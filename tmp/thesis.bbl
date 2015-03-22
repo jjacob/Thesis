@@ -1,0 +1,74 @@
+\begin{thebibliography}{10}
+
+\bibitem{CMS-PAS-TOP-12-019}
+{Measurement of missing transverse energy in top pair events}.
+\newblock Technical Report CMS-PAS-TOP-12-019, CERN, Geneva, 2012.
+
+\bibitem{CMS-PAS-TOP-12-042}
+{Measurement of MET and other global distributions in top pair events}.
+\newblock Technical Report CMS-PAS-TOP-12-042, CERN, Geneva, 2013.
+
+\bibitem{Butz:1497745}
+Erik~Manuel Butz.
+\newblock {Operation and Performance of the CMS Silicon Tracker}.
+\newblock Technical Report CMS-CR-2012-357, CERN, Geneva, Nov 2012.
+
+\bibitem{CMS_experiment}
+S.~Chatrchyan et~al.
+\newblock {The CMS experiment at the CERN LHC}.
+\newblock {\em JINST}, 3:S08004, 2008.
+
+\bibitem{Commissioning_and_Performance_Strip_Tracker}
+S~Chatrchyan et~al.
+\newblock {Commissioning and Performance of the CMS Silicon Strip Tracker with
+  Cosmic Ray Muons}.
+\newblock {\em JINST}, 5:T03008, 2010.
+
+\bibitem{Technical_Proposal_Upgrade_of_CMS_Detector_through_2020}
+CMS Collaboration.
+\newblock {Technical proposal for the upgrade of the CMS detector through
+  2020}.
+\newblock Technical Report CERN-LHCC-2011-006. LHCC-P-004, CERN, Geneva, Jun
+  2011.
+
+\bibitem{Corrin}
+E~P Corrin.
+\newblock {\em Development of Digital Readout Electronics for the CMS Tracker}.
+\newblock PhD thesis, Imperial College, London, 2002.
+
+\bibitem{Cryogenic_System_for_Superconducting_Solenoid}
+D.~Delikaris, J.P. Dauvergne, G.~Passardi, J.C. Lottin, J.P. Lottin, et~al.
+\newblock {The Cryogenic system for the superconducting solenoid magnet of the
+  CMS experiment}.
+\newblock 1998.
+
+\bibitem{CMS_Tracking_Early_Results}
+Christos Leonidopoulos and {The CMS} Collaboration.
+\newblock Cms tracking performance results from early lhc operation.
+\newblock {\em The European Physical Journal C - Particles and Fields},
+  C70:1165--1192, 2010.
+
+\bibitem{CMS_Silicon_Tracker_upgrade_for_HL-LHC}
+Stefano Mersi.
+\newblock {CMS Silicon Tracker upgrade for HL-LHC}.
+\newblock Technical Report CMS-CR-2012-137, CERN, Geneva, Jun 2012.
+
+\bibitem{Palmonari:1260970}
+F~M Palmonari.
+\newblock {CMS Silicon Strip Tracker Commissioning and Preliminary
+  Performances}.
+\newblock {\em Nucl. Phys. B, Proc. Suppl.}, 197(1):121--124, 2009.
+
+\bibitem{Sakuma_sketchup}
+Tai Sakuma and Thomas McCauley.
+\newblock {Detector and Event Visualization with SketchUp at the CMS
+  Experiment}.
+\newblock {\em J.Phys.Conf.Ser.}, 513:022032, 2014.
+
+\bibitem{CMS_TDR1}
+{The CMS Collaboration}.
+\newblock {\em CMS Physics: Technical Design Report Volume 1: Detector
+  Performance and Software}.
+\newblock Technical Design Report CMS. CERN, Geneva, Switzerland, 2006.
+
+\end{thebibliography}

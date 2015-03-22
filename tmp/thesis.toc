@@ -1,0 +1,16 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {chapter}{\numberline {2}The Standard Model}{3}
+\contentsline {chapter}{\numberline {3}The CMS Detector at the LHC}{5}
+\contentsline {section}{\numberline {3.1}Introduction to the LHC}{5}
+\contentsline {section}{\numberline {3.2}Overview of CMS}{5}
+\contentsline {section}{\numberline {3.3}Sub-Detectors}{8}
+\contentsline {subsection}{\numberline {3.3.1}Tracker}{8}
+\contentsline {subsection}{\numberline {3.3.2}Electromagnetic Calorimeter}{10}
+\contentsline {subsection}{\numberline {3.3.3}Hadronic Calorimeter}{11}
+\contentsline {subsection}{\numberline {3.3.4}Magnet}{11}
+\contentsline {subsection}{\numberline {3.3.5}Muon Chambers}{12}
+\contentsline {subsection}{\numberline {3.3.6}Trigger and Data Acquisition}{14}
+\contentsline {subsection}{\numberline {3.3.7}CMS Computing}{15}
+\contentsline {section}{\numberline {3.4}Upgrades}{15}
+\contentsline {chapter}{\numberline {4}7 TeV and 8 TeV Differential Cross Section Measurement}{17}
+\contentsline {chapter}{Appendices}{21}

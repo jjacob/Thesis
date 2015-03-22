@@ -1,0 +1,53 @@
+\ProvidesPackage{StyleFiles/mystyle}
+
+%\usepackage[a4paper,twoside,left=2.5cm,right=2cm,top=30mm,bottom=25mm,bindingoffset=1.5cm,head=14.5pt]{geometry}
+\usepackage[a4paper,twoside,left=2.5cm,right=2cm,top=30mm,bottom=25mm,head=14.5pt]{geometry}
+
+%- set "one and a half" line spacing document-wide, but not where it is usually
+%unnecessary (e.g. footnotes, captions)
+\usepackage{setspace}
+\onehalfspacing
+
+%- disable ligatures altogether in the whole document
+\usepackage{microtype}
+\DisableLigatures{encoding = *, family = *}
+
+\usepackage{graphicx}
+\graphicspath{ {Images/}}
+
+\usepackage{ifpdf}
+\usepackage{datetime}
+
+\usepackage{xspace}
+
+% may need this at some point
+% turn of those nasty overfull and underfull hboxes
+%\hbadness=10000
+%\hfuzz=50pt
+
+% chapters names in LoF and LoT
+\usepackage{StyleFiles/chaptersinindex}
+\AddChaptersToIndex{lof}{figure}
+\AddChaptersToIndex{lot}{table}
+
+% make table of contents, list of figures and list of tables items clickable links 
+\usepackage{hyperref}
+\hypersetup{linktoc=all} %set to all if you want both sections and subsections linked
+
+%
+%
+% DECLARATIONS
+%
+% These macros are used to declare arguments needed for the
+% construction of the title page and other preamble.
+
+% The year and term the degree will be officially conferred
+%\def\degreedate#1{\gdef\@degreedate{#1}}
+% The word count of thesis
+%\def\wordcount#1{\gdef\@wordcount{#1}}
+% The name of your college or department(eg. Trinity, Pembroke, Maths, Physics)
+%\def\collegeordept#1{\gdef\@collegeordept{#1}}
+% The name of your University
+%\def\university#1{\gdef\@university{#1}}
+% Defining the crest
+%\def\crest#1{\gdef\@crest{#1}}

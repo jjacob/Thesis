@@ -1,0 +1,73 @@
+% - create document using 12pt font, on A4 paper, with a title page, with
+% chapters beginning only on right hand pages.
+% - draft makes LaTeX indicate hyphenation and justification problems with a
+% small square in the right-hand margin of the problem line and suppresses image
+% inclusion, showing only a frame where they would occur. 
+\documentclass[12pt,a4paper,titlepage,openright]{report}
+
+% Put all the style files you want in the directory StyleFiles and usepackage like this:
+%\usepackage{StyleFiles/watermark}
+
+% chapters names in LoF and LoT
+% \usepackage{StyleFiles/chaptersinindex}
+% \AddChaptersToIndex{lof}{figure}
+% \AddChaptersToIndex{lot}{table}
+
+\usepackage{StyleFiles/mystyle}
+
+\include{Macros/ParticlePhysicsMacros}
+
+\ifpdf
+    \pdfinfo { /Title  (PhD Thesis)
+               /Creator (TeX)
+               /Producer (pdfTeX)
+               /Author (Jeson Jacob jeson.a.jacob@bristol.ac.uk)
+               /CreationDate (D:20140105195500)  %format D:YYYYMMDDhhmmss
+               /ModDate (D:\pdfdate) % automatically use current date
+               /Subject (PhD Thesis)
+               /Keywords (Bristol, phd, thesis, top, quark)}
+    \pdfcatalog { /PageMode (/UseOutlines)
+                  /OpenAction (fitbh)  }
+\fi
+
+\begin{document}
+
+% - \include uses a clearpage before and after the content of the file and opens
+% a new .aux file for the given file.
+% - use \includeonly {filename1, filename2,} in the preamble to only include
+% specific \include files
+% - \input inputs the content of the given file like it was copy and pasted there
+% manually.
+
+\hypersetup{pageanchor=false}
+%\include{Chapters/00_FrontMatter/00a_Title}
+\hypersetup{pageanchor=true
+}
+% Set up front matter formatting
+% front matter should be single sided
+% roman page numbering for the page, abstract and index
+\pagenumbering{roman}
+
+%\include{Chapters/00_FrontMatter/00b_Abstract}
+%\include{Chapters/00_FrontMatter/00c_Acknowledgements}
+%\include{Chapters/00_FrontMatter/00d_Declaration}
+%\include{Chapters/00_FrontMatter/00e_TableOfContents}
+
+% main text should be double sided
+% change page numbering back to arabic (and start from 1)
+\pagenumbering{arabic}
+
+%\include{Chapters/01_Introduction/01_Introduction}
+%\include{Chapters/02_Theory/02_TheStandardModel}
+%\include{Chapters/03_Detector/03_TheCMSDetectorAtTheLHC}
+\include{Chapters/04_Analysis/04_DifferentialTTbarCrossSections}
+%\include{Chapters/05_ServiceWork/05a_ServiceWorkOnCMSDetector}
+%\include{Chapters/05_ServiceWork/05b_ServiceWorkOnCBC}
+%\include{Chapters/06_Conclusions/06_Conclusions}
+%\include{Chapters/07_Appendices/07_Appendices}
+
+%bibliography
+\bibliographystyle{plain}
+\bibliography{Chapters/08_References/references}
+
+\end{document}
