@@ -37,7 +37,7 @@ time.
 
 The acceleration process begins with a tank of hydrogen. After stripping electrons off the hydrogen atoms
 using an electric field, the remaining protons are inserted into the LINAC2 which accelerates them up to
-50~MeV. From here, the proton beamis injected into the Proton Synchrotron Booster (PSB) which increases the
+50~MeV. From here, the proton beam is injected into the Proton Synchrotron Booster (PSB) which increases the
 energy to 1.4~GeV, followed by the Proton Synchrotron (PS) which accelerates the beam to 25~GeV and the Super
 Proton Synchrotron (SPS) where the beam energy reaches 450~GeV. Finally, the protons are injected into the LHC
 where two beampipes carry the beams in a clockwise and an anti-clockwise direction while accelerating them
@@ -306,10 +306,14 @@ electronics.
 
 The high density crystals used ($8.28~g/cm^{3}$), short radiation length ($X_{0} = 0.89cm$) and small
 Moli\`{e}re radius of 2.2~cm (EXPLAIN THIS? OR REMOVE IT?) lead to a compact calorimeter with fast response
-time, high granularity and of course capable of withstanding the radiation levels within CMS. The barrel region of the ECAL consists of 61,200 crystals and extends up to a pseudorapidity, $\eta\pm1.479$. These crystals are
-divided into 36 supermodules, with each consisting of 4 modules. The endcaps are comprised of 7,324
-crystals, cover the range $1.479\leq\eta\leq3.0$ and are split into two halves known as ``Dees" and is divided
-into operating segments of $40^{\circ}$ each \cite{CMS_experiment,ECAL_frontend_monitoring}.
+time, high granularity and of course capable of withstanding the radiation levels within CMS. The barrel
+region of the ECAL consists of 61,200 crystals and extends up to a pseudorapidity, $\eta\pm1.479$. Each
+individual barrel crystal is $25.8X_{0}$ thick and has cross-sectional dimensions of $22~\times~22~mm^{2}$,
+which equates to $0.0174~\times~0.0174$ in the $\eta-\phi$ plane.These crystals are divided into 36
+supermodules, with each consisting of 4 modules. The endcaps are comprised of 7,324 crystals, cover the range
+$1.479\leq\eta\leq3.0$ and are split into two halves known as ``Dees" and is divided into operating segments
+of $40^{\circ}$ each. The endcap crystals have slightly larger dimensions, having a thickness of $24.7X_{0}$
+and cross-sectional dimensions of $28.62~\times~28.62~mm^{2}$ \cite{CMS_experiment,ECAL_frontend_monitoring}.
 Figure~\ref{fig:CMS_ECAL} shows the layout of the ECAL.
 
 The signals in the crystals are collected by avalanche photodiodes in the barrel region and vacuum
@@ -412,19 +416,22 @@ used for muon triggering \cite{CMS_experiment}.
 \end{figure}
 
 The barrel region DTs cover $|\eta|$ values of less than 1.2, that encounter low rates of low transverse
-momentum muons \cite{CMS_TDR1}. They are arranged in four cylindrical layers among the layers of the magnet's iron return
-yoke and RPC layers. The layers are slightly staggered to ensure that even a muon of high transverse momentum
-will be detected by at least three of the four layers. The drift tubes are gas tubes containing a stretched
-wire and enclosed by aluminium plates. As a particle with a charge traverses the volume of gas, atoms in the
-gas are ionised and the resulting free electrons travel along electric field lines towards the positively
-charged wire. By using the position of the electron along the wire and the time taken for the wire to detect
-the electron, two coordinates of the muon position can be deduced.
+momentum muons \cite{CMS_TDR1}. They are arranged in four cylindrical layers among the layers of the magnet's
+iron return yoke and RPC layers. The layers are slightly staggered to ensure that even a muon of high
+transverse momentum will be detected by at least three of the four layers. The drift tubes are gas tubes
+containing a stretched wire and enclosed by aluminium plates. As a particle with a charge traverses the volume
+of gas, atoms in the gas are ionised and the resulting free electrons travel along electric field lines
+towards the positively charged wire. By using the position of the electron along the wire and the time taken
+for the wire to detect the electron, two coordinates of the muon position can be deduced.
 In comparison to the DTs and CSCs, the RPCs that complement them provide a better resolution in terms of time
-(1ns) but a worse resolution in terms of position. As their name suggests, they are constructed of plates, one
-negatively charged (cathode) and one positively charged (anode) and made of a plastic with high resistance. In
-a similar process to the other muon detectors, a gas that makes up the volume in between the plates is ionised
-by a passing charged muon. The electrons move towards the anode and metal readout strips outside the plastic
-anode detect the signal.
+(1ns) but a worse resolution in terms of position, and so provide additional trigger information. As their
+name suggests, they are constructed of plates, one negatively charged (cathode) and one positively charged
+(anode) and made of a plastic with high resistance. In a similar process to the other muon detectors, a gas
+that makes up the volume in between the plates is ionised by a passing charged muon. The resulting electrons
+create an avalanche of electrons by, in turn, ionising other gas atoms; this avalanche of electrons moves
+towards the anode and metal readout strips outside the plastic anode detect the signal for readout. The hit
+strips pattern allows a calculation of the muon momentum which is then fed to trigger algorithms.
+
 Neutrinos, like muons, also pass through all the layers of the detector, but cannot be detected directly and
 their presence must therefore be deduced by the presence of missing energy in the transverse plane
 (perpendicular to the beam directions).
@@ -435,7 +442,7 @@ The data acquisition system (DAQ) is the name given to the combination of the tr
 systems. At the design bunch crossing frequency of 40~MHz and at the design luminosity of $10^{34}~cm-2s-1$,
 the expected number of proton-proton collisions per second is approximately $10^{9}$, translating to 21
 proton-proton collisions per bunch crossing on average. Each bunch crossing produces approximately 1~MB of
-data, leading to 40,000~GB/s of data. This extremely large amount of data, which is clearly impractical to
+data, leading to 40,000~GB/s of data. This extremely large amount of data, which is impractical to
 record, means that a trigger system is required to filter the events in order to record only data that are of
 interest for physics analyses.
 
@@ -462,11 +469,12 @@ for the trigger to select interesting events. The trigger was designed as descri
 experiment to meet the goals of the LHC physics programme \cite{CMS_experiment}.
 
 Unlike the Level 1 Trigger, the High Level Trigger is software-based and run offline in separate processor
-farms \cite{CMS_TDR1}. If the Level 1 produces an accept decision, the data which was stored in buffers in the front end
-electronics is read into readout buffers from where the DAQ system accesses it. The L1 output rate of 100~kHz
-corresponds to a data rate of approximately 100~GB/s. The software making up the HLT processes these events in
-a computer farm that carries out fast processing of offline algorithms such as selections and object
-reconstructions to reduce the rate down to approximately 100~Hz. This accepted data is then stored on tape.
+farms \cite{CMS_TDR1}. If the Level 1 produces an accept decision, the data which was stored in buffers in the
+front end electronics is read into readout buffers from where the DAQ system accesses it. The L1 output rate
+of 100~kHz corresponds to a data rate of approximately 100~GB/s. The software making up the HLT processes
+these events in a computer farm that carries out fast processing of offline algorithms such as selections and
+object reconstructions to reduce the rate down to approximately 100~Hz. This accepted data are then stored on
+tape.
 
 All sub-detector readout systems consist of front-end systems into which data is fed from the detector.
 When the L1 trigger accepts an event, the data corresponding to that event is extracted from these front-end
@@ -485,17 +493,17 @@ collaboration of LHC experiments and computing centres, is employed to carried o
 The CMS computing resources are primarily divided into three tiers. Tier 0 (T0) consists of only one site, at
 CERN itself. The T0 centre has as its main aims to take accepted data from the detector and transfer it to
 permanent storage on tape. Tier 0 computing is also responsible for reconstructing the RAW data into RECO data
-formats (see Section~\ref{s:Object_Reconstruction} for more details on data formats). From the T0 centre, the
-copies of the data in RECO and RAW format is transferred to T1 centres around the world (there is also a Tier
-1 (T1) centre at CERN, known as the CERN computing centre). Owing to its important role in ensuring the robust
-transfer of RAW and RECO data, the T0 resources are not available for analysis by CMS users. There are seven
-Tier 1 centres located in various countries within the CMS collaboration. In the UK, the T1 centre is located
-at the Rutherford Appleton Laboratory in Harwell, near Oxford. T1 centres provide reliable computing resources
-for data storage and processing; RAW data is spread between them, providing a second copy of the RAW data
-stored at CERN. The second reconstruction step is also carried out at T1 centres, in addition to the
-production of simulated data. These can then be provided to any of the Tier 2 centres at CMS institutes
-(typically universities) where they may be temporarily stored. Typically, T2 centres are used to run users'
-final analyses and produce simulations \cite{CMS_experiment,CMS_TDR1}.
+formats (see Section~\ref{s:object_reconstruction_and_identification} for more details on data formats). From
+the T0 centre, the copies of the data in RECO and RAW format is transferred to T1 centres around the world
+(there is also a Tier 1 (T1) centre at CERN, known as the CERN computing centre). Owing to its important role
+in ensuring the robust transfer of RAW and RECO data, the T0 resources are not available for analysis by CMS
+users. There are seven Tier 1 centres located in various countries within the CMS collaboration. In the UK,
+the T1 centre is located at the Rutherford Appleton Laboratory in Harwell, near Oxford. T1 centres provide
+reliable computing resources for data storage and processing; RAW data is spread between them, providing a
+second copy of the RAW data stored at CERN. The second reconstruction step is also carried out at T1 centres,
+in addition to the production of simulated data. These can then be provided to any of the Tier 2 centres at
+CMS institutes (typically universities) where they may be temporarily stored. Typically, T2 centres are used
+to run users' final analyses and produce simulations \cite{CMS_experiment,CMS_TDR1}.
 
 \section{Event Data Model}
 \label{s:Event_Data_Model}
@@ -541,22 +549,130 @@ Naturally, the above dates and schedules are the latest best estimates and are l
 particularly those further in the future, as work progresses.
 
 
-\section{Object Reconstruction}
-\label{s:Object_Reconstruction}
+\section{Object Reconstruction and Identification}
+\label{s:object_reconstruction_and_identification}
 
 The process of producing a physics object such as an electron, photon or jet, from the data recorded by CMS is
 known as reconstruction and is carried out by ``modules'' known as EDProducers within CMSSW. The three
 step process of reconstructing high level objects consists of local reconstruction within a sub detector,
-global reconstruction using data from the whole CMS detector, and a combination of reconstructed objects from
-both of these.
+global reconstruction using data from the whole CMS detector, and a final stage combining reconstructed
+objects from both of these. The reconstruction technique used in the majority of CMS analyses is called
+Particle Flow (PF) \cite{particle_flow}. PF uses information from all of the sub-detectors of CMS to identify
+and reconstruct particles produced from a proton-proton collision. 
 
 \subsection{Electron Reconstruction}
-\label{ss:Electron_Reconstruction}
+\label{ss:electron_reconstruction}
+ECAL local reconstruction algorithms calculate the time of arrival, position and the energy deposited by
+electromagnetic objects. After grouping together deposits in neighbouring crystals to form clusters, deposits
+are then matched to deposits in the HCAL, forming a Calo Tower. Electrons are completely stopped in the ECAL
+and deposit their energy in a narrow cluster of crystals.
+
+However, electrons can interact with the material between the interaction point and the ECAL, emitting a
+photon via bremsstrahlung radation. Similarly, photons can convert to $e^{+}e^{-}$. Both of these processes
+result in ECAL deposits with a larger spread in $\phi$ because of the strong magnetic field in the inner
+section of CMS with the tracker. In the case of photons, several clusters are grouped together to form superclusters,
+which are then corrected for their energies to obtain the energies of the original photon
+\cite{photon_reconstruction}.
+
+Seeds for electrons are produced in the ECAL by two methods. The first matches superclusters with a trajectory
+compatible with two or three pixel detector hits and the interaction point. The second matches the
+supercluster to tracker tracks to identify electrons (and in the case of electrons emitting bremsstrahlung
+radiation, tracks with a low number of hits) \cite{electron_reconstruction}. Combining the seeds from the two
+methods, a Gaussian-Sum Filter, a generalisation of the Kalman Filter algorithm, is used to reconstruct
+electron paths \cite{electrons_GSF}.
+
+Since other objects can leave similar signatures in the detector to electrons, such as jets or electrons from
+photon conversions, candidates are required to satisfy additional requirements of identification and
+isolation. Several electron identification methods exists and are used in CMS analyses. The main top cross
+sections analysis in this thesis uses the multivariate identification (MVA ID). As the name suggests, this
+approach uses a multivariate analysis, with track, vertex and supercluster variables as input, to produce a
+discriminator value, with higher values indicating a higher likelihood for a candidate to be a real electron.
+The MVA ID algorithm is optimised for identifying electrons from W and Z boson decays
+\cite{electron_reconstruction}.
+
+The isolation of an electron is defined as the activity within a cone surrounding the electron. Isolation is
+used in parallel with identification to select electrons, in particular to distinguish electrons promptly
+produced in a proton-proton collision. Such isolated electrons would have less activity in its vicinity than
+electrons from within a jet, which could originate from leptonically decaying b hadrons, and jets faking
+electrons. Two methods exist in CMS of calculating the isolation of a particle: detector based isolation and
+particle based isolation. The detector based method is defined in each sub detector as the sum of the momenta
+or energies in a cone of $\Delta R = 0.3$ around the electron. The particle based method uses the total
+transverse energy of PF reconstructed particles within a cone of $\Delta R = 0.3$ and can remove activity
+coming from collisions other than the interaction point. By normalising this isolation to the momentum or
+energy of the electron, a relative isolation is obtained, relating the cone activity to the electron. This
+relative isolation is the variable used in the top cross sections analysis to select electrons. %can improve
+% signal efficiency
+
+In order to avoid the selection of electrons originating from a photon conversion, a veto can be placed on a
+second electron in the event. However, since the two electrons in a photon conversion may not necessarily have
+equal transverse momentum, such a veto may be insufficient, and so further techniques to identify conversion
+events are used. Firstly, since an electron from a conversion would be produced at some distance from the
+interaction point and in the detector material, eliminating candidates with missings hits in the pixel tracker
+helps to distinguish such electrons from promptly produced electrons. In events in which the conversion occurs
+in the beam pipe or if the electron is matched to unassociated pixel hits, this method can also be
+insufficient, so an additional track matching step is used. Tracks are matched in pairs and following
+geometrical cuts, can be removed if they appear to originate from a conversion \cite{electron_reconstruction}.
 
 \subsection{Muon Reconstruction}
-\label{ss:Muon_Reconstruction}
+\label{ss:muon_reconstruction}
+Local reconstruction in the muon chambers provide hit position and time of arrival of a muon. This information
+from the DTs and CSCs is then amalgamated to create muon track hits and segments. These are used by the muon
+global reconstruction algorithms to reconstruct ``standalone'' muons. An inner detector segment is used as a
+seed for a Kalman Filter (EXPLAIN THIS?) \cite{kalman_filter} and possible trajectories are generated. By
+removing hits which are not likely to have come from the track in question, the likely trajectory is
+constructed layer-by-layer. A final fit is carried out, including an extrapolation to the interaction point
+for greater momentum resolution.
+
+The magnetic field in the muon system is only 2~T compared to 3.8~T in the tracker. Tracks reconstructed in
+the tracker can therefore be combined with the aforementioned muon chamber information to improve the
+$p_{T}$ resolution of muons, as seen in Figure%~\ref{}. FIND FIGURE.
+%see luke's thesis for explanation of difference between low and high momentum muon resolutions in pt.
+
+Two methods are employed to combine the information from the two sub-detectors. \textit{Global muon
+reconstruction} matches a tracker track to a standalone muon track and carries out a fit of the resulting
+\textit{global muon} track. The second method, \textit{tracker muon reconstruction}, tracker tracks are
+extrapolated outwards to the muon chambers and accepted as a muon candidate if a DT or CSC matching track is
+found \cite{muon_reconstruction}.
+
+In terms of triggering, the $p_{T}$ of a muon is first estimated using the information available at Level 1
+trigger stage from all three types of muon detectors. At HLT level, the muon candidates from Level 1 are
+further refined using track finding and fitting, but still using only information from muon chambers, leading
+to Level 2 muons. As mentioned in Section~\ref{ss:Trigger}, due to the time constraints required of the
+trigger, full tracker data are not currently used. However, tracks of Level 2 muons are extrapolated into the
+tracker systems and a localised track finding algorithm is run to identify only nearby tracker hits. A
+track matching that of a Level 2 muon leads to a Level 3 muon. %See Emyr's thesis P45 top for details.
 
 \subsection{Jet Reconstruction}
-\label{ss:Jet_Reconstruction}
+\label{ss:jet_reconstruction}
+As quarks produced in proton-proton interactions (except the top quark) hadronise, they form jets of particles
+in the direction of travel of the quark from which it originates. With the 
+The time of arrival, position and the energy deposited by hadronic objects are locally reconstructed. If the
+deposit matches an ECAL deposit, a Calo Tower is formed for later use in jet reconstruction algorithms.
 
-(corrections, b-tagging, MET?)
+\subsubsection{B Jets}
+\label{sss:b_jets}
+
+
+\subsection{Track Reconstruction}
+\label{ss:track_reconstruction}
+Algorithms performing local reconstruction scan tracker modules in each layer with higher than a threshold
+signal and constructing clusters by adding adjacent strips or pixels to the original seed strip or pixel. In
+order to reconstruct complete tracks to obtain the position and momentum of the charged particle, algorithms
+based on specfic requirements such as high or low transverse momentum tracks are used. These algorithms in CMS
+are colletively known as the Combinatorial Track Finder (CTF).
+
+Multiple passes of the CTF reconstruction software are carried out to reconstruct tracks, in a process called
+iterative tracking. Earlier iterations identify tracks that are easy to find such as high $p_{t}$ originating
+near the interaction point. As these tracks are reconstructed, the corresponding hits are removed from
+consideration in subsequent iterations, making it simpler for later iterations to identify tracks that are
+more difficult to find such as those of displaced particles or with low $p_{t}$.
+
+Six iterations are carried out in total, and each iteration can be split into four steps. Seeds are created
+using 2 or 3 hits to produce intial track candidates. The seed gives an estimate of the trajectories of the
+potential track candidates. A Kalman Filter (EXPLAIN THIS?) \cite{kalman_filter} based track finding
+algorithm then looks for further hits along an extrapolated path of the seed trajectory. A track fitter is then run using information
+from the previous steps to produce final values for trajectory parameters. The fourth and final step then
+rejects tracks which fail a specified quality checks \cite{track_reconstruction}.
+
+\subsection{Pileup Subtraction}
+\label{ss:pileup_subtraction}
