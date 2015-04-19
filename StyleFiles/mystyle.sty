@@ -36,6 +36,30 @@
 \usepackage{hyperref}
 \hypersetup{linktoc=all} %set to all if you want both sections and subsections linked
 
+\usepackage{siunitx}
+% setup the SIunits package (more info in 'texdoc siunitx')
+\sisetup{number-unit-product = \text{ }}
+\sisetup{binary-units = true}
+\sisetup{seperr, openerr=, closeerr=}
+
+% Print URLs not in Typewriter Font                                     
+\def\UrlFont{\rm}
+
+% bold small caps fix
+%\normalfont
+%\DeclareFontShape{T1}{lmr}{bx}{sc} { <-> ssub * cmr/bx/sc }{}
+
+% hyphenation
+\hyphenation{brems-strahl-ung}
+
+% Tables handling: adjustable row styles
+\newcolumntype{_}{>{\global\let\currentrowstyle\relax}}
+\newcolumntype{^}{>{\currentrowstyle}}
+\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}
+  #1\ignorespaces
+}
+\renewcommand{\arraystretch}{1.2}
+
 %
 %
 % DECLARATIONS

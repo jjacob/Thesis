@@ -9,12 +9,11 @@
 %\usepackage{StyleFiles/watermark}
 
 % chapters names in LoF and LoT
-% \usepackage{StyleFiles/chaptersinindex}
-% \AddChaptersToIndex{lof}{figure}
-% \AddChaptersToIndex{lot}{table}
+%\usepackage{StyleFiles/chaptersinindex}
+%\AddChaptersToIndex{lof}{figure}
+%\AddChaptersToIndex{lot}{table}
 
 \usepackage{StyleFiles/mystyle}
-
 \include{Macros/ParticlePhysicsMacros}
 
 \ifpdf
@@ -40,7 +39,7 @@
 % manually.
 
 \hypersetup{pageanchor=false}
-%\include{Chapters/00_FrontMatter/00a_Title}
+\include{Chapters/00_FrontMatter/00a_Title}
 \hypersetup{pageanchor=true
 }
 % Set up front matter formatting
@@ -48,10 +47,10 @@
 % roman page numbering for the page, abstract and index
 \pagenumbering{roman}
 
-%\include{Chapters/00_FrontMatter/00b_Abstract}
-%\include{Chapters/00_FrontMatter/00c_Acknowledgements}
-%\include{Chapters/00_FrontMatter/00d_Declaration}
-%\include{Chapters/00_FrontMatter/00e_TableOfContents}
+\include{Chapters/00_FrontMatter/00b_Abstract}
+\include{Chapters/00_FrontMatter/00c_Acknowledgements}
+\include{Chapters/00_FrontMatter/00d_Declaration}
+\include{Chapters/00_FrontMatter/00e_TableOfContents}
 
 % main text should be double sided
 % change page numbering back to arabic (and start from 1)
@@ -65,10 +64,14 @@
 \include{Chapters/05_ServiceWork/05a_ServiceWorkOnCMSDetector}
 \include{Chapters/05_ServiceWork/05b_ServiceWorkOnCBC}
 \include{Chapters/06_Conclusions/06_Conclusions}
-\include{Chapters/07_Appendices/07_Appendices}
 
 %bibliography
 \bibliographystyle{plain}
 \bibliography{Chapters/08_References/references}
 
+\appendix
+\include{Chapters/07_Appendices/07_Appendices}
+
+% changes default name Bibliography to References
+% \renewcommand{\bibname}{References}
 \end{document}
