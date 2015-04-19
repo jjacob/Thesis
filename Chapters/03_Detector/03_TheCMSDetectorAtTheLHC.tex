@@ -30,8 +30,8 @@ CMS recorded a peak instantaneous luminosity of $3.7\times10^{33}~cm^{-2}s^{-1}$
 energy was increased to 8~TeV (21 proton-proton interactions per bunch crossing) and CMS recorded a peak
 instantaneous luminosity of $7.7\times10^{33}~cm^{-2}s^{-1}$. The design energy and luminosities mentioned
 previously are planned when data taking begins again after Long Shutdown 1 (currently scheduled to be around
-May 2015) and after Long Shutdown 2 (in 2019) respectively. $6.1~fb^{-1}$ and $23.3~fb^{-1}$ of data was
-delivered to CMS during the 2011 and 2012 data taking periods respectively;
+May 2015) and after Long Shutdown 2 (in 2019) respectively. 6.1\fbinv and 23.3\fbinv of
+data was delivered to CMS during the 2011 and 2012 data taking periods respectively;
 Figure~\ref{fig:integrated_luminosity} shows the increase in integrated luminosities delievered to CMS over
 time.
 
@@ -625,7 +625,7 @@ for greater momentum resolution.
 
 The magnetic field in the muon system is only 2~T compared to 3.8~T in the tracker. Tracks reconstructed in
 the tracker can therefore be combined with the aforementioned muon chamber information to improve the
-$p_{T}$ resolution of muons, as seen in Figure%~\ref{}. FIND FIGURE.
+\pt resolution of muons, as seen in Figure%~\ref{}. FIND FIGURE.
 %see luke's thesis for explanation of difference between low and high momentum muon resolutions in pt.
 
 Two methods are employed to combine the information from the two sub-detectors. \textit{Global muon
@@ -634,7 +634,7 @@ reconstruction} matches a tracker track to a standalone muon track and carries o
 extrapolated outwards to the muon chambers and accepted as a muon candidate if a DT or CSC matching track is
 found \cite{muon_reconstruction}.
 
-In terms of triggering, the $p_{T}$ of a muon is first estimated using the information available at Level 1
+In terms of triggering, the \pt of a muon is first estimated using the information available at Level 1
 trigger stage from all three types of muon detectors. At HLT level, the muon candidates from Level 1 are
 further refined using track finding and fitting, but still using only information from muon chambers, leading
 to Level 2 muons. As mentioned in Section~\ref{ss:Trigger}, due to the time constraints required of the
@@ -645,13 +645,79 @@ track matching that of a Level 2 muon leads to a Level 3 muon. %See Emyr's thesi
 \subsection{Jet Reconstruction}
 \label{ss:jet_reconstruction}
 As quarks produced in proton-proton interactions (except the top quark) hadronise, they form jets of particles
-in the direction of travel of the quark from which it originates. With the 
-The time of arrival, position and the energy deposited by hadronic objects are locally reconstructed. If the
-deposit matches an ECAL deposit, a Calo Tower is formed for later use in jet reconstruction algorithms.
+in the direction of travel of the quark from which it originates. The time of arrival, position and the energy
+deposited by hadronic objects are locally reconstructed in the HCAL. If the deposit matches an ECAL deposit, a
+Calo Tower is formed for later use in jet reconstruction algorithms.
+
+The particle flow (PF) algorithm performing the reconstruction of particles in the jet, and the $anti-k_{t}$
+algorithm used to perform the clustering of these particles into jets. The $anti-k_{t}$ algorithm, explained
+in detail in \cite{anti_kt} is one of several jet algorithms that exist in CMS to
+combine reconstructed particles into jets. It defines a distance $d_{ik}$ between reconstructed particles as
+
+\begin{equation}
+%\begin{center}
+d_{ij} = min(\frac{1}{p_{T,i}^{2}},\frac{1}{p_{T,j}^{2}})\frac{(y_{i}-y_{j})+(\phi_{i}-\phi_{j})^{2}}{R^{2}}
+%\end{center}
+\end{equation}
+
+$p_{T,i}$ and $p_{T,j}$ are the transverse momenta of the two particles $i$ and $j$, $y_{i}$ and $y_{j}$ are
+the rapidities and $\phi_{i}$ and $\phi_{j}$ are the azimuth angles and $R$ is the radius of the jet cone.
+anti-$k_{t}$ iteratively clusters together particles with the smallest $d_{i,j}$ between them until all jets
+are reconstructed and there are no particles remaining. Events will usually consist of a small number of
+high-\pt (hard) particles and a large number of low-\pt particles. The distance between hard particles
+is typically small, and the distance between softer particlesis larger. Soft (low-\pt particles tending to
+cluster around hard (high-\pt) particles, before clustering with other soft particles.
+
+While the PF anti-$k_{t}$ jets show high jet matching efficiency on Monte Carlo simulation samples,
+corrections are applied based on the jet $\pt$ and $\eta$ to correct for mismeasurements in the
+detector and thereby improve the agreement between generated and reconstructed particle flow jets. The
+factored approach to CMS jet energy corrections is comprised of three parts:
+
+\begin{itemize}
+  \item {L1 Pile Up: corrects for additional energy from charged particles from pile-up in the event
+  \ref{ss:pileup_subtraction}.}
+  \item {L2 Relative Jet Correction: corrects the reconstructed energy to match the generated jet with respect
+  to $\eta$.} %to flatten the jet response in the ecal eta
+  \item {L3 Absolute Jet Correction: corrects the reconstructed energy to match the generated jet with respect
+  to $\pt$.} %to flatten the jet response in the ecal pt
+  \item {L2L3Residuals: reduces any residual differences between the reconstructed and generated
+  jet due to simulation not being perfectly tuned to data. This correction is applied to data only.}
+  %https://twiki.cern.ch/twiki/bin/viewauth/CMS/IntroToJEC
+\end{itemize}
+
+In order to identify jets in the differential cross sections analysis, further identification criteria are
+used to reduce electronic noise, to reduce the number of electrons mis-identified as jets and, in so doing, to
+ensure the selection of high quality jets. The requirements, which are known as the losse PF Jet ID, are:
+
+\begin{itemize}
+  \item at least one constituent particle
+  \item the neutral hadron energy fraction (NHF) must be $<~0.99$
+  \item for jets with abseta~<~2.4, the charged hadron energy fraction (CHF) must be >~0
+  \item the neutral electronmagnetic energy fraction (NEF) must be $<~0.99$
+  \item for jets with abseta~<~2.4, the charged electronmagnetic energy faction (CEF) must be $<~0.99$
+  \item for jets with abseta~<~2.4, the number of charged hadronic constituents (NCH) must be $>~0$
+\end{itemize}
+
+Jet energy resolution corrections are also applied (known as jet smearing) to account to the fact that jet
+energy resolution has been measured to be worse in data than in simulation. These PF jet corrections are
+obtained using 0.8\fbinv of 2011 dijet data and 19.7\fbinv of 2012 dijet data
+\cite{jet_res_2011,jet_res_2012}.
 
 \subsubsection{B Jets}
 \label{sss:b_jets}
-
+The process of identifying jets coming from b-quarks is known as b-tagging and is very important in top quark
+physics due to the decay of the top to a W-boson and a b-quark. B-tagging can therefore help to appreciably
+reduce background processes in signal. A description of the several algorithms available in CMS is given in
+\ref{c:b_tagging_studies}. The algorithm used in the differential cross sections analysis is the combined
+secondary vertex tagger (CSV). The relatively long lifetime of b quarks means that they travel a significant
+distance (of the order of a few cm) before decaying. This leads to events with b-jets possessing a
+secondary vertex distinguishable at a significant distance from the primary interaction vertex. This secondary vertex
+information, together with track based information such as the number of tracks in the jet, the invariant
+mass of the secondary vertex and the impact parameter significance of each jet track is used by the CSV
+algorithm to produce a discriminator. TODO: EXPLAIN IMPACT PARAMETER SIGNIFICANCE WITH A DIAGRAM %TODO:EXPLAIN IMPACT PARAMETER SIGNIFICANCE WITH A DIAGRAM.
+Three working points are used in CMS: tight, medium and loose. The medium working point is used in the different
+cross sections analysis, which carries a 1~\% mis-tag rate and approximately 70~\% b-tag efficiency. The tight
+and loose working points have mis-tag rates of 0.1~\% and 10~\% respectively \cite{btagging}.
 
 \subsection{Track Reconstruction}
 \label{ss:track_reconstruction}
@@ -662,17 +728,38 @@ based on specfic requirements such as high or low transverse momentum tracks are
 are colletively known as the Combinatorial Track Finder (CTF).
 
 Multiple passes of the CTF reconstruction software are carried out to reconstruct tracks, in a process called
-iterative tracking. Earlier iterations identify tracks that are easy to find such as high $p_{t}$ originating
-near the interaction point. As these tracks are reconstructed, the corresponding hits are removed from
+iterative tracking. Earlier iterations identify tracks that are easy to find such as high \pt originating
+near the interactionspo point. As these tracks are reconstructed, the corresponding hits are removed from
 consideration in subsequent iterations, making it simpler for later iterations to identify tracks that are
-more difficult to find such as those of displaced particles or with low $p_{t}$.
+more difficult to find such as those of displaced particles or with low \pt.
 
 Six iterations are carried out in total, and each iteration can be split into four steps. Seeds are created
 using 2 or 3 hits to produce intial track candidates. The seed gives an estimate of the trajectories of the
-potential track candidates. A Kalman Filter (EXPLAIN THIS?) \cite{kalman_filter} based track finding
-algorithm then looks for further hits along an extrapolated path of the seed trajectory. A track fitter is then run using information
-from the previous steps to produce final values for trajectory parameters. The fourth and final step then
-rejects tracks which fail a specified quality checks \cite{track_reconstruction}.
+potential track candidates. A Kalman Filter (EXPLAIN THIS?) \cite{kalman_filter} based track finding algorithm
+then looks for further hits along an extrapolated path of the seed trajectory. A track fitter is then run
+using information from the previous steps to produce final values for trajectory parameters. The fourth and
+final step then rejects tracks which fail specified quality checks \cite{track_reconstruction}.
 
 \subsection{Pileup Subtraction}
 \label{ss:pileup_subtraction}
+When reconstructing an event in CMS, all vertices in the event must be reconstructed. By ordering the vertices
+in by the sum of the transverse momenta of their tracks, it is possible to identify the the vertex of interest
+for physics analyses, known as the primary vertex (PV) as the vertex with the largest transverse momentum. The
+particle flow algorithm reconstructs objects, starting with those coming from the primary vertex, followed by
+other vertices (known as pileup). The reconstructed objects from the PV can be affected by the number of other
+vertices present in the event. For example, the jet momentum and lepton isolation could both increase with
+high pileup.This can, in turn, lead to signal events not passing selection requirements because a truly
+isolated lepton from the PV may appear not to be isolated. In addition, a larger number of events from
+background processes may pass selection requirements due to low energy jets appearing to have a higher energy.
+Hence, pileup subtraction, the removal of charged particles coming from vertices other than the PV is
+implemented to reduce these effects.
+
+Neutral particles, however, pose a more difficult problem since they leave no tracker information for the
+reconstruction algorithms to easily identify their origin. One method of removing such particles from an event
+known as the $\Delta\beta$ correction, uses the fact that the estimated average energy in an event from
+neutral particles is half that from charged particles. Thus, it can be estimated that 0.5 times the charged particle
+energy comes from neutral particles. The second method, known as $\rho$ correction, subtracts an average
+transverse momentum coming from pileup per unit area. While the two methods produce similar results, the
+$\rho$ correction is used to correct the electron isolation and the $\Delta\beta$ correction is used to correct the
+muon isolation in the differential cross sections analysis presented in this thesis, as recommended by the CMS
+TOP physics analysis group.
