@@ -1,11 +1,11 @@
-\chapter{7 TeV and 8 TeV Differential Cross Section Measurement}
-\label{c:Differential_Cross_Section}
+\chapter{7 TeV and 8 TeV Differential Cross Section Measurement: Data, Simulation and Selection}
+\label{c:Differential_Cross_Section:data_simulation_and_selection}
 
 \section{Introduction}
 \label{s:xsections_introduction}
 This analysis measures the normalised differential \ttbar cross section in the semi-leptonic channel and is
 carried out on 2011 and 2012 data recorded from the CMS detector. The measurement is carried out with respect
-to the following global variables is carried out:
+to the following global, or primary, variables is carried out:
 \begin {itemize}
   \item {\met, the missing transverse energy in an event}
   \item {\HT, the sum of the jet transverse momenta in an event}
@@ -14,8 +14,8 @@ to the following global variables is carried out:
   \item {\wpt, the transverse momentum of the leptonically decaying W boson}
 \end{itemize}
 
-Previous analyses using 7~TeV data investigating \met and using 8~TeV data investigatin all the global
-variables listed above can be found in \cite{CMS-PAS-TOP-12-019} and \cite{CMS-PAS-TOP-12-042} respectively.
+Previous analyses using 7\TeV data investigating \met and using 8\TeV data investigatin all the
+global variables listed above can be found in \cite{CMS-PAS-TOP-12-019} and \cite{CMS-PAS-TOP-12-042} respectively.
 
 This investigation is motivated primarily by the importance of understanding \ttbar events since they are a
 significant background in many new physics analyses. It is also helpful in understanding QCD and event
@@ -31,11 +31,11 @@ hints of dark matter.
 \subsection{Data}
 \label{ss:data}
 
-Data collected in 2011 at a centre-of-mass energy of 7~TeV and in 2012 at a centre-of-mass energy of 8~TeV are
-used. The datasets are determined by the triggers that were used to record them. For 7~TeV, the ElectronHad
+Data collected in 2011 at a centre-  of-mass energy of 7\TeV and in 2012 at a centre-of-mass energy of
+8\TeV are used. The datasets are determined by the triggers that were used to record them. For 7\TeV, the ElectronHad
 dataset is used in the electron channel. It was recorded with triggers that select based on a single, isolated
-electron and additional jets. At 8~TeV, the SingleElectron dataset was used for the electron channel which is
-based on a single, isolated electron. In the muon channel, the SingleMu dataset was used for both
+electron and additional jets. At 8\TeV, the SingleElectron dataset was used for the electron channel
+which is based on a single, isolated electron. In the muon channel, the SingleMu dataset was used for both
 centre-of-mass energies, requiring a single, isolated muon. See Section~\ref{s:event_selection} for more
 details about triggers. The datasets used are shown in Tables~\ref{tab:datasets7TeV} and {tab:datasets8TeV} in
 Appendix~\ref{a:datasets}. Only data that is certified as “golden”, which is defined as data taken with the
@@ -59,12 +59,17 @@ bosons and additional jets would provide a similar event signature to that of a 
 However, in general, these processes can be removed from the signal selection because the final decay products
 in W + jets events have lower energies than those from semi-leptonic \ttbar decays, since the top quark has a
 high mass. Another characteristic of W + jets events is that the jets are less likely to be the necessary b
-jets in \ttbar events. Similarly, Z + jets events can mimic \ttbar events where the leptonic decay of Z
-bosons to a lepton and an anti-lepton. In these cases, a veto on a second lepton together with jet
-multiplicity requirements removes much of this background, although misidentification and misreconstruction
-of leptons as jets could still mean some of these events still pass the signal selection, although this
-contamination would be small. TODO:FEYNMANN DIAGRAM OF W & Z PRODUCTION.
-%TODO: FEYNMANN DIAGRAM OF W & Z + JETS EVENTS
+jets in \ttbar events. Similarly, Z + jets events can mimic \ttbar events where the leptonic decay of Z bosons
+to a lepton and an anti-lepton. Within the framework of this analysis, prompt leptons are considered as those
+which come from W or Z boson or from tau-lepton decays. These leptons are usually well isolated, whereas
+misidentified leptons originate either from semi-leptonic heavy flavor decays within jets or are simply
+misreconstructed genuine jets. In both cases these leptons are generally not isolated and a veto on a second
+lepton together with jet multiplicity requirements removes much of this background. Misidentification and
+misreconstruction of leptons as jets could still mean some of these events still pass the signal selection,
+although this contamination would be small. TODO:FEYNMANN DIAGRAM OF W \& Z PRODUCTION.
+% TODO: FEYNMANN DIAGRAM OF W & Z + JETS EVENTS
+
+
 
 The QCD events that can form a background to \ttbar analyses, with the multi-jet final states resulting from
 gluon-gluon fusion and quark-antiquark annihilation from proton proton collisions. At high orders, sufficient
@@ -87,75 +92,218 @@ the difficulty in Monte Carlo modelling of such contributions lead to significan
 of events passing the signal selection in data and in simulation. Therefore, the QCD background is
 modelled using a data driven method, decribed in Section~\ref{ss:qcd_selection}.
 
-Table~\ref{monte_carlo_samples} shows the Monte Carlo signal and background samples used in this analysis. Top
-pair production is modelled using MadGraph, single top events are modelled with POWHEG, W and Z boson plus
-jets production is modelled using MadGraph and QCD multi-jet events are modelled with PYTHIA. In all cases,
-PYTHIA is used to model radiation and hadronisation processes.
+Tables~\ref{tab:signaldatasets7TeV} and \ref{tab:backgrounddatasets7TeV} show the Monte Carlo signal and
+background samples respectively used in this analysis. Top pair production is modelled using MadGraph, single
+top events are modelled with POWHEG, W and Z boson plus jets production is modelled using MadGraph and QCD
+multi-jet events are modelled with PYTHIA. In all cases, PYTHIA is used to model radiation and hadronisation
+processes. Tables~\ref{tab:7TeVsystematicdatasets} and \ref{tab:8TeVsystematicdatasets} show the samples used
+to evaluate the factorisation scale and matching threshold uncertainties. \WpJets and \ZpJets samples were not made available at 7\TeV, so the
+scaled distributions from \SI{8}{\TeV} were used, as described in Section~\ref{ss:7TeV_vplusjets_template}.
+
+\input{Chapters/04_Analysis/04b_XSections/tables/signal_samples_7TeV}
+\input{Chapters/04_Analysis/04b_XSections/tables/background_samples_7TeV}
+\input{Chapters/04_Analysis/04b_XSections/tables/systematic_samples_7TeV}
+\input{Chapters/04_Analysis/04b_XSections/tables/signal_samples_8TeV}
+\input{Chapters/04_Analysis/04b_XSections/tables/background_samples_8TeV}
+\input{Chapters/04_Analysis/04b_XSections/tables/systematic_samples_8TeV}
+
+\section{Selection}
+\label{s:selection}
+Selection algorithms are run on the data and samples listed in Sections~\ref{s:data_and_simulated_samples} and
+\ref{ss:simulated_samples} to identify \ttbar events. The selection process is performed in two stages: a
+``pre-selection'' using loose criteria to produce ntuples and a second full selection when processing these
+ntuples to produce histograms of variables of interest. The selection used follows the recommended criteria by
+the CMS TOP Physics Analysis Group (PAG) and is the same for 7\TeV and 8\TeV.
+
+\subsection{Preselection}
+\label{ss:preselection}
+The preselection is performed on the AOD datasets, with the aim of making the resulting ntuples smaller
+in size but still versatile enough for use later in the analysis chain.
+
+The preselection requires at least one good primary vertex with at least four degrees of freedom,
+located within 24\cm of the centre of the CMS detector in the $z$ direction and within 2\cm of the centre of
+the beam trajectory in the transverse plane. In addition, events are required to have at least one lepton
+candidate. In the case of electrons, a transverse energy of at least 30\GeV and \abseta $<$ 2.5 and in the
+muon channel a transverse momentum of at least 20\GeV and $\abseta < 2.1$ are required. 
+
+Trigger flags are also required to pass a trigger. The triggers used in both 7\TeV and 8\TeV data are shown in
+Appendix\ref{tab:HLTTriggers}. In the electron channel, an electron plus jets trigger was used in 2011 with a
+requirement of electron \Et $>$ 25\GeV and at least three jets with \pt $>$ 20\GeV; and a single electron
+trigger was used in 2012 with an electron \Et requirement of 27\GeV. In the muon channel, a single muon
+trigger was used in both data taking periods. In addition to these kinematic requirements, the triggers also
+have cuts for the electron on the ratio between the HCAL and the ECAL energy ($H/E$), track matching with ECAL
+($\Delta\eta$ and $\Delta\phi$), cluster shape ($\sigma_{i\eta i\eta}$), ECAL isolation ($\frac{\text{ECAL
+iso}}{E_\text{T}}$), HCAL isolation ($\frac{\text{HCAL iso}}{E_\text{T}}$) and tracker isolation
+($\frac{\text{tracker iso}}{\pt}$). In the muon triggers, similarly, they have additional cuts on\ldots TODO:
+%TODO: see Luke P76-77 for descriptions of these variables.
+
+\input{Chapters/04_Analysis/04b_XSections/tables/HLT_triggers}
+
+Several filters are also applied in the preselection stage to remove events with significant levels of noise
+due to elements of the detector with sub-optimal performance during data-taking. These filters include a HCAL
+noise filter to remove events with high HCAL noise, a tracking failure filter to remove events with too few
+tracks, ECAL filters to remove events with signals in dead and/or noisy modules of the ECAL and a beam
+scraping veto which requires tracks of high purity in events with high track multiplicity.
+
+
+\subsection{Electron selection}
+\label{electronplusjetschannelselection}
+The final event selection follows that recommended by the CMS TOP Physics Analysis Group (PAG). After having
+passed the electron trigger, events are further required to have an electron with an MVA electron
+identification of $>0.5$, with \Et $> 30\GeV$ and $\abseta < 2.5$ (excluding the transition region between
+the ECAL barrel and endcap of $1.4442 < \abseta < 1.5660$). A transverse impact parameter, the distance
+between the electron and the primary vertex, of $d_{xy} < 0.02\cm$ is also required. In addition, a $\rho$
+corrected (explained in Section \ref{ss:pileup_subtraction}) relative isolation of $< 0.1$, within a cone of size
+$\Delta R = 0.3$ is required and electrons that are matched to a photon conversion are rejected. 
+A veto on additional electrons with looser identification criteria than the signal requirements mentioned here
+include an MVA identification of $> 0.5$, \Et $> 20\GeV$, $\abseta < 2.5$ and a $\rho$ corrected relative
+isolation of $<0.15$.
+
+\subsection{Muon selection}
+\label{muonplusjetschannelselection}
+As in the electron channel, the final selection in the muon channel is taken from the CMS TOP PAG
+recommendations. In this case, the muon identification requirement comprises several cuts: at least five hits
+in the tracker and at least one hit in the muon chambers, at least one layer of the muon chamber hits must be
+matched to a global muon, and the inner track must produce at least one hit in the pixel sub detector.
+Furthermore, the normalised chi-squared of the track fit should be less than 10.  In addition, the muon
+identification algorithms should identify the particle as a global, particle flow (PF) muon, the muon track
+should pass within a z-distance of $d_{z} < 0.5\cm$ of the primary vertex and the transverse impact parameter
+is required to be $d_{xy} < 0.2\cm$. The signal selection also requires that the muon has a $\pt > 26\GeV$,
+$\abseta < 2.1$ and a $\Delta\beta$ corrected (explained in Section \ref{ss:pileup_subtraction}) relative
+isolation of $< 0.12$, within a cone of size $\Delta R = 0.4$. Loose muons are vetoed, that satisfy the looser
+requirements of passing the particle flow identification, $\pt > 10\GeV$, $\abseta < 2.5$ and a $\Delta\beta$
+corrected relative isolation $<0.2$.
+
+\subsection{Jets selection}
+\label{jets_selection}
+In addition to the signal lepton, all events must also have at least four particle flow jets as reconstructed
+using the anti-kt algorithm \cite{Cacciari:2008gp} with a cone of $\Delta R = 0.5$. These jets must also have
+\pt $> 30\GeV$, $\abseta < 2.5$, be at least $\Delta R = 0.3$ from the signal electron or muon and satisfy the
+criteria for the loose particle flow jet identification. These criteria include a neutral hadron energy
+fraction of $<0.99$, a neutral electronmagnetic energy fraction of $<0.99$ and be comprised of at least one
+constituent. If the jet $\abseta < 2.4$, the PF loose jet ID additionally requires a charged electromagnetic
+fraction of $<0.99$, a charged hadron fracction of $> 0$ and at least one charged hadronic constituent in the
+jet. Candidate particle flow jets from pileup are removed from the event; this is known as charged hadron
+subtraction. Events with at least four jets passing these criteria are permitted to have other lower energy
+jets passing the same requirements mentioned above, down to $\pt = 20\GeV$. At least two of the four primary
+jets are further required to originate from b quarks (the process of identifying b jets is explained in
+Section~\ref{ss:b_tagging}.)
+
+\subsection{Multi-jet background selection}
+\label{ss:background_selection}
+The QCD background is difficult to model in simulation and has been shown to be in poor agreement with data,
+therefore this background distribution is modelled from data. In the electron+jets channel, applying the full
+event selection with the exception of an inverted conversion veto provides a control region comprised
+primarily of QCD events in the photon conversion region. The $\geq 2$ b tags requirement is also
+relaxed to select only events with 0 b tags to enrich the selection with QCD events.
+In order to evaluate a systematic uncertainty on the shape of this QCD background, an alternative control region
+is obtained by using the full signal selection but with the electron isolation requirement changed from $<
+0.1$ to $> 0.2$.
+
+In the case of the muon+jets channel, the full selection is applied with the exception of the muon relative
+isolation requirement, which is switched from $< 0.12$ to $> 0.3$ and with the b tag requirement reduced to
+only events with 0 b tags in order to remove most other \ttbar background processes and produce a high purity
+QCD sample. In order to increase statistics the jet multiplicity requirement reduced to at least three jets.
+
+Due to the low statistics of the QCD samples obtained from data, an inclusive sample is used over all bins of
+a primary variable. The remaining contribution from \ttbar, single-top and W/Z+jets processes is subtracted
+from the data sample using the estimation from simulation and an uncertainty of $\pm10\%$ of the subtracted
+events is applied TODO:CHECK IF WE STILL DO THIS. %TODO:CHECK IF WE STILL DO THIS.
+The resulting template of QCD events from data is then used later in the fitting procedure, in place of the
+Monte Carlo template.
+
+TODO:COULD INSERT PLOTS OF MUON PF RELISO DISTRIBUTIONS at 7 and 8 TEV HERE, but perhaps not needed?
+%TODO:COULD INCLUDE PLOTS OF MUON PF RELISO DISTRIBUTIONS at 7 and 8 TEV HERE, but perhaps not needed?
+
+
+\section{Data-MC scale factors}
+\label{s:data_mc_scale_factors}
+The data-MC scale factors used are in accordance with the CMS TOP PAG, and the relevant corrections are
+implemented for 7\TeV and 8\TeV. These correction factors account for the small but significant differences
+between data and Monte Carlo simulation distributions regarding pileup modelling; b tagging; trigger,
+identification and isolation efficiency; jet energy scale and jet energy resolution, and \met calculation.
+
+\subsection{Pileup}
+\label{ss:pileup}
+The pileup distribution in simulation does not reflect the true distribution in data, therefore pileup
+reweighting is carried out. The instantaneous luminosity is used to estimate the number of pilup instances in
+an event at 7\TeV and 8\TeV using a tool provided by the CMS Physics Validation Group. For each number of
+pileup interactions in simulation, a weight is then produced to match the respective distribution in data.
+
+The estimation of the pileup distribution in data is obtained using the instantaneous luminosity measured in
+each proton bunch crossing, and the total inelastic proton-proton cross section. There is an uncertainty on
+the measured luminosity which is currently 2.6\% for 2012 data \cite{CMS:2013gfa} and 2.2\% for 2011 data
+\cite{CMS:2012eui}. The total inelastic cross section has been reported using CMS forward calorimetry
+\cite{Chatrchyan:2012gwa} and by the TOTEM collaboration \cite{Antchev:2011vs}. Based on these findings, the
+CMS recommended central values of 68\mb for $\sqrt{s}=7$ and 69.3\mb for $\sqrt{s}=8$ have been used, with a
+$\pm5\%$ uncertainty to account for pileup and physics modelling in simulation.
+
+%TODO: INCLUDE PLOTS OF NUMBER OF RECONSTRUCTED VERTICES BEFORE/AFTER REWEIGHTING, MAYBE JUST AT 8TeV AND PUT
+% 7TeV IN APPENDIX. CAN ALSO SHOW PU UP/DOWN DISTRIBUTIONS, BUT PROB ALSO PUT THIS IN APPENDIX.
+TODO: INSERT PLOTS OF NUMBER OF RECONSTRUCTED VERTICES BEFORE/AFTER REWEIGHTING, MAYBE JUST AT 8TeV AND PUT
+7TeV IN APPENDIX. CAN ALSO SHOW PU UP/DOWN DISTRIBUTIONS, BUT PROB ALSO PUT THIS IN APPENDIX.
+
+\subsection{\btagging}
+\label{ss:b_tagging}
+The combined secondary vertex \btagging algorithm (CSV) described in Section~\ref{sss:b_jets} is used in this
+analysis to identify jets originating from \bquarks in \ttbar events. The medium working point, CSVM, which
+corresponds to a cut on the discriminator output by the algorithm of 0.679, is used in this analysis.
+Discrepancies between the \btagging efficiency in data and Monte Carlo simulation have been noted in
+$\sqrt{s}=7$ \cite{CMS-PAS-BTV-11-004} and $\sqrt{s}=8$ \cite{CMS-DP-2013-005}. To account for these
+differences, events are reweighted based on the recommendation of the CMS \btagging Physics Object Group
+(POG), with the aim of ensuring that the probability of an event passing selection criteria in simulation
+matches the probability of an even in data with the same jet(s) passing the same selection. TODO: INSERT
+PLOTS.
+
+At bins of lower multiplicity, there is a clear excess in the data distribution over the simulation, but since
+only the $\geq2$ \btags region is used for the signal region, this disagreement in low bins is not of
+importance.  %TODO: mention also not important because of fitting?
+The \btagging efficiency uncertainty is evaluated by varying the scale factors by $\pm1\sigma$.
+
+\subsection{Jet Energy Scale}
+\label{sss:jet_energy_scale}
+Jet energies are corrected to take into account energy coming from other sources. Level 1 (L1 Pileup)
+corrections remove energy that comes from pileup collisions, Level 2 (L2 Relative) corrections remove the
+dependence of jet response on \eta, and Level 3 (L3 Absolute) corrections correct for the jet response
+dependence on \pt \cite{Chatrchyan:2011ds}. These corrections are applied to both data and Monte Carlo
+simulation events. An additional residual correction (L2L3Residual) is applied to data only for fine tuning of the agreement between data and
+simulation.
+
+Furthermore, the jet energy resolution has been measured to be worse in data that in simulation.
+Therefore, jets in this analysis are ``smeared" using scale factors provided by the CMS JETMET
+Physics Object Group. These factors were derived in \cite{Chatrchyan:2011ds} using 0.8\fbinv of dijet data at
+$\sqrt{s}=7$, and 19.7\fbinv of dijet data at $\sqrt{s}=7$ \cite{jet_res_2012}.
+
+\subsection{\met Corrections}
+\label{ss:met_corrections}
 
 
 
-
-
-A simultaneous fit is done with three templates in bins of each variable.
-The binning choice is made based on two variables: purity (equation) and stability (equation). The purity of a
-bin is sensitive to events moving into/out of a bin and the stability is sensitive to events moving inout/out
-of a bin. The bins for each global variable are selected such that each bin has purity and stability values of
-0.5 or greater, meaning that at least half of the events created in a bin remain in that bin.
-	
-Electrons can be faked by jets, so the electron scale factors could be different in ttbar events than in
-events from which the scale factors were derived because our events contain a lot more activity than events
-from which the scale factors were derived.
-For muons it is not so bad because muons leave a much cleaner signal inside CMS and there is no risk of jets
-faking muons.
-	
-We use the lepton trigger, identification and isolation scale factors provided by the Muon POG for both 7 TeV
-and 8 TeV. However, for electrons, although we have 8 TeV scale factors provided by the EGamma POG, we have
-had to derive scale factors ourselves for 7 TeV because not provided (and the trigger we use is not included
-in the 7 TeV Summer 11 Legacy datasets).
-The hadronic leg of the electronHad trigger needs to be measured in relation to the 4 jets. ASK ABOUT THIS
-	 
-Remember:
-- V\_Jets template combined over all global variable bins.
-- QCD template also inclusive over all global variable bins
-	
-Within the framework of this analysis, prompt leptons are considered as those which come
-from W or Z boson or from tau-lepton decays. These leptons are usually well isolated, whereas
-misidentified leptons originate either from semi-leptonic heavy flavor decays within jets or are
-simply misreconstructed genuine jets. In both cases these leptons are generally not isolated.
-
-Tau energy: The met energy systematics are electron energy up/down, muon energy up/down and tau energy
-up/down. These systematics (and JES) are applied to both monte carlo and data. We found that the tau energy is
-susprisingly high, considerably higher than the electron and muon energy systematics. We may select taus in
-our signal region unintentionally although we don't select on taus. The signature of ttbar events with taus
-can mimic the signature of electron + jets or muon + jets ttbar events. The image shows how taus decay. The W
-from a top could decay to a tau, which would then decay either to a tau neutrino and a virtual W which then
-decays to two jets which would be very close together (and therefore reconstructed as a single jet). Or, the
-virtual W could decay to a lepton (electron or muon) and an associated neutrino). These signatures could fake
-our signal, and therefore end up in our ttbar signal. In our unfolding, we remove fakes. However, we use the
-shape of the fakes in the central to subtract from the signal distribution in the tau energy up/down
-variations. The effect is not so pronounced in the electron up/down and muon up/down variations because there
-are not many electrons or muons in the fakes. Luke found that \~14\% of the TTJet events we select on are NOT
-from the decay we are looking for. This was by dividing the number of events in the fake ST distribution in
-the unfolding histogram file by the number of events in the measured distribution (i.e. signal) in the same
-file. The electron channel was actually ~13.5\% and the muon channel was actually ~13.9\%. The shape
-comparison between the fakes and the signal shows that there are more fakes in the higher MET bins, which is
-why the error in those bins is larger. These are likely to come from semi-leptonic tau events (where the tau
-decays to a lepton and a neutrino); tau tau, e tau or mu tau where the tau decays hadronically; or ee, emu or mumu events where one of the leptons is lost (probably low fraction as well). So most of our fakes will include at least one tau. Since semi-leptonic tau would need to
-decay leptonically, these taus are not identified and, I assume, not included in the MET uncertainty.
-
-Looking at the shape difference between the central and tau up/down MET distributions, there is a significant
-different (though not by much). Since this affects data, the difference goes through the fit, and the
-unfolding, and is what we see in the final result. The difference in normalisation in the most affected bin is
-\~6\%, suggesting that we have more than 6\% tau contamination overall (not sure if that is a correct
-assumption). The normalisation across the bins does not change, of course, i.e. the sum of events in the bins
-of, in this case MET, remain the same in the central measurement and in the tau energy up/down variations.
-\includegraphics[width=\textwidth]{Chapters/04_Analysis/04b_XSections/Images/IMG_20150219_160840.jpg}
-
-\section{Event Selection}
-\label{s:event_selection}
-
-\subsection{Data}
-\label{ss:data_selection}
-
-\subsection{QCD}
-\label{ss:qcd_selection}
+% 
+% \subsection{Trigger, Lepton ID and Isolation corrections}
+% \label{ss:trigger_ID_isolation_corrections}
+% We use the lepton trigger, identification and isolation scale factors provided by the Muon POG for both 7 TeV
+% and 8 TeV. However, for electrons, although we have 8\TeV scale factors provided by the EGamma POG, we have
+% had to derive scale factors ourselves for 7\TeV because not provided (and the trigger we use is not included
+% in the 7 TeV Summer 11 Legacy datasets).
+% The hadronic leg of the electronHad trigger needs to be measured in relation to the 4 jets. ASK ABOUT THIS
+% 
+% Electrons can be faked by jets, so the electron scale factors could be different in ttbar events than in
+% events from which the scale factors were derived because our events contain a lot more activity than events
+% from which the scale factors were derived.
+% For muons it is not so bad because muons leave a much cleaner signal inside CMS and there is no risk of jets
+% faking muons.
+% 
+% \subsection{Data-MC Comparison}
+% \label{ss:data-mc_comparison}
+% Plots
+% 
+% 
+% 
+% \section{Binning Choice}
+% \label{s:binning_choice}
+% The binning choice is made based on two variables: purity (equation) and stability (equation). The purity of a
+% bin is sensitive to events moving into/out of a bin and the stability is sensitive to events moving inout/out
+% of a bin. The bins for each global variable are selected such that each bin has purity and stability values of
+% 0.5 or greater, meaning that at least half of the events created in a bin remain in that bin.
+% 

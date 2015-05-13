@@ -23,11 +23,11 @@ shown in Figure~\ref{fig:LHC_and_CMS_map}.
 \end{figure}
 
 The 27~km circumference LHC can collide two proton beams, each composed of 2808 bunches, at a design energy of
-7~TeV per beam (meaning a 14~TeV centre of mass energy in collisions) with a luminosity of $10^{34}
+7\TeV per beam (meaning a 14\TeV centre of mass energy in collisions) with a luminosity of $10^{34}
 cm^{-2}s^{-1}$ at a collision rate of 25~ns (40~MHz). In fact, in 2011 the machine ran at a centre of mass
-energy of 7~TeV at a bunch spacing of 50~ns (leading to 8 proton-proton interactions per bunch crossing) and
+energy of 7\TeV at a bunch spacing of 50~ns (leading to 8 proton-proton interactions per bunch crossing) and
 CMS recorded a peak instantaneous luminosity of $3.7\times10^{33}~cm^{-2}s^{-1}$. In 2012 the centre of mass
-energy was increased to 8~TeV (21 proton-proton interactions per bunch crossing) and CMS recorded a peak
+energy was increased to 8\TeV (21 proton-proton interactions per bunch crossing) and CMS recorded a peak
 instantaneous luminosity of $7.7\times10^{33}~cm^{-2}s^{-1}$. The design energy and luminosities mentioned
 previously are planned when data taking begins again after Long Shutdown 1 (currently scheduled to be around
 May 2015) and after Long Shutdown 2 (in 2019) respectively. 6.1\fbinv and 23.3\fbinv of
@@ -42,7 +42,7 @@ energy to 1.4~GeV, followed by the Proton Synchrotron (PS) which accelerates the
 Proton Synchrotron (SPS) where the beam energy reaches 450~GeV. Finally, the protons are injected into the LHC
 where two beampipes carry the beams in a clockwise and an anti-clockwise direction while accelerating them
 up to the required collision energy. Filling the LHC rings takes approximately 4 minutes, followed by
-approximately 20 minutes until the beams reach energies of 4~TeV (during 2012 data taking). Once the collision
+approximately 20 minutes until the beams reach energies of 4\TeV (during 2012 data taking). Once the collision
 energies have been attained, the counter-circulating beams are brought to collide at the four main LHC
 experiments CMS, ATLAS, LHCb and ALICE. ALICE is specifically designed to investigate heavy ion collisions
 (as opposed to protons), while LHCb investigates b-meson physics.
@@ -397,7 +397,7 @@ taking advantage of their curved tracks due to the magnetic field. The different
 the different numbers of particles expected in different areas of the detector and because of technological
 considerations regarding the physical areas to be covered \cite{CMS_TDR1}.
 Figure~\ref{fig:CMS_muon_system} shows a diagrammatic representation of one quarter of the CMS muon detectors.
-The CSCs are used in the endcaps to cover $|\eta|$ values between 1.2 and 2.4 that experience high muon rates
+The CSCs are used in the endcaps to cover \abseta values between 1.2 and 2.4 that experience high muon rates
 and where the magnetic field of the solenoid is high \cite{CMS_TDR1}. They take the form of four disc layers
 each made of 2 (inner layer) or 3 (outer 3 layers) concentric rings. They consist of volumes of gas in which
 are found positively charged wires placed at right angles to negatively charged copper strips. To relate these
@@ -415,7 +415,7 @@ used for muon triggering \cite{CMS_experiment}.
      \label{fig:CMS_muon_system}
 \end{figure}
 
-The barrel region DTs cover $|\eta|$ values of less than 1.2, that encounter low rates of low transverse
+The barrel region DTs cover \abseta values of less than 1.2, that encounter low rates of low transverse
 momentum muons \cite{CMS_TDR1}. They are arranged in four cylindrical layers among the layers of the magnet's
 iron return yoke and RPC layers. The layers are slightly staggered to ensure that even a muon of high
 transverse momentum will be detected by at least three of the four layers. The drift tubes are gas tubes
@@ -701,7 +701,7 @@ ensure the selection of high quality jets. The requirements, which are known as 
 Jet energy resolution corrections are also applied (known as jet smearing) to account to the fact that jet
 energy resolution has been measured to be worse in data than in simulation. These PF jet corrections are
 obtained using 0.8\fbinv of 2011 dijet data and 19.7\fbinv of 2012 dijet data
-\cite{jet_res_2011,jet_res_2012}.
+\cite{Chatrchyan:2011ds,jet_res_2012}.
 
 \subsubsection{B Jets}
 \label{sss:b_jets}
@@ -714,7 +714,9 @@ distance (of the order of a few cm) before decaying. This leads to events with b
 secondary vertex distinguishable at a significant distance from the primary interaction vertex. This secondary vertex
 information, together with track based information such as the number of tracks in the jet, the invariant
 mass of the secondary vertex and the impact parameter significance of each jet track is used by the CSV
-algorithm to produce a discriminator. TODO: EXPLAIN IMPACT PARAMETER SIGNIFICANCE WITH A DIAGRAM %TODO:EXPLAIN IMPACT PARAMETER SIGNIFICANCE WITH A DIAGRAM.
+algorithm to produce a discriminator ranging from 0 to 1, with larger numbers corresponding to a higher
+probability of a jet being a \bjet.TODO: EXPLAIN IMPACT PARAMETER SIGNIFICANCE WITH A DIAGRAM
+%TODO:EXPLAIN IMPACT PARAMETER SIGNIFICANCE WITH A DIAGRAM.
 Three working points are used in CMS: tight, medium and loose. The medium working point is used in the different
 cross sections analysis, which carries a 1~\% mis-tag rate and approximately 70~\% b-tag efficiency. The tight
 and loose working points have mis-tag rates of 0.1~\% and 10~\% respectively \cite{btagging}.
