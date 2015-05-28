@@ -2,7 +2,7 @@
 \label{c:Differential_Cross_Section:data_simulation_and_selection}
 
 \section{Introduction}
-\label{s:xsections_introduction}
+\label{s:analysis1_introduction}
 This analysis measures the normalised differential \ttbar cross section in the semi-leptonic channel and is
 carried out on 2011 and 2012 data recorded from the CMS detector. The measurement is carried out with respect
 to the following global, or primary, variables is carried out:
@@ -10,9 +10,11 @@ to the following global, or primary, variables is carried out:
   \item {\met, the missing transverse energy in an event}
   \item {\HT, the sum of the jet transverse momenta in an event}
   \item {\st, the sum of the observed transverse momenta in an event}
-  \item {\mt, the transverse mass of the leptonically decaying W boson}
-  \item {\wpt, the transverse momentum of the leptonically decaying W boson}
+  \item {\mt, the transverse mass of the leptonically decaying \W boson}
+  \item {\wpt, the transverse momentum of the leptonically decaying \W boson}
 \end{itemize}
+
+TODO:INCLUDE MT? %TODO: include MT?
 
 Previous analyses using 7\TeV data investigating \met and using 8\TeV data investigatin all the
 global variables listed above can be found in \cite{CMS-PAS-TOP-12-019} and \cite{CMS-PAS-TOP-12-042} respectively.
@@ -36,11 +38,11 @@ Data collected in 2011 at a centre-  of-mass energy of 7\TeV and in 2012 at a ce
 dataset is used in the electron channel. It was recorded with triggers that select based on a single, isolated
 electron and additional jets. At 8\TeV, the SingleElectron dataset was used for the electron channel
 which is based on a single, isolated electron. In the muon channel, the SingleMu dataset was used for both
-centre-of-mass energies, requiring a single, isolated muon. See Section~\ref{s:event_selection} for more
+centre-of-mass energies, requiring a single, isolated muon. See Section~\ref{s:selection} for more
 details about triggers. The datasets used are shown in Tables~\ref{tab:datasets7TeV} and {tab:datasets8TeV} in
-Appendix~\ref{a:datasets}. Only data that is certified as “golden”, which is defined as data taken with the
+Appendix~\ref{as:datasets}. Only data that is certified as “golden”, which is defined as data taken with the
 detector working without any major faults, used. The masks used to filter out data taken in other periods are
-specified in Table~\ref{tab:JSONfiles} in Appendix~\ref{a:datasets}.
+specified in Table~\ref{tab:JSONfiles} in Appendix~\ref{as:datasets}.
 
 \subsection{Simulated Samples}
 \label{ss:simulated_samples}
@@ -49,19 +51,19 @@ The Monte Carlo generators used in this analysis are MadGraph \cite{madgraph}, P
 \cite{mcatnlo_Frixione1, mcatnlo_Frixione2}.
 
 The signal for this analysis is the production of a \ttbar pair which decays semi-leptonically, \ie each of
-the t quarks decays to a W boson and a b jet, with one of the W bosons decaying hadronically to two jets and
+the t quarks decays to a \W boson and a b jet, with one of the \W bosons decaying hadronically to two jets and
 the other decaying leptonically to a lepton (electron or muon) and an associated neutrino.
 
 Additional, lower energy jets, can be produced from other scatterings in the same proton-proton interaction
-and from gluon radiation from quarks in the decay. Events with W bosons or Z bosons and additional jets are a
-significant background to semi-leptonic \ttbar analyses. In the case of W + jets, leptonically decaying W
+and from gluon radiation from quarks in the decay. Events with \W bosons or \Z bosons and additional jets are
+a significant background to semi-leptonic \ttbar analyses. In the case of \W+jets, leptonically decaying \W
 bosons and additional jets would provide a similar event signature to that of a semi-leptonic \ttbar decay.
 However, in general, these processes can be removed from the signal selection because the final decay products
-in W + jets events have lower energies than those from semi-leptonic \ttbar decays, since the top quark has a
-high mass. Another characteristic of W + jets events is that the jets are less likely to be the necessary b
-jets in \ttbar events. Similarly, Z + jets events can mimic \ttbar events where the leptonic decay of Z bosons
+in \W+jets events have lower energies than those from semi-leptonic \ttbar decays, since the top quark has a
+high mass. Another characteristic of \W+jets events is that the jets are less likely to be the necessary b
+jets in \ttbar events. Similarly, \Z+jets events can mimic \ttbar events where the leptonic decay of \Z bosons
 to a lepton and an anti-lepton. Within the framework of this analysis, prompt leptons are considered as those
-which come from W or Z boson or from tau-lepton decays. These leptons are usually well isolated, whereas
+which come from \W or \Z boson or from tau-lepton decays. These leptons are usually well isolated, whereas
 misidentified leptons originate either from semi-leptonic heavy flavor decays within jets or are simply
 misreconstructed genuine jets. In both cases these leptons are generally not isolated and a veto on a second
 lepton together with jet multiplicity requirements removes much of this background. Misidentification and
@@ -90,11 +92,11 @@ Section~\ref{ss:electron_reconstruction}. However, the large uncertainty in the 
 large contamination from higher order processes with additional jets in the signal region of this analysis and
 the difficulty in Monte Carlo modelling of such contributions lead to significant disagreements in the numbers
 of events passing the signal selection in data and in simulation. Therefore, the QCD background is
-modelled using a data driven method, decribed in Section~\ref{ss:qcd_selection}.
+modelled using a data driven method, decribed in Section~\ref{ss:background_selection}.
 
 Tables~\ref{tab:signaldatasets7TeV} and \ref{tab:backgrounddatasets7TeV} show the Monte Carlo signal and
 background samples respectively used in this analysis. Top pair production is modelled using MadGraph, single
-top events are modelled with POWHEG, W and Z boson plus jets production is modelled using MadGraph and QCD
+top events are modelled with POWHEG, \W and \Z boson plus jets production is modelled using MadGraph and QCD
 multi-jet events are modelled with PYTHIA. In all cases, PYTHIA is used to model radiation and hadronisation
 processes. Tables~\ref{tab:7TeVsystematicdatasets} and \ref{tab:8TeVsystematicdatasets} show the samples used
 to evaluate the factorisation scale and matching threshold uncertainties. \WpJets and \ZpJets samples were not made available at 7\TeV, so the
@@ -227,8 +229,8 @@ identification and isolation efficiency; jet energy scale and jet energy resolut
 \label{ss:pileup}
 The pileup distribution in simulation does not reflect the true distribution in data, therefore pileup
 reweighting is carried out. The instantaneous luminosity is used to estimate the number of pilup instances in
-an event at 7\TeV and 8\TeV using a tool provided by the CMS Physics Validation Group. For each number of
-pileup interactions in simulation, a weight is then produced to match the respective distribution in data.
+an event at $\sqrt{s}=7\TeV$ and $\sqrt{s}=8\TeV$ using a tool provided by the CMS Physics Validation Group.
+For each number of pileup interactions in simulation, a weight is then produced to match the respective distribution in data.
 
 The estimation of the pileup distribution in data is obtained using the instantaneous luminosity measured in
 each proton bunch crossing, and the total inelastic proton-proton cross section. There is an uncertainty on
@@ -240,16 +242,16 @@ $\pm5\%$ uncertainty to account for pileup and physics modelling in simulation.
 
 %TODO: INCLUDE PLOTS OF NUMBER OF RECONSTRUCTED VERTICES BEFORE/AFTER REWEIGHTING, MAYBE JUST AT 8TeV AND PUT
 % 7TeV IN APPENDIX. CAN ALSO SHOW PU UP/DOWN DISTRIBUTIONS, BUT PROB ALSO PUT THIS IN APPENDIX.
-TODO: INSERT PLOTS OF NUMBER OF RECONSTRUCTED VERTICES BEFORE/AFTER REWEIGHTING, MAYBE JUST AT 8TeV AND PUT
-7TeV IN APPENDIX. CAN ALSO SHOW PU UP/DOWN DISTRIBUTIONS, BUT PROB ALSO PUT THIS IN APPENDIX.
+TODO: INSERT PLOTS OF NUMBER OF RECONSTRUCTED VERTICES BEFORE AND AFTER REWEIGHTING, MAYBE JUST AT 8TeV AND
+PUT 7TeV IN APPENDIX. CAN ALSO SHOW PU UP AND DOWN DISTRIBUTIONS, BUT PROB ALSO PUT THIS IN APPENDIX.
 
-\subsection{\btagging}
+\subsection{b tagging}
 \label{ss:b_tagging}
 The combined secondary vertex \btagging algorithm (CSV) described in Section~\ref{sss:b_jets} is used in this
 analysis to identify jets originating from \bquarks in \ttbar events. The medium working point, CSVM, which
 corresponds to a cut on the discriminator output by the algorithm of 0.679, is used in this analysis.
 Discrepancies between the \btagging efficiency in data and Monte Carlo simulation have been noted in
-$\sqrt{s}=7$ \cite{CMS-PAS-BTV-11-004} and $\sqrt{s}=8$ \cite{CMS-DP-2013-005}. To account for these
+$\sqrt{s}=7\TeV$ \cite{CMS-PAS-BTV-11-004} and $\sqrt{s}=8\TeV$ \cite{CMS-DP-2013-005}. To account for these
 differences, events are reweighted based on the recommendation of the CMS \btagging Physics Object Group
 (POG), with the aim of ensuring that the probability of an event passing selection criteria in simulation
 matches the probability of an even in data with the same jet(s) passing the same selection. TODO: INSERT
@@ -264,46 +266,85 @@ The \btagging efficiency uncertainty is evaluated by varying the scale factors b
 \label{sss:jet_energy_scale}
 Jet energies are corrected to take into account energy coming from other sources. Level 1 (L1 Pileup)
 corrections remove energy that comes from pileup collisions, Level 2 (L2 Relative) corrections remove the
-dependence of jet response on \eta, and Level 3 (L3 Absolute) corrections correct for the jet response
+dependence of jet response on $\eta$, and Level 3 (L3 Absolute) corrections correct for the jet response
 dependence on \pt \cite{Chatrchyan:2011ds}. These corrections are applied to both data and Monte Carlo
 simulation events. An additional residual correction (L2L3Residual) is applied to data only for fine tuning of the agreement between data and
 simulation.
 
 Furthermore, the jet energy resolution has been measured to be worse in data that in simulation.
-Therefore, jets in this analysis are ``smeared" using scale factors provided by the CMS JETMET
-Physics Object Group. These factors were derived in \cite{Chatrchyan:2011ds} using 0.8\fbinv of dijet data at
-$\sqrt{s}=7$, and 19.7\fbinv of dijet data at $\sqrt{s}=7$ \cite{jet_res_2012}.
+Therefore, jets in this analysis are ``smeared" using scale factors provided by the CMS JETMET Physics Object
+Group. These factors were derived in \cite{Chatrchyan:2011ds} using 0.8\fbinv of dijet data at
+$\sqrt{s}=7\TeV$, and 19.7\fbinv of dijet data at $\sqrt{s}=7\TeV$ \cite{jet_res_2012}.
 
-\subsection{\met Corrections}
+\subsection{Missing Transverse Energy Corrections}
 \label{ss:met_corrections}
+The jet energy scale corrections mentioned in Section~\ref{sss:jet_energy_scale} in turn affect the
+distributions of \met and \met $\phi$. Corrections known as Type-I \met corrections are applied to propagate
+these changes to the \met distributions. In addition, Type-0 corrections 
+ 
+\subsection{Trigger, Lepton ID and Isolation corrections}
+\label{ss:trigger_ID_isolation_corrections}
+Corrections are also required for the trigger, identification and isolation efficiencies for muons and
+electrons. In the muon+jets channel, the corrections are provided by the CMS muon Physics Object Group
+for $\sqrt{s}=8\TeV$ TODO:REFERENCE TWIKI? %TODO:REFERENCE TWIKI?
+and $\sqrt{s}=7\TeV$ \cite{CMS-PAS-SMP-13-013}.
 
+For the electron+jets channel, the corrections are provided by the CMS EGamma Physics Object Group for
+$\sqrt{s}=8\TeV$, however the corrections for the $\sqrt{s}=7\TeV$ data are not provided and so were derived
+independently in this analysis using the same methods as used by the EGamma POG.
 
+In addition, the 7\TeV triggers used (ElectronHad) in this analysis were not present in the 7\TeV simulation,
+and so the trigger efficiency was calculated with respect to the full selection. This efficiency was then implemented in
+the Monte Carlo simulation, thereby imitating the trigger. It should be noted that it is assumed that the
+electron and hadron legs of the trigger are not correlated, since electrons are cleaned from the jet
+collection at HLT level.
 
-% 
-% \subsection{Trigger, Lepton ID and Isolation corrections}
-% \label{ss:trigger_ID_isolation_corrections}
-% We use the lepton trigger, identification and isolation scale factors provided by the Muon POG for both 7 TeV
-% and 8 TeV. However, for electrons, although we have 8\TeV scale factors provided by the EGamma POG, we have
-% had to derive scale factors ourselves for 7\TeV because not provided (and the trigger we use is not included
-% in the 7 TeV Summer 11 Legacy datasets).
-% The hadronic leg of the electronHad trigger needs to be measured in relation to the 4 jets. ASK ABOUT THIS
-% 
-% Electrons can be faked by jets, so the electron scale factors could be different in ttbar events than in
-% events from which the scale factors were derived because our events contain a lot more activity than events
-% from which the scale factors were derived.
-% For muons it is not so bad because muons leave a much cleaner signal inside CMS and there is no risk of jets
-% faking muons.
-% 
-% \subsection{Data-MC Comparison}
-% \label{ss:data-mc_comparison}
-% Plots
-% 
-% 
-% 
-% \section{Binning Choice}
-% \label{s:binning_choice}
-% The binning choice is made based on two variables: purity (equation) and stability (equation). The purity of a
-% bin is sensitive to events moving into/out of a bin and the stability is sensitive to events moving inout/out
-% of a bin. The bins for each global variable are selected such that each bin has purity and stability values of
-% 0.5 or greater, meaning that at least half of the events created in a bin remain in that bin.
-% 
+The full reference selection is first applied with the exception of trigger, \btagging and electron veto
+requirements, while in addition, a second loose electron is required. A \Z mass constraint is placed on the
+two electrons in the event by requiring them to have an invariant mass of between 60\GeV and 120\GeV, thus
+ensuring that the pair of electrons originate from a \Z boson decay. The tight ('tag') electron requirements
+are a \pt$>$30\GeV, \abseta<0.8, relative isolation$<$0.1, MVA identification$>$0.9, $d_{xy}<0.02\cm$ and
+reconstructed at HLT level. The loose ('probe') electron requirements are a \pt$>$30\GeV, \abseta$<$2.5 and
+$d_{xy}<2\cm$.
+
+The events satisfying the above criteria are then fitted to the invariant mass of all pairs of tag and probe
+electrons. After applying the identification and isolation criteria to the probe electrons, a fit is also
+carried out to the invariant mass distribution of pairs of tag and probe electrons in which the probe electron
+passes the identification and isolation criteria. The fit is implemented in both Monte Carlo simulation
+and in data, and a Breit-Wigner distribution convoluted with a Crystal Ball function is used to model the
+invariant mass of the tag and probe electrons, with a falling exponential used to model the background distribution.
+TODO: FIT PLOTS %TODO:FIT PLOTS
+
+The efficiency of the identification and isolation process is then calculated using the numbers extracted
+from the fits, in bins of \pt and $\eta$ of the probe electron, as follows:
+
+\begin{equation}
+\epsilon(\text{identification and isolation}) = \frac{N^{\text{fit}}_{\text{probe, passing}}}{N^{\text{fit}}_{\text{probe, all}}}
+\end{equation}
+
+The scale factor is then calculated as the ratio between the efficiencies in simulation and in data.
+TODO:EFFICIENCY PLOTS %TODO:EFFICIENCY PLOTS
+The efficiencies in both can be seen to be similar, so the scale factors are close to one.
+
+The efficiency of the electron part of the trigger is then similarly calculated, with respect to the
+identification and isolation requirements, meaning the events passing the identification and isolation
+requirements in the previous stage are then used as the baseline for the trigger efficiency. The subset of
+these in which the probe electron matches a HLT electron is then used to calculate the efficiency as follows:
+
+\begin{equation}
+\epsilon(\text{trigger}) = \frac{N^{\text{fit}}_{\text{probe, matching HLT}}}{N^{\text{fit}}_{\text{probe,identification and isolation}}}
+\end{equation}
+
+A scale factor is then calculated as described previously, in bins of electron \pt and $\eta$.
+
+In order to calculate the efficiency of the hadron leg of the trigger, the full selection with only the
+electron part of the trigger and without \btagging is taken as the baseline. The number of events passing the
+hadronic leg of the trigger is then used to calculate the hadronic leg efficiency as follows:
+
+\begin{equation}
+\epsilon(\text{hadron leg}) = \frac{N_{\text{hadron leg, passing}}}{N_{\text{selected}}}
+\end{equation}
+
+The scale factors are produced in bins of \pt and $\eta$ of the fourth most energetic jet, since this is the
+lowest energy jet that is selected. Parametrising as a function of higher energy jets would lead to a bias
+towards high efficiencies as the trigger will have a higher efficiency at higher jet energies.
