@@ -65,6 +65,7 @@ mismodelling of the top quark in simulation has not yet been carried out at this
      selection at $\sqrt{s}=8\TeV$.}
      \label{fig:data_mc_comparison_8TeV_muon}
 \end{figure}
+\FloatBarrier
 
 A comparison between data and simulation in the electron+jets QCD selections is shown in
 Figure~\ref{fig:data_mc_comparison_electron_QCD}. There is reasonably good agreement between the data and
@@ -77,16 +78,16 @@ contain the triggers used in this analysis, unlike at $\sqrt{s}=8\TeV$, therefor
 at $\sqrt{s}=7\TeV$ is not affected by the trigger isolation requirements.
 
 The true QCD background distribution is a mixture of the conversion and non-isolated distributions. A
-comparison of the two QCD background selections at $\sqrt{s}=7\TeV$ and $\sqrt{s}=8\TeV$ is also shown in
-Figure~\ref{fig:data_mc_comparison_electron_QCD}. Background events in which electrons come from jets
-misreconstructed as electrons or from \bquark or \cquark decays will pass the non-isolated selection, whereas
-conversion events in which the second electron is not rejected by the electron veto will pass the conversion
-selection. Another point to note is that, while the general shape of the conversion selection is expected to
-be the same in both signal and QCD background selections, the same may not be true of the non-isolated
-selection due to the isolation requirement in the signal selection. In addition, the number of events passing
-the QCD background selections will be very small compared to the number of events passing the signal
-selection, so the effect of even large uncertainties in the QCD background on the total number of events
-will be minimal.
+comparison of the two QCD background selections at $\sqrt{s}=7\TeV$ and $\sqrt{s}=8\TeV$ is also shown in the
+lower plots in Figure~\ref{fig:data_mc_comparison_electron_QCD}. Background events in which electrons come
+from jets misreconstructed as electrons or from \bquark or \cquark decays will pass the non-isolated
+selection, whereas conversion events in which the second electron is not rejected by the electron veto will
+pass the conversion selection. Another point to note is that, while the general shape of the conversion
+selection is expected to be the same in both signal and QCD background selections, the same may not be true of
+the non-isolated selection due to the isolation requirement in the signal selection. In addition, the number
+of events passing the QCD background selections will be very small compared to the number of events passing
+the signal selection, so the effect of even large uncertainties in the QCD background on the total number of
+events will be minimal.
 
 In the muon+jets channel, again it is clear that the data and simulation are not in agreement and that there
 is a low amount of statistics available in simulation.
@@ -134,7 +135,7 @@ s^k = \frac{N_{\rec\&\gen}^k}{N_{\gen}^k}
 $N_{\rec\&\gen}^k$ is the number of events generated and reconstructed in bin $k$,
 $N_{\rec}^k$ is the number of events reconstructed in bin $k$ and $N_{\gen}^k$ is the number of events
 generated in bin $k$. The stability of a bin is sensitive to the migration of events out of a bin, while
-the purity is sensitive to the migration of events into a bin (see Figure~\ref{fig:purity_and_stability}.
+the purity is sensitive to the migration of events into a bin (see Figure~\ref{fig:purity_and_stability}).
 
 \begin{figure}[hbtp]
 	\centering
@@ -188,6 +189,7 @@ Appendix~\ref{as:binning_tables_electron}.
 	 distributions are obtained using \ttbar Monte Carlo simulation.}
      \label{fig:binning_8TeV_electron}
  \end{figure}
+\FloatBarrier
 
 \section{Maximum Likelihood Fit}
 \label{maximum_likelihood_fit}
@@ -218,13 +220,6 @@ LL\left(x, d\right) = -\frac{2}{k} \sum\limits_{k} \log{L_k}
 where $L_k$ is the likelihood function of each of the different fit variables. Here the division by $k$
 accounts for the fact that the same information is used in all three fit variables, and provides a
 conservative estimate of the uncertainties in the resulting fitted parameters.
-
-A simultaneous fit is done with three templates in bins of
-each variable.
-- V\_Jets template combined over all global variable bins.
-- QCD template also inclusive over all global variable bins
-
-
 
 \subsection{Choice of templates}
 \label{choice_of_templates}
@@ -267,24 +262,25 @@ Hence, M3 shows the best discrimination between the single top and \ttbar templa
 
 \begin{figure}[hbtp]
     \centering
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/7TeV/fit_variables/MET/electron_absolute_eta/MET_inclusive_electron_absolute_eta_2orMoreBtags_templates.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/MET/electron_absolute_eta/MET_inclusive_electron_absolute_eta_2orMoreBtags_templates.pdf}\hfill
      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/placeholder.png}\hfill
      %\includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/7TeV/fit_variables/MET/muon_absolute_eta/MET_inclusive_muon_absolute_eta_2orMoreBtags_templates.pdf}\\    
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/7TeV/fit_variables/MET/angle_bl/MET_inclusive_angle_bl_2orMoreBtags_templates.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/7TeV/fit_variables/MET/M3/MET_inclusive_M3_2orMoreBtags_templates.pdf}\\
-	 \caption{Normalised distributions of the four templates for the three fit variables at $\sqrt{s}=7\TeV$,
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/MET/angle_bl/MET_inclusive_angle_bl_2orMoreBtags_templates.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/MET/M3/MET_inclusive_M3_2orMoreBtags_templates.pdf}\\
+	 \caption{Normalised distributions of the four templates for the three fit variables at $\sqrt{s}=8\TeV$,
 	 inclusive across all primary variable bins: electron \abseta (upper left), muon \abseta (upper right),
 	 $\alpha$ (lower left) and M3 (lower right).}
      \label{fig:fit_variable_distributions_8TeV}
 \end{figure}
+\FloatBarrier
 
-The QCD templates used are inclusive across all bins of the primary variables because there are low statistics
-in the QCD background selection in higher bins. Figure~\ref{fig:fit_variable_qcd_comparisons_8TeV} shows the
-a comparison between QCD templates in the lowest three bins of the \met variable and also the inclusive \met
-QCD template. It can be seen that the third \met bin already shows low numbers of events, meaning the
-inclusive template is largely shaped by events in the first two bins. Therefore, the inclusive QCD
-background template is used rather than individual bins. Similar plots demonstrating the same behaviour for
-the other primary variables are shown in Appendix~\ref{as:fitting_variable_QCD_template_comparisons}.
+The QCD templates inclusive across all bins of the primary variables are used because of low statistics
+in the QCD background selection in higher bins. Figure~\ref{fig:fit_variable_qcd_comparisons_8TeV} shows a
+comparison between QCD templates at $\sqrt{s}=8\TeV$ in the lowest three bins of the \met variable and also
+the inclusive \met QCD template. It can be seen that the third \met bin already shows low numbers of events,
+meaning the inclusive template is largely shaped by events in the first two bins. Therefore, the inclusive QCD
+template is used rather than those in individual bins. Similar plots showing the same behaviour for the other
+primary variables are shown in Appendix~\ref{as:fitting_variable_QCD_template_comparisons}.
 
 \begin{figure}[hbtp]
     \centering
@@ -299,16 +295,51 @@ the other primary variables are shown in Appendix~\ref{as:fitting_variable_QCD_t
      \label{fig:fit_variable_qcd_comparisons_8TeV}
 \end{figure}
 
+An inclusive template is also used in the V+jets (W+jets + Z+jets template) for the same reason.
+Figure~\ref{fig:MET_fit_variable_vjets_comparisons_8TeV} shows a comparison between the V+jets templates at
+$\sqrt{s}=8\TeV$ in all \met bins and also the inclusive \met V+jets template.
+As is the case for the QCD background template, it can be seen in the V+jets templates that there are
+diminished statistics available in higher bins, and the inclusive template shape is largely governed by the
+lower bins. Similar plots demonstrating the same behaviour for the other primary variables are shown in
+Appendix~\ref{as:fitting_variable_vjets_template_comparisons}.
 
-\subsection{7TeV V+Jets Template}
-\label{ss:7TeV_vplusjets_template}
-Explain scaling of 8\TeV W and Z+Jets systematics sample templates to 7\TeV central normalisation.
-    Using 8 TeV VJets systematic samples for 7 TeV so need to scale:
-    vjets ratio = sigma(7TeV)*lumi(7TeV)/(sigma(8TeV)*lumi(8TeV))
-    vjets\_ratio = ( 31314 * 5050 ) / ( 36257.2 * 19584 )
+\begin{figure}[hbtp]
+    \centering
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/MET/electron_absolute_eta/vjets/MET_electron_absolute_eta_2orMoreBtags_VJets_template_comparison.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/placeholder.png}\\
+     %\includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/7TeV/fit_variables/MET/muon_absolute_eta/vjets/MET_inclusive_muon_absolute_eta_2orMoreBtags_templates.pdf}\\    
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/MET/angle_bl/vjets/MET_angle_bl_2orMoreBtags_VJets_template_comparison.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/MET/M3/vjets/MET_M3_2orMoreBtags_VJets_template_comparison.pdf}\\
+	 \caption{Normalised distributions of the V+jets templates for the three fit variables at $\sqrt{s}=8\TeV$
+	 inclusive across all \met bins and for the lowest three \met bins: electron \abseta (upper
+	 left), muon \abseta (upper right), $\alpha$ (lower left) and M3 (lower right).}
+     \label{fig:MET_fit_variable_vjets_comparisons_8TeV}
+\end{figure}
+\FloatBarrier
+
+\subsection{7TeV V+Jets theory systematic template}
+\label{ss:7TeV_vjets_theory_systematic_template}
+Unfortunately, Monte Carlo simulation at $\sqrt{s}=7\TeV$ for theoretical systematic uncertainties have not
+been made available for W+jets and Z+jets processes. However, it can be seen in
+Figure~\ref{fig:wjets_7TeV_8TeV_comparison} that the W+jets template shapes at $\sqrt{s}=7\TeV$ and
+$\sqrt{s}=8\TeV$ are similar. The V+jets template shapes used to evaluate these theoretical systematics are
+therefore obtained from $\sqrt{s}=8\TeV$ theoretical systematic datasets, and then scaled to the normalisation
+in the nominal sample at $\sqrt{s}=7\TeV$.
+
+\begin{figure}[hbtp]
+    \centering
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/WJets_comparison/TTbar_plus_X_analysis_EPlusJets_Refselection_MET_patType1CorrectedPFMet_MET_0orMoreBtag.pdf}\hfill
+	 \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/WJets_comparison/TTbar_plus_X_analysis_EPlusJets_Refselection_Electron_electron_AbsEta_0orMoreBtag.pdf}\\
+	 \caption{Shape comparison of W+jets templates in $\sqrt{s}=7\TeV$ and $\sqrt{s}=8\TeV$ Monte Carlo
+	 simulation for \met (left) and electron \abseta (right) in the electron channel.}
+     \label{fig:wjets_7TeV_8TeV_comparison}
+\end{figure}
+
+
 
 \subsection{Fit Results}
 \label{ss:fit_results}
+
 \begin{figure}[hbtp]
     \centering
      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/after_fit/7TeV/EPlusJets_patType1CorrectedPFMet_2orMoreBtags_with_ratio.pdf}\hfill
@@ -358,6 +389,8 @@ Explain scaling of 8\TeV W and Z+Jets systematics sample templates to 7\TeV cent
 \end{figure}
 
 - Tables in appendix
+\FloatBarrier
+
 
 \section{Unfolding}
 \label{ss:unfolding}
