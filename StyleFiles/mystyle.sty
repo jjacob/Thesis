@@ -7,7 +7,7 @@
 %unnecessary (e.g. footnotes, captions)
 \usepackage{setspace}
 \onehalfspacing
-\doublespacing
+%\doublespacing
 % line in between paragraphs, and no indent
 \usepackage[parfill]{parskip}
 
@@ -39,11 +39,17 @@
 \usepackage{hyperref}
 \hypersetup{linktoc=all} %set to all if you want both sections and subsections linked
 
+% maths stuff
+\usepackage{amsmath}
 \usepackage{siunitx}
 % setup the SIunits package (more info in 'texdoc siunitx')
 \sisetup{number-unit-product = \text{ }}
 \sisetup{binary-units = true}
 \sisetup{seperr, openerr=, closeerr=}
+
+% allow landscape for e.g. wide tables
+\usepackage{lscape}
+\usepackage{pdflscape} % so landscape pages are rotated in the pdf
 
 % Print URLs not in Typewriter Font                                     
 \def\UrlFont{\rm}

@@ -8,15 +8,32 @@
 
 \section{Data-MC Comparison}
 \label{ss:data-mc_comparison}
-Following the full event selection, the distributions of the primary variables \met, \HT, \st, \wpt and \mt
-are shown in Figures \ref{fig:data_mc_comparison_7TeV_electron} and \ref{fig:data_mc_comparison_7TeV_muon} for
-the electron and muon channels respectively at $\sqrt{s}=7\TeV$; and in Figures
-\ref{fig:data_mc_comparison_8TeV_electron} and \ref{fig:data_mc_comparison_8TeV_muon} respectively at
-$\sqrt{s}=8\TeV$. The normalisations and shapes are all obtained form simulation except in the case of QCD
-which is taken from data: the conversion region is used in the electron channel and the non-isolated region is
-used in the muon channel. In general, the agreement between data and simulation is good, with the
-distributions simulation peaking at slightly higher energies because event reweighting to account for the \pt
-mismodelling of the top quark in simulation has not yet been carried out at this stage.
+Following the full event selection, the simulated events are scaled to match the luminosity of the data using
+the following scale factor:
+\begin{equation}
+  S = \frac{{\cal L} \times  \sigma}{N_{\rm processed}}
+\end{equation}
+where $N_{\rm processed}$ is the total number of events processed for each Monte Carlo sample and $\sigma$ is
+the production cross section of each process. The numbers of events passing each selection step in data and
+in Monte Carlo simulation are shown in Tables~\ref{tab:cut_flow_7TeV_electron} and
+\ref{tab:cut_flow_7TeV_muon} for the electron and muon channels respectively at $\sqrt{s}=7\TeV$, and in
+Tables~\ref{tab:cut_flow_8TeV_electron} and \ref{tab:cut_flow_8TeV_muon} for the electron and muon channels
+respectively at $\sqrt{s}=8\TeV$.
+
+\input{Chapters/04_Analysis/04b_XSections/tables/cutflow/cut_flow_7TeV_electron}
+\input{Chapters/04_Analysis/04b_XSections/tables/cutflow/cut_flow_7TeV_muon}
+\input{Chapters/04_Analysis/04b_XSections/tables/cutflow/cut_flow_8TeV_electron}
+\input{Chapters/04_Analysis/04b_XSections/tables/cutflow/cut_flow_8TeV_muon}
+
+The distributions of the primary variables \met, \HT, \st, \wpt and \mt after the full selection requirements
+are applied are shown in Figures \ref{fig:data_mc_comparison_7TeV_electron} and
+\ref{fig:data_mc_comparison_7TeV_muon} for the electron and muon channels respectively at $\sqrt{s}=7\TeV$;
+and in Figures \ref{fig:data_mc_comparison_8TeV_electron} and \ref{fig:data_mc_comparison_8TeV_muon}
+respectively at $\sqrt{s}=8\TeV$. The normalisations and shapes are all obtained form simulation except in the
+case of QCD which is taken from data: the conversion region is used in the electron channel and the
+non-isolated region is used in the muon channel. In general, the agreement between data and simulation is
+good, with the distributions simulation peaking at slightly higher energies because event reweighting to
+account for the \pt mismodelling of the top quark in simulation has not yet been carried out at this stage.
 
 \begin{figure}[hbtp]
     \centering
@@ -65,7 +82,6 @@ mismodelling of the top quark in simulation has not yet been carried out at this
      selection at $\sqrt{s}=8\TeV$.}
      \label{fig:data_mc_comparison_8TeV_muon}
 \end{figure}
-\FloatBarrier
 
 A comparison between data and simulation in the electron+jets QCD selections is shown in
 Figure~\ref{fig:data_mc_comparison_electron_QCD}. There is reasonably good agreement between the data and
@@ -199,7 +215,7 @@ W+Jets and Z+Jets events) and QCD. The template distributions are obtained from 
 variables: the absolute pseudorapidity of the lepton (\abseta), the three-dimensional angle between the lepton
 and the nearest \bjet ($\alpha$), and the invariant mass of the three jets with the highest \pt sum ($M3$).
 
-The fit is carried out by MINIMISING the negative log of the likelihood function (LL):
+The fit is carried out by maximising the log of the likelihood function (LL):
 
 \begin{equation}
 \label{log_likelihood}
@@ -208,10 +224,15 @@ e^{-x_i}}{d_i!}}=-2\sum\limits_{i}\log{\left(\frac{x_i^{d_i}\cdot e^{-x_i}}{d_i!
 \end{equation}
 
 where $i$ is the bin index in the template, $x_i$ is the total of all the templates in bin $i$, and $d_i$ is
-the observed number of data events in  bin $i$.
+the observed number of data events in  bin $i$. $x_i$ is defined to be
 
-Fitting using more than one fitting variable (the three aforementioned fitting variables), the log likelihoods
-are summed:
+\begin{equation}
+\label{eq:sum_mc}
+x_i = \sum\limits_{j}N_{j}x_{i\,j},\;\text{with}\;\sum\limits_{i}\theta_{i\,j}=1\ for each process.
+\end{equation}
+
+where $\theta_{i\,j}$ represents the templates and $N_{j}$ represents the normalisations of the templates.
+Fitting using more than one fitting variable (the three aforementioned fitting variables), the log likelihoods are summed:
 \begin{equation}
 \label{eq:log_L_final}
 LL\left(x, d\right) = -\frac{2}{k} \sum\limits_{k} \log{L_k}
@@ -219,7 +240,10 @@ LL\left(x, d\right) = -\frac{2}{k} \sum\limits_{k} \log{L_k}
 
 where $L_k$ is the likelihood function of each of the different fit variables. Here the division by $k$
 accounts for the fact that the same information is used in all three fit variables, and provides a
-conservative estimate of the uncertainties in the resulting fitted parameters.
+conservative estimate of the uncertainties in the resulting fitted parameters. The fit functions by adjusting
+the normalisation of each template with the aim of equating $x_{i}$ and $d_{i}$ in each bin of each
+template. The starting normalisations in the templates are obtained from simulation after the full selection
+has been applied (this includes the QCD template, although the shape for this is obtained from data).
 
 \subsection{Choice of templates}
 \label{choice_of_templates}
@@ -235,17 +259,19 @@ templates used in the fit:
 \end{itemize}
 
 \ttbar, single-top and V+jets templates are taken from simulation, while the QCD template is extracted from
-datas described in Section~\ref{ss:background_selection}. These four template shapes in each of the three
-fitting variables are shown in Figures~\ref{fig:fit_variable_distributions_7TeV} and
-\ref{fig:fit_variable_distributions_8TeV} for $\sqrt{s}=7\TeV$ and $\sqrt{s}=8\TeV$ respectively. The fit
-variables all show reasonable distinction between the templates. Single top events have similar signatures to
-\ttbar events, with a central lepton from the decay of the single top, leading to a single top template that
-is similar to the \ttbar template in the electron \abseta and muon \abseta distributions. In the $\alpha$
-distribution, the similarity is attributable to the fact that the average boost for single top events is lower
-than in \ttbar events, leading to a wider single top template. The M3 variable will be a combination of the
-jets from the hadronically decaying \tquark (a \bjet and two other jets from the \W-boson) in \ttbar events,
-wheras in the other templates, M3 will simply correspond to some random combination of jets in the event.
-Hence, M3 shows the best discrimination between the single top and \ttbar templates.
+data as described in Section~\ref{ss:background_selection}. The W+jets and Z+jets templates are combined
+firstly due to the similar shapes of the distributions in these two background processes, and secondly due to
+limited statistics available in simulation. The four template shapes in each of the three fitting variables
+are shown in Figures~\ref{fig:fit_variable_distributions_7TeV} and \ref{fig:fit_variable_distributions_8TeV} for $\sqrt{s}=7\TeV$ and $\sqrt{s}=8\TeV$ respectively. This combination of fitting variables was selected because they are uncorrelated to the primary variables under
+investigation, and they show good discrimination between the four templates.
+Single top events have similar signatures to \ttbar events, with a central lepton from the decay of the single
+top, leading to a single top template that is similar to the \ttbar template in the electron \abseta and muon
+\abseta distributions. In the $\alpha$ distribution, the similarity is attributable to the fact that the
+average boost for single top events is lower than in \ttbar events, leading to a wider single top template.
+The M3 variable will be a combination of the jets from the hadronically decaying \tquark (a \bjet and two
+other jets from the \W-boson) in \ttbar events, wheras in the other templates, M3 will simply correspond to
+some random combination of jets in the event. Hence, M3 shows the best discrimination between the single top
+and \ttbar templates.
 
 \begin{figure}[hbtp]
     \centering
@@ -297,7 +323,7 @@ primary variables are shown in Appendix~\ref{as:fitting_variable_QCD_template_co
 
 An inclusive template is also used in the V+jets (W+jets + Z+jets template) for the same reason.
 Figure~\ref{fig:MET_fit_variable_vjets_comparisons_8TeV} shows a comparison between the V+jets templates at
-$\sqrt{s}=8\TeV$ in all \met bins and also the inclusive \met V+jets template.
+$\sqrt{s}=8\TeV$ in each \met bin and also the inclusive \met V+jets template.
 As is the case for the QCD background template, it can be seen in the V+jets templates that there are
 diminished statistics available in higher bins, and the inclusive template shape is largely governed by the
 lower bins. Similar plots demonstrating the same behaviour for the other primary variables are shown in
@@ -335,10 +361,17 @@ in the nominal sample at $\sqrt{s}=7\TeV$.
      \label{fig:wjets_7TeV_8TeV_comparison}
 \end{figure}
 
-
+%TODO: Fit Template Plots
+TODO: Insert Fit Template Plots
 
 \subsection{Fit Results}
 \label{ss:fit_results}
+The results from the fit are shown in Figures~\ref{fig:data_mc_comparison_after_fit_7TeV_electron} and
+\ref{fig:data_mc_comparison_after_fit_7TeV_muon} for the electron and muon channels respectively at
+$\sqrt{s}=7\TeV$, and in Figures~\ref{fig:data_mc_comparison_after_fit_8TeV_electron} and
+\ref{fig:data_mc_comparison_after_fit_8TeV_muon} for the electron and muon channels at $\sqrt{s}=8\TeV$. The
+corresponding numerical values from the fit can be found in Appendix~\ref{as:fit_results_tables}. Overall, the
+agreement within the data and the simulation is within the fit uncertainty. 
 
 \begin{figure}[hbtp]
     \centering
@@ -388,16 +421,150 @@ in the nominal sample at $\sqrt{s}=7\TeV$.
      \label{fig:data_mc_comparison_after_fit_8TeV_muon}
 \end{figure}
 
-- Tables in appendix
 \FloatBarrier
 
 
 \section{Unfolding}
 \label{ss:unfolding}
-		- SVD Unfolding
-		- Pull distributions
+
+The measurement of the differential cross section will be limited by the finite resolution of the detector,
+detector acceptance and selection efficiency. In order to allow later comparison of results with theory
+predeictions and with measurements from other experiments, deconvolution, or unfolding, is employed to provide
+an estimate of the true distributions of the measured variables.
+
+Generally speaking, some variable can be simluated to produce a true distribution, denoted by a vector
+$x_{0}$, and after performing the reconstruction algorithms on this, a corresponding measured distribution in
+simulation, $b_{0}$. These are related by
+
+\begin{equation}
+\label{eq:unfolding_MC}
+\hat{A} x_0 = b_0.
+\end{equation}
+
+where $\hat{A}$ is the response matrix, containing information about how the true distribution is
+reconstructed and measured as the distribution obtained in the real world. The variable in question is then
+measured in reality to have some distribution, $b$, which is then related to the true distribution by
+\begin{equation}
+\label{eq:unfolding_data}
+\hat{A} x = b.
+\end{equation}
+
+Directly inverting the response matrix results in rapidly oscillating solutions \cite{Hocker:1995kb}.
+Therefore, in this analysis, the system is solved to identify the true underlying distribution, $x$, using
+Singular Value Decomposition (SVD) \cite{Hocker:1995kb} of the response matrix, with the RooUnfold package
+\cite{Adye:2011gm}. In SVD unfolding, the response matrix is factorised as follows:
+
+\begin{equation}
+\hat{A} = USV^{T}.
+\label{eq:response}
+\end{equation}
+
+$S$ is a diagonal matrix with non-negative diagonal elements of dimensions $m \times n$, and $U$ and $V$ are
+orthogonal matrices of dimensions $m \times m$ and $n \times n$ respectively. The diagonal elements of $S$ are
+called \textit{singular values} of the matrix $A$ and the columns of $U$ and $V$ are called the left and right
+\textit{singular vectors}. The inverse of the response matrix can then be stated as
+
+\begin{equation}
+\hat{A}^{-1} = VS^{-1}U^{T}.
+\label{eq:inverse_response}
+\end{equation}
+
+In systems with a full rank response matrix and statistical errors in the bins of the distribution are small,
+the problem can be solved simply using the inverted response matrix $\hat{A}^{-1}$. However, in ill-defined
+systems, the response matrix $A$ is almost degenerate and has singular values near zero and in cases where the
+measurement has significant statistical errors, the problem produces an oscillating solution of no meaning,
+since random components will be amplified \cite{Hocker:1995kb}. Regularisation is used in the SVD
+unfolding method to help overcome this problem.
+
+Considering a measured variable that follows a smooth distribution, %(THIS IS A KNOWN FACT WHICH IS USED TO
+% DECIDE UPON A REGULARISATION PARAMETER)
+only the first few bins are expected to be significant, with following bins expected to be compatible with
+zero. Using $d$, a vector obtained by rotating the measured distribution
+
+\begin{equation}
+d = U^{T}\times{b},
+\label{eq:d}
+\end{equation}
+
+a plot of log\abs{d_{i}} versus $i$ can be plotted, where the bin number
+is represented by $i$. This will show $d_{i}$ as being statistically significant for small $i$, and falling exponentially to a random Gaussian
+distribution for larger $i$. A falling exponential function plus a flat line is fitted to this distribution,
+and the value of $i$ at which the $d_{i}$ changes from exponentially falling to within 10\% of the flat
+component is taken as the value of the regularisation parameter, $k$, which represents the number of
+significant bins in the distribution \cite{Hocker:1995kb}.
+
+The value of $k$ should be between 2 and the number of bins in the distribution, and aims to prevent
+statistical fluctuations in the distribution being interpreted as real variations in the true data. A low
+value of $k$ favours the Monte Carlo truth input, while a high value of $k$ favours the measured data which is
+required to be unfolded. The log\abs{d_{i}} plots for \met variable at $\sqrt{s}=7\TeV$ is shown in
+Figure~\ref{fig:d_plots_7TeV}. The resulting $k$ values for both channels and both centre of mass energies are
+shown in Table~\ref{tab:best_k_values}.
+
+\begin{figure}[hbtp]
+    \centering
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/placeholder.png}\hfill
+%     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/unfolding_tests/}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/placeholder.png}\\
+%     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/unfolding_tests/}\\
+	 \caption{log\abs[d[i] plots at $\sqrt{s}=7\TeV$ for the electron+jets channel (left) and the muon+jets
+	 channel (right). TODO: $D_i$ PLOTS} %TODO:D_I_plots
+     \label{fig:d_plots_7TeV}
+\end{figure}
+
+\input{Chapters/04_Analysis/04b_XSections/tables/unfolding/best_k_values}
+
+In summary, the required inputs to unfolding are the Monte Carlo simulated true distributions before
+selection, the Monte Carlo simulated reconstructed distribution after selection, and the two-dimensional reconstruction
+matrix of the true variables after selection versus the measured distributions after selection. These are all
+obtained from Monte Carlo simulations of \ttbar events. 
+
+Unfolding is carried out to the semi-leptonic phase space, where the lepton is either an electron or a muon.
+In the cases of \met, \wpt and \mt, unfolding is carried out to the full phase-space where the \met is defined
+as the \pt of the neutrino from the semi-leptonic decay; and in the cases of \HT and \st, unfolding is carried
+out to particle level where the generated jets have $\pt\geq20\GeV$.
+
+Closure tests were carried out to verify the unfolding method using reconstructed simulated events as
+pseudo-data. A successful closure test results in the unfolded values matching the simulated truth of the same
+simulation sample, as can be seen in Figure~\ref{fig:unfolding_closure_tests}.
+
+\begin{figure}[hbtp]
+    \centering
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/placeholder.png}\hfill
+%     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/unfolding_pulls/}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/placeholder.png}\\
+%     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/unfolding_pulls/}\\
+	 \caption{log\abs{d_{i}} plots at $\sqrt{s}=7\TeV$ for the electron+jets channel (left) and the muon+jets
+	 channel (right). TODO: $D_i$ PLOTS}
+     \label{fig:unfolding_closure_tests}
+\end{figure}
+
+The unfolding method described here was tested using toy Monte Carlo sets and producing pull distributions to
+investigate any potential bias in the method and to verify the unfolding error is estimated correctly. The
+central \ttbar \MADGRAPH sample is used to vary the contents in each bin of each primary variable distribution
+based on assumed Poissonian behaviour around the observed values. 300 sets of variations (henceforth referred
+to as models) are created, with the truth and reconstructed distributions varied independently, while another
+independent variation of the reconstructed distribution is used as the pseudo-data to be unfolded. This
+therefore creates 300\times300 combinations of model and pseudo-data. The pull distributions are created as
+follows
+
+\begin{equation}
+\frac{N^{unfolded}-N^{true}}{\sigma}
+\label{eq:pulls}
+\end{equation}
+
+where N^{unfolded} is the number of events in the unfolded result, N^{true} is the number of events in the
+expected distribution after unfolding (Monte Carlo truth), and \sigma is the unfolding uncertainty. Provided
+the unfolding uncertainty is estimated correctly and that there is no bias in the method, the pull
+distribution is expected to have a Gaussian distribution, a mean of 0 and a \sigma of 1. Any bias would
+manifest as a pull distribution centred at a non-zero value, and any miscalculation of the
+unfolding uncertainty will result in a width of <1 or >1 for an overestimation or an underestimation
+respectively.
+
+
+TODO:INSERT PLOTS AND TABLES.
 
 \subsection{Measurement}
+
 \label{ss:measurement}
 TODO: THIS SECTION TAKEN STRAIGHT FROM AN AT THE MOMENT, NEED TO REWRITE.
 %TODO: THIS SECTION TAKEN STRAIGHT FROM AN AT THE MOMENT, NEED TO REWRITE.
@@ -405,7 +572,8 @@ TODO: THIS SECTION TAKEN STRAIGHT FROM AN AT THE MOMENT, NEED TO REWRITE.
 Once the number of \ttbar events ($\Nttbar$) is unfolded (see section \ref{ss:unfolding}) the normalised
 differential cross-section is calculated for every bin $i$ of the measured variable. Firstly the cross-section in each bin is
 defined as
-\begin{equation}\label{eq:finll_1}
+\begin{equation}
+\label{eq:finll_1}
 \Delta\sigttbar^i = \frac{\Nttbar^i}{\mathrm{BR} \times \epsilon \times {\cal L}} 
 \end{equation}
 where BR is the branching ratio of the semi-leptonic decay channel calculated using MC, $\epsilon$ the \ttbar efficiency

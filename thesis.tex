@@ -29,6 +29,13 @@
                   /OpenAction (fitbh)  }
 \fi
 
+\hypersetup{
+	pdfauthor={Jeson Abe Jacob},
+	pdftitle={Top Physics at the CMS Detector at the LHC},
+	pdfsubject={Top Physics at the CMS Detector at the LHC},
+	pdfkeywords={top, quark, CMS, University of Bristol, thesis, PhD}
+}
+
 \begin{document}
 
 % - \include uses a clearpage before and after the content of the file and opens
@@ -66,14 +73,15 @@
 %\include{Chapters/05_ServiceWork/05b_ServiceWorkOnCBC}
 %\include{Chapters/06_Conclusions/06_Conclusions}
 
-%bibliography
-\bibliographystyle{plain}
-\bibliography{Chapters/08_References/references}
-
+%appendix
 \appendix
 %\include{Chapters/07_Appendices/07a_Appendices_1}
 \include{Chapters/07_Appendices/07b_Appendices_2}
 
-% changes default name Bibliography to References
-\renewcommand{\bibname}{References}
+%bibliography
+\renewcommand{\bibname}{References} % changes default name Bibliography to References
+\addcontentsline{toc}{chapter}{\bibname}
+\bibliographystyle{plain}
+\bibliography{Chapters/08_References/references}
+
 \end{document}
