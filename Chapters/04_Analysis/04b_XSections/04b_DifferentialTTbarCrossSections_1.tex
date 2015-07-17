@@ -46,53 +46,17 @@ specified in Table~\ref{tab:JSONfiles} in Appendix~\ref{as:datasets}.
 
 \subsection{Simulated Samples}
 \label{ss:simulated_samples}
-The Monte Carlo generators used in this analysis are \MADGRAPH \cite{madgraph}, \PYTHIA \cite{pythia8}, \POWHEG
-\cite{powheg_Nason,powheg_Frixione,powheg_Alioli}, HERWIG \cite{herwig} and MC$@$NLO
+The Monte Carlo generators used in this analysis are \MADGRAPH \cite{madgraph5}, \PYTHIA \cite{pythia8},
+\POWHEG \cite{powheg_Nason,powheg_Frixione,powheg_Alioli}, HERWIG \cite{herwig} and MC$@$NLO
 \cite{mcatnlo_Frixione1, mcatnlo_Frixione2}.
 
 The signal for this analysis is the production of a \ttbar pair which decays semi-leptonically, \ie each of
 the t quarks decays to a \W boson and a b jet, with one of the \W bosons decaying hadronically to two jets and
 the other decaying leptonically to a lepton (electron or muon) and an associated neutrino.
+Section~\ref{s:top_physics_at_the_lhc} outlines the signal and background events considered.
 
 Additional, lower energy jets, can be produced from other scatterings in the same proton-proton interaction
-and from gluon radiation from quarks in the decay. Events with \W bosons or \Z bosons and additional jets are
-a significant background to semi-leptonic \ttbar analyses. In the case of \W+jets, leptonically decaying \W
-bosons and additional jets would provide a similar event signature to that of a semi-leptonic \ttbar decay.
-However, in general, these processes can be removed from the signal selection because the final decay products
-in \W+jets events have lower energies than those from semi-leptonic \ttbar decays, since the top quark has a
-high mass. Another characteristic of \W+jets events is that the jets are less likely to be the necessary b
-jets in \ttbar events. Similarly, \Z+jets events can mimic \ttbar events where the leptonic decay of \Z bosons
-to a lepton and an anti-lepton. Within the framework of this analysis, prompt leptons are considered as those
-which come from \W or \Z boson or from tau-lepton decays. These leptons are usually well isolated, whereas
-misidentified leptons originate either from semi-leptonic heavy flavor decays within jets or are simply
-misreconstructed genuine jets. In both cases these leptons are generally not isolated and a veto on a second
-lepton together with jet multiplicity requirements removes much of this background. Misidentification and
-misreconstruction of leptons as jets could still mean some of these events still pass the signal selection,
-although this contamination would be small. TODO:FEYNMANN DIAGRAM OF W \& Z PRODUCTION.
-% TODO: FEYNMANN DIAGRAM OF W & Z + JETS EVENTS
-
-
-
-The QCD events that can form a background to \ttbar analyses, with the multi-jet final states resulting from
-gluon-gluon fusion and quark-antiquark annihilation from proton proton collisions. At high orders, sufficient
-numbers of jets can be produced to produce an event signature similar to that of \ttbar events. The leptons
-required for this to happen can come from jets that are misreconstructed and misidentified as leptons, or from
-the b and c quark decays. In the muon channel, it is possible to use isolation requirements to identify and
-remove a jet of high enough energy that it leaves signals in the muon chambers, because it will also deposit
-much energy in the calorimeters. Fake leptons caused by misreconstruction and misidentification, although not
-a regular occurrence, form a significant background because the QCD cross section is large at the centre of
-mass energies in this analysis. Fake leptons contained in b and c jets will not begin from the primary vertex
-and so can be mostly excluded from the signal selection using their distinct track signature compared to prompt
-leptons.
-
-On the other hand, the electron channel poses a more problematic QCD background, due mainly to the conversion
-of photons, whether produced at the interaction point or through subsequent decays and radiation, into
-electrons and positrons. The identification and removal of such events has been described in
-Section~\ref{ss:electron_reconstruction}. However, the large uncertainty in the cross section of QCD events,
-large contamination from higher order processes with additional jets in the signal region of this analysis and
-the difficulty in Monte Carlo modelling of such contributions lead to significant disagreements in the numbers
-of events passing the signal selection in data and in simulation. Therefore, the QCD background is
-modelled using a data driven method, decribed in Section~\ref{ss:background_selection}.
+and from gluon radiation from quarks in the decay. 
 
 Tables~\ref{tab:signaldatasets7TeV} and \ref{tab:backgrounddatasets7TeV} show the Monte Carlo signal and
 background samples respectively used in this analysis. Top pair production is modelled using \MADGRAPH, single
@@ -140,7 +104,7 @@ iso}}{E_\text{T}}$), HCAL isolation ($\frac{\text{HCAL iso}}{E_\text{T}}$) and t
 ($\frac{\text{tracker iso}}{\pt}$). In the muon triggers, similarly, they have additional cuts on\ldots TODO:
 %TODO: see Luke P76-77 for descriptions of these variables.
 
-\input{Chapters/04_Analysis/04b_XSections/tables/HLT_triggers}
+\input{Chapters/04_Analysis/04b_XSections/tables/datasets/HLT_triggers}
 
 Several filters are also applied in the preselection stage to remove events with significant levels of noise
 due to elements of the detector with sub-optimal performance during data-taking. These filters include a HCAL
@@ -168,7 +132,7 @@ As in the electron channel, the final selection in the muon channel is taken fro
 recommendations. In this case, the muon identification requirement comprises several cuts: at least five hits
 in the tracker and at least one hit in the muon chambers, at least one layer of the muon chamber hits must be
 matched to a global muon, and the inner track must produce at least one hit in the pixel sub detector.
-Furthermore, the normalised chi-squared of the track fit should be less than 10.  In addition, the muon
+Furthermore, the normalised chi-squared of the track fit should be less than 10. In addition, the muon
 identification algorithms should identify the particle as a global, particle flow (PF) muon, the muon track
 should pass within a z-distance of $d_{z} < 0.5\cm$ of the primary vertex and the transverse impact parameter
 is required to be $d_{xy} < 0.2\cm$. The signal selection also requires that the muon has a $\pt > 26\GeV$,
@@ -231,7 +195,8 @@ identification and isolation efficiency; jet energy scale and jet energy resolut
 The pileup distribution in simulation does not reflect the true distribution in data, therefore pileup
 reweighting is carried out. The instantaneous luminosity is used to estimate the number of pilup instances in
 an event at $\sqrt{s}=7\TeV$ and $\sqrt{s}=8\TeV$ using a tool provided by the CMS Physics Validation Group.
-For each number of pileup interactions in simulation, a weight is then produced to match the respective distribution in data.
+For each number of pileup interactions in simulation, a weight is then produced to match the respective
+distribution in data.
 
 The estimation of the pileup distribution in data is obtained using the instantaneous luminosity measured in
 each proton bunch crossing, and the total inelastic proton-proton cross section. There is an uncertainty on

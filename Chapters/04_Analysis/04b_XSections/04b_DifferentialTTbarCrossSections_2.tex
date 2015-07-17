@@ -32,7 +32,7 @@ and in Figures \ref{fig:data_mc_comparison_8TeV_electron} and \ref{fig:data_mc_c
 respectively at $\sqrt{s}=8\TeV$. The normalisations and shapes are all obtained form simulation except in the
 case of QCD which is taken from data: the conversion region is used in the electron channel and the
 non-isolated region is used in the muon channel. In general, the agreement between data and simulation is
-good, with the distributions simulation peaking at slightly higher energies because event reweighting to
+good, with the distributions in simulation peaking at slightly higher energies because event reweighting to
 account for the \pt mismodelling of the top quark in simulation has not yet been carried out at this stage.
 
 \begin{figure}[hbtp]
@@ -90,7 +90,7 @@ events with large weights, leading to peaks in the distribution. It can also be 
 conversion events in the regions of the endcaps, where the larger amount of detector material for electrons to
 traverse leads to a higher number of conversions. The non-isolated QCD selection shows more discrepancies
 between the simulation and data, but it should be noted that at $\sqrt{s}=7\TeV$ the simulation does not
-contain the triggers used in this analysis, unlike at $\sqrt{s}=8\TeV$, therefore the simulation distirbution
+contain the triggers used in this analysis, unlike at $\sqrt{s}=8\TeV$, therefore the simulation distribution
 at $\sqrt{s}=7\TeV$ is not affected by the trigger isolation requirements.
 
 The true QCD background distribution is a mixture of the conversion and non-isolated distributions. A
@@ -103,29 +103,20 @@ selection is expected to be the same in both signal and QCD background selection
 the non-isolated selection due to the isolation requirement in the signal selection. In addition, the number
 of events passing the QCD background selections will be very small compared to the number of events passing
 the signal selection, so the effect of even large uncertainties in the QCD background on the total number of
-events will be minimal.
-
-In the muon+jets channel, again it is clear that the data and simulation are not in agreement and that there
-is a low amount of statistics available in simulation.
+events will be minimal. In the muon+jets channel, similarly, it is clear that the data and simulation are not
+in agreement and that there is a low amount of statistics available in simulation.
 
  \begin{figure}[hbtp]
     \centering
-%      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/}\hfill
-%      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/}\\
-%      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/}\hfill
-%      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/}\\
-%      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/}\hfill
-%      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/}\\
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/placeholder.png}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/placeholder.png}\\
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/placeholder.png}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/placeholder.png}\\
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/placeholder.png}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/placeholder.png}\\
+      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/qcd_plots/QCD_electron_AbsEta_conversion_control_region_0btag_with_ratio}\hfill
+      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/qcd_plots/QCD_electron_AbsEta_conversion_control_region_0btag_with_ratio}\\
+      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/qcd_plots/QCD_electron_AbsEta_non_iso_control_region_0btag_with_ratio}\hfill
+      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/qcd_plots/QCD_electron_AbsEta_non_iso_control_region_0btag_with_ratio}\\
+      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/qcd_plots/shape_comparisons/QCD_electron_AbsEta_control_region_comparison_0btag}\hfill
+      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/qcd_plots/shape_comparisons/QCD_electron_AbsEta_control_region_comparison_0btag}\\
      \caption{Comparison of QCD selections in the electron+jets channel at $\sqrt{s}=7\TeV$ on the left
      and at $\sqrt{s}=8\TeV$ on the right. Conversion region is shown at the top, non-isolated selection
-     in the middle and a comparison of the two selections in data (TODO:CHECK THIS, AND INSERT THE PLOTS IN
-     THE FIRST PLACE!)
+     in the middle and a comparison of the two selections in data (TODO:CHECK THIS)
      %TODO:CHECK THIS
      is shown in the lower plots.}
      \label{fig:data_mc_comparison_electron_QCD}
@@ -133,7 +124,7 @@ is a low amount of statistics available in simulation.
 
 \section{Binning Choice}
 \label{s:binning_choice}
-The bin boundaries in the primary variable distributions is important because events generated in one bin can
+The bin boundaries in the primary variable distributions are important because events generated in one bin can
 migrate to another bin after reconstrution due to the finite resolution of the detector. This altering of the
 number of events, either as a result of events moving into, or out of, a bin is important to understand so
 that the final reconstructed distribution can be deconvoluted (unfolded) to the true distribution.
@@ -208,7 +199,7 @@ Appendix~\ref{as:binning_tables_electron}.
 \FloatBarrier
 
 \section{Maximum Likelihood Fit}
-\label{maximum_likelihood_fit}
+\label{s:maximum_likelihood_fit}
 A maximum log likelihood fit of four templates to data in each bin of the primary variables is used to obtain
 the number of events in each bin. The four templates used are \ttbar, single top, V+Jets (a combination of
 W+Jets and Z+Jets events) and QCD. The template distributions are obtained from the following three
@@ -228,10 +219,10 @@ the observed number of data events in  bin $i$. $x_i$ is defined to be
 
 \begin{equation}
 \label{eq:sum_mc}
-x_i = \sum\limits_{j}N_{j}x_{i\,j},\;\text{with}\;\sum\limits_{i}\theta_{i\,j}=1\ for each process.
+x_i = \sum\limits_{j}N_{j}x_{i\,j},\;\text{with}\;\sum\limits_{i}x_{i\,j}=1\ for each process.
 \end{equation}
 
-where $\theta_{i\,j}$ represents the templates and $N_{j}$ represents the normalisations of the templates.
+where $x_{i\,j}$ represents the templates and $N_{j}$ represents the normalisations of the templates.
 Fitting using more than one fitting variable (the three aforementioned fitting variables), the log likelihoods are summed:
 \begin{equation}
 \label{eq:log_L_final}
@@ -239,22 +230,24 @@ LL\left(x, d\right) = -\frac{2}{k} \sum\limits_{k} \log{L_k}
 \end{equation}
 
 where $L_k$ is the likelihood function of each of the different fit variables. Here the division by $k$
-accounts for the fact that the same information is used in all three fit variables, and provides a
-conservative estimate of the uncertainties in the resulting fitted parameters. The fit functions by adjusting
-the normalisation of each template with the aim of equating $x_{i}$ and $d_{i}$ in each bin of each
-template. The starting normalisations in the templates are obtained from simulation after the full selection
-has been applied (this includes the QCD template, although the shape for this is obtained from data).
+accounts for the fact that the same information is used in all three fit variables, and so full correlation is
+assumed between the three fitting variables, which provides a conservative estimate of the uncertainties in
+the resulting fitted parameters.
+The fit functions by adjusting the normalisation of each template with the aim of equating $x_{i}$ and $d_{i}$
+in each bin of each template. The starting normalisations in the templates are obtained from simulation after
+the full selection has been applied (this includes the QCD template, although the shape for this is obtained
+from data).
 
 \subsection{Choice of templates}
 \label{choice_of_templates}
 
-Three fitting variables are used because no individual fit variable is able to distinguish between all four
+Three fitting variables are used because no individual variable is able to distinguish between all four
 templates used in the fit:
 
 \begin{itemize}
   \item {\ttbar}
   \item{single-top}
-  \item{V+jets (W+jets + Z+jets}
+  \item{V+jets (W+jets + Z+jets)}
   \item{QCD multi-jet} 
 \end{itemize}
 
@@ -262,90 +255,91 @@ templates used in the fit:
 data as described in Section~\ref{ss:background_selection}. The W+jets and Z+jets templates are combined
 firstly due to the similar shapes of the distributions in these two background processes, and secondly due to
 limited statistics available in simulation. The four template shapes in each of the three fitting variables
-are shown in Figures~\ref{fig:fit_variable_distributions_7TeV} and \ref{fig:fit_variable_distributions_8TeV} for $\sqrt{s}=7\TeV$ and $\sqrt{s}=8\TeV$ respectively. This combination of fitting variables was selected because they are uncorrelated to the primary variables under
-investigation, and they show good discrimination between the four templates.
+are shown in Figures~\ref{fig:fit_variable_distributions_electron_7TeV} and
+\ref{fig:fit_variable_distributions_muon_7TeV} for the electron+jets channel and the muon+jets channel
+respectively at $\sqrt{s}=7\TeV$. The corresponding plots for $\sqrt{s}=8\TeV$ are shown in
+Appendix~\ref{as:fitting_variables_distributions}.
+
+This combination of fitting variables was selected because they are uncorrelated to the primary variables
+under investigation, and they show good discrimination between the four templates.
 Single top events have similar signatures to \ttbar events, with a central lepton from the decay of the single
 top, leading to a single top template that is similar to the \ttbar template in the electron \abseta and muon
 \abseta distributions. In the $\alpha$ distribution, the similarity is attributable to the fact that the
-average boost for single top events is lower than in \ttbar events, leading to a wider single top template.
+closest \bjet from the lepton is generally a \bjet from the decay of a \tquark. However, the average boost for
+single top events is lower than in \ttbar events, leading to a wider single top template.
 The M3 variable will be a combination of the jets from the hadronically decaying \tquark (a \bjet and two
-other jets from the \W-boson) in \ttbar events, wheras in the other templates, M3 will simply correspond to
+other jets from the \W-boson) in \ttbar events, whereas in the other templates, M3 will simply correspond to
 some random combination of jets in the event. Hence, M3 shows the best discrimination between the single top
 and \ttbar templates.
 
 \begin{figure}[hbtp]
     \centering
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/7TeV/fit_variables/MET/electron_absolute_eta/MET_inclusive_electron_absolute_eta_2orMoreBtags_templates.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/placeholder.png}\\
-     %\includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/7TeV/fit_variables/MET/muon_absolute_eta/MET_inclusive_muon_absolute_eta_2orMoreBtags_templates.pdf}\\    
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/7TeV/fit_variables/MET/angle_bl/MET_inclusive_angle_bl_2orMoreBtags_templates.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/7TeV/fit_variables/MET/M3/MET_inclusive_M3_2orMoreBtags_templates.pdf}\\
-	 \caption{Normalised distributions of the four templates for the three fit variables at $\sqrt{s}=7\TeV$,
-	 inclusive across all primary variable bins: electron \abseta (upper left), muon \abseta (upper right),
-	 $\alpha$ (lower left) and M3 (lower right).}
-     \label{fig:fit_variable_distributions_7TeV}
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/7TeV/fit_variables/electron/MET/electron_absolute_eta/MET_inclusive_electron_absolute_eta_2orMoreBtags_templates.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/7TeV/fit_variables/electron/MET/angle_bl/MET_inclusive_angle_bl_2orMoreBtags_templates.pdf}\\
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/7TeV/fit_variables/electron/MET/M3/MET_inclusive_M3_2orMoreBtags_templates.pdf}\\
+	 \caption{Normalised distributions of the templates for the three fit variables at $\sqrt{s}=7\TeV$,
+	 inclusive across all primary variable bins in the electron+jets channel: electron \abseta (upper left), muon
+	 \abseta (upper right), $\alpha$ (lower left) and M3 (lower right).}
+     \label{fig:fit_variable_distributions_electron_7TeV}
 \end{figure}
 
 \begin{figure}[hbtp]
     \centering
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/MET/electron_absolute_eta/MET_inclusive_electron_absolute_eta_2orMoreBtags_templates.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/placeholder.png}\hfill
-     %\includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/7TeV/fit_variables/MET/muon_absolute_eta/MET_inclusive_muon_absolute_eta_2orMoreBtags_templates.pdf}\\    
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/MET/angle_bl/MET_inclusive_angle_bl_2orMoreBtags_templates.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/MET/M3/MET_inclusive_M3_2orMoreBtags_templates.pdf}\\
-	 \caption{Normalised distributions of the four templates for the three fit variables at $\sqrt{s}=8\TeV$,
-	 inclusive across all primary variable bins: electron \abseta (upper left), muon \abseta (upper right),
-	 $\alpha$ (lower left) and M3 (lower right).}
-     \label{fig:fit_variable_distributions_8TeV}
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/7TeV/fit_variables/muon/MET/muon_absolute_eta/MET_inclusive_muon_absolute_eta_2orMoreBtags_templates.pdf}\hfill
+	 \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/7TeV/fit_variables/muon/MET/angle_bl/MET_inclusive_angle_bl_2orMoreBtags_templates.pdf}\\
+	 \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/7TeV/fit_variables/muon/MET/M3/MET_inclusive_M3_2orMoreBtags_templates.pdf}\\
+	 \caption{Normalised distributions of the four templates for the three fit variables at $\sqrt{s}=7\TeV$,
+	 inclusive across all primary variable bins in the muon+jets channel: muon \abseta (upper left),
+	 $\alpha$ (upper right) and M3 (lower).}
+     \label{fig:fit_variable_distributions_muon_7TeV}
 \end{figure}
+
 \FloatBarrier
 
-The QCD templates inclusive across all bins of the primary variables are used because of low statistics
-in the QCD background selection in higher bins. Figure~\ref{fig:fit_variable_qcd_comparisons_8TeV} shows a
-comparison between QCD templates at $\sqrt{s}=8\TeV$ in the lowest three bins of the \met variable and also
-the inclusive \met QCD template. It can be seen that the third \met bin already shows low numbers of events,
-meaning the inclusive template is largely shaped by events in the first two bins. Therefore, the inclusive QCD
-template is used rather than those in individual bins. Similar plots showing the same behaviour for the other
-primary variables are shown in Appendix~\ref{as:fitting_variable_QCD_template_comparisons}.
+The QCD templates inclusive across all bins of the primary variables are used because of low statistics in the
+QCD background selection in higher bins. Figure~\ref{fig:fit_variable_qcd_comparisons_8TeV} shows a comparison
+between QCD templates at $\sqrt{s}=8\TeV$ in the lowest three bins of the \met variable and also the inclusive
+\met QCD template. It can be seen that the third \met bin already shows low numbers of events, and that the
+inclusive template is largely shaped by events in the first two bins. Therefore, the inclusive QCD template is
+used rather than those in individual bins. Similar plots showing the same behaviour for the other primary
+variables at $\sqrt{s}=8\TeV$ are shown in Appendix~\ref{as:fitting_variable_QCD_template_comparisons}. TODO:
+INCLUDE THE 7TEV COMPARISONS ALSO? %TODO: INCLUDE THE 7TeV COMPARISONS ALSO?
 
 \begin{figure}[hbtp]
     \centering
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/MET/electron_absolute_eta/qcd/MET_electron_absolute_eta_0orMoreBtag_QCD_template_comparison.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/placeholder.png}\hfill
-     %\includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/7TeV/fit_variables/MET/muon_absolute_eta/qcd/MET_inclusive_muon_absolute_eta_2orMoreBtags_templates.pdf}\\    
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/MET/angle_bl/qcd/MET_angle_bl_1orMoreBtag_QCD_template_comparison.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/MET/M3/qcd/MET_M3_0orMoreBtag_QCD_template_comparison.pdf}\\
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/electron/MET/electron_absolute_eta/qcd/MET_electron_absolute_eta_0orMoreBtag_QCD_template_comparison.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/electron/MET/angle_bl/qcd/MET_angle_bl_1orMoreBtag_QCD_template_comparison.pdf}\\
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/electron/MET/M3/qcd/MET_M3_0orMoreBtag_QCD_template_comparison.pdf}\\
 	 \caption{Normalised distributions of the QCD templates for the three fit variables at $\sqrt{s}=8\TeV$
-	 inclusive across all \met bins and for the lowest three \met bins: electron \abseta (upper
-	 left), muon \abseta (upper right), $\alpha$ (lower left) and M3 (lower right).}
+	 inclusive across all \met bins and for the lowest three \met bins in the electron+jets channel: electron
+	 \abseta (upper left), muon \abseta (upper right), $\alpha$ (lower left) and M3 (lower right).}
      \label{fig:fit_variable_qcd_comparisons_8TeV}
 \end{figure}
 
-An inclusive template is also used in the V+jets (W+jets + Z+jets template) for the same reason.
+An inclusive template is also used in the V+jets (W+jets + Z+jets) template for the same reason.
 Figure~\ref{fig:MET_fit_variable_vjets_comparisons_8TeV} shows a comparison between the V+jets templates at
 $\sqrt{s}=8\TeV$ in each \met bin and also the inclusive \met V+jets template.
 As is the case for the QCD background template, it can be seen in the V+jets templates that there are
 diminished statistics available in higher bins, and the inclusive template shape is largely governed by the
-lower bins. Similar plots demonstrating the same behaviour for the other primary variables are shown in
-Appendix~\ref{as:fitting_variable_vjets_template_comparisons}.
+lower bins. Similar plots demonstrating the same behaviour for the other primary variables at $\sqrt{s}=8\TeV$
+are shown in Appendix~\ref{as:fitting_variable_vjets_template_comparisons}. TODO: INCLUDE THE 7TEV COMPARISONS
+ALSO? %TODO: INCLUDE THE 7TeV COMPARISONS ALSO?
 
 \begin{figure}[hbtp]
     \centering
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/MET/electron_absolute_eta/vjets/MET_electron_absolute_eta_2orMoreBtags_VJets_template_comparison.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/placeholder.png}\\
-     %\includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/7TeV/fit_variables/MET/muon_absolute_eta/vjets/MET_inclusive_muon_absolute_eta_2orMoreBtags_templates.pdf}\\    
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/MET/angle_bl/vjets/MET_angle_bl_2orMoreBtags_VJets_template_comparison.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/MET/M3/vjets/MET_M3_2orMoreBtags_VJets_template_comparison.pdf}\\
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/electron/MET/electron_absolute_eta/vjets/MET_electron_absolute_eta_2orMoreBtags_VJets_template_comparison.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/electron/MET/angle_bl/vjets/MET_angle_bl_2orMoreBtags_VJets_template_comparison.pdf}\\
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/electron/MET/M3/vjets/MET_M3_2orMoreBtags_VJets_template_comparison.pdf}\\
 	 \caption{Normalised distributions of the V+jets templates for the three fit variables at $\sqrt{s}=8\TeV$
-	 inclusive across all \met bins and for the lowest three \met bins: electron \abseta (upper
-	 left), muon \abseta (upper right), $\alpha$ (lower left) and M3 (lower right).}
+	 inclusive across all \met bins and for the lowest three \met bins in the electron+jets channel: electron
+	 \abseta (upper left), muon \abseta (upper right), $\alpha$ (lower left) and M3 (lower right).}
      \label{fig:MET_fit_variable_vjets_comparisons_8TeV}
 \end{figure}
 \FloatBarrier
 
 \subsection{7TeV V+Jets theory systematic template}
 \label{ss:7TeV_vjets_theory_systematic_template}
-Unfortunately, Monte Carlo simulation at $\sqrt{s}=7\TeV$ for theoretical systematic uncertainties have not
+Unfortunately, Monte Carlo simulation for theoretical systematic uncertainties at $\sqrt{s}=7\TeV$ have not
 been made available for W+jets and Z+jets processes. However, it can be seen in
 Figure~\ref{fig:wjets_7TeV_8TeV_comparison} that the W+jets template shapes at $\sqrt{s}=7\TeV$ and
 $\sqrt{s}=8\TeV$ are similar. The V+jets template shapes used to evaluate these theoretical systematics are
@@ -355,9 +349,9 @@ in the nominal sample at $\sqrt{s}=7\TeV$.
 \begin{figure}[hbtp]
     \centering
      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/WJets_comparison/TTbar_plus_X_analysis_EPlusJets_Refselection_MET_patType1CorrectedPFMet_MET_0orMoreBtag.pdf}\hfill
-	 \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/WJets_comparison/TTbar_plus_X_analysis_EPlusJets_Refselection_Electron_electron_AbsEta_0orMoreBtag.pdf}\\
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/WJets_comparison/TTbar_plus_X_analysis_EPlusJets_Refselection_Electron_electron_AbsEta_0orMoreBtag.pdf}\\
 	 \caption{Shape comparison of W+jets templates in $\sqrt{s}=7\TeV$ and $\sqrt{s}=8\TeV$ Monte Carlo
-	 simulation for \met (left) and electron \abseta (right) in the electron channel.}
+	 simulation for \met (left) and electron \abseta (right) in the electron+jets channel.}
      \label{fig:wjets_7TeV_8TeV_comparison}
 \end{figure}
 
@@ -371,7 +365,7 @@ The results from the fit are shown in Figures~\ref{fig:data_mc_comparison_after_
 $\sqrt{s}=7\TeV$, and in Figures~\ref{fig:data_mc_comparison_after_fit_8TeV_electron} and
 \ref{fig:data_mc_comparison_after_fit_8TeV_muon} for the electron and muon channels at $\sqrt{s}=8\TeV$. The
 corresponding numerical values from the fit can be found in Appendix~\ref{as:fit_results_tables}. Overall, the
-agreement within the data and the simulation is within the fit uncertainty. 
+agreement between the data and the simulation is within the fit uncertainty. 
 
 \begin{figure}[hbtp]
     \centering
@@ -428,11 +422,13 @@ agreement within the data and the simulation is within the fit uncertainty.
 \label{ss:unfolding}
 
 The measurement of the differential cross section will be limited by the finite resolution of the detector,
-detector acceptance and selection efficiency. In order to allow later comparison of results with theory
-predeictions and with measurements from other experiments, deconvolution, or unfolding, is employed to provide
-an estimate of the true distributions of the measured variables.
+detector acceptance and selection efficiency, and also by the presence of a small number of
+dilepton and fully hadronic \ttbar events, and semi-leptonic events in the tau channel. In order to allow
+later comparison of results with theory predeictions and with measurements from other experiments,
+deconvolution, or unfolding, is employed to provide an estimate of the true distributions of the measured
+variables.
 
-Generally speaking, some variable can be simluated to produce a true distribution, denoted by a vector
+Generally speaking, some variable can be simulated to produce a true distribution, denoted by a vector
 $x_{0}$, and after performing the reconstruction algorithms on this, a corresponding measured distribution in
 simulation, $b_{0}$. These are related by
 
@@ -496,24 +492,25 @@ significant bins in the distribution \cite{Hocker:1995kb}.
 The value of $k$ should be between 2 and the number of bins in the distribution, and aims to prevent
 statistical fluctuations in the distribution being interpreted as real variations in the true data. A low
 value of $k$ favours the Monte Carlo truth input, while a high value of $k$ favours the measured data which is
-required to be unfolded. The log\abs{d_{i}} plots for \met variable at $\sqrt{s}=7\TeV$ is shown in
+to be unfolded. The log\abs{d_{i}} plots for \met variable at $\sqrt{s}=7\TeV$ is shown in
 Figure~\ref{fig:d_plots_7TeV}. The resulting $k$ values for both channels and both centre of mass energies are
 shown in Table~\ref{tab:best_k_values}.
 
 \begin{figure}[hbtp]
     \centering
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/placeholder.png}\hfill
-%     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/unfolding_tests/}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/placeholder.png}\\
-%     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/unfolding_tests/}\\
-	 \caption{log\abs[d[i] plots at $\sqrt{s}=7\TeV$ for the electron+jets channel (left) and the muon+jets
-	 channel (right). TODO: $D_i$ PLOTS} %TODO:D_I_plots
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/unfolding_tests/8TeV/k_values/k_from_d_i_electron_channel_MET_data.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/unfolding_tests/8TeV/k_values/k_from_d_i_electron_channel_MET_data.pdf}\\
+	 \caption{log\abs[d[i] plots at $\sqrt{s}=8\TeV$ for the electron+jets channel (left) and the muon+jets
+	 channel (right). TODO: INSERT UPDATED PLOTS} %TODO:INSERT UPDATED PLOTS
      \label{fig:d_plots_7TeV}
 \end{figure}
 
 \input{Chapters/04_Analysis/04b_XSections/tables/unfolding/best_k_values}
 
-In summary, the required inputs to unfolding are the Monte Carlo simulated true distributions before
+TODO:INSERT PLOTS FOR OTHER VARIABLES IN APPENDICES?
+%TODO: INSERT OTHER VARIABLES IN APPENDICES
+
+In summary, the required inputs to unfolding are the Monte Carlo simulated true distribution before
 selection, the Monte Carlo simulated reconstructed distribution after selection, and the two-dimensional reconstruction
 matrix of the true variables after selection versus the measured distributions after selection. These are all
 obtained from Monte Carlo simulations of \ttbar events. 
@@ -529,14 +526,16 @@ simulation sample, as can be seen in Figure~\ref{fig:unfolding_closure_tests}.
 
 \begin{figure}[hbtp]
     \centering
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/placeholder.png}\hfill
-%     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/unfolding_pulls/}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/placeholder.png}\\
-%     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/unfolding_pulls/}\\
-	 \caption{log\abs{d_{i}} plots at $\sqrt{s}=7\TeV$ for the electron+jets channel (left) and the muon+jets
-	 channel (right). TODO: $D_i$ PLOTS}
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/unfolding_tests/8TeV/closure/electron_MET_RooUnfoldSvd_closure.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/unfolding_tests/8TeV/closure/muon_MET_RooUnfoldSvd_closure.pdf}\\
+	 \caption{Unfolding closure tests performed by unfolding the reconstructed \MADGRAPH distribution
+	 (``measured'') to generated values for the \met variable in the electron+jets channel (left) and the
+	 muon+jets channel (right) at $\sqrt{s}=8\TeV$. TODO: INSERT UPDATED PLOTS} %TODO:INSERT UPDATED PLOTS
      \label{fig:unfolding_closure_tests}
 \end{figure}
+
+TODO:SHOULD I INSERT PLOTS FOR OTHER VARIABLES IN APPENDICES?
+%TODO: INSERT OTHER VARIABLES IN APPENDICES
 
 The unfolding method described here was tested using toy Monte Carlo sets and producing pull distributions to
 investigate any potential bias in the method and to verify the unfolding error is estimated correctly. The
@@ -544,7 +543,7 @@ central \ttbar \MADGRAPH sample is used to vary the contents in each bin of each
 based on assumed Poissonian behaviour around the observed values. 300 sets of variations (henceforth referred
 to as models) are created, with the truth and reconstructed distributions varied independently, while another
 independent variation of the reconstructed distribution is used as the pseudo-data to be unfolded. This
-therefore creates 300\times300 combinations of model and pseudo-data. The pull distributions are created as
+therefore creates $300\times300$ combinations of model and pseudo-data. The pull distributions are created as
 follows
 
 \begin{equation}
@@ -552,38 +551,51 @@ follows
 \label{eq:pulls}
 \end{equation}
 
-where N^{unfolded} is the number of events in the unfolded result, N^{true} is the number of events in the
-expected distribution after unfolding (Monte Carlo truth), and \sigma is the unfolding uncertainty. Provided
+where $N^{unfolded}$ is the number of events in the unfolded result, $N^{true}$ is the number of events in the
+expected distribution after unfolding (Monte Carlo truth), and $\sigma$ is the unfolding uncertainty. Provided
 the unfolding uncertainty is estimated correctly and that there is no bias in the method, the pull
-distribution is expected to have a Gaussian distribution, a mean of 0 and a \sigma of 1. Any bias would
-manifest as a pull distribution centred at a non-zero value, and any miscalculation of the
-unfolding uncertainty will result in a width of <1 or >1 for an overestimation or an underestimation
+distribution is expected to have a Gaussian distribution around a mean of 0 and a $\sigma$ of 1. Any bias
+would manifest as a pull distribution centred at a non-zero value, and any miscalculation of the
+unfolding uncertainty will result in a width of $<1$ or $>1$ for an overestimation or an underestimation
 respectively.
 
+\begin{figure}[hbtp]
+    \centering
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/unfolding_pulls/8TeV/MET/electron/kv3/pull_from_files_all_bins_stats_65520.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/unfolding_pulls/8TeV/MET/muon/kv3/pull_from_files_all_bins_stats_65520.pdf}\\
+	 \caption{Pull distribution using toy Monte Carlo datasets for the \met variable using a $k$ value of 3 in
+	 the electron+jets channel (left) and in the muon+jets channel (right) at $\sqrt{s}=8\TeV$.
+	 TODO:INSERT UPDATED PLOTS} %INSERT UPDATED PLOTS
+     \label{fig:unfolding_pull_tests}
+\end{figure}
 
-TODO:INSERT PLOTS AND TABLES.
+TODO:INSERT PLOTS FOR OTHER VARIABLES IN APPENDICES?
+%TODO: INSERT OTHER VARIABLES IN APPENDICES
 
 \subsection{Measurement}
-
 \label{ss:measurement}
-TODO: THIS SECTION TAKEN STRAIGHT FROM AN AT THE MOMENT, NEED TO REWRITE.
-%TODO: THIS SECTION TAKEN STRAIGHT FROM AN AT THE MOMENT, NEED TO REWRITE.
 
-Once the number of \ttbar events ($\Nttbar$) is unfolded (see section \ref{ss:unfolding}) the normalised
-differential cross-section is calculated for every bin $i$ of the measured variable. Firstly the cross-section in each bin is
-defined as
+The unfolded number of \ttbar events can now be used to calculate the normalised differential cross-section in
+each bin of the primary variables by first calculating the average cross-section in each bin using
 \begin{equation}
 \label{eq:finll_1}
-\Delta\sigttbar^i = \frac{\Nttbar^i}{\mathrm{BR} \times \epsilon \times {\cal L}} 
+\Delta\sigttbar^i = \frac{\Nttbar^i}{\mathrm{BR} \times \epsilon \times {\cal L}}. 
 \end{equation}
-where BR is the branching ratio of the semi-leptonic decay channel calculated using MC, $\epsilon$ the \ttbar efficiency
-and ${\cal L}$ the measured luminosity. Since the efficiency is corrected for in the unfolding it is set to $1$.
-Next the average value for the cross-section in each bin is obtained by dividing by the bin width $\Delta \mathrm{X}$:
+
+Here, the theoretical \ttbar semi-leptonic branching ratio is denoted by BR, $\epsilon$ is the total
+efficiency of the \ttbar simulation sample, and  {\cal L} is the luminosity of the recorded dataset. The
+efficiency term can be disregarded since the unfolding procedure takes account of the effiency, so $\epsilon$
+can be set to 1. Subsequently, the differential cross section in each primary variable bin is
+calculated by dividing by the bin width $\Delta \mathrm{X}$ as follows:
+
 \begin{equation}
 \frac{\mathrm{d}\sigttbar^i}{\mathrm{d} \mathrm{X}} =
-\frac{\Delta\sigttbar^i}{\Delta \mathrm{X} } = \frac{\Nttbar^i}{\mathrm{BR} \times {\cal L} \times \Delta \mathrm{X}} 
+\frac{\Delta\sigttbar^i}{\Delta \mathrm{X} } = \frac{\Nttbar^i}{\mathrm{BR} \times {\cal L} \times \Delta
+\mathrm{X}} .
 \end{equation}
-Finally the average cross-section in each bin is normalised to the total measured cross-section
+
+Finally, the normalised differential cross section in each bin is obtained by normalising to the total
+measured cross section
 \begin{equation}
 \label{eq:normalisedxs}
 \frac{1}{\sigttbar^\mathrm{tot}} \frac{\mathrm{d}\sigttbar^i}{\mathrm{d} \mathrm{X}} =
@@ -591,9 +603,4 @@ Finally the average cross-section in each bin is normalised to the total measure
 \frac{\mathrm{BR} \times {\cal L}}{\sum\limits_{j}{\Nttbar^j}}\frac{\Nttbar^i}{\mathrm{BR} \times {\cal L} \times \Delta
 \mathrm{X}} = \frac{1}{\sum\limits_{j}{\Nttbar^j}}\frac{\Nttbar^i}{\Delta\mathrm{X}}
 \end{equation}
-This normalised cross-section distribution is not normalised to 1 as $\sigttbar^\mathrm{tot}$ does not take the bins
-into account. However, if one was to include the bin widths in the normalisation then the information about the
-bin-width would be lost in the measurement.
-
-
 		
