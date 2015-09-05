@@ -3,24 +3,25 @@
 
 \section{Introduction to the LHC}
 \label{s:Introduction}
-The Large Hadron Collider (LHC) at the Organisation Europ\'{e}enne pour la Recherche Nucl\'{e}aire (CERN) near
-the Swiss city of Geneva was constructed with the aim of investigating various aspects of the Standard Model
-of physics. The Standard Model has stood up well to scientific scrutiny for several decades.
+The LHC at the CERN was constructed with the aim of investigating various aspects of the Standard Model of
+physics. The Standard Model has stood up well to scientific scrutiny for several decades.
 However, areas of current interest such as the Higgs mechanism and the role electroweak symmetry breaking
 plays in it, and physics beyond the standard model such as supersymmetry (explained in further detail in
-Section~\ref{c:the_standard_model}), require the acceleration of particles to high energies (of the order of
-TeV). The Compact Muon Solenoid (CMS) general-purpose detector is one of four detectors located around the
-LHC, approximately 100~m below ground level. The geographical site and location of the various experiments are
-shown in Figure~\ref{fig:LHC_and_CMS_map}.
+Section~\ref{c:the_standard_model_and_top_physics}), require the acceleration of particles to high energies
+(of the order of TeV). The Compact Muon Solenoid (CMS) general-purpose detector is one of four detectors
+located around the LHC, approximately 100~m below ground level. The geographical site and location of the
+various experiments are shown in Figure~\ref{fig:LHC_schematic}.
 
 \begin{figure}[hbtp]
    \centering
-     \includegraphics[width=0.35\textwidth]{Chapters/03_Detector/Images/lhc-pho-1997-169.jpg}\\
-     \includegraphics[width=\textwidth]{Chapters/03_Detector/Images/0812015.jpg}%\hfill
-     \caption{Map of LHC location (top) and schematic of LHC and experiments (bottom). CMS is located at Point
+     \includegraphics[width=\textwidth]{Chapters/02_Detector/Images/0812015.jpg}\\
+     \caption{Schematic of LHC and experiments (bottom). CMS is located at Point
      5 on the LHC ring.}
-     \label{fig:LHC_and_CMS_map}
+     \label{fig:LHC_schematic}
 \end{figure}
+
+
+%% comment out above.
 
 The 27~km circumference LHC can collide two proton beams, each composed of 2808 bunches, at a design energy of
 7\TeV per beam (meaning a 14\TeV centre of mass energy in collisions) with a luminosity of $10^{34}
@@ -40,16 +41,16 @@ using an electric field, the remaining protons are inserted into the LINAC2 whic
 50~MeV. From here, the proton beam is injected into the Proton Synchrotron Booster (PSB) which increases the
 energy to 1.4~GeV, followed by the Proton Synchrotron (PS) which accelerates the beam to 25~GeV and the Super
 Proton Synchrotron (SPS) where the beam energy reaches 450~GeV. Finally, the protons are injected into the LHC
-where two beampipes carry the beams in a clockwise and an anti-clockwise direction while accelerating them
-up to the required collision energy. Filling the LHC rings takes approximately 4 minutes, followed by
+where two beampipes carry the beams in a clockwise and an anti-clockwise direction while accelerating them up
+to the required collision energy. Filling the LHC rings takes approximately 4 minutes, followed by
 approximately 20 minutes until the beams reach energies of 4\TeV (during 2012 data taking). Once the collision
 energies have been attained, the counter-circulating beams are brought to collide at the four main LHC
-experiments CMS, ATLAS, LHCb and ALICE. ALICE is specifically designed to investigate heavy ion collisions
-(as opposed to protons), while LHCb investigates b-meson physics.
+experiments CMS, ATLAS, LHCb and ALICE. ATLAS, like CMS, is a general purpose detector, ALICE is specifically
+designed to investigate heavy ion collisions (as opposed to protons), while LHCb investigates b-meson physics.
 
 \begin{figure}[hbtp]
    \centering
-     \includegraphics[width=0.75\textwidth]{Chapters/03_Detector/Images/int_lumi_cumulative_pp_2.png}\\
+     \includegraphics[width=0.75\textwidth]{Chapters/02_Detector/Images/int_lumi_cumulative_pp_2.png}\\
      \caption{Cumulative luminosity delivered to CMS over time during 2010, 2011 and 2012 proton-proton data
      taking periods.}
      \label{fig:integrated_luminosity}
@@ -72,7 +73,7 @@ buffered on the detector.
 
 \begin{figure}[hbtp]
    \centering
-     \includegraphics[width=\textwidth]{Chapters/03_Detector/Images/cms_120918_02.pdf}\hfill
+     \includegraphics[width=\textwidth]{Chapters/02_Detector/Images/cms_120918_02.pdf}\hfill
      \caption{Diagrammatic sectional view of the CMS detector \cite{Sakuma_sketchup}}
      \label{fig:CMS_diagram}
  \end{figure}
@@ -82,12 +83,17 @@ the pixel and strip tracker, the electromagnetic calorimeter, the hadronic calor
 the magnet and the muon detectors. The coordinate system of the detector is designated with the origin as the
 intersection point of the two beams in the beam pipe, with the x-axis positive towards the centre of the LHC
 ring, with the y-axis positive vertically upwards and with the z-axis pointing along the beampipe in an
-anticlockwise direction. The angle $\phi$ is defined as the angle in the x-y plane, transverse to the beampipe
-starting from the x-axis. $\theta$, the polar angle is defined as the angle in the z-y plane starting from the
-z-axis (the beampipe). $\theta$ is related to the pseudorapidity, $\eta$, by the formula
+anticlockwise direction. The azimuthal angle, $\phi$, is defined as the angle in the x-y plane, transverse to
+the beampipe starting from the x-axis. The polar anglge, $\theta$, is defined as the angle in the z-y plane
+starting from the z-axis (the beampipe). $\theta$ is related to the pseudorapidity, $\eta$, by the formula
 $\eta$=-ln(tan($\theta$/2)), so that $\eta$ ranges from 0 at $\theta$ = 90$^{\circ}$ to $\infty$ at $\theta$ =
-0 $^{\circ}$ \cite{CMS_TDR1}. The two ends of the detector, at high $\eta$ values, are called the endcap regions while the
-central area at lower $\eta$ values is called the barrel region.
+0 $^{\circ}$ \cite{CMS_TDR1}. The two ends of the detector, at high $\eta$ values, are called the endcap
+regions while the central area at lower $\eta$ values is called the barrel region. The detector volume is
+often denoted in terms of $\Delta R$, with the separation between two particles 1 and 2 being defined as
+
+\begin{equation}
+\Delta R = \sqrt{(\eta_{1} - \eta_{2})^{2} + (\phi_{1} - \phi_{2})^{2}}
+\end{equation}
 
 \section{Sub-Detectors}
 \label{s:Subdetectors}
@@ -126,7 +132,7 @@ Shutdown 1 \cite{Butz:1497745}.
 
 \begin{figure}[hbtp]
    \centering
-     \includegraphics[width=\textwidth]{Chapters/03_Detector/Images/tracker.pdf}\hfill
+     \includegraphics[width=\textwidth]{Chapters/02_Detector/Images/tracker.pdf}\hfill
      \caption{Cross-sectional diagram of the CMS strip tracker; each line represents a detector module
      \cite{CMS_TDR1}}
      \label{fig:CMS_strip_tracker}
@@ -328,7 +334,7 @@ as photostatistics, electronics noise and temperature stability and calibration 
 
 \begin{figure}[hbtp]
    \centering
-     \includegraphics[width=0.7\textwidth]{Chapters/03_Detector/Images/ECAL.pdf}\hfill
+     \includegraphics[width=0.7\textwidth]{Chapters/02_Detector/Images/ECAL.pdf}\hfill
      \caption{Diagram of the ECAL showing barrel supermodules, endcaps and preshower detectors.
      \cite{ECAL_calibration_and_resolution_at_7TeV}}
      \label{fig:CMS_ECAL}
@@ -355,7 +361,7 @@ light as they do which is fed to readout electronics via optical fibres to measu
 
 \begin{figure}[hbtp]
    \centering
-     \includegraphics[width=\textwidth]{Chapters/03_Detector/Images/HCAL.pdf}\hfill
+     \includegraphics[width=\textwidth]{Chapters/02_Detector/Images/HCAL.pdf}\hfill
      \caption{A longitudinal schematic of the HCAL showing the location of the hadron barrel (HB), endcap
      (HE), outer (HO) and forward (HF) calorimeters \cite{CMS_experiment}}
      \label{fig:CMS_HCAL}
@@ -372,7 +378,7 @@ withstand its own magnetic bursting force on the coil \cite{CMS_experiment}.
 
 \begin{figure}[hbtp]
    \centering
-     \includegraphics[width=0.5\textwidth]{Chapters/03_Detector/Images/Cold_mass.png}\hfill
+     \includegraphics[width=0.5\textwidth]{Chapters/02_Detector/Images/Cold_mass.png}\hfill
      \caption{Bore of the CMS solenoid magnet in vertical position in the CMS assembly hall, SX5, prior to
      installation \cite{CMS_experiment}}
      \label{fig:CMS_magnet_cold_bore}
@@ -410,7 +416,7 @@ used for muon triggering \cite{CMS_experiment}.
  
 \begin{figure}[hbtp]
    \centering
-     \includegraphics[width=0.65\textwidth]{Chapters/03_Detector/Images/MuonSys-mod3.png}\hfill
+     \includegraphics[width=0.65\textwidth]{Chapters/02_Detector/Images/MuonSys-mod3.png}\hfill
      \caption{Schematic representation of a quarter of the CMS muon system \cite{Muon_tracking}}
      \label{fig:CMS_muon_system}
 \end{figure}
@@ -585,9 +591,9 @@ Since other objects can leave similar signatures in the detector to electrons, s
 photon conversions, candidates are required to satisfy additional requirements of identification and
 isolation. Several electron identification methods exists and are used in CMS analyses. The main top cross
 sections analysis in this thesis uses the multivariate identification (MVA ID). As the name suggests, this
-approach uses a multivariate analysis, with track, vertex and supercluster variables as input, to produce a
-discriminator value, with higher values indicating a higher likelihood for a candidate to be a real electron.
-The MVA ID algorithm is optimised for identifying electrons from W and Z boson decays
+approach uses a multivariate analysis, with track, track quality, and supercluster variables as input, to
+produce a discriminator value, with higher values indicating a higher likelihood for a candidate to be a real
+electron. The MVA ID algorithm is optimised for identifying electrons from W and Z boson decays
 \cite{electron_reconstruction}.
 
 The isolation of an electron is defined as the activity within a cone surrounding the electron. Isolation is
@@ -649,9 +655,9 @@ in the direction of travel of the quark from which it originates. The time of ar
 deposited by hadronic objects are locally reconstructed in the HCAL. If the deposit matches an ECAL deposit, a
 Calo Tower is formed for later use in jet reconstruction algorithms.
 
-The particle flow (PF) algorithm performing the reconstruction of particles in the jet, and the $anti-k_{t}$
-algorithm used to perform the clustering of these particles into jets. The $anti-k_{t}$ algorithm, explained
-in detail in \cite{anti_kt} is one of several jet algorithms that exist in CMS to
+The particle flow (PF) algorithm performs the reconstruction of particles in the jet, and the $anti-k_{t}$
+algorithm is used to perform the clustering of these particles into jets. The $anti-k_{t}$ algorithm,
+explained in detail in \cite{anti_kt}, is one of several jet algorithms that exist in CMS to
 combine reconstructed particles into jets. It defines a distance $d_{ik}$ between reconstructed particles as
 
 \begin{equation}
@@ -665,7 +671,7 @@ the rapidities and $\phi_{i}$ and $\phi_{j}$ are the azimuth angles and $R$ is t
 anti-$k_{t}$ iteratively clusters together particles with the smallest $d_{i,j}$ between them until all jets
 are reconstructed and there are no particles remaining. Events will usually consist of a small number of
 high-\pt (hard) particles and a large number of low-\pt particles. The distance between hard particles
-is typically small, and the distance between softer particlesis larger. Soft (low-\pt particles tending to
+is typically small, and the distance between softer particles is larger. Soft (low-\pt particles tending to
 cluster around hard (high-\pt) particles, before clustering with other soft particles.
 
 While the PF anti-$k_{t}$ jets show high jet matching efficiency on Monte Carlo simulation samples,
@@ -715,7 +721,20 @@ secondary vertex distinguishable at a significant distance from the primary inte
 information, together with track based information such as the number of tracks in the jet, the invariant
 mass of the secondary vertex and the impact parameter significance of each jet track is used by the CSV
 algorithm to produce a discriminator ranging from 0 to 1, with larger numbers corresponding to a higher
-probability of a jet being a \bjet.TODO: EXPLAIN IMPACT PARAMETER SIGNIFICANCE WITH A DIAGRAM
+probability of a jet being a \bjet.
+
+The impact parameter (IP) of a track is defined as the distance between the track and the vertex at the point
+of closest approach~\cite{CMS-PAS-BTV-09-001}. Figure~\ref{fig:impact_parameter} shows a schematic
+representation of the impact parameter for one single track. Typicall, the 
+
+\begin{figure}[hbtp]
+   \centering
+     \includegraphics[width=\textwidth]{Chapters/02_Detector/Images/impact_parameter}\\
+     \caption{Graphical representation of a track impact parameter~\cite{CMS-PAS-BTV-09-001}.}
+     \label{fig:impact_parameter}
+\end{figure}
+
+TODO: EXPLAIN IMPACT PARAMETER SIGNIFICANCE WITH A DIAGRAM
 %TODO:EXPLAIN IMPACT PARAMETER SIGNIFICANCE WITH A DIAGRAM.
 Three working points are used in CMS: tight, medium and loose. The medium working point is used in the different
 cross sections analysis, which carries a 1~\% mis-tag rate and approximately 70~\% b-tag efficiency. The tight

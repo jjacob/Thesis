@@ -33,7 +33,7 @@ hints of dark matter.
 \subsection{Data}
 \label{ss:data}
 
-Data collected in 2011 at a centre-  of-mass energy of 7\TeV and in 2012 at a centre-of-mass energy of
+Data collected in 2011 at a centre-of-mass energy of 7\TeV and in 2012 at a centre-of-mass energy of
 8\TeV are used. The datasets are determined by the triggers that were used to record them. For 7\TeV, the ElectronHad
 dataset is used in the electron channel. It was recorded with triggers that select based on a single, isolated
 electron and additional jets. At 8\TeV, the SingleElectron dataset was used for the electron channel
@@ -179,8 +179,9 @@ events is applied TODO:CHECK IF WE STILL DO THIS. %TODO:CHECK IF WE STILL DO THI
 The resulting template of QCD events from data is then used later in the fitting procedure, in place of the
 Monte Carlo template.
 
-TODO:COULD INSERT PLOTS OF MUON PF RELISO DISTRIBUTIONS at 7 and 8 TEV HERE, but perhaps not needed?
-%TODO:COULD INCLUDE PLOTS OF MUON PF RELISO DISTRIBUTIONS at 7 and 8 TEV HERE, but perhaps not needed?
+TODO:WORTH ADDING SOME CONTROL REGION PLOTS?
+%TODO:COULD INCLUDE PLOTS OF MUON PF RELISO DISTRIBUTIONS AND ELECTRON COMPARISONS at 7 and 8 TEV HERE, but
+% perhaps not needed?
 
 
 \section{Data-MC scale factors}
@@ -194,7 +195,7 @@ identification and isolation efficiency; jet energy scale and jet energy resolut
 \label{ss:pileup}
 The pileup distribution in simulation does not reflect the true distribution in data, therefore pileup
 reweighting is carried out. The instantaneous luminosity is used to estimate the number of pilup instances in
-an event at $\sqrt{s}=7\TeV$ and $\sqrt{s}=8\TeV$ using a tool provided by the CMS Physics Validation Group.
+an event at $\roots=7\TeV$ and $\roots=8\TeV$ using a tool provided by the CMS Physics Validation Group.
 For each number of pileup interactions in simulation, a weight is then produced to match the respective
 distribution in data.
 
@@ -203,13 +204,24 @@ each proton bunch crossing, and the total inelastic proton-proton cross section.
 the measured luminosity which is currently 2.6\% for 2012 data \cite{CMS:2013gfa} and 2.2\% for 2011 data
 \cite{CMS:2012eui}. The total inelastic cross section has been reported using CMS forward calorimetry
 \cite{Chatrchyan:2012gwa} and by the TOTEM collaboration \cite{Antchev:2011vs}. Based on these findings, the
-CMS recommended central values of 68\mb for $\sqrt{s}=7$ and 69.3\mb for $\sqrt{s}=8$ have been used, with a
-$\pm5\%$ uncertainty to account for pileup and physics modelling in simulation.
+CMS recommended central values of 68\mb for $\roots=7$ and 69.3\mb for $\roots=8$ have been used, with a
+$\pm5\%$ uncertainty to account for pileup and physics modelling in simulation. The distributions of the
+number of reconstructed of vertices before and after applying pileup reweighting in the electron+jets channel
+is shown in Figure~\ref{fig:nvertices_before_and_after_pileup_reweighting_electrons}, and in the muon+jets
+channel is shown in Figure~\ref{fig:nvertices_before_and_after_pileup_reweighting_muons} in Appendix~\ref{as:data_monte_carlo_corrections}.
+The distributions show good agreement after reweighting.
 
-%TODO: INCLUDE PLOTS OF NUMBER OF RECONSTRUCTED VERTICES BEFORE/AFTER REWEIGHTING, MAYBE JUST AT 8TeV AND PUT
-% 7TeV IN APPENDIX. CAN ALSO SHOW PU UP/DOWN DISTRIBUTIONS, BUT PROB ALSO PUT THIS IN APPENDIX.
-TODO: INSERT PLOTS OF NUMBER OF RECONSTRUCTED VERTICES BEFORE AND AFTER REWEIGHTING, MAYBE JUST AT 8TeV AND
-PUT 7TeV IN APPENDIX. CAN ALSO SHOW PU UP AND DOWN DISTRIBUTIONS, BUT PROB ALSO PUT THIS IN APPENDIX.
+\begin{figure}[hbtp]
+    \centering
+      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/EPlusJets_nVertex__with_ratio}\hfill
+      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/EPlusJets_nVertex_reweighted__with_ratio}\\
+      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/EPlusJets_nVertex__with_ratio}\hfill
+      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/EPlusJets_nVertex_reweighted__with_ratio}\\
+     \caption{Distributions of the number of reconstructed vertices in an event in the electron+jets channel
+     before implementing pileup reweighting (left) and after implementation (right) at $\roots=7\TeV$ (upper)
+     and $\roots=8\TeV$ (lower). Both data and sum of MC simulations are normalisated to one.}
+     \label{fig:nvertices_before_and_after_pileup_reweighting_electrons}
+\end{figure}
 
 \subsection{b tagging}
 \label{ss:b_tagging}
@@ -217,16 +229,31 @@ The combined secondary vertex \btagging algorithm (CSV) described in Section~\re
 analysis to identify jets originating from \bquarks in \ttbar events. The medium working point, CSVM, which
 corresponds to a cut on the discriminator output by the algorithm of 0.679, is used in this analysis.
 Discrepancies between the \btagging efficiency in data and Monte Carlo simulation have been noted in
-$\sqrt{s}=7\TeV$ \cite{CMS-PAS-BTV-11-004} and $\sqrt{s}=8\TeV$ \cite{CMS-DP-2013-005}. To account for these
+$\roots=7\TeV$ \cite{CMS-PAS-BTV-11-004} and $\roots=8\TeV$ \cite{CMS-DP-2013-005}. To account for these
 differences, events are reweighted based on the recommendation of the CMS \btagging Physics Object Group
 (POG), with the aim of ensuring that the probability of an event passing selection criteria in simulation
-matches the probability of an even in data with the same jet(s) passing the same selection. TODO: INSERT
-PLOTS.
-
-At bins of lower multiplicity, there is a clear excess in the data distribution over the simulation, but since
-only the $\geq2$ \btags region is used for the signal region, this disagreement in low bins is not of
-importance.  %TODO: mention also not important because of fitting?
+matches the probability of an even in data with the same jet(s) passing the same selection. The result of this
+reweighting in the electron+jets channel is shown in
+Figure~\ref{fig:nbjets_before_and_after_btag_scale_factors_electrons}, and in the muon+jets channel in
+Figure~\ref{fig:nbjets_before_and_after_btag_scale_factors_muons} in
+Appendix~\ref{as:data_monte_carlo_corrections} .
 The \btagging efficiency uncertainty is evaluated by varying the scale factors by $\pm1\sigma$.
+
+\begin{figure}[hbtp]
+    \centering
+      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/EPlusJets_N_BJets_with_ratio}\hfill
+      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/EPlusJets_N_BJets_reweighted_with_ratio}\\
+      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/EPlusJets_N_BJets_with_ratio}\hfill
+      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/EPlusJets_N_BJets_reweighted_with_ratio}\\
+     \caption{Distributions of the number of \btags in an event in the electron+jets channel before applying
+     \btag scale factors (left) and after application (right) at $\roots=7\TeV$
+     (upper) and $\roots=8\TeV$ (lower).}
+     \label{fig:nbjets_before_and_after_btag_scale_factors_electrons}
+\end{figure}
+
+%At bins of lower multiplicity, there is a clear excess in the data distribution over the simulation, but
+% since only the $\geq2$ \btags region is used for the signal region, this disagreement in low bins is not of
+% importance.  %TODO: mention also not important because of fitting?
 
 \subsection{Jet Energy Scale}
 \label{sss:jet_energy_scale}
@@ -240,7 +267,7 @@ simulation.
 Furthermore, the jet energy resolution has been measured to be worse in data that in simulation.
 Therefore, jets in this analysis are ``smeared" using scale factors provided by the CMS JETMET Physics Object
 Group. These factors were derived in \cite{Chatrchyan:2011ds} using 0.8\fbinv of dijet data at
-$\sqrt{s}=7\TeV$, and 19.7\fbinv of dijet data at $\sqrt{s}=7\TeV$ \cite{jet_res_2012}.
+$\roots=7\TeV$, and 19.7\fbinv of dijet data at $\roots=7\TeV$ \cite{jet_res_2012}.
 
 \subsection{Missing Transverse Energy Corrections}
 \label{ss:met_corrections}
@@ -252,11 +279,11 @@ these changes to the \met distributions. In addition, Type-0 corrections
 \label{ss:trigger_ID_isolation_corrections}
 Corrections are also required for the trigger, identification and isolation efficiencies for muons and
 electrons. In the muon+jets channel, the corrections are provided by the CMS muon Physics Object Group
-for $\sqrt{s}=8\TeV$ TODO:REFERENCE TWIKI? %TODO:REFERENCE TWIKI?
-and $\sqrt{s}=7\TeV$ \cite{CMS-PAS-SMP-13-013}.
+for $\roots=8\TeV$ TODO:REFERENCE TWIKI? %TODO:REFERENCE TWIKI?
+and $\roots=7\TeV$ \cite{CMS-PAS-SMP-13-013}.
 
 For the electron+jets channel, the corrections are provided by the CMS EGamma Physics Object Group for
-$\sqrt{s}=8\TeV$, however the corrections for the $\sqrt{s}=7\TeV$ data are not provided and so were derived
+$\roots=8\TeV$, however the corrections for the $\roots=7\TeV$ data are not provided and so were derived
 independently in this analysis using the same methods as used by the EGamma POG.
 
 In addition, the 7\TeV triggers used (ElectronHad) in this analysis were not present in the 7\TeV simulation,
@@ -278,8 +305,19 @@ electrons. After applying the identification and isolation criteria to the probe
 carried out to the invariant mass distribution of pairs of tag and probe electrons in which the probe electron
 passes the identification and isolation criteria. The fit is implemented in both Monte Carlo simulation
 and in data, and a Breit-Wigner distribution convoluted with a Crystal Ball function is used to model the
-invariant mass of the tag and probe electrons, with a falling exponential used to model the background distribution.
-TODO: FIT PLOTS %TODO:FIT PLOTS
+invariant mass of the tag and probe electrons, with a falling exponential used to model the background
+distribution. The result of this fitting procedure can be seen in
+Figure~\ref{fig:electron_id_iso_efficiency_invariant_Z_mass_fits}.
+
+\begin{figure}[hbtp]
+    \centering
+      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/lepton_scale_factors/CBConvolution/electron/data/id_iso/tagProbe_total_Z_peak}\hfill
+      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/lepton_scale_factors/CBConvolution/electron/data/id_iso/tagProbe_passed_Z_peak}\\
+     \caption{Fits of the invariant mass distribution of all tag-and-probe pairs (left) and for
+     tag-and-probe pairs in which the probe satisfies the identification and isolation criteria
+     (right).}
+     \label{fig:electron_id_iso_efficiency_invariant_Z_mass_fits}
+\end{figure}
 
 The efficiency of the identification and isolation process is then calculated using the numbers extracted
 from the fits, in bins of \pt and $\eta$ of the probe electron, as follows:
@@ -288,9 +326,18 @@ from the fits, in bins of \pt and $\eta$ of the probe electron, as follows:
 \epsilon(\text{identification and isolation}) = \frac{N^{\text{fit}}_{\text{probe, passing}}}{N^{\text{fit}}_{\text{probe, all}}}
 \end{equation}
 
-The scale factor is then calculated as the ratio between the efficiencies in simulation and in data.
-TODO:EFFICIENCY PLOTS %TODO:EFFICIENCY PLOTS
-The efficiencies in both can be seen to be similar, so the scale factors are close to one.
+The scale factor is then calculated as the ratio between the efficiencies in simulation and in data. The
+efficiencies in both can be seen to be similar in Figure~\ref{fig:electron_id_iso_efficiencies_wrt_eta_pt},
+leading to scale factors close to one.
+
+\begin{figure}[hbtp]
+    \centering
+      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/lepton_scale_factors/CBConvolution/electron/efficiency_eta_id_iso}\hfill
+      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/lepton_scale_factors/CBConvolution/electron/efficiency_pt_id_iso}
+      \caption{Identification and isolation efficiencies as a function of $\eta$ and \pt in data and \ttbar
+      Monte Carlo simulation.}
+     \label{fig:electron_id_iso_efficiencies_wrt_eta_pt}
+\end{figure}
 
 The efficiency of the electron part of the trigger is then similarly calculated, with respect to the
 identification and isolation requirements, meaning the events passing the identification and isolation
@@ -300,8 +347,6 @@ these in which the probe electron matches a HLT electron is then used to calcula
 \begin{equation}
 \epsilon(\text{trigger}) = \frac{N^{\text{fit}}_{\text{probe, matching HLT}}}{N^{\text{fit}}_{\text{probe,identification and isolation}}}
 \end{equation}
-
-A scale factor is then calculated as described previously, in bins of electron \pt and $\eta$.
 
 In order to calculate the efficiency of the hadron leg of the trigger, the full selection with only the
 electron part of the trigger and without \btagging is taken as the baseline. The number of events passing the
@@ -314,3 +359,8 @@ hadronic leg of the trigger is then used to calculate the hadronic leg efficienc
 The scale factors are produced in bins of \pt and $\eta$ of the fourth most energetic jet, since this is the
 lowest energy jet that is selected. Parametrising as a function of higher energy jets would lead to a bias
 towards high efficiencies as the trigger will have a higher efficiency at higher jet energies.
+
+Equivalent fit and efficiency plots for the trigger are included in
+Figures~\ref{fig:electron_trigger_efficiency_invariant_Z_mass_fits} and
+\ref{fig:electron_trigger_efficiencies_wrt_eta_pt} in Appendix~\ref{as:data_monte_carlo_corrections}.
+TODO:HAVE NOT INCLUDED MUON ID-ISO OR TRIGGER PLOTS ANYWHERE. HOPEFULLY OK WITH JUST ELECTRON PLOTS.

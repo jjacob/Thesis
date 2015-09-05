@@ -3,6 +3,10 @@
 %\usepackage[a4paper,twoside,left=2.5cm,right=2cm,top=30mm,bottom=25mm,bindingoffset=1.5cm,head=14.5pt]{geometry}
 \usepackage[a4paper,twoside,left=2.5cm,right=2cm,top=30mm,bottom=25mm,head=14.5pt]{geometry}
 
+% set font
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
 %- set "one and a half" line spacing document-wide, but not where it is usually
 %unnecessary (e.g. footnotes, captions)
 \usepackage{setspace}
@@ -25,6 +29,18 @@
 
 \usepackage{placeins}
 
+\usepackage{subcaption}
+
+%\usepackage[Lenny]{fncychap}
+
+\usepackage{color}
+\definecolor{gray75}{gray}{0.75}
+
+\usepackage[compact]{titlesec}
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{$|$}\hsp}{0pt}{\Huge\bfseries}
+\titlespacing*{\chapter}{0pt}{-30pt}{40pt}
+\titlespacing{name=\chapter,numberless}{0pt}{-30pt}{30pt}
 % may need this at some point
 % turn of those nasty overfull and underfull hboxes
 %\hbadness=10000
@@ -41,11 +57,14 @@
 
 % maths stuff
 \usepackage{amsmath}
-\usepackage{siunitx}
+\usepackage[version-1-compatibility]{siunitx}
 % setup the SIunits package (more info in 'texdoc siunitx')
 \sisetup{number-unit-product = \text{ }}
 \sisetup{binary-units = true}
 \sisetup{seperr, openerr=, closeerr=}
+% avoid conflicts between microtype and siunitx when loading things like \textmu and \textminus
+\usepackage{textcomp}
+
 
 % allow landscape for e.g. wide tables
 \usepackage{lscape}
@@ -53,6 +72,8 @@
 
 % Print URLs not in Typewriter Font                                     
 \def\UrlFont{\rm}
+
+
 
 % bold small caps fix
 %\normalfont
@@ -65,8 +86,8 @@
 \newcolumntype{_}{>{\global\let\currentrowstyle\relax}}
 \newcolumntype{^}{>{\currentrowstyle}}
 \newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}
-  #1\ignorespaces
-}
+						  #1\ignorespaces
+						  }
 \renewcommand{\arraystretch}{1.2}
 
 % merge rows in tables

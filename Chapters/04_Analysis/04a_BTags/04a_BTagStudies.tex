@@ -1,35 +1,55 @@
 \chapter{B Tagging Studies}
 \label{c:b_tagging_studies}
 
-In order to study \ttbar events, event selections often use the reconstruction of jets as a key part of the
-event signature. More specifically, b tagging is used to identify those jets which come from a b quark. There
-are several algorithms which carry out b tagging in CMS: Combined Secondary Vertex, CombinedSecondaryVertex,
-CombinedSecondaryVetexMVA, JetBProbability, JetProbability, SimpleSecondaryVertex (High Efficiency),
-SimpleSecondaryVertex (High Purity), SoftMuon, SoftMuonByPt, SoftMuonByIP3d, TrackCounting (High Efficiency),
-TrackCounting (High Purity). These algorithms perform analyses on the jet in question and produce a
-discriminator output (simply a number). In all cases, a more positive discriminator value indicates a jet that
-is more likely to be a b flavour jet. The performance of the different algorithms vary depending on which jet
-characteristics are used to calculate the discriminator.
+Since the \tquark decays to a \W boson and a \bquark, the understanding of these decay products is important
+in studies of \ttbar events. In particular, methods to identify jets coming from a \bquark, known as
+\btagging, are commonly used to increase the efficiency of a signal selection. CMS has several algorithms for
+\btagging: TrackCounting (High Efficiency) and TrackCounting (High Purity), JetBProbability; JetProbability;
+SoftMuon; SoftMuonByPt; SoftMuonByIP3d; SimpleSecondaryVertex (High Efficiency); SimpleSecondaryVertex (High
+Purity); CombinedSecondaryVertex; CombinedSecondaryVetexMVA. These algorithms produce a discriminator output
+for each jet which indicates how likely it is to be a \b flavour jet. In all cases, a more positive
+discriminator value indicates a jet that is more likely to be a \b flavour jet. Performance of the different
+algorithms varies owing to the fact that they use different jet properties to produce their discriminators.
 
-The curent CMS recommendation is to use the Combined Secondary Vertex for physics analyses. This algorithm
-reconstructs the event vertices using the Trimmed Kalman Vertex Finder TODO:DESCRIBE THIS?
-%TODO: MORE INFO ABOUT THIS, SEE PRESENTATION
-and applies cuts to these vertices in order to find a secondary vertex, the b decay vertex.
-Depending on how many candidate secondary vertices are found, different combinations of variables such as
-impact parameter, flight distance significance between primary and secondary vertices, kinematics and
-secondary, kinematics and secondary vertex information are used to calculate a discriminator value \cite{CSV}.
+\section{Inputs to \btagging algorithms}
+\label{s:inputs_to_btagging_algorithms}
 
-The JProbability algorithms take all tracks, calculate the signed impact parameter significance and calculate
-the discriminator based on the negative log of the confidence level that all tracks are from the primary
-vertex. The Simple Secondary Vertex uses an adaptive vertex finder to reconstruct the secondary vertex and
-calculate the disciminator based on variables such as the decay length significance. The Soft Muon algorithms
+\subsection{Vertex Finding}
+\label{ss:vertex_finding}
+
+
+\subsection{Impact Parameter}
+\label{ss:impact_parameter}
+
+
+\section{Algorithm descriptions}
+The JetProbability algorithm calculates the signed impact parameter significance based on all good tracks in
+the jet, and uses this significance to calculate discriminator based on the confidence level that all tracks
+are from the primary vertex. The JetBProbability variant of this algorithm uses only the four most displaced
+tracks in the jet.
+
+The Simple Secondary Vertex uses an adaptive vertex finder to reconstruct the secondary vertex and
+calculate the disciminator based on variables such as the decay length significance.
+
+The Soft Muon algorithms
 use the detection of a muon from the semi-leptonic decay of a b quark and a neural net analysis. The Track
-Counting algorithms simply take all the tracks within a jet and order them by decreasing order o signed impact
-parameter significance, with the discriminator being the significance of the second track (high efficiency) or
+Counting algorithms simply take all the tracks within a jet and order them by decreasing order of signed
+impact parameter significance, with the discriminator being the significance of the second track (high efficiency) or
 the third track (high purity).
+
+The current CMS recommendation is to use the Combined Secondary Vertex (CSV) algorithm for physics analyses.
+This algorithm reconstructs the event vertices using the Trimmed Kalman Vertex Finder, which fits tracks to a
+primary vertex after removing incompatible tracks and applies cuts to these vertices in order to find a
+secondary vertex (the \b decay vertex). Depending on how many candidate secondary vertices are found,
+different combinations of variables such as impact parameter, flight distance significance between primary and
+secondary vertices, event kinematics and secondary vertex information are used to calculate a discriminator
+value \cite{CSV}.
 
 TODO: INCLUDE A MORE DETAILED DESCRIPTION OF EACH ALGORITHM? ALSO INCLUDE PLOTS FOR OTHER ALGORITHMS?
 %TODO: INCLUDE A MORE DETAILED DESCRIPTION OF EACH ALGORITHM?
+
+\section{Algorithm analysis}
+\label{s:algorithm_analysis}
 
 Analysing a Fall 2011 \ttbar Madgraph Monte Carlo sample (/TTJets\_TuneZ2\_7TeV-madgraph-tauola/) simulated in
 CMSSSW 44X, all algorithms produced higher discriminator values for the b jets in the sample than the light
