@@ -7,7 +7,7 @@ The LHC at the CERN was constructed with the aim of investigating various aspect
 physics. The Standard Model has stood up well to scientific scrutiny for several decades.
 However, areas of current interest such as the Higgs mechanism and the role electroweak symmetry breaking
 plays in it, and physics beyond the standard model such as supersymmetry (explained in further detail in
-Section~\ref{c:the_standard_model_and_top_physics}), require the acceleration of particles to high energies
+Section~\ref{c:the_standard_model}), require the acceleration of particles to high energies
 (of the order of TeV). The Compact Muon Solenoid (CMS) general-purpose detector is one of four detectors
 located around the LHC, approximately 100~m below ground level. The geographical site and location of the
 various experiments are shown in Figure~\ref{fig:LHC_schematic}.
@@ -15,7 +15,7 @@ various experiments are shown in Figure~\ref{fig:LHC_schematic}.
 \begin{figure}[hbtp]
    \centering
      \includegraphics[width=\textwidth]{Chapters/02_Detector/Images/0812015.jpg}\\
-     \caption{Schematic of LHC and experiments (bottom). CMS is located at Point
+     \caption[Schematic of LHC and experiments.]{Schematic of LHC and experiments. CMS is located at Point
      5 on the LHC ring.}
      \label{fig:LHC_schematic}
 \end{figure}
@@ -51,8 +51,8 @@ designed to investigate heavy ion collisions (as opposed to protons), while LHCb
 \begin{figure}[hbtp]
    \centering
      \includegraphics[width=0.75\textwidth]{Chapters/02_Detector/Images/int_lumi_cumulative_pp_2.png}\\
-     \caption{Cumulative luminosity delivered to CMS over time during 2010, 2011 and 2012 proton-proton data
-     taking periods.}
+     \caption[Cumulative luminosity delivered to CMS during 2010, 2011 and 2012.]{Cumulative luminosity
+     delivered to CMS over time during 2010, 2011 and 2012 proton-proton data taking periods.}
      \label{fig:integrated_luminosity}
 \end{figure}
 
@@ -74,7 +74,9 @@ buffered on the detector.
 \begin{figure}[hbtp]
    \centering
      \includegraphics[width=\textwidth]{Chapters/02_Detector/Images/cms_120918_02.pdf}\hfill
-     \caption{Diagrammatic sectional view of the CMS detector \cite{Sakuma_sketchup}}
+     \caption[Diagrammatic sectional view of the CMS detector.]{Diagrammatic sectional view of the CMS
+     detector
+     \cite{Sakuma_sketchup}.}
      \label{fig:CMS_diagram}
  \end{figure}
 
@@ -133,7 +135,8 @@ Shutdown 1 \cite{Butz:1497745}.
 \begin{figure}[hbtp]
    \centering
      \includegraphics[width=\textwidth]{Chapters/02_Detector/Images/tracker.pdf}\hfill
-     \caption{Cross-sectional diagram of the CMS strip tracker; each line represents a detector module
+     \caption[Cross-sectional diagram of the CMS strip tracker.]{Cross-sectional diagram of the CMS strip
+     tracker; each line represents a detector module
      \cite{CMS_TDR1}}
      \label{fig:CMS_strip_tracker}
 \end{figure}
@@ -335,8 +338,9 @@ as photostatistics, electronics noise and temperature stability and calibration 
 \begin{figure}[hbtp]
    \centering
      \includegraphics[width=0.7\textwidth]{Chapters/02_Detector/Images/ECAL.pdf}\hfill
-     \caption{Diagram of the ECAL showing barrel supermodules, endcaps and preshower detectors.
-     \cite{ECAL_calibration_and_resolution_at_7TeV}}
+     \caption[Diagram of the ECAL showing barrel supermodules, endcaps and preshower detectors.]{Diagram of
+     the ECAL showing barrel supermodules, endcaps and preshower
+     detectors~\cite{ECAL_calibration_and_resolution_at_7TeV}.}
      \label{fig:CMS_ECAL}
 \end{figure}
 
@@ -362,8 +366,9 @@ light as they do which is fed to readout electronics via optical fibres to measu
 \begin{figure}[hbtp]
    \centering
      \includegraphics[width=\textwidth]{Chapters/02_Detector/Images/HCAL.pdf}\hfill
-     \caption{A longitudinal schematic of the HCAL showing the location of the hadron barrel (HB), endcap
-     (HE), outer (HO) and forward (HF) calorimeters \cite{CMS_experiment}}
+     \caption[A longitudinal schematic of the CMS HCAL.]{A longitudinal schematic of the CMS HCAL showing the
+     location of the hadron barrel (HB), endcap (HE), outer (HO) and forward (HF) calorimeters
+     \cite{CMS_experiment}.}
      \label{fig:CMS_HCAL}
 \end{figure} 
 
@@ -379,8 +384,8 @@ withstand its own magnetic bursting force on the coil \cite{CMS_experiment}.
 \begin{figure}[hbtp]
    \centering
      \includegraphics[width=0.5\textwidth]{Chapters/02_Detector/Images/Cold_mass.png}\hfill
-     \caption{Bore of the CMS solenoid magnet in vertical position in the CMS assembly hall, SX5, prior to
-     installation \cite{CMS_experiment}}
+     \caption[Bore of the CMS solenoid magnet in vertical position in the CMS assembly hall, SX5.]{Bore of the
+     CMS solenoid magnet in vertical position in the CMS assembly hall, SX5, prior to installation \cite{CMS_experiment}}
      \label{fig:CMS_magnet_cold_bore}
 \end{figure}
  
@@ -417,7 +422,8 @@ used for muon triggering \cite{CMS_experiment}.
 \begin{figure}[hbtp]
    \centering
      \includegraphics[width=0.65\textwidth]{Chapters/02_Detector/Images/MuonSys-mod3.png}\hfill
-     \caption{Schematic representation of a quarter of the CMS muon system \cite{Muon_tracking}}
+     \caption[Schematic representation of a quarter of the CMS muon system.]{Schematic representation of a
+     quarter of the CMS muon system \cite{Muon_tracking}}
      \label{fig:CMS_muon_system}
 \end{figure}
 
@@ -624,8 +630,8 @@ geometrical cuts, can be removed if they appear to originate from a conversion \
 Local reconstruction in the muon chambers provide hit position and time of arrival of a muon. This information
 from the DTs and CSCs is then amalgamated to create muon track hits and segments. These are used by the muon
 global reconstruction algorithms to reconstruct ``standalone'' muons. An inner detector segment is used as a
-seed for a Kalman Filter (EXPLAIN THIS?) \cite{kalman_filter} and possible trajectories are generated. By
-removing hits which are not likely to have come from the track in question, the likely trajectory is
+seed for a Kalman Filter (EXPLAIN THIS?) \cite{kalman_filter, Speer:927395} and possible trajectories are
+generated. By removing hits which are not likely to have come from the track in question, the likely trajectory is
 constructed layer-by-layer. A final fit is carried out, including an extrapolation to the interaction point
 for greater momentum resolution.
 
@@ -657,7 +663,7 @@ Calo Tower is formed for later use in jet reconstruction algorithms.
 
 The particle flow (PF) algorithm performs the reconstruction of particles in the jet, and the $anti-k_{t}$
 algorithm is used to perform the clustering of these particles into jets. The $anti-k_{t}$ algorithm,
-explained in detail in \cite{anti_kt}, is one of several jet algorithms that exist in CMS to
+explained in detail in \cite{Cacciari:2008gp}, is one of several jet algorithms that exist in CMS to
 combine reconstructed particles into jets. It defines a distance $d_{ik}$ between reconstructed particles as
 
 \begin{equation}
@@ -704,41 +710,51 @@ ensure the selection of high quality jets. The requirements, which are known as 
   \item for jets with abseta~<~2.4, the number of charged hadronic constituents (NCH) must be $>~0$
 \end{itemize}
 
-Jet energy resolution corrections are also applied (known as jet smearing) to account to the fact that jet
-energy resolution has been measured to be worse in data than in simulation. These PF jet corrections are
-obtained using 0.8\fbinv of 2011 dijet data and 19.7\fbinv of 2012 dijet data
-\cite{Chatrchyan:2011ds,jet_res_2012}.
-
 \subsubsection{B Jets}
 \label{sss:b_jets}
 The process of identifying jets coming from b-quarks is known as b-tagging and is very important in top quark
 physics due to the decay of the top to a W-boson and a b-quark. B-tagging can therefore help to appreciably
 reduce background processes in signal. A description of the several algorithms available in CMS is given in
-\ref{c:b_tagging_studies}. The algorithm used in the differential cross sections analysis is the combined
+\ref{c:b_tagging_study}. The algorithm used in the differential cross sections analysis is the combined
 secondary vertex tagger (CSV). The relatively long lifetime of b quarks means that they travel a significant
-distance (of the order of a few cm) before decaying. This leads to events with b-jets possessing a
-secondary vertex distinguishable at a significant distance from the primary interaction vertex. This secondary vertex
-information, together with track based information such as the number of tracks in the jet, the invariant
-mass of the secondary vertex and the impact parameter significance of each jet track is used by the CSV
-algorithm to produce a discriminator ranging from 0 to 1, with larger numbers corresponding to a higher
-probability of a jet being a \bjet.
+distance (of the order of a few cm) before decaying. This leads to events with b-jets possessing a secondary
+vertex distinguishable at a significant distance from the primary interaction vertex. This secondary vertex
+information, together with track based information such as the number of tracks in the jet, the invariant mass
+of the secondary vertex and the impact parameter significance (described below) of each jet track is used by
+the CSV algorithm to produce a discriminator ranging from 0 to 1, with larger numbers corresponding to a
+higher probability of a jet being a \bjet. Three \btagging working points are used in CMS: tight, medium and
+loose. The medium working point is used in the different cross sections analysis, which carries a 1~\% mis-tag
+rate and approximately 70~\% b-tag efficiency. The tight and loose working points have mis-tag rates of 0.1~\% and
+10~\% respectively~\cite{Chatrchyan:2012jua}.
 
 The impact parameter (IP) of a track is defined as the distance between the track and the vertex at the point
 of closest approach~\cite{CMS-PAS-BTV-09-001}. Figure~\ref{fig:impact_parameter} shows a schematic
-representation of the impact parameter for one single track. Typicall, the 
+representation of the impact parameter for one single track. The IP measurement can be made in either the
+plane transverse to the beam line, or in three dimensions. The impact parameter significance
+(IP/$\sigma_{IP}$) is often used instead as an input to \btagging algorithms to allow for the experimental
+resolution. Due to the fact that the uncertainty on the IP value alone can be as large as the IP itself. The
+IP significance distribution of light jets ($u$, $d$, $s$ and gluon jets) form a gaussian about a mean of zero
+and width of one, with a slightly extended tail due to tracks from particles in the jet with long lifetimes.
+The equivalent distribution for $c$ jets and $b$ jets show an asymmetric distribution at positive values due
+to the long lifetime of B and C hadrons, making the IP significance a useful parameter to distinguish between
+light and heavy flavour jets~\cite{CMS-AN-2005-041}. The signed IP is also used, in which the sign is
+obtained from the sign of the scalar product of the IP vector and the jet direction, so that it is positive if the angle between the IP vector and the jet direction is less
+than 90$^{\circ}$, and negative if the angle is greater than 90$^{\circ}$. Tracks belonging in a \bjet would
+have an IP sign >0, since the jet direction is an estimate of the direction of travel of the B hadron.
+However, the sign could be inaccurately calculated in cases with badly reconstructed jet directions or primary
+vertices, or badly measured track parameters~\cite{CMS-AN-2005-041}.
 
 \begin{figure}[hbtp]
    \centering
-     \includegraphics[width=\textwidth]{Chapters/02_Detector/Images/impact_parameter}\\
-     \caption{Graphical representation of a track impact parameter~\cite{CMS-PAS-BTV-09-001}.}
+     \includegraphics[width=0.8\textwidth]{Chapters/02_Detector/Images/impact_parameter}\\
+     \caption[Graphical representation of a track impact parameter.]{Graphical representation of a track
+     impact parameter~\cite{CMS-PAS-BTV-09-001}.}
      \label{fig:impact_parameter}
 \end{figure}
 
-TODO: EXPLAIN IMPACT PARAMETER SIGNIFICANCE WITH A DIAGRAM
-%TODO:EXPLAIN IMPACT PARAMETER SIGNIFICANCE WITH A DIAGRAM.
-Three working points are used in CMS: tight, medium and loose. The medium working point is used in the different
-cross sections analysis, which carries a 1~\% mis-tag rate and approximately 70~\% b-tag efficiency. The tight
-and loose working points have mis-tag rates of 0.1~\% and 10~\% respectively \cite{btagging}.
+TODO: PARAGRAPH ON VERTEX FINDING
+
+
 
 \subsection{Track Reconstruction}
 \label{ss:track_reconstruction}
@@ -756,7 +772,7 @@ more difficult to find such as those of displaced particles or with low \pt.
 
 Six iterations are carried out in total, and each iteration can be split into four steps. Seeds are created
 using 2 or 3 hits to produce intial track candidates. The seed gives an estimate of the trajectories of the
-potential track candidates. A Kalman Filter (EXPLAIN THIS?) \cite{kalman_filter} based track finding algorithm
+potential track candidates. A Kalman Filter \cite{kalman_filter, Speer:927395} based track finding algorithm
 then looks for further hits along an extrapolated path of the seed trajectory. A track fitter is then run
 using information from the previous steps to produce final values for trajectory parameters. The fourth and
 final step then rejects tracks which fail specified quality checks \cite{track_reconstruction}.

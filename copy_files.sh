@@ -4,6 +4,10 @@ origin_file_path=/Volumes/soolin/03_Measurement/CMSSW_7_4_7_DPS/src/DailyPythonS
 origin_file_path_for_lepton_scale_factors=/Users/phjaj/Documents/workspace/AN-14-071_check/notes/AN-14-071/trunk/results/other_plots/leptonSF/
 destination_file_path=/Users/phjaj/Documents/workspace/Thesis/Chapters/
 
+# Muon channel non-isolated region PF relative isolation (muon)
+cp ${origin_file_path}plots/control_plots/before_fit/7TeV/qcd_plots/QCD_muon_pfIsolation_0btag.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/qcd_plots/QCD_muon_pfIsolation_0btag.pdf
+cp ${origin_file_path}plots/control_plots/before_fit/8TeV/qcd_plots/QCD_muon_pfIsolation_0btag.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/qcd_plots/QCD_muon_pfIsolation_0btag.pdf
+
 # NVertices before and after pileup reweighting (electron)
 cp ${origin_file_path}plots/control_plots/before_fit/7TeV/EPlusJets_nVertex__with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/EPlusJets_nVertex__with_ratio.pdf
 cp ${origin_file_path}plots/control_plots/before_fit/7TeV/EPlusJets_nVertex_reweighted__with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/EPlusJets_nVertex_reweighted__with_ratio.pdf
@@ -187,11 +191,11 @@ cp ${origin_file_path}plots/binning/muon_ST_7TeV.pdf ${destination_file_path}04_
 cp ${origin_file_path}plots/binning/muon_MT_7TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/muon_MT_7TeV.pdf
 cp ${origin_file_path}plots/binning/muon_WPT_7TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/muon_WPT_7TeV.pdf
 
-cp ${origin_file_path}plots/binning/muon_MET_8TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/muon_MET_8TeV.pdf}\\
-cp ${origin_file_path}plots/binning/muon_HT_8TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/muon_HT_8TeV.pdf}\\
-cp ${origin_file_path}plots/binning/muon_ST_8TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/muon_ST_8TeV.pdf}\\
-cp ${origin_file_path}plots/binning/muon_MT_8TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/muon_MT_8TeV.pdf}\\
-cp ${origin_file_path}plots/binning/muon_WPT_8TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/muon_WPT_8TeV.pdf}\\
+cp ${origin_file_path}plots/binning/muon_MET_8TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/muon_MET_8TeV.pdf
+cp ${origin_file_path}plots/binning/muon_HT_8TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/muon_HT_8TeV.pdf
+cp ${origin_file_path}plots/binning/muon_ST_8TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/muon_ST_8TeV.pdf
+cp ${origin_file_path}plots/binning/muon_MT_8TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/muon_MT_8TeV.pdf
+cp ${origin_file_path}plots/binning/muon_WPT_8TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/muon_WPT_8TeV.pdf
 
 # Fitting variable distributions (8TeV)
 cp ${origin_file_path}plots/8TeV/fit_variables/electron/MET/electron_absolute_eta/MET_inclusive_electron_absolute_eta_2orMoreBtags_templates.pdf ${destination_file_path}04_Analysis/04b_XSections/images/8TeV/fit_variables/electron/MET/electron_absolute_eta/MET_inclusive_electron_absolute_eta_2orMoreBtags_templates.pdf

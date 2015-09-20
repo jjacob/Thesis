@@ -1,4 +1,4 @@
-\chapter{7 TeV and 8 TeV Differential Cross Section Measurement: Systematic Uncertainties and Results}
+\chapter{7 TeV and 8 TeV Differential Cross Section Measurement: \\ Systematic Uncertainties and Results}
 \label{c:Differential_Cross_Section:systematics_and_results}
 
 \section{Systematic uncertainties}
@@ -61,7 +61,7 @@ varying the tau energy has a more significant influence on the measurement.
      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/tau_cross_checks/comparison_measured_fakeTTJets_normalised_to_one.pdf}\hfill
      % \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/tau_cross_checks/comparison_measured_fakeTTJets.pdf}
      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/placeholder.png}
-\caption{Comparison of the signal and fake distributions from semi-leptonic \ttbar events after
+	 \caption[]{Comparison of the signal and fake distributions from semi-leptonic \ttbar events after
      selection in simulation in the electron+jets channel at $\roots=8\TeV$ normalised to one (left) and
      normalised to the numbers of events (right). TODO:MAKE SECOND PLOT} %TODO:MAKE SECOND PLOT
      \label{fig:tau_shape_number_comparison}
@@ -105,11 +105,32 @@ influence only the template normalisations that are input to the fitting process
 \subsection{Theoretical Uncertainties}
 \label{ss:theoretical_uncertainties}
 
+\subsubsection{7TeV V+Jets theory systematic template}
+\label{sss:7TeV_vjets_theory_systematic_template}
+
 The factorisation and normalisation scale ($Q^{2}$ up/down) uncertainty is evaluated using simulation samples
 produced with the scale varied by factors of 2 (up) and 0.5 (down). This has been evaluated to be one of the
 dominating uncertainties in this analysis. The uncertainty in the matching theshold (matching up/down) for
 \ttbar events is evaluated in the same way.
 
+Unfortunately, Monte Carlo simulation for theoretical systematic uncertainties at $\roots=7\TeV$ have not
+been made available for W+jets and Z+jets processes. However, it can be seen in
+Figure~\ref{fig:wjets_7TeV_8TeV_comparison} that the W+jets template shapes at $\roots=7\TeV$ and
+$\roots=8\TeV$ are similar. The V+jets template shapes used to evaluate these theoretical systematics are
+therefore obtained from $\roots=8\TeV$ theoretical systematic datasets, and then scaled to the normalisation
+in the nominal sample at $\roots=7\TeV$.
+
+\begin{figure}[hbtp]
+    \centering
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/WJets_comparison/TTbar_plus_X_analysis_EPlusJets_Refselection_MET_patType1CorrectedPFMet_MET_0orMoreBtag.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/WJets_comparison/TTbar_plus_X_analysis_EPlusJets_Refselection_Electron_electron_AbsEta_0orMoreBtag.pdf}\\
+	 \caption{Shape comparison of W+jets templates in $\roots=7\TeV$ and $\roots=8\TeV$ Monte Carlo
+	 simulation for \met (left) and electron \abseta (right) in the electron+jets channel.}
+     \label{fig:wjets_7TeV_8TeV_comparison}
+\end{figure}
+
+\subsubsection{Hadronisation Uncertainty}
+\label{sss:hadronisation_uncertainty}
 The uncertainty due to hadronisation modelling is evaluated by comparing a simulated sample
 generated using the \POWHEG generator and \PYTHIA to model the hadron showering (\POWHEG+\PYTHIA) to a sample
 generator using the same \POWHEG generator and \HERWIG to model the hadron showering (\POWHEG+\HERWIG). The
@@ -118,12 +139,16 @@ hadronisation uncertainty. All variables, and in particular those sensitive to h
 such as \HT and \st, are significantly affected by this systematic, with a larger uncertainty at lower
 values of the primary variables. %\a MADGRAPH+HERWIG sample was not available.
 
+\subsubsection{PDF Uncertainties}
+\label{sss:PDF_uncertainties}
 The proton PDF uncertainties are evaluated similarly, with 44 distinct weights from the CTEQ 6.6 PDF sets used
 to reweight events in the simulated samples and repeat the analysis.
 Top quark mass uncertainty is evaluated using \ttbar samples produced with two different top quark masses of
 169.5\GeV and 173.5\GeV, and scaling the the error obtained using these samples to the top mass uncertainty of
 $\pm1.0\GeV$.
 
+\subsubsection{\ttbar \pt Mismodelling}
+\label{sss:top_pt_modelling}
 There is a known problem with event generators mismodelling the top quark \pt distribution; the distribution
 of the transverse momentum of top quarks in data was found to be softer than that in simulation
 \cite{Chatrchyan:2012saa}. The effect of this correction on the nominal measurement was evaluated to be
@@ -137,34 +162,11 @@ the \ttbar process and the hadronisation.
 \subsection{Systematic Uncertainty Tables}
 \label{ss:systematic_uncertainty_tables}
 
-\input{Chapters/04_Analysis/04b_XSections/tables/systematics/7TeV/MET/MET_systematics_7TeV_combined}
-\begin{landscape}
-\input{Chapters/04_Analysis/04b_XSections/tables/systematics/7TeV/HT/HT_systematics_7TeV_combined}
-\end{landscape}
-\begin{landscape}
-\input{Chapters/04_Analysis/04b_XSections/tables/systematics/7TeV/ST/ST_systematics_7TeV_combined}
-\end{landscape}
-\input{Chapters/04_Analysis/04b_XSections/tables/systematics/7TeV/WPT/WPT_systematics_7TeV_combined}
-%\begin{landscape}
-\input{Chapters/04_Analysis/04b_XSections/tables/systematics/7TeV/MT/MT_systematics_7TeV_combined}
-%\end{landscape}
-
-\input{Chapters/04_Analysis/04b_XSections/tables/systematics/8TeV/MET/MET_systematics_8TeV_combined}
-\begin{landscape}
-\input{Chapters/04_Analysis/04b_XSections/tables/systematics/8TeV/HT/HT_systematics_8TeV_combined}
-\end{landscape}
-\begin{landscape}
-\input{Chapters/04_Analysis/04b_XSections/tables/systematics/8TeV/ST/ST_systematics_8TeV_combined}
-\end{landscape}
-\input{Chapters/04_Analysis/04b_XSections/tables/systematics/8TeV/WPT/WPT_systematics_8TeV_combined}
-%\begin{landscape}
-\input{Chapters/04_Analysis/04b_XSections/tables/systematics/8TeV/MT/MT_systematics_8TeV_combined}
-%\end{landscape}
-
-TODO:COULD PUT THE TYPICAL SYSTEMATICS TABLE FROM THE PAPER IN HERE AND PUT THE FULL SYSTEMATICS TABLES IN THE
-APPENDICES?
+TODO:insert typical systematics tables here
 %TODO:COULD PUT THE TYPICAL SYSTEMATICS TABLE FROM THE PAPER IN HERE AND PUT THE FULL SYSTEMATICS TABLES IN
 % THE APPENDICES?
+%\input{Chapters/04_Analysis/04b_XSections/tables/systematics/7TeV/MET/MET_systematics_7TeV_combined}
+%\input{Chapters/04_Analysis/04b_XSections/tables/systematics/7TeV/MET/MET_systematics_7TeV_combined}
 
 \section{Results}
 \label{s:results}
@@ -174,7 +176,7 @@ performed individually in the electron+jets and muon+jets channels, resulting in
 each channel. The measurement is then carried out as outlined in Section~\ref{ss:measurement} on the numbers
 of events in each channel, in addition to the sum total of the two channels to calculate the cross section in
 the combined semi-leptonic channel. This section summarises the normalised differential cross sections for the
-primary variables investigated in this analysis. Figures ~\ref{fig:result_MET_7TeV_combined} to
+primary variables investigated in this analysis. Figures~\ref{fig:result_MET_7TeV_combined} to
 \ref{fig:result_WPT_7TeV_combined} show the distributions at $\roots=7\TeV$ and
 Figures~\ref{fig:result_MET_8TeV_combined} to \ref{fig:result_WPT_8TeV_combined} show the distributions at
 $\roots=8\TeV$. The numerical values are included in Appendix~\ref{as:results_tables}.
