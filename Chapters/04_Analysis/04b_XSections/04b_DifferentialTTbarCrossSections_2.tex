@@ -17,8 +17,8 @@ the scale factor:
 
 where $N_{\rm processed}$ is the total number of events processed for each Monte Carlo sample and $\sigma$ is
 the production cross section of each process. The numbers of events passing each selection step in data and
-in Monte Carlo simulation, after scaling to the measured luminosity, are shown for both the \eplusjets and
-\muplusjets channels in Table~\ref{tab:cut_flow_7TeV} at $\roots=7\TeV$, and in Table~\ref{tab:cut_flow_8TeV}
+in Monte Carlo simulation, after scaling to the measured luminosity, are shown for both the electron+jets and
+muon+jets channels in Table~\ref{tab:cut_flow_7TeV} at $\roots=7\TeV$, and in Table~\ref{tab:cut_flow_8TeV}
 at $\roots=8\TeV$.
 
 \input{Chapters/04_Analysis/04b_XSections/tables/cutflow/cut_flow_7TeV}
@@ -270,7 +270,6 @@ to low numbers of events, and that the inclusive template is largely shaped by e
 Therefore, the inclusive QCD template is used rather than those in individual bins. Similar plots showing the
 same behaviour for the other primary variables at $\roots=8\TeV$ are shown in
 Appendix~\ref{as:fitting_variable_QCD_template_comparisons}.
-TODO: HAVE NOT INCLUDED 7TEV COMPARISONS ANYWHERE %TODO: INCLUDE THE 7TeV COMPARISONS ALSO?
 
 \begin{figure}[hbtp]
     \centering
@@ -280,10 +279,10 @@ TODO: HAVE NOT INCLUDED 7TEV COMPARISONS ANYWHERE %TODO: INCLUDE THE 7TeV COMPAR
      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/muon/MET/angle_bl/qcd/MET_angle_bl_1orMoreBtag_QCD_template_comparison.pdf}\\
      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/electron/MET/M3/qcd/MET_M3_0orMoreBtag_QCD_template_comparison.pdf}\hfill
      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/8TeV/fit_variables/muon/MET/M3/qcd/MET_M3_0orMoreBtag_QCD_template_comparison.pdf}\\
-	 \caption[Normalised distributions of the QCD templates for the three fit variables in \met bins.]{Normalised
-	 distributions of the QCD templates for the three fit variables lepton \abseta (upper), $\alpha$ (middle) and
-	 M3 (lower) inclusive across all \met bins and for the lowest three \met bins at $\roots=8\TeV$ in the
-	 electron+jets channel (left) and in the muon+jets channel (right).}
+	 \caption[Normalised distributions of the QCD templates for the three fit variables in \met bins
+	 at $\roots=8\TeV$.]{Normalised distributions of the QCD templates for the three fit variables lepton \abseta
+	 (upper), $\alpha$ (middle) and M3 (lower) inclusive across all \met bins and for the lowest three \met bins
+	 at $\roots=8\TeV$ in the electron+jets channel (left) and in the muon+jets channel (right).}
      \label{fig:fit_variable_qcd_comparisons_8TeV}
 \end{figure}
 
@@ -293,8 +292,7 @@ $\roots=8\TeV$ in each \met bin and also the inclusive \met V+jets template.
 As is the case for the QCD background template, it can be seen in the V+jets templates that there are
 diminished statistics available in higher bins, and the inclusive template shape is largely governed by the
 lower bins. Similar plots demonstrating the same behaviour for the other primary variables at $\roots=8\TeV$
-are shown in Appendix~\ref{as:fitting_variable_vjets_template_comparisons}. TODO: HAVE NOT INCLUDED 7TEV
-COMPARISONS ANYWHERE %TODO: INCLUDE THE 7TeV COMPARISONS ALSO?
+are shown in Appendix~\ref{as:fitting_variable_vjets_template_comparisons}.
 
 \begin{figure}[hbtp]
     \centering
@@ -312,8 +310,8 @@ COMPARISONS ANYWHERE %TODO: INCLUDE THE 7TeV COMPARISONS ALSO?
 \end{figure}
 
 \FloatBarrier
-%TODO: Fit Template Plots
-TODO: Insert Fit Template Plots
+%TODO: Fit Template Plots?
+TODO: Insert Fit Template Plots?
 
 \subsection{Fit Results}
 \label{ss:fit_results}
@@ -377,6 +375,32 @@ agreement between the data and the simulation is within the fit uncertainty.
 \end{figure}
 
 \FloatBarrier
+
+\section{Fit cross-checks}
+\label{s:fit_cross_section}
+The correlations between the fitted processes, $N_{\ttbar}$, $N_{singletop}$, $N_{V+Jets}$ and $N_{QCD}$, for
+the \met variable in the electron+jets channel at $\roots=8\TeV$ are shown in
+Figure~\ref{fig:correlation_plots_8TeV_electron}. The equivalent plots for $\roots=7\TeV$ are shown in
+Figure~\ref{fig:correlation_plots_7TeV_electron} in Appendix~\ref{as:fit_correlations}. It can be seen that
+the correlation between signal and QCD remains very low for all \met bins. The \VpJets template is negatively
+correlated with the QCD template in low bins, whereas this is not seen in higher bins due to these bins
+containing very few QCD events.
+
+\begin{figure}[hbtp]
+    \centering
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/fitchecks/8TeV/Correlations_electron_MET_0-27.pdf}\hfill    
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/fitchecks/8TeV/Correlations_electron_MET_27-52.pdf}\\
+	 \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/fitchecks/8TeV/Correlations_electron_MET_52-87.pdf}\hfill
+	 \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/fitchecks/8TeV/Correlations_electron_MET_87-130.pdf}\\
+	 \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/fitchecks/8TeV/Correlations_electron_MET_130-172.pdf}\hfill
+	 \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/fitchecks/8TeV/Correlations_electron_MET_172-inf.pdf}\\
+	 \caption[Correlation between fit processes for the \met variable in the electron+jets channel at
+	 $\roots=8\TeV$.]{Correlation between fit processes for the \met variable in the electron+jets channel at
+	 $\roots=8\TeV$ in bins 0-27\GeV (upper left), 27-52\GeV (upper right), 52-87\GeV (middle left), 87-130\GeV
+	 (middle right), 130-172\GeV (lower left) and $\geq$172\GeV (lower right).}
+     \label{fig:correlation_plots_8TeV_electron}
+\end{figure}
+
 
 \section{Background Subtraction}
 \label{s:background_subtraction}

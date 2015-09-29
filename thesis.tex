@@ -8,11 +8,6 @@
 % Put all the style files you want in the directory StyleFiles and usepackage like this:
 %\usepackage{StyleFiles/watermark}
 
-% chapters names in LoF and LoT
-%\usepackage{StyleFiles/chaptersinindex}
-%\AddChaptersToIndex{lof}{figure}
-%\AddChaptersToIndex{lot}{table}
-
 \usepackage{StyleFiles/mystyle}
 \include{Macros/ParticlePhysicsMacros}
 
@@ -45,25 +40,36 @@
 % - \input inputs the content of the given file like it was copy and pasted there
 % manually.
 
-\hypersetup{pageanchor=false}
+%\hypersetup{pageanchor=false}
 \include{Chapters/00_FrontMatter/00a_Title}
-\hypersetup{pageanchor=true}
+%\hypersetup{pageanchor=true}
+
 % Set up front matter formatting
 % front matter should be single sided
-% roman page numbering for the page, abstract and index
+% single line spacing for abstract, acknowledgements, declaration and tables of contents
+\singlespacing
+% roman page numbering for the title page, abstract, acknowledgements, declaration and tables of contents
 \pagenumbering{roman}
+
+% single sided for abstract, acknowledgements, declaration and tables of contents
+%\newgeometry{}
 
 \include{Chapters/00_FrontMatter/00b_Abstract}
 \include{Chapters/00_FrontMatter/00c_Acknowledgements}
 \include{Chapters/00_FrontMatter/00d_Declaration}
 \include{Chapters/00_FrontMatter/00e_TableOfContents}
 
-% main text should be double sided
+% restore double sided geometry settings for main document (specified in mystyle.sty)
+%\restoregeometry
+%\setboolean{@twoside}{true}
+% restore double line spacing
+\doublespacing
 % change page numbering back to arabic (and start from 1)
 \pagenumbering{arabic}
 
 \include{Chapters/01_Introduction/01_Introduction}
-\include{Chapters/02_Detector/02_TheCMSDetectorAtTheLHC}
+\include{Chapters/02_Detector/02a_TheCMSDetectorAtTheLHC}
+\include{Chapters/02_Detector/02b_ComputingandOffline}
 \include{Chapters/03_Theory/03a_TheStandardModel}
 \include{Chapters/03_Theory/03b_Top_Physics}
 \include{Chapters/04_Analysis/04a_BTags/04a_BTagStudies}

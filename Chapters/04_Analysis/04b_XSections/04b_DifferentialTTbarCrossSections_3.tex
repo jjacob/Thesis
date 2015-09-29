@@ -3,15 +3,19 @@
 
 \section{Systematic uncertainties}
 \label{s:systematic_uncertainties}
-The systematic uncertainties in this analysis are evaluated by changing the inputs by the associated
-uncertainties and measuring the change in the final result compared to the nominal measurement. The
-uncertainty from a systematic source is then taken as the maximum value between the up or down systematic
-variation. The total measurement error is obtained by adding the fitting, unfolding and systematic uncertainties in
-quadrature.
+The systematic uncertainties in this analysis are evaluated independently, under the assumption that
+systematic uncertainty sources are uncorrelated, by changing the inputs by the associated uncertainties
+($-1\sigma$ and $+1\sigma$) and measuring the deviation in the final result from the nominal measurement. The
+final result from systematic variations are generally found to be compatible with the nominal measurement within uncertainties. The
+uncertainties from each source are therefore symmetrised by using the maximum absolute deviation of the up or
+down systematic variation. The total systematic uncertainty is obtained by adding the systematic uncertainties
+in quadrature, and this is summed with the fitting and unfolding uncertainties to obtain the total measurement
+uncertainty. The normalisation of the final differential cross section will cancel systematic uncertainties
+that are correlated between bins of the primary variables.
 
-In the case of experimental systematics, the uncertainty is calculated by changing the templates in the
+In the case of experimental uncertainties, the uncertainty is calculated by changing the templates in the
 fitting process and/or their normalisations, and using the nominal \MADGRAPH response matrix in the unfolding
-process. In the case of theoretical systematics, the central fitting templates and normalisation are used,
+process. In the case of theoretical uncertainties, the central fitting templates and normalisation are used,
 while the response matrix information is changed according to the systematic being investigated.
 
 The systematic uncertainties are summarised in Tables~\ref{tab:MET_systematics_7TeV_combined} to
@@ -20,92 +24,108 @@ The systematic uncertainties are summarised in Tables~\ref{tab:MET_systematics_7
 \subsection{Experimental Uncertainties}
 \label{ss:experimental_uncertainties}
 
-Jet energy scale uncertainty is evaluated as a function of jet \pt and jet $\eta$ and a 10\% jet energy
-resolution uncertainty is applied. The jet energy scale uncertainty becomes significant at higher values of
-the primary variables, in particular of \met. This is because the jet energy corrections directly
-affects the \met measurement by virtue of the jet energy corrections being propagated to the \met (see
-Section~\ref{ss:met_corrections}). The \HT and \st variables are also affected, as the jet energy corrections
-directly change the \pt of jets in the event.
+Jet energy scale uncertainty is evaluated as a function of jet \pt and jet $\eta$, and a 10\% jet energy
+resolution uncertainty is applied. The jet energy scale (JES) directly changes the \pt of jets in
+the event, and also propagates to the event \met (see
+Section~\ref{ss:met_corrections}). Therefore the JES uncertainty becomes significant at higher
+values of the primary variables, in particular of \met, \HT and \st.
 
 Together with jet energy scale uncertainty, the \met energy uncertainties are the only systematics applied to
-both simulation and data. These affect how the uncertainty on the energy of the lepton in the event affects
-the \met. While the electron and muon energy uncertainties are not dominant sources of error in this analysis,
-the tau energy has been calculated to be larger. Events with tau leptons can pass the signal selection (known
-as fake events, i.e. non semi-leptonic \ttbar events which pass our signal selection) if they mimic the
-signature of an electron+jets or muon+jets \ttbar event:
+both simulation and data. These take account of uncertainty in the lepton energy, and propagates this to the
+\met in the event. While the electron and muon energy uncertainties are not dominant sources of error in this
+analysis, the effect of the uncertainty on tau energy has been calculated to be larger. Events with tau
+leptons can pass the signal selection (a component of what are known as fake events, i.e. non semi-leptonic
+\ttbar events which pass our signal selection) if they mimic the signature of an electron+jets or muon+jets
+\ttbar event:
 
 \begin{itemize}
  \item semi-leptonic tau, where $\tau \rightarrow e/\mu + \bar{\nu}_{e/\mu} + \nu_{\tau}$
+ (Figure~\ref{subfig:semileptonic_tau_events}).
  \item di-leptonic $e\tau$ \& $\mu\tau$, where $\tau \rightarrow q\bar{q}^{'} + \nu_\tau$
+ (Figure~\ref{subfig:dileptonic_tau_events_to_quarks}).
  \item di-leptonic $\tau\tau$, where $\tau \rightarrow q\bar{q}^{'} + \nu_\tau, \tau \rightarrow e/\mu
- + \bar{\nu}_{e/\mu}$
+ + \bar{\nu}_{e/\mu}$ (Figure~\ref{subfig:semileptonic_tau_events_to_quarks_and_leptons}).
 \end{itemize}
 
+\begin{figure}%[!]
+	\centering
+	\subfloat[]{
+		\includegraphics[width=0.45\textwidth]{Chapters/04_Analysis/04b_XSections/images/feynman_diagrams/semileptonic_tau_to_lepton}
+%	\caption{}
+		\label{subfig:semileptonic_tau_events}
+		}
+	\subfloat[]{
+		\includegraphics[width=0.45\textwidth]{Chapters/04_Analysis/04b_XSections/images/feynman_diagrams/dileptonic_tau_to_quarks}		
+		\label{subfig:dileptonic_tau_events_to_quarks}
+		}\\
+	\subfloat[]{
+		\includegraphics[width=0.45\textwidth]{Chapters/04_Analysis/04b_XSections/images/feynman_diagrams/dileptonic_tau_tau_to_quarks_and_leptons}
+		\label{subfig:semileptonic_tau_events_to_quarks_and_leptons}
+		}
+	\caption[Diagrams of semi-leptonic and dileptonic $\tau$ events.]{Feynman diagrams of semi-leptonic $\tau$
+	events (a), dileptonic events with one $\tau$ lepton (b) and dileptonic events with two $\tau$ leptons (c).}
+	\label{fig:tau_diagrams}
+\end{figure}
+
 If, for example, the leptonically decaying \W boson from a semi-leptonic \ttbar decay decays to a tau lepton
-and a tau neutrino, and the tau lepton then decays to another tau neutrino, an electron/muon and an
-electron/muon neutrino via a virtual \W boson, such an event would fake our signal and pass the \ttbar signal
-selection. Although the unfolding process removes fake events by subtracting the fake distribution obtained
-from simulation, the shape of the fake distribution in the nominal measurement is also used to subtract from
-the systematic measurements with the tau energy varied up and down. The comparison of shapes in the fake and
-the signal distributions from \ttbar simulation are shown on the left in
-Figure~\ref{fig:tau_shape_number_comparison}. It can be seen that relatively, the contribution from fakes
-increases as \met increases. The effect of varying the electron and muon energies is not so pronounced because
-there are not many electrons or muons in the fake collection (a dileptonic \ttbar event with $ee$, $e\mu$ or
-$\mu\mu$ would have to be misreconstructed as a semi-leptonic event for this to happen). However, since
-approximately 14\% of the reconstructed \ttbar events in simulation are fake events (13.5\% in electron
-channel and 13.9\% in muon channel), as seen on the right in Figure~\ref{fig:tau_shape_number_comparison},
-varying the tau energy has a more significant influence on the measurement.
+and a tau neutrino, and the tau lepton then decays to another tau neutrino, an electron/muon and an electron
+neutrino/muon neutrino via a virtual \W boson, such an event might fake our signal and pass the \ttbar signal
+selection. Fake events are removed by subtracting the fake distribution obtained from simulation. However, for
+the systematic measurements with the tau energy varied up and down, the same fake distribution shape is
+subtracted as in the nominal measurement. A comparison of the fakes and the signal \met distributions shapes
+from \ttbar simulation are shown on the left in Figure~\ref{fig:tau_shape_number_comparison}.
+It can be seen that the relative contribution from fakes increases as \met increases. Approximately 14\% of
+the reconstructed \ttbar events in simulation are fake events (13.5\% in electron channel and 13.9\% in muon
+channel). The right hand plot in Figure~\ref{fig:tau_shape_number_comparison} compares the normalisations of
+signal and fake events after selection. The effect of varying the electron and muon energies is not so
+pronounced because there are not many electrons or muons in the fake collection (a dileptonic \ttbar event
+with $ee$, $e\mu$ or $\mu\mu$ would have to be misreconstructed as a semi-leptonic event for this to happen).
 
 \begin{figure}[hbtp]
     \centering
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/tau_cross_checks/comparison_measured_fakeTTJets_normalised_to_one.pdf}\hfill
-     % \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/tau_cross_checks/comparison_measured_fakeTTJets.pdf}
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/placeholder.png}
-	 \caption[]{Comparison of the signal and fake distributions from semi-leptonic \ttbar events after
-     selection in simulation in the electron+jets channel at $\roots=8\TeV$ normalised to one (left) and
-     normalised to the numbers of events (right). TODO:MAKE SECOND PLOT} %TODO:MAKE SECOND PLOT
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/tau_cross_checks/comparison_measured_fake_TTJets_normalised_to_one_without_ratio.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/tau_cross_checks/comparison_measured_fake_TTJets_normalised_to_nevents.pdf}
+     \caption[Comparison of the signal and fake distributions in the \met variable from semi-leptonic \ttbar
+	 events in the electron+jets channel at $\roots=8\TeV$.]{Comparison of the signal and fake distributions from
+	 semi-leptonic \ttbar events after selection in simulation in the electron+jets channel at $\roots=8\TeV$
+	 normalised to one (left) and normalised to the numbers of events (right).}
      \label{fig:tau_shape_number_comparison}
 \end{figure}
 
 The difference between the tau energy down ($-1\sigma$) variation and the nominal measurements in the \met
 variable before fitting and unfolding is shown in Figure~\ref{fig:tau_down_comparison}. In the highest \met
 bin, the difference is approximately 6\%, and this value remains approximately constant after fitting and
-unfolding, as shown in Table~\ref{tab:tau_up_down_final_bin_comparison}. It can be seen therefore that the
-significant affect of varying the tau energy is not an artifact of the fitting and/or unfolding procedure, but
-a real difference in the number of events.
+unfolding. %, as shown in Table~\ref{tab:tau_up_down_final_bin_comparison}.
+The significant affect of varying the tau energy is therefore unlikely to be an artifact of the fitting and/or
+unfolding procedure, but a real difference in the number of events.
 
 \begin{figure}[hbtp]
     \centering
      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/tau_cross_checks/compare_central_MET_to_tau_energy_down_asym_bins_electron_channel_data.pdf}\hfill
      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/tau_cross_checks/compare_central_MET_to_tau_energy_down_asym_bins_electron_channel_TTJet.pdf}
-     \caption{Comparison of the \met distributions in the nominal measurement and in the tau energy down
-     variation before fitting and unfolding in data (left) and in \ttbar simulation (right) at
-     $\roots=8\TeV$}
+     \caption[Comparison of the \met distributions in the nominal measurement and in the tau energy down
+     variation in data and in simulation.]{Comparison of the \met distributions in the nominal measurement and
+     in the tau energy down variation before fitting and unfolding in data (left) and in \ttbar simulation
+     (right) at $\roots=8\TeV$}
      \label{fig:tau_down_comparison}
 \end{figure}
  
-\input{Chapters/04_Analysis/04b_XSections/tables/systematics/8TeV/tau_up_down_to_central_difference_in_highest_met_bin.tex}
+%\input{Chapters/04_Analysis/04b_XSections/tables/systematics/8TeV/tau_up_down_to_central_difference_in_highest_met_bin.tex}
 
 Other small sources of experimental uncertainty include the non-clustered energy uncertainty (which refers to
-the fluctuations in deposits in the electromagnetic calorimeter that are not included in jet clusters), the
+fluctuations in deposits in the electromagnetic calorimeter that are not included in jet clusters), the
 matching threshold and factorisation and normalisation scale uncertainties in \WpJets and \ZpJets events,
 pileup uncertainty, the QCD template shape uncertainty, and the efficiency of electron, muon and \btagging in
 the selection process.
 
-The tau energy systematic becomes more significant in the region of higher primary variable values. This stems
-from \ttbar events with tau leptons. Taus could pass the signal selection in two ways. Events in which one \W
-boson decays to a muon or an electron and the associated neutrino, and the other \W boson decays to a $\tau$
-lepton which then decays hadronically; and also semi-leptonic events in which the lepton is a tau, which then
-decays to a tau neutrino, and electron or a muon and the associated neutrino. This 
-
 Rate changing systematics such as the uncertainty on the luminosity and the uncertainty on the theoretical
 cross-sections of the signal and background processes have a negligible effect on the final result, since they
-influence only the template normalisations that are input to the fitting process.
+cance in the final normalised measurements.
 
 \subsection{Theoretical Uncertainties}
 \label{ss:theoretical_uncertainties}
 
-\subsubsection{7TeV V+Jets theory systematic template}
+\subsubsection{7~\TeV V+Jets theory systematic template}
 \label{sss:7TeV_vjets_theory_systematic_template}
 
 The factorisation and normalisation scale ($Q^{2}$ up/down) uncertainty is evaluated using simulation samples
@@ -124,37 +144,40 @@ in the nominal sample at $\roots=7\TeV$.
     \centering
      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/WJets_comparison/TTbar_plus_X_analysis_EPlusJets_Refselection_MET_patType1CorrectedPFMet_MET_0orMoreBtag.pdf}\hfill
      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/WJets_comparison/TTbar_plus_X_analysis_EPlusJets_Refselection_Electron_electron_AbsEta_0orMoreBtag.pdf}\\
-	 \caption{Shape comparison of W+jets templates in $\roots=7\TeV$ and $\roots=8\TeV$ Monte Carlo
-	 simulation for \met (left) and electron \abseta (right) in the electron+jets channel.}
+	 \caption[\met and electron \abseta shape comparison of W+jets templates in $\roots=7\TeV$ and
+	 $\roots=8\TeV$ in the electron+jets channel.]{Shape comparison of W+jets templates in $\roots=7\TeV$ and
+	 $\roots=8\TeV$ Monte Carlo simulation for \met (left) and electron \abseta (right) in the electron+jets
+	 channel.}
      \label{fig:wjets_7TeV_8TeV_comparison}
 \end{figure}
 
 \subsubsection{Hadronisation Uncertainty}
 \label{sss:hadronisation_uncertainty}
 The uncertainty due to hadronisation modelling is evaluated by comparing a simulated sample
-generated using the \POWHEG generator and \PYTHIA to model the hadron showering (\POWHEG+\PYTHIA) to a sample
-generator using the same \POWHEG generator and \HERWIG to model the hadron showering (\POWHEG+\HERWIG). The
+generated using the \POWHEG generator and \PYTHIA to model the hadron showering (\POWHEG+ \PYTHIA) to a sample
+generator using the same \POWHEG generator and \HERWIG to model the hadron showering (\POWHEG+ \HERWIG). The
 difference between the \PYTHIA and \HERWIG samples is scaled to the nominal measurement and taken as the
 hadronisation uncertainty. All variables, and in particular those sensitive to hadronic aspects of an event
-such as \HT and \st, are significantly affected by this systematic, with a larger uncertainty at lower
-values of the primary variables. %\a MADGRAPH+HERWIG sample was not available.
+such as \HT and \st, are significantly affected by this systematic, with a larger uncertainty in lower bins of
+the primary variables.
 
 \subsubsection{PDF Uncertainties}
 \label{sss:PDF_uncertainties}
 The proton PDF uncertainties are evaluated similarly, with 44 distinct weights from the CTEQ 6.6 PDF sets used
 to reweight events in the simulated samples and repeat the analysis.
-Top quark mass uncertainty is evaluated using \ttbar samples produced with two different top quark masses of
-169.5\GeV and 173.5\GeV, and scaling the the error obtained using these samples to the top mass uncertainty of
+The top quark mass uncertainty is evaluated using \ttbar samples produced with two different top quark masses
+of 169.5\GeV and 173.5\GeV, and scaling the the error obtained using these samples to the top mass uncertainty of
 $\pm1.0\GeV$.
 
 \subsubsection{\ttbar \pt Mismodelling}
 \label{sss:top_pt_modelling}
-There is a known problem with event generators mismodelling the top quark \pt distribution; the distribution
-of the transverse momentum of top quarks in data was found to be softer than that in simulation
-\cite{Chatrchyan:2012saa}. The effect of this correction on the nominal measurement was evaluated to be
-negligible for low values of the primary variables, increasing to 3-7\% at higher values. The \MADGRAPH
-simulation after applying the \tquark \pt correction is also included in the results plots
-(Figures~\ref{fig:result_MET_7TeV_combined} to \ref{fig:result_WPT_8TeV_combined}).
+There is a known issue with event generators mismodelling the top quark \pt distribution; the distribution of
+the transverse momentum of top quarks in data was found to be softer than that in simulation
+\cite{Chatrchyan:2012saa}. Scale factors have been derived to correct for this disagreement. The effect of
+this correction on the nominal measurement was evaluated to be negligible for low values of the primary
+variables, increasing to 3--7\% at higher values. The \MADGRAPH simulation after applying the \tquark \pt
+correction is also included in the results plots (Figures~\ref{fig:result_MET_HT_ST_7TeV_combined} to
+\ref{fig:result_WPT_MT_8TeV_combined}), but this is not included as a systematic error.
 
 The most significant shape changing uncertainties typically arise from the factorisation scale variations in
 the \ttbar process and the hadronisation.
@@ -162,11 +185,20 @@ the \ttbar process and the hadronisation.
 \subsection{Systematic Uncertainty Tables}
 \label{ss:systematic_uncertainty_tables}
 
-TODO:insert typical systematics tables here
-%TODO:COULD PUT THE TYPICAL SYSTEMATICS TABLE FROM THE PAPER IN HERE AND PUT THE FULL SYSTEMATICS TABLES IN
-% THE APPENDICES?
-%\input{Chapters/04_Analysis/04b_XSections/tables/systematics/7TeV/MET/MET_systematics_7TeV_combined}
-%\input{Chapters/04_Analysis/04b_XSections/tables/systematics/7TeV/MET/MET_systematics_7TeV_combined}
+Tables~\ref{tab:typical_systematics_7TeV_combined} and \ref{tab:typical_systematics_8TeV_combined} give
+typical (median) relative systematic uncertainties for all systematic uncertainty sources, at $\roots=7\TeV$
+and $\roots=8\TeV$ respectively, and are for the combined electron+jets and muon+jets channel, for the fitting
+method. The sources are grouped into categories, taking only the maximum relative uncertainty between a
+$+1\sigma/-1\sigma$ variation of each uncertainty source. In categories containing more than one
+$+1\sigma/-1\sigma$ variation pair (\met uncertanties: electron/muon/tau/unclustered energy; Background
+(other):\ttbar/single top/\VpJets/QCD cross sections and luminosity; Theoretical Systematics: \ttbar/\VpJets
+matching and $Q^{2}$), the maximum uncertainty of each $+1\sigma/-1\sigma$ source is added in quadrature. The
+median values across all of the bins of a primary variable are then taken as the typical systematic
+uncertainties stated in the tables. Extended uncertainty tables can be found in
+Appendix~\ref{as:systematic_uncertainties}.
+
+\input{Chapters/04_Analysis/04b_XSections/tables/systematics/7TeV/typical_systematics_7TeV_combined_with_paper_changes}
+\input{Chapters/04_Analysis/04b_XSections/tables/systematics/8TeV/typical_systematics_8TeV_combined_with_paper_changes}
 
 \section{Results}
 \label{s:results}
@@ -176,15 +208,17 @@ performed individually in the electron+jets and muon+jets channels, resulting in
 each channel. The measurement is then carried out as outlined in Section~\ref{ss:measurement} on the numbers
 of events in each channel, in addition to the sum total of the two channels to calculate the cross section in
 the combined semi-leptonic channel. This section summarises the normalised differential cross sections for the
-primary variables investigated in this analysis. Figures~\ref{fig:result_MET_7TeV_combined} to
-\ref{fig:result_WPT_7TeV_combined} show the distributions at $\roots=7\TeV$ and
-Figures~\ref{fig:result_MET_8TeV_combined} to \ref{fig:result_WPT_8TeV_combined} show the distributions at
-$\roots=8\TeV$. The numerical values are included in Appendix~\ref{as:results_tables}.
+primary variables investigated in this analysis. Figures~\ref{fig:result_MET_HT_ST_7TeV_combined} and
+\ref{fig:result_WPT_MT_7TeV_combined} show the distributions at $\roots=7\TeV$;q and
+Figures~\ref{fig:result_MET_HT_ST_8TeV_combined} and \ref{fig:result_WPT_MT_8TeV_combined} show the
+distributions at $\roots=8\TeV$. Corresponding numerical results are included in Appendix~\ref{as:results}.
+Results plots showing the unfolded data distributions from the background subtraction method of extracting the
+\ttbar event yield are also shown in Appendix~\ref{as:results}.
 
 The normalised cross section distributions are shown compared with predictions from \MADGRAPH,
 \POWHEG+\PYTHIA, \POWHEG+\HERWIG, \MCATNLO ($\roots=8\TeV$ only) and a \MADGRAPH prediction with corrected
 \tquark \pt in the left hand plots. The error bars on the data points represent the statistical +unfolding
-(inner) and systematic (outer) uncertainties summed in qudrature. In the right hand plots a comparison with
+(inner) and systematic uncertainties summed in qudrature (outer). In the right hand plots a comparison with
 the \MADGRAPH prediction with matching threshold, and factorisation and renormalisation scale up and down.
 Ratio plots are shown below the distribution plots to allow easier comparison of the distribution in data to
 the different simulations, with a line at 1.0 for reference. In the ratio plots, the grey error bands
@@ -198,123 +232,71 @@ distributions than in simulation as a result of the mismodelling of the \tquark 
 
 \begin{figure}[hbtp]
     \centering
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/7TeV/MET/central/normalised_xsection_combined_different_generators.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/7TeV/MET/central/normalised_xsection_combined_systematics_shifts.pdf}\hfill
-     \caption{Comparison of the measured normalised differential cross section with respect to \met to
+%     \resizebox{\columnwidth}{!} {
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/7TeV/MET/central/normalised_xsection_combined_different_generators.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/7TeV/MET/central/normalised_xsection_combined_systematics_shifts.pdf}\\
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/7TeV/HT/central/normalised_xsection_combined_different_generators.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/7TeV/HT/central/normalised_xsection_combined_systematics_shifts.pdf}\\
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/7TeV/ST/central/normalised_xsection_combined_different_generators.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/7TeV/ST/central/normalised_xsection_combined_systematics_shifts.pdf}\\
+     \caption[Comparison of the measured normalised differential cross section with respect to \met, \HT and
+     \st to different Monte Carlo generators and predictions at $\roots=7\TeV$.]{Comparison of the measured
+     normalised differential cross section with respect to \met (upper), \HT (middle) and \st (lower) to
      different Monte Carlo generators: \MADGRAPH, \POWHEG+\HERWIG, \POWHEG+\PYTHIA and \MADGRAPH corrected for
      top \pt mismodelling (left) and to different Monte Carlo predictions matching threshold up/down and
      factorisation scale up/down (right) in the combined electron+jets and muon+jets channel at
-     $\roots=7\TeV$.}
-     \label{fig:result_MET_7TeV_combined}
+     $\roots=7\TeV$. The lower plots show the ratio of the predictions to the data.}
+     \label{fig:result_MET_HT_ST_7TeV_combined}
+ %    }
 \end{figure}
 
 \begin{figure}[hbtp]
     \centering
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/7TeV/HT/central/normalised_xsection_combined_different_generators.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/7TeV/HT/central/normalised_xsection_combined_systematics_shifts.pdf}\hfill
-     \caption{Comparison of the measured normalised differential cross section with respect to \HT to
-     different Monte Carlo generators: \MADGRAPH, \POWHEG+\HERWIG, \POWHEG+\PYTHIA and \MADGRAPH corrected for
-     top \pt mismodelling (left) and to different Monte Carlo predictions matching threshold up/down and
-     factorisation scale up/down (right) in the combined electron+jets and muon+jets channel at
-     $\roots=7\TeV$.}
-     \label{fig:result_HT_7TeV_combined}
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/7TeV/WPT/central/normalised_xsection_combined_different_generators.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/7TeV/WPT/central/normalised_xsection_combined_systematics_shifts.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/7TeV/MT/central/normalised_xsection_combined_different_generators.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/7TeV/MT/central/normalised_xsection_combined_systematics_shifts.pdf}\hfill
+     \caption[Comparison of the measured normalised differential cross section with respect to \wpt and \mt to
+     different Monte Carlo generators and predictions at $\roots=7\TeV$.]{Comparison of the measured
+     normalised differential cross section with respect to \wpt and \mt to different Monte Carlo generators:
+     \MADGRAPH, \POWHEG+\HERWIG, \POWHEG+\PYTHIA and \MADGRAPH corrected for top \pt mismodelling (left) and
+     to different Monte Carlo predictions matching threshold up/down and factorisation scale up/down (right)
+     in the combined electron+jets and muon+jets channel at $\roots=7\TeV$. The lower plots show the ratio of
+     the predictions to the data.}
+     \label{fig:result_WPT_MT_7TeV_combined}
+\end{figure}
+
+
+\begin{figure}[hbtp]
+    \centering
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/8TeV/MET/central/normalised_xsection_combined_different_generators.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/8TeV/MET/central/normalised_xsection_combined_systematics_shifts.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/8TeV/HT/central/normalised_xsection_combined_different_generators.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/8TeV/HT/central/normalised_xsection_combined_systematics_shifts.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/8TeV/ST/central/normalised_xsection_combined_different_generators.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/8TeV/ST/central/normalised_xsection_combined_systematics_shifts.pdf}\hfill
+     \caption[Comparison of the measured normalised differential cross section with respect to \met, \HT and
+     \st to different Monte Carlo generators and predictions at $\roots=8\TeV$.]{Comparison of the measured
+     normalised differential cross section with respect to \met, \HT and \st to different Monte Carlo
+     generators: \MADGRAPH, \POWHEG+\HERWIG, \POWHEG+\PYTHIA and \MADGRAPH corrected for top \pt mismodelling
+     (left) and to different Monte Carlo predictions matching threshold up/down and factorisation scale
+     up/down (right) in the combined electron+jets and muon+jets channel at $\roots=8\TeV$. The lower plots
+     show the ratio of the predictions to the data.}
+     \label{fig:result_MET_HT_ST_8TeV_combined}
 \end{figure}
 
 \begin{figure}[hbtp]
     \centering
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/7TeV/ST/central/normalised_xsection_combined_different_generators.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/7TeV/ST/central/normalised_xsection_combined_systematics_shifts.pdf}\hfill
-     \caption{Comparison of the measured normalised differential cross section with respect to \st to
-     different Monte Carlo generators: \MADGRAPH, \POWHEG+\HERWIG, \POWHEG+\PYTHIA and \MADGRAPH corrected for
-     top \pt mismodelling (left) and to different Monte Carlo predictions matching threshold up/down and
-     factorisation scale up/down (right) in the combined electron+jets and muon+jets channel at
-     $\roots=7\TeV$.}
-     \label{fig:result_ST_7TeV_combined}
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/8TeV/WPT/central/normalised_xsection_combined_different_generators.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/8TeV/WPT/central/normalised_xsection_combined_systematics_shifts.pdf}\\
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/8TeV/MT/central/normalised_xsection_combined_different_generators.pdf}\hfill
+     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/8TeV/MT/central/normalised_xsection_combined_systematics_shifts.pdf}\\
+     \caption[Comparison of the measured normalised differential cross section with respect to \wpt and \mt to
+     different Monte Carlo generators and predictions at $\roots=8\TeV$.]{Comparison of the measured
+     normalised differential cross section with respect to \wpt and \mt to different Monte Carlo generators:
+     \MADGRAPH, \POWHEG+\HERWIG, \POWHEG+\PYTHIA and \MADGRAPH corrected for top \pt mismodelling (left) and
+     to different Monte Carlo predictions matching threshold up/down and factorisation scale up/down (right)
+     in the combined electron+jets and muon+jets channel at $\roots=8\TeV$. The lower plots show the ratio of
+     the predictions to the data.}
+     \label{fig:result_WPT_MT_8TeV_combined}
 \end{figure}
-
-\begin{figure}[hbtp]
-    \centering
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/7TeV/WPT/central/normalised_xsection_combined_different_generators.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/7TeV/WPT/central/normalised_xsection_combined_systematics_shifts.pdf}\hfill
-     \caption{Comparison of the measured normalised differential cross section with respect to \wpt to
-     different Monte Carlo generators: \MADGRAPH, \POWHEG+\HERWIG, \POWHEG+\PYTHIA and \MADGRAPH corrected for
-     top \pt mismodelling (left) and to different Monte Carlo predictions matching threshold up/down and
-     factorisation scale up/down (right) in the combined electron+jets and muon+jets channel at
-     $\roots=7\TeV$.}
-     \label{fig:result_MT_7TeV_combined}
-\end{figure}
-
-\begin{figure}[hbtp]
-    \centering
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/7TeV/MT/central/normalised_xsection_combined_different_generators.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/7TeV/MT/central/normalised_xsection_combined_systematics_shifts.pdf}\hfill
-     \caption{Comparison of the measured normalised differential cross section with respect to \mt to
-     different Monte Carlo generators: \MADGRAPH, \POWHEG+\HERWIG, \POWHEG+\PYTHIA and \MADGRAPH corrected for
-     top \pt mismodelling (left) and to different Monte Carlo predictions matching threshold up/down and
-     factorisation scale up/down (right) in the combined electron+jets and muon+jets channel at
-     $\roots=7\TeV$.}
-     \label{fig:result_WPT_7TeV_combined}
-\end{figure}
-
-\begin{figure}[hbtp]
-    \centering
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/8TeV/MET/central/normalised_xsection_combined_different_generators.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/8TeV/MET/central/normalised_xsection_combined_systematics_shifts.pdf}\hfill
-     \caption{Comparison of the measured normalised differential cross section with respect to \met to
-     different Monte Carlo generators: \MADGRAPH, \POWHEG+\HERWIG, \POWHEG+\PYTHIA and \MADGRAPH corrected for
-     top \pt mismodelling (left) and to different Monte Carlo predictions matching threshold up/down and
-     factorisation scale up/down (right) in the combined electron+jets and muon+jets channel at
-     $\roots=8\TeV$.}
-     \label{fig:result_MET_8TeV_combined}
-\end{figure}
-
-\begin{figure}[hbtp]
-    \centering
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/8TeV/HT/central/normalised_xsection_combined_different_generators.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/8TeV/HT/central/normalised_xsection_combined_systematics_shifts.pdf}\hfill
-     \caption{Comparison of the measured normalised differential cross section with respect to \HT to
-     different Monte Carlo generators: \MADGRAPH, \POWHEG+\HERWIG, \POWHEG+\PYTHIA and \MADGRAPH corrected for
-     top \pt mismodelling (left) and to different Monte Carlo predictions matching threshold up/down and
-     factorisation scale up/down (right) in the combined electron+jets and muon+jets channel at
-     $\roots=8\TeV$.}
-     \label{fig:result_HT_8TeV_combined}
-\end{figure}
-
-\begin{figure}[hbtp]
-    \centering
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/8TeV/ST/central/normalised_xsection_combined_different_generators.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/8TeV/ST/central/normalised_xsection_combined_systematics_shifts.pdf}\hfill
-     \caption{Comparison of the measured normalised differential cross section with respect to \st to
-     different Monte Carlo generators: \MADGRAPH, \POWHEG+\HERWIG, \POWHEG+\PYTHIA and \MADGRAPH corrected for
-     top \pt mismodelling (left) and to different Monte Carlo predictions matching threshold up/down and
-     factorisation scale up/down (right) in the combined electron+jets and muon+jets channel at
-     $\roots=8\TeV$.}
-     \label{fig:result_ST_8TeV_combined}
-\end{figure}
-
-\begin{figure}[hbtp]
-    \centering
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/8TeV/WPT/central/normalised_xsection_combined_different_generators.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/8TeV/WPT/central/normalised_xsection_combined_systematics_shifts.pdf}\hfill
-     \caption{Comparison of the measured normalised differential cross section with respect to \wpt to
-     different Monte Carlo generators: \MADGRAPH, \POWHEG+\HERWIG, \POWHEG+\PYTHIA and \MADGRAPH corrected for
-     top \pt mismodelling (left) and to different Monte Carlo predictions matching threshold up/down and
-     factorisation scale up/down (right) in the combined electron+jets and muon+jets channel at
-     $\roots=8\TeV$.}
-     \label{fig:result_MT_8TeV_combined}
-\end{figure}
-
-\begin{figure}[hbtp]
-    \centering
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/8TeV/MT/central/normalised_xsection_combined_different_generators.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/8TeV/MT/central/normalised_xsection_combined_systematics_shifts.pdf}\hfill
-     \caption{Comparison of the measured normalised differential cross section with respect to \mt to
-     different Monte Carlo generators: \MADGRAPH, \POWHEG+\HERWIG, \POWHEG+\PYTHIA and \MADGRAPH corrected for
-     top \pt mismodelling (left) and to different Monte Carlo predictions matching threshold up/down and
-     factorisation scale up/down (right) in the combined electron+jets and muon+jets channel at
-     $\roots=8\TeV$.}
-     \label{fig:result_WPT_8TeV_combined}
-\end{figure}
-
-TODO: INDIVIDUAL ELECTRON CHANNEL AND MUON CHANNEL RESULTS IN APPENDIX? 
-%TODO: INDIVIDUAL ELECTRON CHANNEL AND MUON CHANNEL RESULTS IN APPENDIX?

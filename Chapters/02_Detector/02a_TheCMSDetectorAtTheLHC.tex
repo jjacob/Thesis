@@ -1,0 +1,549 @@
+\chapter{The CMS Detector at the LHC}
+\label{c:CMS_Detector}
+
+\section{Introduction to the LHC}
+\label{s:Introduction}
+The CMS general-purpose detector is one of four detectors located around the LHC, approximately 100\m below
+ground level. The CERN accelerator complex and the locations of the various experiments around the LHC are
+shown in Figure~\ref{fig:LHC_schematic}.
+
+\begin{figure}[hbtp]
+   \centering
+     \includegraphics[width=\textwidth]{Chapters/02_Detector/Images/0812015.jpg}\\
+     \caption[Schematic of LHC and experiments.]{Schematic of CERN accelerator complex including the LHC and
+     experiments.
+     CMS is located at Point 5 on the LHC ring.}
+     \label{fig:LHC_schematic}
+\end{figure}
+
+The 27\km circumference LHC can collide two proton beams, each composed of 2808 bunches, at a design energy
+of 7\TeV per beam (meaning a 14\TeV centre of mass energy, \roots, in collisions) with a luminosity of
+$10^{34}\cm^{-2}\s^{-1}$ at a collision rate of 25\ns (40~\MHz). Each event that is recorded in the
+CMS detector is one crossing of the bunches of protons of which the beams are comprised. During the first part
+of Run 1 in 2011 the machine ran at a centre of mass energy of 7\TeV at a bunch spacing of 50\ns (leading to 8
+proton-proton interactions per bunch crossing) and CMS recorded a peak instantaneous luminosity of
+$3.7\times10^{33}\cm^{-2}\s^{-1}$. In 2012 the centre of mass energy was increased to 8\TeV (21
+proton-proton interactions per bunch crossing) and CMS recorded a peak instantaneous luminosity of
+$7.7\times10^{33}\cm^{-2}\s^{-1}$. Since Run 2 began in May 2015 after Long Shutdown 1, the LHC has
+been operating at a collision energy of 13\TeV and CMS recorded a peak instantaneous luminosity of
+$4.7\times10^{33}\cm^{-2}\s^{-1}$ at a collision rate of 25\ns initially, before switching to 50\ns.
+The design collision energy and luminosity are scheduled to beattained later in Run 2 and after Long Shutdown
+2 (in 2019) respectively. 6.1\fbinv and 23.3\fbinv of data was delivered to CMS during the 2011 and 2012 data
+taking periods respectively; Figure~\ref{fig:integrated_luminosity} shows the increase in integrated
+luminosities delivered to CMS over time during 2010--2012.
+
+The acceleration process begins with a tank of hydrogen (see Figure~\ref{fig:LHC_schematic}). After stripping
+electrons off the hydrogen atoms using an electric field, the remaining protons are inserted into the LINAC2
+which accelerates them up to 50\MeV. From here, the proton beam is injected into the Proton Synchrotron
+Booster (PSB) which increases the energy to 1.4\GeV, followed by the Proton Synchrotron (PS) which accelerates
+the beam to 25\GeV and the Super Proton Synchrotron (SPS) where the beam energy reaches 450\GeV. Finally, the
+protons are injected into the LHC where two beampipes carry the beams in a clockwise and an anti-clockwise
+direction while accelerating them up to the required collision energy. Filling the LHC rings takes
+approximately 4 minutes, followed by approximately 20 minutes until the beams reach energies of 4\TeV (during
+2012 data taking). The beams are accelerated by radio frequency cavities, and superconducting dipole magnets
+bend the beams to maintain their trajectory around the LHC beampipe. Once the collision energy has been
+attained, the beams are ``squeezed'' to focus them into a cross-sectional area of approximately 16\um using
+superconducting quadrupole magnets. Collimators act to scrape away protons, thereby maintaining beam losses to
+the superconducting magnets below the level that would cause quenching. The counter-circulating beams are
+brought to collide at the four main LHC experiments CMS, ATLAS, LHCb and ALICE. ATLAS, like CMS, is a general
+purpose detector, ALICE is specifically designed to investigate heavy ion collisions (as opposed to protons),
+while LHCb investigates b-meson physics.
+
+\begin{figure}[hbtp]
+   \centering
+     \includegraphics[width=0.75\textwidth]{Chapters/02_Detector/Images/int_lumi_cumulative_pp_2.png}\\
+     \caption[Cumulative luminosity delivered to CMS during 2010, 2011 and 2012.]{Cumulative luminosity
+     delivered to CMS over time during 2010, 2011 and 2012 proton-proton data taking periods.}
+     \label{fig:integrated_luminosity}
+\end{figure}
+
+\section{Overview of CMS}
+\label{s:Overview}
+Compact Muon Solenoid is both the name of the detector at the LHC, and of the collaboration of people
+worldwide who work to build, operate, maintain and upgrade it, and to analyse the data it records.
+
+CMS is a general-purpose detector, designed to be efficient at detecting new physics with a wide range of
+signals. The detector measures 14.6\m in diameter and 21.6\m in length, and weighs 12500~tonnes
+\cite{CMS_experiment}. The different sub-detectors of CMS are arranged in concentric layers around the point
+of the beam pipe at which the two beams of proton bunches collide, known as the interaction point (see
+Figure~\ref{fig:CMS_diagram}). As the products of any collisions that occur in the bunch crossing travel
+outwards from the interaction point, they pass through the sub-detectors depositing energy, resulting in
+signals being produced. A subset of the information from some sub-detectors (the calorimeters and muon
+chambers, described in Section~\ref{s:Subdetectors}) is then processed by a trigger while information from
+other sub-detectors is buffered on the detector.
+
+\begin{figure}[hbtp]
+   \centering
+     \includegraphics[width=\textwidth]{Chapters/02_Detector/Images/cms_120918_02.pdf}\hfill
+     \caption[Diagrammatic sectional view of the CMS detector.]{Diagrammatic sectional view of the CMS
+     detector
+     \cite{Sakuma_sketchup}.}
+     \label{fig:CMS_diagram}
+ \end{figure}
+
+The design of CMS is based firstly around a superconducting solenoid magnet. Around and inside the magnet are
+the sub-detectors: the pixel and strip tracker, the electromagnetic calorimeter, the hadronic calorimeter, the
+return yoke for the magnet and the muon detectors. The coordinate system of the detector is designated with
+the origin as the intersection point of the two beams in the beam pipe, the x-axis positive towards the centre
+of the LHC ring, the y-axis positive vertically upwards and the z-axis pointing along the beampipe in an
+anticlockwise direction. The azimuthal angle, $\phi$, is defined as the angle in the x-y plane, transverse to
+the beampipe starting from the x-axis. The polar angle, $\theta$, is defined as the angle in the z-y plane
+starting from the z-axis (the beampipe). The angle $\theta$ is related to the pseudorapidity, $\eta$, by the
+formula $\eta=-\ln(\tan(\theta/2))$, so that $\eta$ ranges from 0 at $\theta=90~\degreeCelsius$ to $\infty$ at
+$\theta=0~\degreeCelsius$~\cite{CMS_TDR1}. The two ends of the detector, at high $\abseta$ values, are called
+the endcap regions while the central area at lower $\abseta$ values is called the barrel region. The detector
+volume is often denoted in terms of $\Delta R$, with the separation between two particles 1 and 2 being
+defined as
+
+\begin{equation}
+\Delta R = \sqrt{(\eta_{1} - \eta_{2})^{2} + (\phi_{1} - \phi_{2})^{2}}
+\end{equation}
+
+\section{Sub-Detectors}
+\label{s:Subdetectors}
+
+\subsection{Tracker}
+\label{ss:Tracker}
+
+Any charged particles produced as a result of the proton-proton collisions in these bunch crossings need to be
+recorded for later use in reconstruction of particle information such as trajectories and charges. This is
+achieved using the tracker section of CMS which consists of silicon sensors in two forms: pixels and strips.
+As the charged particles travel through these silicon sensors, electron-hole pairs are produced that induce a
+current in the sensors and are processed by readout chips. This readout is carried out by the Analogue
+Pipeline Voltage (APV) chip. A new chip called the CMS Binary Chip (CBC) is intended to replace the APV in the
+HL-LHC after Long Shutdown 3, currently scheduled for 2023-2024. The CBC is described in more detail in
+Appendix~\ref{s:cbc}.
+
+The purpose of the tracker within the CMS detector is to track the trajectory of charged particles as they
+travel out from the interaction point. An important requirement of the tracker is that it must allow the above
+whilst not affecting the energy of the particle being tracked. The silicon in the tracker sensors also does
+not stop particles, thereby allowing them to pass through this innermost layer of the detector and interact
+with outer layers. The tracker readout chips must also be able to distinguish from which bunch crossing a
+particle was produced (bunch-crossing identification) in order for the trigger to remove particles from
+previous bunch crossings (termed out-of-time pileup) and fully reconstruct events.
+
+The tracker is split into two parts, with an inner silicon pixel detector and an outer silicon strip detector.
+A diagrammatic view of the tracker, including both pixels and strips, is shown in
+Figure~\ref{fig:CMS_strip_tracker}. The inner pixel detector consists of three layers in the barrel region at
+distances of 4.4\cm, 7.3\cm and 10.2\cm from the beam line with two endcap discs at each end. Each pixel
+measures 100\um by 150\um. The entire pixel detector covers an area of only approximately $1\m^{2}$ but
+contains 66~million pixels in total.
+
+The strip tracker is comprised of ten layers in the barrel region at distances ranging from 20\cm to 1.1\m
+from the beam pipe. The four inner layers (at distances of 26\cm, 34\cm, 42\cm and 50\cm from the beampipe)
+are collectively named the Tracker Inner Barrel (TIB), while the outer six layers (at distances of 61\cm,
+70\cm, 78\cm, 87\cm, 97\cm and 108\cm from the beampipe) are known as the Tracker Outer Barrel (TOB).
+The endcaps consist of twelve discs, three of which correspond to the Tracker Inner Discs (TID) at z-distances
+from 75\cm to 100\cm, and nine to the Tracker End Caps (TEC) at z-distances between 120\cm and 280\cm
+\cite{Palmonari:1260970}. The largest silicon detector ever constructed, the strip tracker contains about ten
+million channels and covers an area of approximately $200\m^{2}$ \cite{CMS_experiment,CMS_TDR1}. The operating
+temperature of the tracker during 2011 and 2012 has been $0~\degreeCelsius$ for the pixels and
+$+4~\degreeCelsius$ for the strips but will be lowered for both after Long Shutdown 1~\cite{Butz:1497745}.
+
+\begin{figure}[hbtp]
+   \centering
+     \includegraphics[width=\textwidth]{Chapters/02_Detector/Images/tracker.pdf}\hfill
+     \caption[Cross-sectional diagram of the CMS strip tracker.]{Cross-sectional diagram of the CMS strip
+     tracker; each line represents a detector module
+     \cite{CMS_TDR1}}
+     \label{fig:CMS_strip_tracker}
+\end{figure}
+
+As a charged particle passes through the various layers of silicon in these detectors, electrical signals are
+created which are then read by readout electronics. Offline algorithms then use the data relating to which
+strips and sensors received `hits' to reconstruct the tracks of charged particles and this information is
+later used for particle reconstruction and identification \cite{CMS_experiment,CMS_Tracking_Early_Results}.
+
+% Neutral particles could also leave signals in the tracker in a small proportion of cases if the particle
+% interacts with a silicon atom and/or converts to charged particles such as a photon conversion to two
+% electrons. In the majority of cases, the presence of neutral particles must be detected from their energy
+% deposits in the calorimeters.
+The curving of particle tracks within a magnetic field allows the calculation of the particle momentum and
+charge, $mv=RqB$, where $mv$ is the momentum of the particle, $R$ is the radius of curvature, q is the
+electric charge, and B is the magnetic field strength.
+
+%With the higher data rate expected after the LHC upgrades over the coming decade,
+%pile-up will become an important issue, with approximately 20 interactions per bunch crossing even at the
+%current design luminosity. This number is expected to increase to 100-200 following Long Shutdown 3.
+
+%At higher luminosities, the occupancy (the fraction of channels with a 'hit') increases,
+%which makes pattern recognition more difficult for track reconstruction algorithms and readout systems. The
+%higher tracker resolution desirable for such circumstances also requires more sensors and readout chips. As a
+%result, any new chip would need to be more efficient in its use of power whilst processing the data and/or
+%require the associated cooling systems to be more efficient. Indeed, studies have shown that the present
+%tracker could itself produce acceptable tracking performance in such conditions based on simulations of
+%heavy-ion collisions, which produce similar numbers of tracks per event to that expected after the luminosity
+%upgrades at the LHC [10].
+
+%The LHC upgrades are split into 2 phases. The pixel detector will be upgraded during Phase 1, and will be an
+%on-going process during both Long Shutdown 1, Long Shutdown 2 and shorter intermediate shutdowns. The strip
+%detector will be upgraded during Phase 2, more specifically during Long Shutdown 3 [11][12].
+
+The required tracker characteristics of high granularity and resolution, fast response to process the high
+data rate without losing potentially valuable information, radiation hardness and keeping detector material to
+a minimum to minimise interactions of the particles with detector matter, resulted in silicon being chosen to
+construct the tracker.
+
+One of the advantages of using silicon over gaseous detectors is that silicon produces more charge carriers
+per unit of length travelled by a particle. This therefore means the silicon thickness can be reduced,
+typically around 300\um per layer. The silicon sensors that make up the strip tracker in the CMS detector vary
+in thickness depending on their location. Sensors of 320\um thickness are utilised in the TIB and TID, 500\um
+in the TOB, and a mixture of both thicknesses is used in the TEC. Thicker sensors are used in the outer
+sections of the strip tracker in order to maintain a high signal to noise ratio, since the increased strip
+lengths in this region lead to increased electronics noise due to higher capacitance~\cite{CMS_experiment}.
+
+Silicon also allows fast signal transfer, of the order of about 10\ns, as the charge carriers travel quickly
+through silicon. Furthermore, the spacing between strips in a silicon sensor, known as the strip pitch, can be
+manufactured to be extremely small, down to around 50\um. The strip pitches and their lengths vary such that
+there are fifteen distinct types of sensor geometries in the strip
+tracker~\cite{Commissioning_and_Performance_Strip_Tracker}.
+
+A further tracker requirement is low occupancy (the fraction of channels with a hit in an event was desired to
+be 1~\% or lower at the nominal LHC luminosity) so that pattern recognition can be carried out efficiently and
+so the amount of simultaneous data to be read out is manageable. In order to maintain such a low occupancy,
+the strip tracker has a high granularity, with strip lengths less than 20\cm and strip pitches less than
+205\um~\cite{Palmonari:1260970}. While high granularity is beneficial for high precision tracking, it also
+results in a high number of channels, which in turn requires a large amount of electronics for readout and
+leads to a high heat load.
+
+On a global scale, the tracker data is read out using a combination of interoperating systems.
+The data from the Analogue Pipeline Voltage (APV25) tracker readout chips is taken via optical fibres to 440
+off-detector Front End Drivers (FEDs) (Tracker FEDs make up 63~\% of the total number of FEDs in CMS).
+The FEDs then forward the data to the online Data Acquisition System (DAQ). In addition, off-detector Front
+End Controllers (FECs) control the front-end electronics by means of approximately 350 control rings,
+including triggers, clock and monitoring~\cite{CMS_experiment, Corrin}.
+
+%As a result of the higher collision rates to be expected after
+%these upgrades, the CMS tracker will require an improvement in its infrastructure because of radiation damage
+%it will have suffered by that point and to ensure that it is robust enough to handle the higher levels of
+%radiation after the upgrades. The pile-up is also expected to be in the range of 100 to 200 interactions per
+%bunch crossing which also necessitates an improvement in the CMS tracker performance in order to ensure
+%valuable data are not lost during collisions \cite{CMS_Silicon_Tracker_upgrade_for_HL-LHC}.
+
+% Within the lattice of pure silicon, there are well-defined bands of energy levels called the conduction band
+% and the valence band. The band gap is the difference in energy between these two bands and varies depending on
+% the material. At absolute zero, -273$^{\circ}$C, almost all the electrons can be said to be fixed in place in
+% this lattice in the valence band, meaning that if an electric field is applied across the silicon, no current
+% would be able to flow. When energy is input to the system and an electron gains energy, it may be able to
+% cross the band gap to the conduction band, in which case a hole would be present in its previous place in the
+% valence band. At this point, both the electron and the hole are mobile and can move freely in current flow,
+% for example, under the influence of an electric potential. Materials with a large band gap are insulators, and
+% those with a small band gap (or even sometimes with energy bands that overlap with each other) are conductors.
+% Silicon, being a semiconductor, has a 'medium' sized band gap of approximately 1.12eV. Nevertheless, the
+% number of mobile electrons, above absolute zero, is still large enough to make it difficult to distinguish the
+% real signal from the inherent noise in the silicon, known as leakage current (explained in Section 2.3.2).
+% In order to decrease this number of free electrons and holes in silicon to obtain a much cleaner signal from a
+% traversing particle (i.e. improve the signal to noise ratio), a process called doping is employed to increase
+% the number of charge carriers. This involves the substituting of silicon atoms in the lattice with atoms of
+% other elements like arsenic, phosphorous, boron or aluminium. In the case of the former two, both have five
+% valence electrons. Four of these electrons bond to the four valence electrons present in a silicon atom,
+% leaving one electron that can be easily removed from the lattice to the conduction band. This 'donation' of
+% electrons to the conduction band increases the number of charge carriers. This type of silicon is called
+% n-type silicon because the additional charge carriers are negative. Similarly, if boron or aluminium atoms are
+% introduced to the silicon lattice, their three valence electrons bond to the electrons in a silicon atom but
+% one silicon electron has nothing to bond to, creating a mobile positive hole. The addition of holes (which
+% 'accept' electrons) leads to this type of silicon being called p-type because the additional charge carriers
+% are positive.
+% Although both p- and n-type silicon increase the number of free charge carriers, a PN-junction can be created
+% by attaching a piece of n-type silicon to a piece of p-type silicon. Considering a PN-junction in isolation,
+% mobile electrons from the n-type silicon would diffuse into the p-type silicon and unite with the holes from
+% the p-type material, leaving behind the positively charged donor atoms. Similarly, the mobile holes from the
+% p-type silicon would diffuse to the n-type silicon and leave behind negatively charged acceptor atoms. As
+% these electrons and holes move to the two sides of the junction, the resulting electric field opposes the
+% initial diffusion of electrons and holes, eventually reaching a state of equilibrium. Once equilibrium is
+% reached, this area around the PN-junction will contain no mobile charge carriers and is called the depletion
+% region.
+% However, if a reverse bias voltage is applied to the silicon (a negative terminal connected to the p-type
+% silicon and a positive terminal to the n-type silicon), then the electrons from the n-type silicon, rather
+% than diffusing towards the junction, will be attracted towards the positive terminal. Similarly, the holes
+% from the p-type silicon will be attracted towards the negative terminal, as shown in Figure 7.
+% 
+%  
+% A higher reverse bias voltage leads to a larger depletion width as more electrons and holes are carried away
+% from the junction. At high enough voltages, the width of the depletion region can be made equal to the width
+% of the silicon; this voltage is known as the depletion voltage. At this stage, there are no free charge
+% carriers anywhere in the silicon and it is in this state that silicon detectors are operated, thus ensuring
+% that any charge carriers are only produced as a charged particle travels through the silicon. In this state,
+% silicon detectors are effectively reverse biased diodes, only allowing a current to flow in one direction.
+ 
+%Figure 8 - Basic diagram of silicon strip detector with p+ strips (green) on n-bulk (blue) [24].
+
+% The silicon sensors in the CMS strip tracker are p+ strips (which denotes a high concentration of p-type
+% impurities) on n-bulk sensors, similar to the diagram in Figure 8. As the silicon is ionised by a traversing
+% particle, mobile charge carriers are created which then travel, due to the depletion voltage, to the p+ strips
+% (holes) or to the backplane (electrons). As the signal will be created on a particular strip (or strips), it
+% will then be possible to deduce the position of the particle.
+
+% 2.3.2 Radiation Hardness The current tracker front-end electronics were initially designed to last about 10
+% years in operation under the radiation conditions of the detector [5]. The higher radiation they will be
+% subjected to as a result of the higher luminosity and higher collision energies at the HL-LHC will clearly
+% impose the requirement that all components, including sensors and electronics, should be manufactured to a
+% higher standard of radiation hardness. Radiation damage can occur when particles of high enough energy are
+% created in the collisions at the centre of CMS that when they pass through the silicon tracker, they collide
+% with atoms in the lattice. This damage is done most often by neutrons, in particular low energy neutrons from
+% calorimeters and other detector elements, which interact with nuclei in the silicon and move atoms out of
+% place. These atoms are knocked out of place into levels where there is usually no atom, known as interstitial
+% levels. An energy of around 15eV is necessary for this to happen; generally at energies of 2keV or less only
+% isolated displacements occur, whereas for energies between 2 and 12keV, one or more defect clusters will be
+% created. The removal of donor atoms in this way leads to a change in the doping concentrations and eventually
+% to an increase in the leakage current (current which may flow when there is no ionising particle traversing
+% the silicon). A leakage current will in turn require a higher depletion voltage to remove additional electrons
+% or holes captured by the electronically active defects.
+% The leakage current is temperature dependent and can be mitigated by using low temperatures. The planned
+% running temperature of the CMS silicon tracker in the HL-LHC is planned to be lowered from +4$^{\circ}$C to
+% the region of -20$^{\circ}$C to -40$^{\circ}$C due to the benefits in terms of radiation damage. To evaluate
+% the behaviour of the proposed CBC in these conditions, an environmental chamber was used to carry out tests at
+% varying temperatures in this project. If a leakage current is present, this will lead to noise in the system,
+% since current will always flow and any signal would sit on top of this noise. If subject to high levels of
+% radiation damage, the leakage current increases to levels at which excessive amounts of power are dissipated,
+% and the noise in the readout will be too high to read a clean signal.
+% 
+% 2.3.3 Noise The aforementioned leakage current is a result of the quantised nature of the charge carriers.
+% This noise is present even when there is no signal present, and increases as radiation damage increases the
+% leakage current.
+% Other potential sources of noise include electronic noise caused by thermal fluctuations of the charge
+% carriers. This would manifest as noise in the amplifier at the front end of the CBC and would increase
+% proportionally with the capacitance of the connected input system [25]. Another contributor to noise in the
+% system could be from non-linearity of the analogue to digital converter (ADC) in the CBC that converts the
+% incoming analogue pulse to a digital signal [25].
+% The dominant source of noise in our test system is likely to have resulted from electronic noise in the
+% connected laboratory setup. In practice, the external noise under operational conditions when the CBC is
+% connected to the CMS detector should ideally be maintained lower than the noise in the amplifier.
+
+
+\subsection{Electromagnetic Calorimeter}
+\label{ss:Ecal}
+The electromagnetic calorimeter (ECAL), is a hermetic, homogeneous sub-detector constructed of scintillating
+crystals of lead tungstate ($\mathrm{PbWO_{4}}$), and is the next layer outside the tracker. Any
+electromagnetic particles such as electrons or photons are absorbed by the ECAL crystals which then
+scintillate emitting a blue-green coloured light. These signals are then collected and converted to electrical
+signals by connected photodetectors, and processed by readout electronics.
+
+The signals in the crystals are collected by avalanche photodiodes in the barrel region and vacuum
+phototriodes in the endcaps. The numbers of photoelectrons produced is dependent on temperature, with
+increasing temperature resulting in a decrease in the number of electrons at a rate of
+$-3.8\pm0.4\%/\degreeCelsius$. A cooling system is thus employed which maintains a stable operating
+temperature of the ECAL system to within $\pm0.05\degreeCelsius$, with a nominal operating temperature of
+$18\degreeCelsius$~\cite{CMS_experiment}. The energy resolution of the ECAL has been shown to follow
+$\sigma_{E}/E = 2.8\%/\sqrt{E}\oplus 12\%/E \oplus 0.3\%$ where the three constant terms come from stochastic
+fluctations such as photostatistics, electronics noise and temperature stability and calibration uncertainties
+\cite{ECAL_calibration_and_resolution_at_7TeV}.
+
+The barrel region of the ECAL consists of 61,200 crystals and extends up to a pseudorapidity $\eta\pm1.479$.
+Each individual barrel crystal is $25.8X_{0}$ thick, where $X_{0}$ is the radiation length (the mean distance
+over which a high energy electron loses all but 1/$e$ of its energy through bremsstrahlung
+radiation~\cite{Agashe:2014kda}), and has cross-sectional dimensions of $22\times22\mm^{2}$, which equates to
+$0.0174\times0.0174$ in $\eta-\phi$ plane. These crystals are divided into 36 supermodules, with each
+supermodule consisting of 4 modules. The endcaps are comprised of 7,324 crystals, cover the range
+$1.479\leq\eta\leq3.0$ and are split into two halves known as ``Dees", each divided into operating segments of
+$40\degreeCelsius$ each. The endcap crystals have slightly larger dimensions, having a thickness of
+$24.7X_{0}$ and cross-sectional dimensions of
+$28.62\times28.62\mm^{2}$~\cite{CMS_experiment,ECAL_frontend_monitoring}.
+Figure~\ref{fig:CMS_ECAL} shows the layout of the ECAL.
+
+The high density crystals used ($8.28~\g/\cm^{3}$), short radiation length of $X_{0}=0.89\cm$, and small
+Moli\`{e}re radius (a measure of the transverse dimensions of electromagnetic showers in a
+material~\cite{Agashe:2014kda}) of 2.2\cm lead to a compact calorimeter with fast response time (80\% of the
+light is emitted within 25ns), high granularity and of course capable of withstanding the radiation levels
+within CMS.
+
+\begin{figure}[hbtp]
+   \centering
+     \includegraphics[width=0.7\textwidth]{Chapters/02_Detector/Images/ECAL.pdf}\hfill
+     \caption[Diagram of the ECAL showing barrel supermodules, endcaps and preshower detectors.]{Diagram of
+     the ECAL showing barrel supermodules, endcaps and preshower
+     detectors~\cite{ECAL_calibration_and_resolution_at_7TeV}.}
+     \label{fig:CMS_ECAL}
+\end{figure}
+
+An ECAL preshower, comprised of two lead plates each followed by a layer of orthogonal silicon strip sensors
+(thickness 350\mm, strip pitch 2\mm) is located between the tracker and ECAL endcaps to provide a higher
+spatial resolution than the ECAL. This helps to identify, for instance, closely spaced photon pairs
+originating from pion decays which may otherwise be identified as a single high-energy photon based on ECAL
+energy deposits. As photons pass through the lead, a shower of electromagnetic particles ($e^{+}e^{-}$ pairs)
+is produced that are detected by the silicon layers to give a measure of the energy of the photon, while the
+orthogonal strips allow a position measurement. The measured energy can then been combined with the energy
+measured by the ECAL.
+
+\subsection{Hadronic Calorimeter}
+\label{ss:Hcal}
+The next sub-detector outside the ECAL is the hadronic calorimeter (HCAL) which works in a similar way to
+the ECAL, in this case by absorbing hadron jets. The HCAL is located at a distance of 1.77~m to 2.95~m from
+the beamline, with an additional outer hadronic calorimeter also installed outside the magnet due to
+radial restrictions imposed by the magnet coil. The HCAL barrel (HB), outer (HO) and endcaps (HE) cover
+the $\eta$ range up to 3.0, with the forward HCAL (HF) placed at $\abseta$ up to 5.2 increasing the coverage.
+Figure~\ref{fig:CMS_HCAL} shows a quarter of the HCAL endcap.
+
+The HCAL is a sampling calorimeter, meaning it is composed of alternating absorber layers (made of brass) and
+scintillator layers (made of plastic). A hadronic particle produces a shower of secondary particles when it
+strikes an absorber layer. This process is repeated as these secondary particles themselves pass through
+successive absorber layers. The scintillator layers in between absorb the energy of these particles, emitting
+light as they do which is fed to readout electronics via optical fibres to measure the particle energies. 
+
+\begin{figure}[hbtp]
+   \centering
+     \includegraphics[width=\textwidth]{Chapters/02_Detector/Images/HCAL.pdf}\hfill
+     \caption[A longitudinal schematic of the CMS HCAL.]{A longitudinal schematic of the CMS HCAL showing the
+     location of the hadron barrel (HB), endcap (HE), outer (HO) and forward (HF) calorimeters
+     \cite{CMS_experiment}.}
+     \label{fig:CMS_HCAL}
+\end{figure} 
+
+\subsection{Superconducting Magnet}
+\label{ss:Magnet}
+The magnet of the CMS detector is the largest and highest field strength superconducting solenoid constructed
+for a physics experiment in terms of bending power for physics and total stored energy~\cite{CMS_experiment}.
+It can produce a magnetic field up to 4~\tesla~ (a field strength of 3.8~\tesla~ is used in normal operation)
+with a stored energy of 2.7~\giga\joule~\cite{CMS_TDR1}. The cold bore, cooled to 4.5~\kelvin~ using liquid
+helium, has dimensions of 12.5\m length and 6\m diameter, and weighs
+220~tonnes~\cite{Cryogenic_System_for_Superconducting_Solenoid}.
+Due to design constraints and structural requirements, the magnet itself provides some of the structural
+strength both to support itself and to withstand its own magnetic bursting force on the coil
+\cite{CMS_experiment}.
+
+\begin{figure}[hbtp]
+   \centering
+     \includegraphics[width=0.5\textwidth]{Chapters/02_Detector/Images/Cold_mass.png}\hfill
+     \caption[Bore of the CMS solenoid magnet in vertical position in the CMS assembly hall, SX5.]{Bore of the
+     CMS solenoid magnet in vertical position in the CMS assembly hall, SX5, prior to installation \cite{CMS_experiment}}
+     \label{fig:CMS_magnet_cold_bore}
+\end{figure}
+ 
+The cold bore, pictured in Figure~\ref{fig:CMS_magnet_cold_bore} in the CMS assembly hall, is enclosed in a
+steel return yoke weighing 10,000~tonnes with the aim of containing and returning the magnetic field. The yoke
+is interspersed with the muon chambers and is made up of 5 barrel segments and 6 endcap discs. The magnet was
+designed in a manner such as to facilitate assembly at ground level prior to lowering into the CMS
+experimental cavern, UX5. Despite the challenges involved in constructing such a powerful magnet, the high
+bending-power created by the high magnetic field was desirable in order to provide good momentum
+resolution of the tracking components.
+
+\subsection{Muon Chambers}
+\label{ss:Muon_Chambers}
+Muons pass through all the previous inner sub-detectors, losing very little energy as they traverse them
+(around 1~\MeV/\mm on average), leading to the muon chambers being located outermost in the detector. There
+are, in fact, three types of muon detectors in use in CMS. The endcaps contain Cathode Strip Chambers (CSCs),
+the central barrel regions contain Drift Tubes (DTs), and both regions are equipped with Resistive Plate
+Chambers (RPCs). These systems, in combination with the silicon tracker, are used to determine the momentum of
+muons by taking advantage of their curved tracks due to the magnetic field. The different technologies are
+used due to the different numbers of particles expected in different areas of the detector and because of
+technological considerations regarding the physical areas to be covered~\cite{CMS_TDR1}.
+Figure~\ref{fig:CMS_muon_system} shows a diagrammatic representation of one quarter of the CMS muon detectors.
+The CSCs are used in the endcaps to cover \abseta values between 1.2 and 2.4 that experience high muon rates
+and where the magnetic field of the solenoid is high~\cite{CMS_TDR1}. They take the form of four disc layers
+each made of 2 (inner layer) or 3 (outer 3 layers) concentric rings. They consist of volumes of gas in which
+positive wires placed at right angles to negative copper strips. To relate these to the name given to these
+detectors, the positive wires are the anodes and the negative strips are the cathodes. As a charged particle
+passes through the gas it ionises gas atoms and the electrons that are knocked out travel towards the anode
+wires. At the same time the resulting positively charged ions in the gas travel towards the cathode strips.
+Since the wires and strips are at right angles to each other, the CSCs provide two position co-ordinates for
+the passing muon. The CSC detection mechanism is a fast process so their signals are used for muon triggering
+\cite{CMS_experiment}.
+ 
+\begin{figure}[hbtp]
+   \centering
+     \includegraphics[width=0.65\textwidth]{Chapters/02_Detector/Images/MuonSys-mod3.png}\hfill
+     \caption[Schematic representation of a quarter of the CMS muon system.]{Schematic representation of a
+     quarter of the CMS muon system \cite{Muon_tracking}}
+     \label{fig:CMS_muon_system}
+\end{figure}
+
+The barrel region DTs cover \abseta values of less than 1.2, that encounter low rates of low transverse
+momentum muons \cite{CMS_TDR1}. The drift tube chambers are arranged in four cylindrical layers, or stations,
+among the layers of the magnet's iron return yoke and RPC layers. The stations are slightly staggered to
+ensure that even a muon of high transverse momentum will be detected by at least three of the four layers. The
+drift tubes contain a mixture of argon (85\%) and carbon dioxide (15\%), and a postively charged stretched
+wire. As a particle with a charge traverses the volume of gas, atoms in the gas are ionised and the resulting
+free electrons travel along electric field lines towards the positive wire. By using the position of the
+electron along the wire and the time taken for the wire to detect the electron, two coordinates of the muon
+position can be deduced.
+In comparison to the DTs and CSCs, the RPCs that complement them provide a better resolution in terms of time
+(1\ns) but a worse resolution in terms of position, and so provide additional trigger information. As their
+name suggests, they are constructed of plates, one negatively charged (cathode) and one positively charged
+(anode) and made of a plastic with high resistance. In a similar process to the other muon detectors, a gas
+that makes up the volume in between the plates is ionised by a passing charged muon. The resulting electrons
+create an avalanche of electrons by, in turn, ionising other gas atoms; this avalanche of electrons moves
+towards the anode and metal readout strips outside the plastic anode detect the signal for readout. The hit
+strips pattern allows a calculation of the muon momentum which is then fed to trigger algorithms.
+
+\subsection{Trigger and Data Acquisition}
+\label{ss:Trigger}
+At the design bunch crossing frequency of 40~\MHz and at the design luminosity of $10^{34}\cm^{-2}\s^{-1}$,
+the expected number of proton-proton collisions per second is approximately $10^{9}$, translating to 21
+proton-proton collisions per bunch crossing on average. Each bunch crossing produces approximately 1~MB of
+data, leading to 40,000~GB/\s~ of data. This extremely large amount of data, which is impractical to record,
+means that a trigger system is required to filter the events in order to record only data that are of interest
+for physics analyses.
+
+There are two levels to the CMS trigger, named Level 1 Trigger (L1) and High Level Trigger (HLT). These work
+with the electronics and readout systems in place in the detector to filter the events to a practically
+manageable amount for processing. In combination, these triggers reduce the data rate by at least a factor of
+$10^{6}$~\cite{CMS_experiment}.
+
+The L1 Trigger is a pipelined deadtimeless system comprised of calorimeter triggers, muon triggers and a
+global trigger that works on a combination of data from the former two. The decisions made by the L1 Trigger
+are carried out by custom-designed hardware processors, consisting mostly of programmable electronics such
+as Field Programmable Gate Arrays (FPGAs)~\cite{1742-6596-219-3-032009}. The data from a bunch crossing are held in
+pipeline buffers in the electronics on the detector (at the front) end whilst the information for the triggers
+is processed in the CMS service cavern (USC) and the decisions transmitted back to the front end. The maximum
+time allowed for this process for each event is 3.2\us, which is the time taken for the signals to be
+transmitted via optical fibres from the detector to the processors, processing time, and trasmitted back
+again. This time is known as the latency~\cite{CMS_TDR1}. The L1 Trigger outputs events to the HLT at a rate
+of 100~\kHz~\cite{CMS_experiment}.
+
+As mentioned, the trigger uses calorimeter and muon chamber data to reach a decision on an event
+within the required timeframe. Tracker data are not currently used since track reconstruction exceeds the
+amount of time allowed for the L1 trigger decision. Good trigger performance is related to the quality of the
+calorimeters and muon systems. Factors such as good momentum resolution of high momentum muons, good charge
+determination of muons, good ECAL energy resolution and good missing transverse energy resolution are required
+for the trigger to select interesting events. The trigger was designed as described in order to allow the CMS
+experiment to meet the goals of the LHC physics programme~\cite{CMS_experiment}.
+
+Unlike the Level 1 Trigger, the High Level Trigger (HLT) is software-based and runs offline in HLT processor
+farms of about a thousand commerical processors~\cite{CMS_TDR1}. If the Level 1 produces an accept decision,
+the data which was stored in buffers in the front end electronics is read into readout buffers from where the
+DAQ system accesses it. The L1 output rate of 100~\kHz~ corresponds to a data rate of approximately 100~GB/\s.
+The HLT software processes these events in a computer farm that carries out fast processing of offline
+algorithms such as selections and object reconstructions to reduce the rate down to approximately 100~\Hz.
+This accepted data are then stored on tape. The HLT algorithms are designed based on the principle of
+minimising the number of objects that need to be reconstructed in order to come to a decision, and events are
+discarded as early as possible, leading to the HLT consisting of many virtual levels that progressively use
+more information from, first, the muon chambers and calorimeters, followed by pixel tracker data, and finally
+full tracker information~\cite{CMS_TDR1}.
+
+Figure~\ref{fig:single_muon_trigger_rates} shows the variation in trigger rates at at a luminosities of
+$2\times10^{33}\cm^{-2}\s^{-1}$ and $10^{34}\cm^{-2}\s^{-1}$ with increasing muon transverse momentum. The
+rates for different trigger levels are shown. The L1 trigger rate begins to flatten out as the \pt threshold
+increases because the lack of tracker information at L1 means that low momentum muons mis-measured as having
+high momentum are not removed. Thus, increasing the threshold would have no discernible effect on reducing the
+trigger rates while reducing physics performance by rejecting desirable events. In comparison, the L3 trigger
+rate, which includes tracker information, continues to decrease at high muon momenta, and is able to maintain
+the rate at the desired level.
+%Tracker data could thus be used for improved muon momentum resolution, in addition to electron matching, for
+% the application of more efficient isolation criteria, and for primary vertex identification at the L1 stage~\cite{Klein:1628930}.
+%Incorporating the tracker information in the L1 trigger at the HL-LHC would therefore be an effective method
+% of maintaining the L1 trigger rate at 100kHz at higher luminosities.
+
+\begin{figure}[hbtp]
+   \centering
+     \includegraphics[width=0.65\textwidth]{Chapters/02_Detector/Images/Muon_trigger_rates.png}\hfill
+     \caption[Single muon HLT rates at low and high luminosities.]{Single
+     muon high level trigger rates at (a) $\mathcal{L}=2\times10^{33}\cm^{-2}\s^{-1}$ and (b)
+     $\mathcal{L}=10^{34}\cm^{-2}\s^{-1}$~\cite{Cittolin:578006}.}
+     \label{fig:single_muon_trigger_rates}
+\end{figure}
+
+A more detailed description of the data acquisition (DAQ) system can be found in \cite{CMS_experiment}
+and \cite{CMS_TDR1}.
+
+\section{Upgrades}
+\label{s:Upgrades}
+The CMS experiment, along with the LHC and the other detectors are in a long term programme of upgrades and
+maintenance. By 2023 the luminosity provided by the LHC is expected to be $2\times10^{34}\cm^{-2}\s^{-1}$
+\cite{Technical_Proposal_Upgrade_of_CMS_Detector_through_2020}. The various runs and shutdowns until 2023 are
+collectively referred to as Phase 1. In phase 2, or after 2023, long shutdown 3 is also planned to bring
+further improvements and upgrades to the performance of the LHC, after which the luminosity of the LHC is
+expected to reach $5\times10^{34}\cm^{-2}\s^{-1}$. The machine in this state will be known as the high
+luminosity LHC, HL-LHC (also sometimes referred to as Super LHC, SLHC).
+
+Naturally, the above dates and schedules are the latest best estimates and are liable to change over time,
+particularly those further in the future, as work progresses.

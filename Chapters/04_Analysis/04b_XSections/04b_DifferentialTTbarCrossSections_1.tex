@@ -62,14 +62,14 @@ centre-of-mass energies, requiring a single, isolated muon.
 
 These datasets are produced from CMS data by requiring events to pass a trigger. The triggers used in both
 7\TeV and 8\TeV data are shown in Table\ref{tab:HLTTriggers} in Appendix~\ref{as:datasets}. In the electron
-channel, an electron plus jets trigger was used in 2011 with a requirement of electron \Et $>$ 25\GeV and at least three jets with \pt
-$>$ 20\GeV; and a single electron trigger was used in 2012 with an electron \Et requirement of 27\GeV. In the
-muon channel, a single muon trigger was used in both data taking periods. In addition to these kinematic
-requirements, the triggers also have cuts for the electron on the ratio between the HCAL and the ECAL energy
-($H/E$), track matching with ECAL ($\Delta\eta$ and $\Delta\phi$), cluster shape ($\sigma_{i\eta i\eta}$),
-ECAL isolation ($\frac{\text{ECAL iso}}{E_\text{T}}$), HCAL isolation ($\frac{\text{HCAL iso}}{E_\text{T}}$)
-and tracker isolation ($\frac{\text{tracker iso}}{\pt}$). In the muon triggers, similarly, they have
-additional cuts on\ldots TODO: CURRENTLY WAITING FOR EMAIL REPLY FROM MUON POG.
+channel, an electron plus jets trigger was used in 2011 with a requirement of electron \Et $>$ 25\GeV and at
+least three jets with \pt $>$ 20\GeV; and a single electron trigger was used in 2012 with an electron \Et
+requirement of 27\GeV. In the muon channel, a single muon trigger was used in both data taking periods. In
+addition to these kinematic requirements, the triggers also have cuts for the electron on the ratio between
+the HCAL and the ECAL energy ($H/E$), track matching with ECAL ($\Delta\eta$ and $\Delta\phi$), cluster shape
+($\sigma_{i\eta i\eta}$), ECAL isolation ($\frac{\text{ECAL iso}}{E_\text{T}}$), HCAL isolation
+($\frac{\text{HCAL iso}}{E_\text{T}}$) and tracker isolation ($\frac{\text{tracker iso}}{\pt}$). In the muon
+triggers, similarly, they have additional cuts on\ldots TODO: CURRENTLY WAITING FOR EMAIL REPLY FROM MUON POG.
 % TODO: see Luke P76-77 for descriptions of these variables.
 
 The datasets used are shown in Tables~\ref{tab:datasets7TeV} and \ref{tab:datasets8TeV}. %in
@@ -296,13 +296,13 @@ The distributions show good agreement after reweighting.
      \label{fig:nvertices_before_and_after_pileup_reweighting_electrons}
 \end{figure}
 
-\subsection{b tagging}
+\subsection{\btagging}
 \label{ss:b_tagging}
 The combined secondary vertex \btagging algorithm (CSV) described in Section~\ref{sss:b_jets} is used in this
 analysis to identify jets originating from \bquarks in \ttbar events. The medium working point, CSVM, which
 corresponds to a cut on the discriminator output by the algorithm of 0.679, is used in this analysis.
 Discrepancies between the \btagging efficiency in data and Monte Carlo simulation have been noted in
-$\roots=7\TeV$ \cite{CMS-PAS-BTV-11-004} and $\roots=8\TeV$ \cite{CMS-DP-2013-005}. To account for these
+$\roots=7\TeV$ \cite{Chatrchyan:2012jua} and $\roots=8\TeV$ \cite{CMS-PAS-BTV-13-001}. To account for these
 differences, events are reweighted based on the recommendation of the CMS \btagging Physics Object Group
 (POG), with the aim of ensuring that the probability of an event passing selection criteria in simulation
 matches the probability of an even in data with the same jet(s) passing the same selection. The result of this
