@@ -40,27 +40,35 @@
 % - \input inputs the content of the given file like it was copy and pasted there
 % manually.
 
-%\hypersetup{pageanchor=false}
+\hypersetup{pageanchor=false}
 \include{Chapters/00_FrontMatter/00a_Title}
-%\hypersetup{pageanchor=true}
+\hypersetup{pageanchor=true}
 
 % Set up front matter formatting
-% front matter should be single sided
-% single line spacing for abstract, acknowledgements, declaration and tables of contents
-\singlespacing
+
 % roman page numbering for the title page, abstract, acknowledgements, declaration and tables of contents
 \pagenumbering{roman}
 
+% front matter should be single sided
 % single sided for abstract, acknowledgements, declaration and tables of contents
-%\newgeometry{}
+\newgeometry{left=2.5cm,right=2cm,top=30mm,bottom=25mm,head=14.5pt}
+%\setboolean{@twoside}{false}
+
+% single line spacing for abstract, acknowledgements, declaration and tables of contents
+\singlespacing
 
 \include{Chapters/00_FrontMatter/00b_Abstract}
+
+% set page number to two on acknowledgements page, otherwise will start from one again after abstract 
+\setcounter{page}{2}
+
 \include{Chapters/00_FrontMatter/00c_Acknowledgements}
 \include{Chapters/00_FrontMatter/00d_Declaration}
 \include{Chapters/00_FrontMatter/00e_TableOfContents}
 
 % restore double sided geometry settings for main document (specified in mystyle.sty)
-%\restoregeometry
+\restoregeometry
+%\newgeometry{twoside,left=2.5cm,right=2cm,top=30mm,bottom=25mm,head=14.5pt}
 %\setboolean{@twoside}{true}
 % restore double line spacing
 \doublespacing
@@ -76,8 +84,6 @@
 \include{Chapters/04_Analysis/04b_XSections/04b_DifferentialTTbarCrossSections_1}
 \include{Chapters/04_Analysis/04b_XSections/04b_DifferentialTTbarCrossSections_2}
 \include{Chapters/04_Analysis/04b_XSections/04b_DifferentialTTbarCrossSections_3}
-%\include{Chapters/05_ServiceWork/05a_ServiceWorkOnCMSDetector}
-%\include{Chapters/05_ServiceWork/05b_ServiceWorkOnCBC}
 \include{Chapters/06_Conclusions/06_Conclusions}
 
 %appendix
@@ -86,7 +92,6 @@
 \include{Chapters/07_Appendices/07b_Appendices_1}
 \include{Chapters/07_Appendices/07b_Appendices_2}
 \include{Chapters/07_Appendices/07b_Appendices_3}
-\include{Chapters/07_Appendices/07c_1_ServiceWorkOnCMSDetector}
 \include{Chapters/07_Appendices/07c_2_ServiceWorkOnCBC}
 
 %bibliography
