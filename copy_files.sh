@@ -9,10 +9,10 @@ cp ${origin_file_path}plots/control_plots/before_fit/7TeV/qcd_plots/QCD_muon_pfI
 cp ${origin_file_path}plots/control_plots/before_fit/8TeV/qcd_plots/QCD_muon_pfIsolation_0btag.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/qcd_plots/QCD_muon_pfIsolation_0btag.pdf
 
 # NVertices before and after pileup reweighting (electron)
-cp ${origin_file_path}plots/control_plots/before_fit/7TeV/EPlusJets_nVertex__with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/EPlusJets_nVertex__with_ratio.pdf
-cp ${origin_file_path}plots/control_plots/before_fit/7TeV/EPlusJets_nVertex_reweighted__with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/EPlusJets_nVertex_reweighted__with_ratio.pdf
-cp ${origin_file_path}plots/control_plots/before_fit/8TeV/EPlusJets_nVertex__with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/EPlusJets_nVertex__with_ratio.pdf
-cp ${origin_file_path}plots/control_plots/before_fit/8TeV/EPlusJets_nVertex_reweighted__with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/EPlusJets_nVertex_reweighted__with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/before_fit/7TeV/EPlusJets_nVertex_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/EPlusJets_nVertex_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/before_fit/7TeV/EPlusJets_nVertex_reweighted_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/EPlusJets_nVertex_reweighted_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/before_fit/8TeV/EPlusJets_nVertex_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/EPlusJets_nVertex_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/before_fit/8TeV/EPlusJets_nVertex_reweighted_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/EPlusJets_nVertex_reweighted_with_ratio.pdf
 
 # NBTags before and after btag scale factors (electron)
 cp ${origin_file_path}plots/control_plots/before_fit/7TeV/EPlusJets_N_BJets_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/EPlusJets_N_BJets_with_ratio.pdf
@@ -238,10 +238,10 @@ cp ${origin_file_path}plots/fit/8TeV/WPT/central/normalised_xsection_combined_sy
 # APPENDICES
 
 # NVertices before and after pileup reweighting (muon)
-cp ${origin_file_path}plots/control_plots/before_fit/7TeV/MuPlusJets_nVertex__with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/MuPlusJets_nVertex__with_ratio.pdf
-cp ${origin_file_path}plots/control_plots/before_fit/7TeV/MuPlusJets_nVertex_reweighted__with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/MuPlusJets_nVertex_reweighted__with_ratio.pdf
-cp ${origin_file_path}plots/control_plots/before_fit/8TeV/MuPlusJets_nVertex__with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/MuPlusJets_nVertex__with_ratio.pdf
-cp ${origin_file_path}plots/control_plots/before_fit/8TeV/MuPlusJets_nVertex_reweighted__with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/MuPlusJets_nVertex_reweighted__with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/before_fit/7TeV/MuPlusJets_nVertex_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/MuPlusJets_nVertex_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/before_fit/7TeV/MuPlusJets_nVertex_reweighted_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/MuPlusJets_nVertex_reweighted_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/before_fit/8TeV/MuPlusJets_nVertex_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/MuPlusJets_nVertex_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/before_fit/8TeV/MuPlusJets_nVertex_reweighted_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/MuPlusJets_nVertex_reweighted_with_ratio.pdf
 
 # NBTags before and after btag scale factors (muon)
 cp ${origin_file_path}plots/control_plots/before_fit/7TeV/MuPlusJets_N_BJets_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/MuPlusJets_N_BJets_with_ratio.pdf

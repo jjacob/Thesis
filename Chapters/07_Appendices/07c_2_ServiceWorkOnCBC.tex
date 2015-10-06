@@ -19,7 +19,7 @@ in Figure~\ref{fig:lhc_upgrades}.
 The High Luminosity LHC (HL-LHC), as the machine will be known after Long Shutdown 3, will experience higher
 collision rates. Therefore, there is a requirement for an upgraded CMS tracker in order to overcome the
 problem of radiation damage suffered during previous years of data taking; to ensure it is capable of
-withstanding the subsequent higher radiation levels;q and to allow the tracker to maintain performance with
+withstanding the subsequent higher radiation levels; and to allow the tracker to maintain performance with
 the resulting 100-200 proton-proton interactions per bunch crossing~\cite{Mersi:2011jv}.
 
 \begin{figure}[ht] %btp!]
@@ -32,11 +32,11 @@ the resulting 100-200 proton-proton interactions per bunch crossing~\cite{Mersi:
 A description of the CBC is given in~\cite{JonesL}, and summarised together with a description of the
 laboratory setup in~\cite{JacobJA}. In summary, the laboratory setup consisted of the CBC held on a CBC
 carrier board, connected via an FPGA mezzanine card (FMC) to a field programmable gate array (FPGA) which was
-connected to a controlling computer. The signal created in a connected silicon sensor would enter
-the CBC through the analogue front end and a comparator digitises the signal to produce a binary output, a `1'
-to indicate a `hit' or `0'. The CBC includes a setting to read out either `electrons' or `holes', and 24 of
-the 128 channels were wire bonded out from the chip to allow signal to be injected if desired. TODO: GIVE
-MORE CBC DESCRIPTION IF TIME ALLOWS %TODO: EXPAND ON THIS CBC DESCRIPTION A LITTLE IF TIME
+connected to a controlling computer. The signal created in a connected silicon sensor would enter the CBC
+through the analogue front end and a comparator digitises the signal to produce a binary output, a `1' to
+indicate a `hit' or `0'. The CBC includes a setting to read out either `electrons' or `holes', and 24 of the
+128 channels were wire bonded out from the chip to allow signal to be injected if desired. %TODO: EXPAND ON
+%THIS CBC DESCRIPTION A LITTLE IF TIME
 
 \begin{figure}[ht] %btp!]
    \centering
@@ -61,7 +61,7 @@ Tests were carried out on the first CBC prototype, CBCv1, to verify its operatio
 the behaviour of the analogue front-end, to test the response of the CBC to varying sizes of injected charges,
 to measure the gain at a range of temperatures from -40~\degreeCelsius and 40~\degreeCelsius, and to measure
 the channel-to-channel variation in pedestal voltage. The basic principle of the tests involved scanning
-through the values of comparator threshold voltage, creating an s-curve', and evaluating the point at which
+through the values of comparator threshold voltage, creating an s-curve, and evaluating the point at which
 the mean output changed from zeros to ones or vice versa. These already documented tests were carried out only
 on one chip, however. Continuation of that work, including some studies on a second CBCv1 chip, are outlined
 below.
@@ -94,7 +94,7 @@ present in the test setup was showing levels of the order of thousands of electr
 the variation in noise as a function of added capacitance to an injection channel were therefore of little
 use, due to the added noise now being so small compared to the noise in the test setup. After establishing
 that the noise in the system was associated to the incoming pulse, additional grounding and shielding was
-introduced in the form of copper tape, insulation between the connecting cables, placing the chip and it's
+introduced in the form of copper tape, insulation between the connecting cables, placing the chip and its
 carrier board inside an aluminium box and injecting the pulse through a triaxial cable rather than a coaxial
 cable. Unfortunately the latest results after all these modifications (Figure~\ref{fig:noise_all_channels})
 show that although the noise on channels which are not connected to the pulse injection cable was reduced

@@ -1,16 +1,16 @@
-\chapter{7 TeV and 8 TeV Differential Cross Section: Data, Simulation and Selection}
+\chapter{Differential Cross Sections: Data, Simulation and Selection}
 \label{c:Differential_Cross_Section:data_simulation_and_selection}
 
 \section{Outline}
 \label{s:analysis1_outline}
-This chapter describes the first part of the main \ttbar differential cross section analysis in bins of
-global event variables. Following an introduction to the variables under investigation and motivations, the
-datasets used and the selection process is explained, including scale factors and corrections applied to ensure agreement between Monte Carlo
-simulation and data.
+This chapter describes the first part of the main \ttbar differential cross section analysis in bins of global
+event variables. Following an introduction to the variables under investigation and motivations, the datasets
+used and the selection process is explained, including scale factors and corrections applied to ensure
+agreement between Monte Carlo simulation and data.
 
 The analysis measures the normalised differential \ttbar cross section in the semi-leptonic channel and is
 carried out on 2011 and 2012 data recorded from the CMS detector. The measurement is carried out with respect
-to the following global, or primary, variables is carried out:
+to the following global, or primary, variables:
 \begin {itemize}
 
   \item {\met, the missing transverse energy in an event, defined as the magnitude of the missing transverse
@@ -20,9 +20,9 @@ to the following global, or primary, variables is carried out:
   	where $p_x^i$ and $p_yi$ are momentum components of the \textit{i}th object in an event, and the sums
   	include all objects in the event.
 
-  \item {\HT, the sum of the transverse momenta of all jets in an event}
-	\[\HT = \sum_{\text{all jets}}\pt^{\mathrm{jet}},\]
-	where the sum includes all jets with  $\pt>20\GeV$ and $\left|\eta\right|<2.5$.
+  \item {\HT, the sum of the transverse momenta of all jets with $\pt>20\GeV$ and $\abseta<2.5$ in an
+  event}
+  	\[\HT = \sum_{\text{all jets}}\pt^{\mathrm{jet}}\].
 
   \item {\st, the sum of all observed transverse momenta in an event, \ie the scalar sum of \HT, \met, and
   	lepton \pt}
@@ -57,19 +57,22 @@ Data collected in 2011 at a centre-of-mass energy of 7\TeV corresponding to an i
 5.0\fbinv, and in 2012 at a centre-of-mass energy of 8\TeV corresponding to an integrated luminosity of
 19.7\fbinv are used in this analysis. The datasets are determined by the triggers that were used to record
 them. For 7\TeV, the ``ElectronHad'' dataset is used in the electron channel. It was recorded with triggers
-that select based on a single, isolated electron and additional jets. At 8\TeV, the ``SingleElectron'' dataset
-was used for the electron channel which is based only on a single, isolated electron. In the muon channel, the
-``SingleMu'' dataset was used for both centre-of-mass energies, requiring a single, isolated muon.
+that select based on at least one, isolated electron and additional jets. At 8\TeV, the ``SingleElectron''
+dataset was used for the electron channel which is based only on at least one, isolated electron. In the muon
+channel, the ``SingleMu'' dataset was used for both centre-of-mass energies, requiring a single, isolated
+muon.
 
 These datasets are produced from CMS data by requiring events to pass a trigger. The triggers used in both
 7\TeV and 8\TeV data are shown in Table\ref{tab:HLTTriggers} in Appendix~\ref{as:datasets}. In the electron
-channel, an electron plus jets trigger was used in 2011 with a requirement of electron \Et $>$ 25\GeV and at
-least three jets with \pt $>$ 20\GeV; and a single electron trigger was used in 2012 with an electron \Et
-requirement of 27\GeV. In the muon channel, a single muon trigger was used in both data taking periods. In
-addition to these kinematic requirements, the triggers also have cuts on the ratio between the HCAL and the
-ECAL energy ($H/E$), track matching with ECAL ($\Delta\eta$ and $\Delta\phi$), cluster shape ($\sigma_{i\eta
-i\eta}$), ECAL isolation ($\frac{\text{ECAL iso}}{E_\text{T}}$), HCAL isolation ($\frac{\text{HCAL
-iso}}{E_\text{T}}$) and tracker isolation ($\frac{\text{tracker iso}}{\pt}$).
+channel, an electron+jets trigger was used in 2011 with a requirement of at least one electron with
+\Et$>25\GeV$ and at least three jets with \pt$>30\GeV$; and a single electron trigger was used in 2012 with at
+least one electron with \Et$>27\GeV$. In the muon channel, a single muon trigger was used in both data taking
+periods with a requirement of at least one muon with \pt$>24\GeV$. In addition to these kinematic
+requirements, the triggers also have cuts on the ratio between the HCAL and the ECAL energy ($H/E$), track matching with
+ECAL ($\Delta\eta$ and $\Delta\phi$), cluster shape ($\sigma_{i\eta i\eta}$), ECAL isolation
+($\frac{\text{ECAL iso}}{E_\text{T}}$), HCAL isolation ($\frac{\text{HCAL iso}}{E_\text{T}}$) and tracker
+isolation ($\frac{\text{tracker iso}}{\pt}$). In both channels, the final selection is tighter than these
+trigger requirements.
 % TODO: see Luke P76-77 for descriptions of these variables.
 
 The datasets used are shown in Tables~\ref{tab:datasets7TeV} and \ref{tab:datasets8TeV}. %in
@@ -80,6 +83,8 @@ specified in Table~\ref{tab:JSONfiles} in Appendix~\ref{as:datasets}.
 
 \input{Chapters/04_Analysis/04b_XSections/tables/datasets/data_7TeV}
 \input{Chapters/04_Analysis/04b_XSections/tables/datasets/data_8TeV}
+
+\FloatBarrier
 
 \subsection{Simulated Samples}
 \label{ss:simulated_samples}
@@ -98,41 +103,45 @@ the signal and backgrounds in this analysis.
 
 Tables~\ref{tab:signaldatasets7TeV} and~\ref{tab:signaldatasets8TeV} show the Monte Carlo signal samples used
 in this analysis at 7\TeV and 8\TeV respectively. Tables~\ref{tab:backgrounddatasets7TeV}
-and~\ref{tab:backgrounddatasets7TeV} %in Appendix~\ref{as:datasets} 
-list the background simulation samples
-used. Top pair production is modelled using \MADGRAPH, single top events are modelled with \POWHEG, \W and \Z boson plus jets production is
-modelled using \MADGRAPH and QCD multi-jet events are modelled with \PYTHIA. In all cases, \PYTHIA is used to
-model radiation and hadronisation processes. Tables~\ref{tab:7TeVsystematicdatasets} and
-\ref{tab:8TeVsystematicdatasets} show the samples used to evaluate the factorisation scale, matching
-threshold, and top quark mass uncertainties. \WpJets and \ZpJets samples were not made available at 7\TeV, so
-the scaled distributions from 8\TeV were used, as described in
+and~\ref{tab:backgrounddatasets8TeV} %in Appendix~\ref{as:datasets} 
+list the background simulation samples used. Top pair production is modelled using \MADGRAPH, single top
+events are modelled with \POWHEG, \W and \Z boson plus jets production is modelled using \MADGRAPH and QCD
+multi-jet events are modelled with \PYTHIA. In all cases, \PYTHIA is used to model radiation and hadronisation
+processes. Tables~\ref{tab:7TeVsystematicdatasets} and \ref{tab:8TeVsystematicdatasets} show the samples used
+to evaluate the factorisation scale, matching threshold, and top quark mass uncertainties. \WpJets and \ZpJets
+samples were not made available at 7\TeV, so the scaled distributions from 8\TeV were used, as described in
 Section~\ref{sss:7TeV_vjets_theory_systematic_template}.
 
 \input{Chapters/04_Analysis/04b_XSections/tables/datasets/signal_samples_7TeV}
-\input{Chapters/04_Analysis/04b_XSections/tables/datasets/background_samples_7TeV}
-\input{Chapters/04_Analysis/04b_XSections/tables/datasets/systematic_samples_7TeV}
 \input{Chapters/04_Analysis/04b_XSections/tables/datasets/signal_samples_8TeV}
+\input{Chapters/04_Analysis/04b_XSections/tables/datasets/background_samples_7TeV}
 \input{Chapters/04_Analysis/04b_XSections/tables/datasets/background_samples_8TeV}
+
+\begin{landscape}
+\input{Chapters/04_Analysis/04b_XSections/tables/datasets/systematic_samples_7TeV}
 \input{Chapters/04_Analysis/04b_XSections/tables/datasets/systematic_samples_8TeV}
+\end{landscape}
+
+\FloatBarrier
 
 \section{Selection}
 \label{s:selection}
 Selection algorithms are run on the data and samples listed in Sections~\ref{s:data_and_simulated_samples} and
 \ref{ss:simulated_samples} to identify \ttbar events. The selection process is performed in two stages: a
 ``pre-selection'' using loose criteria to produce ntuples and a second full selection when processing these
-ntuples to produce the final sample. The selection used follows the recommended criteria by
-the CMS TOP Physics Analysis Group (PAG) and is the same for 7\TeV and 8\TeV.
+ntuples to produce the final sample. The selection used follows the recommended criteria by the CMS TOP
+Physics Analysis Group (PAG) and is the same for 7\TeV and 8\TeV.
 
 \subsection{Preselection}
 \label{ss:preselection}
 The preselection is performed on the AOD datasets, with the aim of making the resulting ntuples smaller
-in size but still versatile enough for use later in the analysis chain.
+in size but still versatile enough for adjustments later in the analysis chain.
 
-The preselection requires at least one good primary vertex with at least four degrees of freedom,
-located within 24\cm~ of the centre of the CMS detector in the $z$ direction and within 2\cm~ of the centre of
-the beam trajectory in the transverse plane. In addition, events are required to have at least one lepton
-candidate. In the case of electrons, a transverse energy of at least 30\GeV and \abseta $<$ 2.5 and in the
-muon channel a transverse momentum of at least 20\GeV and \abseta $<$ 2.1 are required. 
+The preselection requires at least one good primary vertex with at least four degrees of freedom, located
+within 24\cm of the centre of the CMS detector in the $z$ direction and within 2\cm of the centre of the beam
+trajectory in the transverse plane. In addition, events are required to have at least one lepton candidate. In
+the case of electrons, a transverse energy of at least 30\GeV and \abseta$<2.5$ and in the muon channel a
+transverse momentum of at least 26\GeV and \abseta$<2.1$ are required.
 
 Several filters are also applied in the preselection stage to remove events with significant levels of noise
 due to elements of the detector with sub-optimal performance during data-taking. These filters include an HCAL
@@ -144,13 +153,13 @@ scraping veto which requires tracks of high purity in events with high track mul
 \label{electronplusjetschannelselection}
 The final selection in the electron+jets channel follows that recommended by the CMS TOP Physics Analysis
 Group (PAG). After having passed the electron trigger, events are further required to have an electron with an
-MVA electron identification of $>0.5$, with \Et $> 30\GeV$ and $\abseta < 2.5$ (excluding the transition
-region between the ECAL barrel and endcap of $1.4442 < \abseta < 1.5660$). A transverse impact parameter, the
-distance between the electron and the primary vertex, of $d_{xy} < 0.02\cm$ is also required. In addition, a
-$\rho$ corrected (explained in Section \ref{ss:pileup_subtraction}) relative isolation of $< 0.1$, within a
-cone of size $\Delta R = 0.3$ is required and electrons that are matched to a photon conversion are rejected.
-A veto on additional electrons with looser identification criteria than the signal requirements mentioned here
-include an MVA identification of $> 0.5$, \Et $> 20\GeV$, $\abseta < 2.5$ and a $\rho$ corrected relative
+MVA electron identification of $>0.5$, with \Et$>30\GeV$ and $\abseta<2.5$ (excluding the transition region
+between the ECAL barrel and endcap of $1.4442<\abseta<1.5660$). A transverse impact parameter, the distance
+between the electron and the primary vertex, of $d_{xy}<0.02\cm$ is also required. In addition, a $\rho$
+corrected (explained in Section~\ref{ss:pileup_subtraction}) relative isolation of~$<0.1$, within a cone of
+size $\Delta R=0.3$ is required and electrons that are matched to a photon conversion are rejected.
+A veto is placed on additional electrons with looser identification criteria than the signal requirements.
+These include an MVA identification of $>0.5$, \Et$>20\GeV$, $\abseta<2.5$ and a $\rho$ corrected relative
 isolation of $<0.15$.
 
 \subsection{Muon selection}
@@ -162,23 +171,22 @@ muon chamber hits must be matched to a global muon (described in Section~\ref{ss
 the inner track must include at least one hit in the pixel sub detector. Furthermore, the normalised
 chi-squared of the track fit should be less than 10. In addition, the muon identification algorithms should
 identify the particle as a global, particle flow (PF) muon, the muon track should pass within a z-distance of
-$d_{z} < 0.5\cm$ of the primary vertex and the transverse impact parameter is required to be $d_{xy} <
-0.2\cm$. The signal selection also requires that the muon has a $\pt > 26\GeV$, $\abseta < 2.1$ and a
-$\Delta\beta$ corrected (explained in Section \ref{ss:pileup_subtraction}) relative isolation of $< 0.12$,
-within a cone of size $\Delta R = 0.4$. Loose muons are vetoed, that satisfy the looser requirements of
-passing the particle flow identification, $\pt > 10\GeV$, $\abseta < 2.5$ and a $\Delta\beta$ corrected
-relative isolation $<0.2$.
+$d_{z}<0.5\cm$ of the primary vertex and the transverse impact parameter is required to be $d_{xy}<0.2\cm$.
+The signal selection also requires that the muon has a $\pt>26\GeV$, $\abseta<2.1$ and a $\Delta\beta$
+corrected (explained in Section~\ref{ss:pileup_subtraction}) relative isolation of~$<0.12$, within a cone of
+size $\Delta R=0.4$. Loose muons are vetoed, that satisfy the looser requirements of passing the particle
+flow identification, $\pt>10\GeV$, $\abseta<2.5$ and a $\Delta\beta$ corrected relative isolation of~$<0.2$.
 
 \subsection{Jets selection}
 \label{jets_selection}
 In addition to the signal lepton, all events must also have at least four particle flow jets as reconstructed
-using the anti-kt algorithm (see Section~\ref{ss:jet_reconstruction}) with a cone of $\Delta R = 0.5$. These
-jets are also required to have \pt $> 30\GeV$, $\abseta < 2.5$, be at least $\Delta R = 0.3$ from the signal
+using the anti-kt algorithm (see Section~\ref{ss:jet_reconstruction}) with a cone of $\Delta R=0.5$. These
+jets are also required to have \pt $>30\GeV$, $\abseta<2.5$, be at least $\Delta R=0.3$ from the signal
 electron or muon and satisfy the criteria for the loose particle flow jet identification. These criteria are
 outlined in Section~\ref{ss:jet_reconstruction}. Candidate particle flow jets from pileup are removed from the
 event; this is known as charged hadron subtraction. Events with at least four jets passing these criteria are
-permitted to have other lower energy jets passing the same requirements mentioned above, down to $\pt =
-20\GeV$. At least two of the four primary jets are further required to originate from b quarks (the process of
+permitted to have other lower energy jets passing the same requirements mentioned above, down to $\pt=20\GeV$.
+At least two of the four primary jets are further required to originate from b quarks (the process of
 identifying b jets is explained in Section~\ref{ss:b_tagging}.)
 
 \subsection{Multi-jet background selection}
@@ -240,12 +248,12 @@ in agreement and that there is a low amount of statistics available in simulatio
 
 \begin{figure}[hbtp]
     \centering
-      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/qcd_plots/QCD_electron_AbsEta_conversion_control_region_0btag_with_ratio}\hfill
-      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/qcd_plots/QCD_electron_AbsEta_conversion_control_region_0btag_with_ratio}\\
-      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/qcd_plots/QCD_electron_AbsEta_non_iso_control_region_0btag_with_ratio}\hfill
-      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/qcd_plots/QCD_electron_AbsEta_non_iso_control_region_0btag_with_ratio}\\
-      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/qcd_plots/shape_comparisons/QCD_electron_AbsEta_control_region_comparison_0btag}\hfill
-      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/qcd_plots/shape_comparisons/QCD_electron_AbsEta_control_region_comparison_0btag}\\
+      \includegraphics[width=0.45\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/qcd_plots/QCD_electron_AbsEta_conversion_control_region_0btag_with_ratio}\hfill
+      \includegraphics[width=0.45\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/qcd_plots/QCD_electron_AbsEta_conversion_control_region_0btag_with_ratio}\\
+      \includegraphics[width=0.45\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/qcd_plots/QCD_electron_AbsEta_non_iso_control_region_0btag_with_ratio}\hfill
+      \includegraphics[width=0.45\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/qcd_plots/QCD_electron_AbsEta_non_iso_control_region_0btag_with_ratio}\\
+      \includegraphics[width=0.45\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/qcd_plots/shape_comparisons/QCD_electron_AbsEta_control_region_comparison_0btag}\hfill
+      \includegraphics[width=0.45\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/qcd_plots/shape_comparisons/QCD_electron_AbsEta_control_region_comparison_0btag}\\
      \caption[Comparison of QCD selections in the electron+jets channel at $\roots=7\TeV$ and at
      $\roots=8\TeV$.]{Comparison of QCD selections in the electron+jets channel at $\roots=7\TeV$ on the left
      and at $\roots=8\TeV$ on the right. Conversion region is shown at the top, non-isolated selection in the
@@ -266,28 +274,29 @@ corrections are implemented for 7\TeV and 8\TeV.
 Monte Carlo simulation events are produced by first creating the hard proton-proton interaction of interest in
 a proton bunch crossing, and then introducing the additional interactions, pileup, are added. The pileup
 distribution in simulation does not reflect the true distribution in data, therefore pileup reweighting is
-carried out. The instantaneous luminosity is used to estimate the number of pilup instances in an event at
+carried out. The instantaneous luminosity is used to estimate the number of pileup instances in an event at
 $\roots=7\TeV$ and $\roots=8\TeV$ using a tool provided by the CMS Physics Validation Group. For each number
 of pileup interactions in simulation, a weight is then produced to match the respective distribution in data.
 
 The estimation of the pileup distribution in data is obtained using the instantaneous luminosity measured in
 each proton bunch crossing, and the total inelastic proton-proton cross section. There is an uncertainty on
-the measured luminosity which is currently 2.6\% for 2012 data \cite{CMS:2013gfa} and 2.2\% for 2011 data
+the measured luminosity which is currently 2.6~\% for 2012 data \cite{CMS:2013gfa} and 2.2~\% for 2011 data
 \cite{CMS:2012eui}. The total inelastic cross section has been reported using CMS forward calorimetry
 \cite{Chatrchyan:2012gwa} and by the TOTEM collaboration \cite{Antchev:2011vs}. Based on these findings, the
 CMS recommended central values of 68\mb~ for $\roots=7$ and 69.3\mb~ for $\roots=8$ have been used, with a
-$\pm5\%$ uncertainty to account for pileup and physics modelling in simulation. The distributions of the
-number of reconstructed of vertices before and after applying pileup reweighting in the electron+jets channel
+$\pm5~\%$ uncertainty to account for pileup and physics modelling in simulation. The distributions of the
+number of reconstructed vertices before and after applying pileup reweighting in the electron+jets channel
 is shown in Figure~\ref{fig:nvertices_before_and_after_pileup_reweighting_electrons}, and in the muon+jets
-channel is shown in Figure~\ref{fig:nvertices_before_and_after_pileup_reweighting_muons} in Appendix~\ref{as:data_monte_carlo_corrections}.
+channel is shown in Figure~\ref{fig:nvertices_before_and_after_pileup_reweighting_muons} in
+Appendix~\ref{as:data_monte_carlo_corrections}.
 The distributions show good agreement after reweighting.
 
 \begin{figure}[hbtp]
     \centering
-      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/EPlusJets_nVertex__with_ratio}\hfill
-      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/EPlusJets_nVertex_reweighted__with_ratio}\\
-      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/EPlusJets_nVertex__with_ratio}\hfill
-      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/EPlusJets_nVertex_reweighted__with_ratio}\\
+      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/EPlusJets_nVertex_with_ratio}\hfill
+      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/EPlusJets_nVertex_reweighted_with_ratio}\\
+      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/EPlusJets_nVertex_with_ratio}\hfill
+      \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/EPlusJets_nVertex_reweighted_with_ratio}\\
      \caption[Distributions of the number of reconstructed vertices in an event in the electron+jets channel
      before and after implementing pileup reweighting at $\roots=7\TeV$ and $\roots=8\TeV$.]{Distributions of
      the number of reconstructed vertices in an event in the electron+jets channel before implementing pileup
@@ -300,17 +309,18 @@ The distributions show good agreement after reweighting.
 \label{ss:b_tagging}
 The combined secondary vertex \btagging algorithm (CSV) described in Section~\ref{sss:b_jets} is used in this
 analysis to identify jets originating from \bquarks in \ttbar events. The medium working point, CSVM, which
-corresponds to a cut on the discriminator output by the algorithm of 0.679, is used in this analysis.
-Discrepancies between the \btagging efficiency in data and Monte Carlo simulation have been noted in
-$\roots=7\TeV$ \cite{Chatrchyan:2012jua} and $\roots=8\TeV$ \cite{CMS-PAS-BTV-13-001}. To account for these
-differences, events are reweighted based on the recommendation of the CMS \btagging Physics Object Group
-(POG), with the aim of ensuring that the probability of an event passing selection criteria in simulation
-matches the probability of an even in data with the same jet(s) passing the same selection. The result of this
-reweighting in the electron+jets channel is shown in
+corresponds to a cut on the discriminator output by the algorithm of 0.679, is used in this analysis. This
+corresponds to a \btagging efficiency of $\approx$70~\% and a mis-tag efficiency of 1~\% for jets from light
+quarks ($\cPqu$, $\cPqd$, $\cPqs$) and gluons. Discrepancies between the \btagging efficiency in data and
+Monte Carlo simulation have been noted in $\roots=7\TeV$~\cite{Chatrchyan:2012jua} and
+$\roots=8\TeV$~\cite{CMS-PAS-BTV-13-001}. To account for these differences, events are reweighted based on the
+recommendation of the CMS \btagging Physics Object Group (POG), with the aim of ensuring that the probability
+of an event passing selection criteria in simulation matches the probability of an event in data with the same
+jet(s) passing the same selection. The result of this reweighting in the electron+jets channel is shown in
 Figure~\ref{fig:nbjets_before_and_after_btag_scale_factors_electrons}, and in the muon+jets channel in
 Figure~\ref{fig:nbjets_before_and_after_btag_scale_factors_muons} in
-Appendix~\ref{as:data_monte_carlo_corrections} .
-The \btagging efficiency uncertainty is evaluated by varying the scale factors by $\pm1\sigma$.
+Appendix~\ref{as:data_monte_carlo_corrections}. The \btagging efficiency uncertainty is evaluated by varying
+the scale factors by $\pm1\sigma$.
 
 \begin{figure}[hbtp]
     \centering
@@ -327,7 +337,8 @@ The \btagging efficiency uncertainty is evaluated by varying the scale factors b
 
 %At bins of lower multiplicity, there is a clear excess in the data distribution over the simulation, but
 % since only the $\geq2$ \btags region is used for the signal region, this disagreement in low bins is not of
-% importance.  %TODO: mention also not important because of fitting?
+% importance.
+%TODO: mention also not important because of fitting?
 
 \subsection{Jet Energy Scale}
 \label{sss:jet_energy_scale}
@@ -335,11 +346,11 @@ Jet energies are corrected to take into account energy coming from other sources
 corrections remove energy that comes from pileup collisions, Level 2 (L2 Relative) corrections remove the
 dependence of jet response on $\eta$, and Level 3 (L3 Absolute) corrections correct for the jet response
 dependence on \pt~\cite{Chatrchyan:2011ds}. These corrections are applied to both data and Monte Carlo
-simulation events. An additional residual correction (L2L3Residual) is applied to data only for fine tuning of the agreement between data and
-simulation.
+simulation events. An additional residual correction (L2L3Residual) is applied to data only for fine tuning of
+the agreement between data and simulation.
 
-Furthermore, jet energy resolution corrections are applied (known as jet smearing) to account for the fact
-that jet energy resolution has been measured to be worse in data than in simulation. These PF jet corrections
+Furthermore, jet energy resolution corrections are applied to simulation (known as jet smearing) to account
+for the fact that jet energy resolution has been measured to be worse in data than in simulation. These PF jet corrections
 are provided by the CMS JETMET Physics Object Group using 0.8\fbinv of dijet data at
 $\roots=7\TeV$~\cite{Chatrchyan:2011ds} and 19.7\fbinv of dijet data at $\roots=8\TeV$~\cite{jet_res_2012}.
 
@@ -355,11 +366,11 @@ corrections are applied to mitigate a known modulation of the \met distribution 
 \label{ss:trigger_ID_isolation_corrections}
 Corrections are also required for the trigger, identification and isolation efficiencies for muons and
 electrons. In the muon+jets channel, the corrections were provided by the CMS muon Physics Object Group
-for $\roots=8\TeV$ TODO:FINDREF (ONLY A TWIKI, WOULD THIS BE OK?) %TODO:FINDREF
-and $\roots=7\TeV$ \cite{CMS-PAS-SMP-13-013}.
+for $\roots=8\TeV$ %TODO:FINDREF (ONLY A TWIKI, WOULD THIS BE OK?)
+and $\roots=7\TeV$~\cite{CMS-PAS-SMP-13-013}.
 
 For the electron+jets channel, the corrections were provided by the CMS EGamma Physics Object Group for
-$\roots=8\TeV$, TODO:FINDREF (ONLY A TWIKI, WOULD THIS BE OK?) %TODO:FINDREF
+$\roots=8\TeV$, %TODO:FINDREF (ONLY A TWIKI, WOULD THIS BE OK?)
 however the corrections for the $\roots=7\TeV$ data were not provided and so were derived independently in
 this analysis using the same tag and probe methods as used by the EGamma POG.
 
@@ -374,7 +385,7 @@ electron trigger efficiencies. The full reference selection was first applied wi
 \btagging and electron veto requirements, while in addition, a second loose electron was required. A \Z mass
 constraint was placed on the two electrons in the event by requiring them to have an invariant mass of between
 60\GeV and 120\GeV, thus ensuring that the pair of electrons originated from a \Z boson decay. The tight
-('tag') electron requirements were \pt$>30\GeV$, \abseta$<0.8$, relative isolation$<0.1$, MVA
+('tag') electron requirements were \pt$>30\GeV$, \abseta$<0.8$, relative isolation~$<0.1$, MVA
 identification$>0.9$, $d_{xy}<0.02\cm$ and reconstructed at HLT level. The loose ('probe') electron
 requirements were \pt$>30\GeV$, \abseta$<2.5$ and $d_{xy}<2\cm$.
 
@@ -456,4 +467,4 @@ towards high efficiencies as the trigger will have a higher efficiency at higher
 Equivalent fit and efficiency plots for the trigger are included in
 Figures~\ref{fig:electron_trigger_efficiency_invariant_Z_mass_fits} and
 \ref{fig:electron_trigger_efficiencies_wrt_eta_pt} in Appendix~\ref{as:data_monte_carlo_corrections}.
-TODO:HAVE NOT INCLUDED MUON ID-ISO OR TRIGGER PLOTS ANYWHERE, ASSUMING OK WITH JUST ELECTRON PLOTS.
+% TODO:HAVE NOT INCLUDED MUON ID-ISO OR TRIGGER PLOTS ANYWHERE, ASSUMING OK WITH JUST ELECTRON PLOTS.

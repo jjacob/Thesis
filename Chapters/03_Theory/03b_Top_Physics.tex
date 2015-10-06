@@ -6,7 +6,7 @@
 The top quark was discovered by the CDF and D{\O} collaborations at the Tevatron at Fermilab in 1995
 \cite{Abe:1995hr, Abachi:1995iq} and is still one of the less well studied fundamental particles in the
 Standard Model. The top quark is the heaviest fermion with its mass currently placed at $173.29 \pm 0.23
-(stat.) \pm 0.92 (syst.)\mathrm{\GeV/c^{2}}$~\cite{top_mass}. Since the lifetime of the top quark is very
+(\stat) \pm 0.92 (\syst) \mathrm{\GeV/c^{2}}$~\cite{top_mass}. Since the lifetime of the top quark is very
 short, approximately $5 \times 10^{25}\mathrm{\s}$~\cite{Agashe:2014kda}, it is the only one of the quarks to
 decay before it hadronises, meaning that the bare quark properties can be investigated. These unique
 properties of the top quark within the Standard Model mean it is an interesting focus of study.
@@ -16,7 +16,7 @@ properties of the top quark within the Standard Model mean it is an interesting 
 Top quarks can be produced either in top-antitop (\ttbar) production through the strong interaction or single
 top (\tquark) production through the electroweak mechanism. During Run~1 of data taking at the LHC produced
 millions of top quark pair events with gluon-gluon fusion or quark-antiquark annihilation being the primary
-production mechanisms, as shown in Figure~\ref{fig:ttbar_production}. Gluon-gluon fusion dominates at the LHC
+production mechanisms (shown in Figure~\ref{fig:ttbar_production}). Gluon-gluon fusion dominates at the LHC
 since protons are collided with protons, meaning antiquarks are only available from sea quarks in the proton.
 At low momentum fractions, $x$, the gluon density in the proton is large compared to the sea quarks, and
 increases towards lower $x$ at a higher rate than that of the sea quarks. Figure~\ref{fig:proton_parton_pdfs}
@@ -43,8 +43,8 @@ the valence quarks increase in number at high $x$.
      \label{fig:proton_parton_pdfs}
 \end{figure}
 
-At $\sqrt{s}=7\TeV$, gluon-gluon fusion accounts for approximately 80~\% of the total \tquark production cross
-section, increasing to approximately 90~\% at $\sqrt{s}=14\TeV$ \cite{Agashe:2014kda}.
+At $\sqrt{s}=7\TeV$, gluon-gluon fusion accounts for approximately 80~\% of the total \ttbar production,
+increasing to approximately 90~\% at $\sqrt{s}=14\TeV$ \cite{Agashe:2014kda}.
 % A \ttbar production cross section of has been measured at $\sqrt{s}=7\TeV$ and at $\sqrt{s}=8\TeV$.
 
 \begin{figure}[hbtp]
@@ -109,7 +109,7 @@ interaction in one of three channels: s-channel or t-channel which involve the e
 or tW-channel which involves the associated production of a \W boson and a top quark. Although semi-leptonic
 \ttbar decays have more jets in the final state than these single top production modes, initial state
 radiation and final state radiation, where low energy gluons and quarks are produced before and after the
-interaction that produces the single \t quark, can increase the numbers of jets in single top events. This can
+interaction that produces the single \tquark, can increase the numbers of jets in single top events. This can
 lead to such events having a similar signature to \ttbar events, and providing a non-negligble background.
 
 \subsection{W/Z+jets background}
@@ -147,22 +147,17 @@ In the muon+jets channel, only highly energetic jets ($\pt>500\GeV$) are capable
 the calorimeters to leave tracks in the muon chambers. Such events can be removed by isolation requirements
 (since they deposit significant amounts of energy in the calorimeters). Events with real electrons and muons
 from heavy quark jets can be identified by the track quality requirements in the selection since they would
-not begin from the primary vertex and so would have a distrinct track signature compared to prompt leptons.
+not begin from the primary vertex and so would have a distinct track signature compared to prompt leptons.
 
 On the other hand, the electron channel poses a more problematic QCD background, due mainly to the conversion
 of photons, whether produced at the interaction point or through subsequent decays and radiation, into
 electrons and positrons. The identification and removal of such events is described in
-Section~\ref{ss:electron_reconstruction}. However, the large uncertainty in the cross section of QCD events,
+Section~\ref{ss:electron_reconstruction}. However, the large uncertainty in the cross sections of QCD events,
 large contamination from higher order processes with additional jets in the signal region of this analysis and
-the difficulty in modelling such contributions lead to significant disagreements in the numbers
-of events passing the signal selection in data and in simulation. Therefore, the QCD background is modelled
-using a data driven method.
-
-The QCD background is difficult to model precisely because of large uncertainties on the cross sections and
-the significant higher contributions which can easily be mismodelled, leading to incorrect event kinematics
-and selection biases. Hence, the QCD background shape is modelled using a data driven method, decribed in
-Section~\ref{ss:background_selection} and then normalised to the number of events passing the selection
-process in simulation.
+the difficulty in modelling such contributions, lead to incorrect event kinematics and significant
+disagreements in the QCD background distributions in data and in simulation. Therefore, the QCD background is
+modelled using a data driven method, described in Section~\ref{ss:background_selection}, and then normalised
+to the number of events passing the signal selection in simulation.
 
 \section{Monte Carlo Simulation}
 \label{s:monte_carlo_simulation}
@@ -244,7 +239,7 @@ of this threshold, simulated samples in which the threshold is increased and dec
 Table~\ref{tab:matching_uncertainty_thresholds}) are used to estimate the affect of this uncertainty on this
 analysis. Similarly, the factorisation scale at which $\alpha_{S}$ is varied up and down from the nominal
 value of $Q^{2} = m^{2} + \Sigma p_{T}^{2}$ by a factor of 2 (see Table~\ref{tab:matching_uncertainty_thresholds}) to
-produce simulation samples to evaluate the sytematic uncertainty resulting from this. The uncertainty
+produce simulation samples to evaluate the systematic uncertainty resulting from this. The uncertainty
 resulting from these variations are evaluated in both \ttbar and \W/\ZpJets processes.
 
 \input{Chapters/03_Theory/tables/theoretical_systematics}
@@ -252,7 +247,7 @@ resulting from these variations are evaluated in both \ttbar and \W/\ZpJets proc
 \subsection{Detector Simulation (GEANT)}
 \label{ss:detector_simulation}
 Following creation of the physics processes in proton-proton collisions, the simulated events are then put
-through a detector simulation to evaluate the interation of the detector with the products of collisions. The
+through a detector simulation to evaluate the interaction of the detector with the products of collisions. The
 Geometry and Tracking 4 (\GEANTfour) package~\cite{Agostinelli:2002hh,Allison:2006ve} is used for this
 purpose, which simulates what happens to particles as they travel through the geometry of the detector,
 including simulation of the detector components and materials and the interaction of particles with the

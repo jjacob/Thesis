@@ -1,4 +1,4 @@
-\chapter{7 TeV and 8 TeV Differential Cross Section: Systematic Uncertainties and Results}
+\chapter{Differential Cross Sections: Systematic Uncertainties and Results}
 \label{c:Differential_Cross_Section:systematics_and_results}
 
 \section{Systematic uncertainties}
@@ -6,17 +6,17 @@
 The systematic uncertainties in this analysis are evaluated independently, under the assumption that
 systematic uncertainty sources are uncorrelated, by changing the inputs by the associated uncertainties
 ($-1\sigma$ and $+1\sigma$) and measuring the deviation in the final result from the nominal measurement. The
-final result from systematic variations are generally found to be compatible with the nominal measurement within uncertainties. The
-uncertainties from each source are therefore symmetrised by using the maximum absolute deviation of the up or
-down systematic variation. The total systematic uncertainty is obtained by adding the systematic uncertainties
-in quadrature, and this is summed with the fitting and unfolding uncertainties to obtain the total measurement
-uncertainty. The normalisation of the final differential cross section will cancel systematic uncertainties
-that are correlated between bins of the primary variables.
+final results from systematic variations are generally found to be compatible with the nominal measurement
+within uncertainties. The uncertainties from each source are therefore symmetrised by using the maximum
+absolute deviation of the up or down systematic variation. The total systematic uncertainty is obtained by
+adding the systematic uncertainties in quadrature, and this is summed with the fitting and unfolding
+uncertainties to obtain the total measurement uncertainty. The normalisation of the final differential cross
+section will cancel systematic uncertainties that are correlated between bins of the primary variables.
 
 In the case of experimental uncertainties, the uncertainty is calculated by changing the templates in the
 fitting process and/or their normalisations, and using the nominal \MADGRAPH response matrix in the unfolding
-process. In the case of theoretical uncertainties, the central fitting templates and normalisation are used,
-while the response matrix information is changed according to the systematic being investigated.
+process. In the case of theoretical uncertainties, the nominal fitting templates and normalisation are used,
+while the response matrix information is changed according to the systematic uncertainty being investigated.
 
 The systematic uncertainties are summarised in Tables~\ref{tab:MET_systematics_7TeV_combined} to
 \ref{tab:MT_systematics_8TeV_combined}.
@@ -120,7 +120,7 @@ the selection process.
 
 Rate changing systematics such as the uncertainty on the luminosity and the uncertainty on the theoretical
 cross sections of the signal and background processes have a negligible effect on the final result, since
-they cance in the final normalised measurements.
+they cancel in the final normalised measurements.
 
 \subsection{Theoretical Uncertainties}
 \label{ss:theoretical_uncertainties}
@@ -130,7 +130,7 @@ they cance in the final normalised measurements.
 
 The factorisation and normalisation scale ($Q^{2}$ up/down) uncertainty is evaluated using simulation samples
 produced with the scale varied by factors of 2 (up) and 0.5 (down). This has been evaluated to be one of the
-dominating uncertainties in this analysis. The uncertainty in the matching theshold (matching up/down) for
+dominating uncertainties in this analysis. The uncertainty in the matching threshold (matching up/down) for
 \ttbar events is evaluated in the same way.
 
 Unfortunately, Monte Carlo simulation for theoretical systematic uncertainties at $\roots=7\TeV$ have not
@@ -217,28 +217,30 @@ Results plots showing the unfolded data distributions from the background subtra
 
 The normalised cross section distributions are shown compared with predictions from \MADGRAPH,
 \POWHEG+\PYTHIA, \POWHEG+\HERWIG, \MCATNLO ($\roots=8\TeV$ only) and a \MADGRAPH prediction with corrected
-\tquark \pt in the left hand plots. The error bars on the data points represent the statistical +unfolding
-(inner) and systematic uncertainties summed in qudrature (outer). In the right hand plots a comparison with
+\tquark \pt in the left hand plots. The error bars on the data points represent the statistical+unfolding
+(inner) and systematic uncertainties summed in quadrature (outer). In the right hand plots a comparison with
 the \MADGRAPH prediction with matching threshold, and factorisation and renormalisation scale up and down.
 Ratio plots are shown below the distribution plots to allow easier comparison of the distribution in data to
 the different simulations, with a line at 1.0 for reference. In the ratio plots, the grey error bands
-represent the statistical + unfolding uncertainty, while the yellow error bands represent the systematic
-uncertainties added in qudrature. The systematic uncertainties resulting from matching and factorisation and
-renormalisation scale are excluded from the systematic uncertainties in plots comparing the data distribution
-with theoretical variations. Similarly, the hadronisation uncertainty is excluded in plots comparing the data
-distribution with different simulation generators. It can be seen that the data distributions show softer
-distributions than in simulation as a result of the mismodelling of the \tquark \pt in the generators
-\cite{Chatrchyan:2012saa}. The corrected \MADGRAPH distribution, however, shows good agreement with the data.
+represent the statistical+unfolding uncertainty, while the yellow error bands represent the systematic
+uncertainties added in quadrature.
+% The systematic uncertainties resulting from matching and factorisation and renormalisation scale are
+% excluded from the systematic uncertainties in plots comparing the data distribution with theoretical
+% variations. Similarly, the hadronisation uncertainty is excluded in plots comparing the data distribution
+% with different simulation generators.
+It can be seen that the data distributions show softer distributions than in simulation as a result of the
+mismodelling of the \tquark \pt in the generators \cite{Chatrchyan:2012saa}. The corrected \MADGRAPH
+distribution, however, shows good agreement with the data.
 
 \begin{figure}[hbtp]
     \centering
 %     \resizebox{\columnwidth}{!} {
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/7TeV/MET/central/normalised_xsection_combined_different_generators.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/7TeV/MET/central/normalised_xsection_combined_systematics_shifts.pdf}\\
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/7TeV/HT/central/normalised_xsection_combined_different_generators.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/7TeV/HT/central/normalised_xsection_combined_systematics_shifts.pdf}\\
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/7TeV/ST/central/normalised_xsection_combined_different_generators.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/7TeV/ST/central/normalised_xsection_combined_systematics_shifts.pdf}\\
+     \includegraphics[width=0.45\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/7TeV/MET/central/normalised_xsection_combined_different_generators.pdf}\hfill
+     \includegraphics[width=0.45\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/7TeV/MET/central/normalised_xsection_combined_systematics_shifts.pdf}\\
+     \includegraphics[width=0.45\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/7TeV/HT/central/normalised_xsection_combined_different_generators.pdf}\hfill
+     \includegraphics[width=0.45\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/7TeV/HT/central/normalised_xsection_combined_systematics_shifts.pdf}\\
+     \includegraphics[width=0.45\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/7TeV/ST/central/normalised_xsection_combined_different_generators.pdf}\hfill
+     \includegraphics[width=0.45\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/7TeV/ST/central/normalised_xsection_combined_systematics_shifts.pdf}\\
      \caption[Comparison of the measured normalised differential cross section with respect to \met, \HT and
      \st to different Monte Carlo generators and predictions at $\roots=7\TeV$.]{Comparison of the measured
      normalised differential cross section with respect to \met (upper), \HT (middle) and \st (lower) to
@@ -269,12 +271,12 @@ distributions than in simulation as a result of the mismodelling of the \tquark 
 
 \begin{figure}[hbtp]
     \centering
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/8TeV/MET/central/normalised_xsection_combined_different_generators.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/8TeV/MET/central/normalised_xsection_combined_systematics_shifts.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/8TeV/HT/central/normalised_xsection_combined_different_generators.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/8TeV/HT/central/normalised_xsection_combined_systematics_shifts.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/8TeV/ST/central/normalised_xsection_combined_different_generators.pdf}\hfill
-     \includegraphics[width=0.48\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/8TeV/ST/central/normalised_xsection_combined_systematics_shifts.pdf}\hfill
+     \includegraphics[width=0.45\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/8TeV/MET/central/normalised_xsection_combined_different_generators.pdf}\hfill
+     \includegraphics[width=0.45\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/8TeV/MET/central/normalised_xsection_combined_systematics_shifts.pdf}\hfill
+     \includegraphics[width=0.45\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/8TeV/HT/central/normalised_xsection_combined_different_generators.pdf}\hfill
+     \includegraphics[width=0.45\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/8TeV/HT/central/normalised_xsection_combined_systematics_shifts.pdf}\hfill
+     \includegraphics[width=0.45\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/8TeV/ST/central/normalised_xsection_combined_different_generators.pdf}\hfill
+     \includegraphics[width=0.45\textwidth]{Chapters/04_Analysis/04b_XSections/images/results/fit/8TeV/ST/central/normalised_xsection_combined_systematics_shifts.pdf}\hfill
      \caption[Comparison of the measured normalised differential cross section with respect to \met, \HT and
      \st to different Monte Carlo generators and predictions at $\roots=8\TeV$.]{Comparison of the measured
      normalised differential cross section with respect to \met, \HT and \st to different Monte Carlo
