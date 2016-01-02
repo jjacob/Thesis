@@ -98,10 +98,11 @@ this stage.
 \label{s:binning_choice}
 The different cross sections in this analysis are measured in bins of the primary variable distributions. The
 choice of bin sizes and boundaries are significant because events generated in one bin can migrate to another
-bin after reconstrution due to the finite resolution of the detector. This altering of the number of events,
+bin after reconstruction due to the finite resolution of the detector. This altering of the number of events,
 as a result of events moving into, or out of, a bin is important to understand so that the final reconstructed
 distribution can be deconvoluted (unfolded) to the true distribution. In light of this, the binning choice is
-made based on two variables defined as purity ($p^k$) and stability ($s^k$):
+made based on two variables defined as purity ($p^k$) and stability ($s^k$), which are functions of how well
+a variable is reconstructed:
 \begin{align}
 \label{eq:purity_and_stability}
 p^k = \frac{N_{\rec\&\gen}^k}{N_{\rec}^k}\\
@@ -109,8 +110,8 @@ s^k = \frac{N_{\rec\&\gen}^k}{N_{\gen}^k}.
 \end{align}
 $N_{\rec\&\gen}^k$ is the number of events generated and reconstructed in bin $k$,
 $N_{\rec}^k$ is the number of events reconstructed in bin $k$ and $N_{\gen}^k$ is the number of events
-generated in bin $k$. The stability of a bin is sensitive to the migration of events out of a bin, while
-the purity is sensitive to the migration of events into a bin (see Figure~\ref{fig:purity_and_stability}).
+generated in bin $k$. The stability of a bin is sensitive to the migration of events out of a bin, while the
+purity is sensitive to the migration of events into a bin (see Figure~\ref{fig:purity_and_stability}).
 
 \begin{figure}[hbtp]
 	\centering
@@ -120,6 +121,8 @@ the purity is sensitive to the migration of events into a bin (see Figure~\ref{f
      the bin in which an event is generated to the range in which they are reconstructed.}
      \label{fig:purity_and_stability}
  \end{figure}
+
+Say about statistics and resolution in measurement so many bins as possible etc.
 
 In this analysis, the bins for each primary variable distribution were chosen such that all bins have purity
 and stability values of 0.5 or greater, meaning that at least half of the events generated in a bin remain in
@@ -182,9 +185,13 @@ variable is able to distinguish between all four templates used in the fit:
   \item{QCD multi-jet} 
 \end{itemize}
 \doublespacing
-The template distributions are obtained from the following three variables: the absolute pseudorapidity of the
-lepton (\abseta), the three-dimensional angle between the lepton and the nearest \bjet ($\alpha$), and the
-invariant mass of the three jets with the highest \pt sum ($M3$).
+The template distributions are obtained from the following three variables:
+\onehalfspacing
+\begin{itemize}
+  \item {the absolute pseudorapidity of the lepton (\abseta)}
+  \item {the three-dimensional angle between the lepton and the nearest \bjet ($\alpha$)}
+  \item {invariant mass of the three jets with the highest \pt sum ($M3$)}
+\end{itemize}
 
 The fit is carried out by maximising the log of the likelihood function (LL):
 
@@ -400,10 +407,12 @@ containing very few QCD events.
 \section{Background Subtraction}
 \label{s:background_subtraction}
 As a cross-check for the fitting process, an alternative method of extracting the number of \ttbar events
-using the background subtraction method was performed. The MC predictions of single top, \VpJets and QCD
-events is subtracted from the data in each bin to provide the \ttbar yield. The normalisations of these background
-processes is the same as previously used in the fitting method, \ie to their respective cross sections and
-luminosities. The resulting number of \ttbar events is then taken forward to the unfolding process.
+using the background subtraction method was performed. This method removes, to some extent, the
+model-dependency present in the fitting method, by not using the \ttbar MC simulation. The MC predictions of
+single top, \VpJets and QCD events is subtracted from the data in each bin to provide the \ttbar yield. The
+normalisations of these background processes is the same as previously used in the fitting method, \ie to
+their respective cross sections and luminosities. The resulting number of \ttbar events is then taken forward
+to the unfolding process.
 
 \section{Unfolding}
 \label{ss:unfolding}
@@ -432,12 +441,12 @@ measured in reality to have some distribution, $b$, which is then related to the
 and therefore
 \begin{equation}
 \label{eq:unfolding_data_rearranged}
-b = \hat{A}^{-1} x,
+x = \hat{A}^{-1} b,
 \end{equation}
 Therefore, in this analysis, the system is solved to identify the true underlying distribution, $x$, using
 Singular Value Decomposition (SVD) \cite{Hocker:1995kb} of the response matrix, with the RooUnfold package
-\cite{Adye:2011gm}, and using regularisation overcome the problem of oscillating solutions. In SVD unfolding,
-the response matrix is factorised as follows:
+\cite{Adye:2011gm}, and using regularisation to overcome the problem of oscillating solutions. In SVD
+unfolding, the response matrix is factorised as follows:
 \begin{equation}
 \hat{A} = USV^{T}.
 \label{eq:response}

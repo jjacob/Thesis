@@ -12,10 +12,10 @@ twelve fermions, with a spin quantum number of 1/2, as the matter particles. The
 of six quarks and six leptons, all of which are split into three generations. The six quarks are classified
 according to their charge and flavour: up, down, charm, strange, top and beauty quarks. The leptons are in
 turn classified similarly: electron, muon or tau leptons, together with their corresponding neutrinos.
-Neutrinos, although originally thought to be massless, are now believed to carry mass due to the observation
-of the oscillation of neutrinos between different flavours. Table~\ref{tab:standard_model} shows these
-particles of the Standard Model in their respective generations. All of these particles have a respective
-antiparticle which has identical quantum numbers except opposite electric charge.
+Neutrinos, although originally thought to be massless, are now known to carry mass due to the observation of
+the oscillation of neutrinos between different flavours. Table~\ref{tab:standard_model} shows these particles
+of the Standard Model in their respective generations. All of these particles have a respective antiparticle
+which has identical quantum numbers with the exception of opposite electric charge.
 
 \input{Chapters/03_Theory/tables/standard_model}
 
@@ -41,26 +41,28 @@ their properties.
 % themselves carry the strong colour charge and so interact with each other, reducing their interaction range.
 The strength of the fundamental forces is quantified by their coupling strength, denoted $\alpha$. Taking the
 strength of the strong force as the baseline, the relative strength of the electromagnetic force is $10^{-2}$,
-that of the weak force is $10^{-5}$ and the strength of the gravitational force is
-$10^{-39}$~\cite{Rolnick_Fundamental_Particles}. The electromagnetic coupling strength, also known as the
-fine-structure constant, is defined as $\alpha_{em}=\frac{e^{2}}{4\pi}$, which at low energies is
-$\approx\frac{1}{137}$. Although the strong force is the strongest force, it has a limited range of only
-\textasciitilde$~10^{-15}\m$, and the weak force has an estimated range of \textasciitilde$10^{-18}\m$, while
-the electromagnetic and gravitational forces have infinite range.
+that of the weak force is $10^{-5}$ and the strength of the gravitational force is $10^{-39}$, though the
+notion of relative strength is dependent on the energy scale, so different relative strengths are often
+quoted, in particular for the weak force~\cite{Rolnick_Fundamental_Particles,Griffiths:1987tj}. The
+electromagnetic coupling strength, also known as the fine-structure constant, is defined as
+$\alpha_{em}=\frac{e^{2}}{4\pi}$, which at low energies is $\approx\frac{1}{137}$. Although the strong force
+is the strongest force, it has a limited range of only \textasciitilde$~10^{-15}\m$, and the weak force has an
+estimated range of \textasciitilde$10^{-18}\m$, while the electromagnetic and gravitational forces have
+infinite range.
 
-The Higgs boson, the discovery of which was announced in July 2012 by the CMS and ATLAS experiments at the
-LHC, is the latest component of the Standard Model to be discovered~\cite{Chatrchyan:2012xdj, Aad:2012tfa}.
-The mechanism of electroweak symmetry breaking through which other particles acquire mass is due to the Higgs
-field, and is described in Section~\ref{ss:spontaneous_symmetry_breaking}.
+The discovery of the Higgs boson was announced in July 2012 by the CMS and ATLAS experiments at the LHC, and
+is a major component of the Standard Model~\cite{Chatrchyan:2012xdj, Aad:2012tfa}. The mechanism of
+electroweak symmetry breaking through which other particles acquire mass is due to the Higgs field, and is
+described in Section~\ref{ss:spontaneous_symmetry_breaking}.
 
 \subsection{Gauge Principle}
 \label{ss:gauge_principle}
 The underlying mathematical model of the Standard Model is a Quantum Field Theory (QFT) combining special
 relativity and quantum mechanics. All interactions in the SM must conserve the kinematic quantities energy and
 momentum, in addition to electric charge. The electromagnetic and strong forces also conserve the dynamic
-quantities colour, baryon number, lepton number and quark flavour. The weak force, if mediated by a charged
-propagator ($\W^{\pm}$), can allow the violation of quark flavour, meaning a quark can decay into another
-flavour quark.
+quantities colour, strangeness, spin, baryon number, lepton number and quark flavour. The weak force, if
+mediated by a charged propagator ($\W^{\pm}$), can allow the violation of quark flavour, meaning a quark can
+decay into another flavour quark. %P143 Griffiths
 
 The laws of conservation occur as a result of underlying symmetries in the theories. For instance, energy
 conservation stems from time symmetry and angular momentum conservation is a result of rotational symmetry.
@@ -103,21 +105,20 @@ together, such as electron-positron annihilation shown in Figure~\ref{fig:qed_pr
      \label{fig:qed_processes}
 \end{figure}
 
-Any such real process is represented by the sum of all possible orders of Feynmann diagrams for the
-interaction. In practice, since each vertex contributes a factor of $\alpha$ at low energies, higher-order
-Feynmann diagrams with more than a few vertices contribute negligibly to the process and are often ignored.
+Any such real process is represented by the sum of all possible orders of Feynman diagrams for the
+interaction. In practice, since each vertex contributes a factor of $\alpha$, higher-order Feynman diagrams
+with more than a few vertices contribute negligibly to the process and are often ignored.
 
 The coupling strength of a force can be further explained in terms of vacuum polarisation. Regarding the
 electromagnetic force, this refers to the phenomenon of electron-positron pairs and photons being
 spontaneously created and absorbed by an electron. These virtual particles, which would be represented in
-Feynmann diagrams as closed loops, shield the original electron leading to the electron charge being measured
+Feynman diagrams as closed loops, shield the original electron leading to the electron charge being measured
 at a lower value than its true charge. This measured value is called the effective, or 'screened', charge. As
 a result, the coupling strength of the electromagnetic force is said to be a `running' coupling
 constant, due to the fact that it decreases as a function of distance.
 
 The mathematical formulation of QED stems from the Dirac equation, which describes the Lagrangian for a
 spin-half (Fermionic) field $\psi$~\cite{Dirac610}:
-
 \begin{equation}
 \calL = i (\hbar c) \bar{\psi} \gamma^{\mu} \partial_{\mu} \psi - (mc^{2}) \bar{\psi} \psi
 \end{equation}
@@ -226,12 +227,12 @@ symmetry underlying the $SU(2) \times U(1)$ group addresses this problem, as exp
 Section~\ref{ss:spontaneous_symmetry_breaking}.
 
 The weak force has been shown to change the flavour of quarks in an interaction, meaning flavour conservation
-is broken. %As stated,
-The quarks, like leptons, come in the form of left handed doublets within each generation,
+is broken. The quarks, like leptons, come in the form of left handed doublets within each generation,
 \begin{equation}
 \left(\begin{array}{c} u_{L} \\ d'_{L} \end{array}\right) , \left(\begin{array}{c} c_{L} \\ 
 s'_{L} \end{array}\right) , \left(\begin{array}{c} t_{L} \\ b'_{L} \end{array}\right)
 \end{equation}
+
 with isospin $\frac{1}{2}$. Note that the lower quarks of the doublets are denoted with primes as they
 indicate a rotated state of the quark, called Cabibbo-rotated states, which are superpositions of the physical quarks.
 This means that in, for example, the decay of a down quark to an up quark via emittance of a $\W^{-}$, the
@@ -239,9 +240,8 @@ down quark to which the $\W^{-}$ couples is actually a superposition of `down ty
 and beauty quarks. The Cabbibo-Kobayashi-Maskawa (CKM) matrix, relates the weak interaction mixed states to
 the physical quark states. This is the degree of quark mixing between the different generations, and results in
 the measured values (see equation~\ref{CKM_matrix}) of $\abs{V_{12}}$ for the probability of a transition from
-quark 1 to quark 2 in a weak interaction~\cite{Agashe:2014kda}. In reference to top physics, the \abs{V_{tb}} value of almost 1
-means that the top quark almost always decays to a \W boson and a \bquark.
-
+quark 1 to quark 2 in a weak interaction~\cite{Agashe:2014kda}. In reference to top physics, the \abs{\Vtb}
+value of almost 1 means that the top quark almost always decays to a \W boson and a \bquark.
 \begin{equation}
 \begin{pmatrix}
 V_{\cPqu\cPqd} & V_{\cPqu\cPqs} & V_{\cPqu\cPqb} \\
@@ -315,6 +315,7 @@ The potential $V(\Phi)$ is chosen to be
 \begin{equation}
 V(\Phi) = -\mu^{2} \Phi^\dagger \Phi + \lambda^{2} (\Phi^\dagger \Phi)^{2}
 \end{equation}
+
 Imposing the requirement of $\mu^{2}$ and $\lambda$ both being greater than 0, gives a potential of the
 geometry shown in Figure~\ref{fig:higgs_potential}. The minimum of this potential is clearly not at
 $\Phi=0$, rather, the minimum has a circular form given by the formula $\Phi^\dagger \Phi =
@@ -340,24 +341,34 @@ Terms known as Yukawa coupling terms can be introduced to specify the interactio
 fields. It is this coupling of the Higgs field to any massive particle that gives them a proportional mass.
 The top quark, being the heaviest known particle at \textasciitilde173\GeV, has a Yukawa coupling to the
 Higgs field close to 1.
-%TODO: IMPORTANT BECAUSE?
 
-Results published at the discovery of the Higgs boson are shown in Figure~\ref{fig:higgs_results} in the
+Results published at the discovery of the Higgs boson are shown in Figure~\ref{fig:higgs_results_2012} in the
 Higgs$\rightarrow\gamma\gamma$ and Higgs$\rightarrow\Z\Z$ channels. These plots of the invariant masses of the
 $\gamma\gamma$ and $\Z\Z$ combinations show a clear excess of events around 125\GeV. The latest results from
-CMS and ATLAS state a Higgs mass of $125.09\pm0.21\pm0.11\GeV$~\cite{Aad:2015zhl}, where the first uncertainty
-is statistical and the second is systematic. Since the announcement of the discovery of the Higgs boson in 2012,
-studies have continued to determine its quantum properties. Thus far, results show it to be in agreement with
-predictions from the Standard Model~\cite{Khachatryan:2014jba}.
+CMS and ATLAS, shown in Figure~\ref{fig:higgs_results_2015} state a Higgs mass of
+$125.09\pm0.21\pm0.11\GeV$~\cite{Aad:2015zhl}, where the first uncertainty is statistical and the second is
+systematic. Since the announcement of the discovery of the Higgs boson in 2012, studies have continued to
+determine its quantum properties. Thus far, results show it to be in agreement with predictions from the
+Standard Model~\cite{Khachatryan:2014jba}.
 
 \begin{figure}[hbtp]
    \centering
-     \includegraphics[width=0.5\textwidth]{Chapters/03_Theory/Images/sbweightedmassunweightedinset1_5GeV}\hfill
      \includegraphics[width=0.5\textwidth]{Chapters/03_Theory/Images/H4l_mass_v3}\hfill
-     \caption[Invariant mass in $H\rightarrow\gamma\gamma$ (left) and $H\rightarrow\Z\Z$ (right)
+   	 \includegraphics[width=0.5\textwidth]{Chapters/03_Theory/Images/sbweightedmassunweightedinset1_5GeV}\hfill
+   	 \caption[Invariant mass in $H\rightarrow\gamma\gamma$ (left) and $H\rightarrow\Z\Z$ (right)
      channels.]{Invariant mass in $H\rightarrow\gamma\gamma$ (left) and $H\rightarrow\Z\Z$ (right) channels
      ~\cite{Chatrchyan:2012xdj}.}
-     \label{fig:higgs_results}
+     \label{fig:higgs_results_2012}
+\end{figure}
+
+\begin{figure}[hbtp]
+   \centering
+     \includegraphics[width=\textwidth]{Chapters/03_Theory/Images/CMS-HIG-14-042_Figure_002}
+     \caption[Summary of Higgs boson mass measurements from CMS, ATLAS and combined CMS+ATLAS analyses in the
+     $H\rightarrow\gamma\gamma$ and $H\rightarrow\Z\Z$ channels.]{Summary of Higgs boson mass measurements
+     from CMS, ATLAS and combined CMS+ATLAS analyses in the $H\rightarrow\gamma\gamma$ and $H\rightarrow\Z\Z$
+     channels~\cite{Aad:2015zhl}.}
+     \label{fig:higgs_results_2015}
 \end{figure}
 
 \section{Incompleteness of, and physics beyond, the SM}
@@ -377,7 +388,7 @@ universe could be partially explained by the observed charge-parity (CP) symmetr
 interactions~\cite{Christenson:1964fg}, this is not sufficient to account for the observed excess.
 
 Furthermore, the SM does not provide a theoretical explanation for neutrino mass. Originally thought to be
-massless, neutrinos are now thought to have mass, albeit extremely small, based on observations of neutrino
+massless, neutrinos are now known to have mass, albeit extremely small, based on observations of neutrino
 oscillations between different flavours~\cite{Kajita:1998bw,Fukuda:1998mi}.
 
 The hierarchy problem, in terms of the Higgs boson, refers to the fact that the measured Higgs mass is many
@@ -403,12 +414,15 @@ top mass. Theories of extra dimensions also exist, in which additional space-tim
 which only gravity propagates~\cite{ArkaniHamed:1998rs}. This could provide an explanation for the fact that
 the Planck scale is far larger than the electroweak force by solving the heirarchy problem.
 
-The universe is thought to constitute of about 27~\% dark matter, 68~\% dark energy and 5~\% ordinary
-matter (Figure~\ref{fig:universe_composition})~\cite{Ade:2013sjv}. The origins and nature of the dark energy and dark
+The Planck experiment, and the WMAP mission before that, provide estimates that the universe is thought to
+constitute approximately 27~\% dark matter, 68~\% dark energy and 5~\% ordinary matter
+(Figure~\ref{fig:universe_composition})~\cite{Ade:2013sjv}. The origins and nature of the dark energy and dark
 matter are currently unknown and they are as yet unobserved, but their existence has been inferred from their
-gravitational effects on galactic masses composed of stars, gases and dust. The relatively large amounts of
-dark matter and dark energy hypothesised suggests that they are made up of weakly interacting massive
-particles.
+gravitational effects on galactic masses composed of stars, gases and dust. The relative amounts of ordinary
+matter, dark matter and dark energy have been inferred from measurements of the cosmic microwave background
+radiation which give an indication of the structure and composition of the early universe. The relatively
+large amounts of dark matter and dark energy hypothesised suggests that they are made up of weakly interacting
+massive particles.
 
 \begin{figure}[hbtp]
    \centering

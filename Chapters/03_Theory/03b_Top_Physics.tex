@@ -5,33 +5,54 @@
 \label{s:top_physics_intro}
 The top quark was discovered by the CDF and D{\O} collaborations at the Tevatron at Fermilab in 1995
 \cite{Abe:1995hr, Abachi:1995iq} and is still one of the less well studied fundamental particles in the
-Standard Model. The top quark is the heaviest fermion with its mass currently placed at $173.29 \pm 0.23
-(\stat) \pm 0.92 (\syst) \mathrm{\GeV/c^{2}}$~\cite{top_mass}. Since the lifetime of the top quark is very
-short, approximately $5 \times 10^{25}\mathrm{\s}$~\cite{Agashe:2014kda}, it is the only one of the quarks to
-decay before it hadronises, meaning that the bare quark properties can be investigated. These unique
-properties of the top quark within the Standard Model mean it is an interesting focus of study.
+SM. The top quark is the heaviest fermion with its mass currently placed at $173.29\pm0.23
+(\stat)\pm0.92(\syst)\GeV/c^{2}$~\cite{top_mass}. Since the lifetime of the top quark is very short,
+approximately $5\times10^{-25}\s$~\cite{Agashe:2014kda}, it is the only one of the quarks to decay
+before it hadronises, meaning that the bare quark properties can be investigated. These unique properties of
+the top quark within the SM mean it is an interesting focus of study.
 
 \subsection{Top Quark Production and Decay}
 \label{ss:top_quark_production_and_decay}
 Top quarks can be produced either in top-antitop (\ttbar) production through the strong interaction or single
 top (\tquark) production through the electroweak mechanism. During Run~1 of data taking at the LHC produced
 millions of top quark pair events with gluon-gluon fusion or quark-antiquark annihilation being the primary
-production mechanisms (shown in Figure~\ref{fig:ttbar_production}). Gluon-gluon fusion dominates at the LHC
-since protons are collided with protons, meaning antiquarks are only available from sea quarks in the proton.
-At low momentum fractions, $x$, the gluon density in the proton is large compared to the sea quarks, and
-increases towards lower $x$ at a higher rate than that of the sea quarks. Figure~\ref{fig:proton_parton_pdfs}
-shows the proton parton distribution functions (PDFs) at a momentum transfer, $Q^{2}=10\GeV^{2}$, of the order
-required for \cPqt/\W/\Z production. At low $x$, it can be seen that the sea quarks and gluons dominate, while
-the valence quarks increase in number at high $x$.
+production mechanisms (shown in Figure~\ref{fig:ttbar_production}). The \ttbar production cross section at
+$\sqrt{s}=1.96\TeV$ was measured by the CDF and D{\O} collaborations at the TeVatron, while the cross sections
+at $\sqrt{s}=7\TeV$ and $\sqrt{s}=8\TeV$ have been measured by CMS and ATLAS at the LHC. The measurements are
+summarised in Figure~\ref{fig:ttbar_cross_sections_plot}. Numerical cross sections values at the LHC, at
+\roots=7\TeV, \roots=8\TeV, \roots=13\TeV and \roots=14\TeV are shown in
+Table~\ref{tab:ttbar_and_single_top_cross_sections}.
 
 \begin{figure}[hbtp]
    \centering
      \includegraphics[width=0.9\textwidth]{Chapters/03_Theory/Images/ttbar_production}\hfill
      \caption[Feynman diagrams of leading order \ttbar production processes.]{Feynman diagrams of leading
-     order \ttbar production processes. (a) depicts quark-antiquark annihilation, and (b, (c) and (d) depict
+     order \ttbar production processes. (a) depicts quark-antiquark annihilation, and (b), (c) and (d) depict
      gluon-gluon fusion in the s, t and u channels respectively.)}
      \label{fig:ttbar_production}
 \end{figure}
+
+\begin{figure}[hbtp]
+   \centering
+     \includegraphics[width=0.8\textwidth]{Chapters/03_Theory/Images/toplhcwg_ttxsec_sqrts_may2015}\hfill
+     \caption[\ttbar production cross sections at 1.96\TeV at CDF and D{\O} at the TeVatron and at 7\TeV and
+     8\TeV at CMS and ATLAS at the LHC.]{\ttbar production cross sections at 1.96\TeV at CDF and D{\O} at the
+     TeVatron and at 7\TeV and 8\TeV at CMS and ATLAS at the LHC~\cite{TOPLHC_WG}.}
+     \label{fig:ttbar_cross_sections_plot}
+\end{figure}
+
+\input{Chapters/03_Theory/tables/ttbar_and_single_top_cross_sections}
+
+At the TeVatron, quark-antiquark annihilation dominated, accounting for 90~\% of the \ttbar production cross
+section. At $\sqrt{s}=7\TeV$, gluon-gluon fusion accounts for approximately 80~\% of the \ttbar production,
+increasing to approximately 90~\% at $\sqrt{s}=14\TeV$ \cite{Agashe:2014kda}. Gluon-gluon fusion dominates at
+the LHC since protons are collided with protons, meaning antiquarks are only available from sea quarks in the
+proton. At low momentum fractions, $x$, the gluon density in the proton is large compared to the sea quarks,
+and increases towards lower $x$ at a higher rate than that of the sea quarks.
+Figure~\ref{fig:proton_parton_pdfs} shows the proton parton distribution functions (PDFs) at a momentum
+transfer, $Q^{2}=10000\GeV^{2}$, the region relevant for the LHC and of the order required for \cPqt/\W/\Z
+production. At low $x$, it can be seen that the sea quarks and gluons dominate, while the valence quarks
+increase in number at high $x$.
 
 \begin{figure}[hbtp]
    \centering
@@ -39,26 +60,14 @@ the valence quarks increase in number at high $x$.
      \hfill
      \caption[Proton parton distribution functions at $Q^{2}=10\GeV^{2}$.]{Parton Distribution Functions
      (PDFs) from HERA as a function of proton momentum fraction for
-     $Q^{2}=10\GeV^{2}$~\cite{Placakyte:2011az}}
+     $Q^{2}=10\GeV^{2}$~\cite{Placakyte:2011az}.}
      \label{fig:proton_parton_pdfs}
-\end{figure}
-
-At $\sqrt{s}=7\TeV$, gluon-gluon fusion accounts for approximately 80~\% of the total \ttbar production,
-increasing to approximately 90~\% at $\sqrt{s}=14\TeV$ \cite{Agashe:2014kda}.
-% A \ttbar production cross section of has been measured at $\sqrt{s}=7\TeV$ and at $\sqrt{s}=8\TeV$.
-
-\begin{figure}[hbtp]
-   \centering
-     \includegraphics[width=0.8\textwidth]{Chapters/03_Theory/Images/toplhcwg_ttxsec_sqrts_may2015}\hfill
-     \caption[\ttbar production cross sections at 1.96\TeV at CDF and D{\O} at the TeVatron and at 7\TeV and
-     8\TeV at CMS and ATLAS at the LHC.]{\ttbar production cross sections at 1.96\TeV at CDF and D{\O} at the
-     TeVatron and at 7\TeV and 8\TeV at CMS and ATLAS at the LHC~\cite{TOPLHC_WG}}
-     \label{fig:ttbar_cross_sections}
 \end{figure}
 
 Top quarks decay almost 100~\% of the time to a \W boson and a \cPqb flavour jet. The \W boson then decays
 either hadronically (into two jets) or leptonically (lepton + neutrino). Top pair events are characterised by the
 decay of the \W bosons:
+
 \begin{itemize}
   \item Leptonic: $\ttbar \rightarrow \W^{+} \cPqb \W^{-} \cPaqb \rightarrow l \nu_{l}\cPqb
   l' \bar{\nu_{l'}} \cPaqb$.
@@ -88,8 +97,10 @@ decay channel, with multiple jets and no leptons in the final state, is difficul
 multijet, W+jets and Z+jets backgrounds. Conversely, the leptonic channel has a very clean signature with two
 leptons, however the low branching ratio would limit the available statistics. The semi-leptonic channel, with
 one lepton and four jets provides a good balance between statistics and event identification. The lepton can
-be any of an electron, muon or $\tau$, but $\tau$s are not included in semi-leptonic \tquark analyses in
-general as they are more difficult to identify (see Section~\ref{ss:experimental_uncertainties}).
+be an electron, a muon or a tau. However, top events with taus are difficult to distinguish from genuine
+semi-leptonic events, hence resulting measurements are generally less precise, and therefore taus are not
+included in semi-leptonic \tquark studies in general (see Section~\ref{ss:experimental_uncertainties} for more
+details regarding taus in semi-leptonic \ttbar events).
 
 \begin{figure}[hbtp]
    \centering
@@ -100,17 +111,31 @@ general as they are more difficult to identify (see Section~\ref{ss:experimental
 
 The signal channel for the analysis described in this work is semi-leptonic \ttbar decay, also referred to as
 the lepton+jets channel, where the lepton is either an electron or a muon. These channels have a branching
-ratio of apprimxately 14.2~\% and 14.4~\% respectively \cite{Agashe:2014kda}.
+ratio of approximately 14.2~\% and 14.4~\% respectively~\cite{Agashe:2014kda}.
 
 \subsection{Single Top background}
 \label{ss:single_top}
 Single top production is one of the backgrounds considered in this analysis, and can occur via the electroweak
-interaction in one of three channels: s-channel or t-channel which involve the exchange of a virtual \W boson,
-or tW-channel which involves the associated production of a \W boson and a top quark. Although semi-leptonic
-\ttbar decays have more jets in the final state than these single top production modes, initial state
-radiation and final state radiation, where low energy gluons and quarks are produced before and after the
-interaction that produces the single \tquark, can increase the numbers of jets in single top events. This can
-lead to such events having a similar signature to \ttbar events, and providing a non-negligble background.
+interaction in one of three channels: s-channel (Figure~\ref{fig:single_top_production} (a)), t-channel
+(Figure~\ref{fig:single_top_production} (b) and (c)) which both involve the exchange of a virtual \W boson, or
+\tW-channel (Figure~\ref{fig:single_top_production} (d) and (e)) which involves the associated production of a
+\W boson and a top quark. Although semi-leptonic \ttbar decays have more jets in the final state than these
+single top production modes, initial state radiation and final state radiation, where low energy gluons and
+quarks are produced before and/or after the interaction that produces the single \tquark, can increase the
+numbers of jets in single top events. This can lead to such events having a similar signature to \ttbar
+events, and providing a non-negligble background. SM production cross sections for single top events are shown
+in Table~\ref{tab:ttbar_and_single_top_cross_sections}. Comparisons of data to Monte Carlo simulation, and the
+composition of the backgrounds, including single top events, will be shown in
+Section~\ref{ss:data-mc_comparison}.
+
+\begin{figure}[hbtp]
+   \centering
+     \includegraphics[width=0.9\textwidth]{Chapters/03_Theory/Images/single_top_production}\hfill
+     \caption[Feynman diagrams of leading order single top production processes.]{Feynman diagrams of leading
+     order single top production processes in the s-channel (a), t-channel (b) and (c), and associated tW
+     production (d) and (e).}
+     \label{fig:single_top_production}
+\end{figure}
 
 \subsection{W/Z+jets background}
 \label{ss:w_z_plus_jets}
@@ -121,13 +146,16 @@ semi-leptonic \ttbar decay. In general, these processes can be removed from the 
 final decay products in \WpJets events typically have lower energies than those from semi-leptonic \ttbar
 decays, since the top quark has a high mass. Another characteristic of \WpJets events is that the jets are
 more likely to be light quark jets and therefore less likely to be \bjets than in \ttbar events. Thus, \WpJets
-events can be separated from the \ttbar signal by using jet multiplicity, jet \pt and \bjet multiplicity.
+events can be separated to a large extent from the \ttbar signal by using jet multiplicity, jet \pt and \bjet
+multiplicity.
 
 Similarly, \ZpJets events can mimic \ttbar events where the leptonic decay of a \Z boson to a lepton and an
 anti-lepton takes place. This background can be distinguished from semi-leptonic \ttbar decays by
 vetoing on a second lepton and imposing jet multiplicity requirements. Misidentification and misreconstruction
 of these leptons as jets, however, can result in such events mimicking \ttbar events and passing the signal
-selection, although this contamination is small.
+selection, although this contamination is small. Comparisons of data to Monte Carlo simulation, and the
+composition of the backgrounds, including \WpJets and \ZpJets events, will be shown in
+Section~\ref{ss:data-mc_comparison}.
 
 \subsection{QCD background}
 \label{ss:qcd}
@@ -141,7 +169,6 @@ heavy flavour (\cPqb and \cPqc) jets. Unfortunately the cross section of these p
 magnitude larger than the signal cross section. Although the lepton (either fake or real) is rarely one that
 passes selection, the much higher QCD cross section means that its contribution as a background is
 significant.
-% TODO: READ LUKE'S THESIS FOR WAYS IN WHICH JETS CAN FAKE AN ELECTRON OR A MUON
 
 In the muon+jets channel, only highly energetic jets ($\pt>500\GeV$) are capable of ``punching through'' from
 the calorimeters to leave tracks in the muon chambers. Such events can be removed by isolation requirements
@@ -157,7 +184,9 @@ large contamination from higher order processes with additional jets in the sign
 the difficulty in modelling such contributions, lead to incorrect event kinematics and significant
 disagreements in the QCD background distributions in data and in simulation. Therefore, the QCD background is
 modelled using a data driven method, described in Section~\ref{ss:background_selection}, and then normalised
-to the number of events passing the signal selection in simulation.
+to the number of events passing the signal selection in simulation. Comparisons of data to Monte Carlo
+simulation, and the composition of the backgrounds, including QCD multi-jet events, will be shown in
+Sections~\ref{ss:background_selection} and~\ref{ss:data-mc_comparison}.
 
 \section{Monte Carlo Simulation}
 \label{s:monte_carlo_simulation}
@@ -177,13 +206,12 @@ protons).
 
 \subsection{MadGraph}
 \label{ss:madgraph}
-\MADGRAPH \cite{madgraph5}, a matrix element generator, works by taking into account next-to-leading-order
+\MADGRAPH \cite{madgraph5}, a matrix element generator, works by taking into account leading-order (LO)
 Feynman diagrams for a given process and subsequently calculating the matrix elements for these diagrams over
 all phase space. The Parton Distribution Functions are used to generate the incoming partons.
 The cross section of the process and various subprocesses and the structure and contents of the event (such as
-the partons present and their kinematics) are thus produced. %Also spin correlations. Also tau lepton decays
-Proton fragmentation and subsequent hadronisation are simulated using the \PYTHIA generator, as explained in
-Section~\ref{ss:pythia}.
+the partons present and their kinematics) are thus produced. Proton fragmentation and subsequent hadronisation
+are simulated using the \PYTHIA generator, as explained in Section~\ref{ss:pythia}.
 
 The parton showers are then matched with the matrix element partons via the MLM method~\cite{mlm}. This
 method ensures that parton showers with a highly energetic jet are not double counted. Matching is carried out
@@ -193,36 +221,33 @@ Only if the parton has a transverse energy above a certain threshold, is it cons
 if an event contains either too few or too many matching jets, it is discarded. The matching threshold is
 process dependent as follows:
 
-\onehalfspacing
 \begin{itemize}
   \item \ttbar: 20\GeV
   \item \WpJets: 10\GeV
   \item \ZpJets: 10\GeV
 \end{itemize}
-\doublespacing
 
-\subsection{MCatNLO}
+\subsection{MC@NLO}
 \label{ss:mcatnlo}
-The \MCATNLO \cite{mcatnlo_Frixione1, mcatnlo_Frixione2} generator is a next-to-leading-order generator. These
-aditional corrections provide more accurate simulations of physics processes in comparison to leading-order
+The \MCATNLO \cite{mcatnlo_Frixione1, mcatnlo_Frixione2} generator is a next-to-leading-order (NLO) generator.
+These additional corrections provide more accurate simulations of physics processes in comparison to LO
 generators by including additional partons from the initial hard process in the final state of the event.
 
 \subsection{PYTHIA}
 \label{ss:pythia}
-\PYTHIA \cite{pythia8} then simulates the proton fragmentation, the subsequent hadronisation of the
-resulting quarks and gluons resulting from the hard interaction and the underlying event. \PYTHIA is
-considered to be particuarly good at multi-particle simulation, modelling fragmentation and hadronisation, and
-matching parton showers. Therefore, \PYTHIA carries out these steps after the initial partons are provided
-by other generators in most simulated samples, if it is not already used for the whole production chain (as is
-common in QCD multijet simulations).
+\PYTHIA \cite{pythia8} then simulates the proton fragmentation, the subsequent hadronisation of the resulting
+quarks and gluons resulting from the hard interaction and the underlying event. \PYTHIA is considered to be
+particuarly good at multi-particle simulation, modelling fragmentation and hadronisation. Therefore, \PYTHIA
+carries out these steps after the initial partons are provided by other generators in most simulated samples,
+if it is not already used for the whole production chain (as is common in QCD multijet simulations).
 
 \subsection{POWHEG}
 \label{ss:powheg}
-One problem with the \MCATNLO generator is that some events are given negative weights when matching
-the next-to-leading-order QCD multijet calculations to parton showers.  The Positive Weight Hardest Emission
-Generator, \POWHEG \cite{powheg_Frixione, powheg_Nason, powheg_Alioli}, is another next-to-leading-order
-generator which generates the hardest processes in the event first, which avoids double counting of
-softer radiation produced later in the chain, which is the cause of negative event weights.
+One problem with the \MCATNLO generator is that some events are given negative weights when matching the NLO
+QCD multijet calculations to parton showers.  The Positive Weight Hardest Emission Generator, \POWHEG
+\cite{powheg_Frixione, powheg_Nason, powheg_Alioli}, is another NLO generator which generates the hardest
+processes in the event first, which avoids double counting of softer radiation produced later in the chain,
+which is the cause of negative event weights.
 
 %\subsection{HERWIG}
 %\label{ss:herwig}
@@ -236,7 +261,7 @@ softer radiation produced later in the chain, which is the cause of negative eve
 The models used in generators use an essentially arbitrary choice for the threshold transverse energy above
 which matrix-element partons are matched to parton showers. To account for the systematic uncertainties as a result
 of this threshold, simulated samples in which the threshold is increased and decreased by a factor of 2 (see
-Table~\ref{tab:matching_uncertainty_thresholds}) are used to estimate the affect of this uncertainty on this
+Table~\ref{tab:matching_uncertainty_thresholds}) are used to estimate the effect of this uncertainty on this
 analysis. Similarly, the factorisation scale at which $\alpha_{S}$ is varied up and down from the nominal
 value of $Q^{2} = m^{2} + \Sigma p_{T}^{2}$ by a factor of 2 (see Table~\ref{tab:matching_uncertainty_thresholds}) to
 produce simulation samples to evaluate the systematic uncertainty resulting from this. The uncertainty

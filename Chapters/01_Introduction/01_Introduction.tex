@@ -10,9 +10,9 @@ including electroweak symmetry breaking, the Higgs mechanism and physics beyond 
 supersymmetry (explained in further detail in Section~\ref{c:the_standard_model}), require the acceleration of
 particles to high energies (of the order of several TeV). The start of data-taking from proton-proton
 collisions at the LHC in 2009 ushered in a new era in terms of energies at particle colliders, taking over as
-the highest energy particle collider from the TeVatron at Fermilab. In 2010 and 2011 the LHC collected data at
-a centre of mass energy of 7\TeV (5.1\fbinv), followed by 8\TeV (21.8\fbinv) in 2012 and currently in 2015
-after the first long shutdown at 13\TeV.
+the highest energy particle collider from the TeVatron at Fermilab, near Chicago, U.S.A. In 2010 and 2011 the
+LHC collected data at a centre of mass energy of 7\TeV (5.1\fbinv), followed by 8\TeV (21.8\fbinv) in 2012 and
+currently in 2015, after the first long shutdown, at 13\TeV.
 
 The Compact Muon Solenoid (CMS) general-purpose detector is one of the four main detectors located around the
 LHC (the others being ATLAS, LHCb and ALICE), approximately 100\m below ground level.
@@ -28,24 +28,26 @@ This thesis presents an analysis based on the full proton-proton collision data 
 2011 and 2012. The analysis investigates the top-antitop (\ttbar) differential cross section with respect to
 global level event variables, specifically in semileptonic \ttbar decays in the electron+jets and muon+jets
 channels. This investigation is motivated primarily by the importance of understanding \ttbar events, since
-they are a significant background in many new physics analyses. The understanding of QCD and event generators
-that studies such as this provide is also helpful for other physics analyses. Furthermore, rare Standard Model
-processes such as $\ttbar + W\rightarrow l\nu$ or $\ttbar + Z\rightarrow \nu\bar{\nu}$ would appear in \met
-distribution tail, and $\ttbar + X$ where $X$ is massive would appear in the \HT and \st distributions. There
-are also possible new physics scenarios such as stop pair production, $\tilde{t}\bar{\tilde{t}} \rightarrow
-t\tilde{\chi_0} \bar{t}\bar{\tilde{\chi_0}}$ which could show hints of dark matter.
+they are a significant background in many new physics analyses. The understanding of event generators and QCD
+events provided by studies such as this is also helpful for other physics analyses. Furthermore, rare Standard
+Model processes and new physics scenarios could be detected in the distributions of the global variables
+under investigation.
 
 The work presented here was carried out in collaboration with Emyr Clement, L{}ukasz Kreczko, Sergey Senkin
 and Philip Symonds under the supervision of Professors Joel Goldstein and Greg Heath. The main contribution of
-the author to these studies lay in development of the C++ and Python software frameworks and scripts used in
-the analyses. Related to this, maintaining up-to-date particle object definitions, corrections, efficiencies
-and prescription recommendations from working groups within CMS was a large component of the author's work. In
-terms of the technical workflow employed, the author was heavily involved in producing n-tuples from the
-analysis-ready AOD data format, running the software to perform the prescribed analysis methods, and running
-final scripts on the output ROOT data to perform the final calculation and to produce results plots and
-tables. Particular areas of focus regarding physics included synchronisation of the event selection,
-comparison of distribution shapes between 7\TeV and 8\TeV data, and implementing aspects of the analyses such
-as selection criteria, \btagging and jet energy resolution.
+the author to these studies lay in development of the physics analysis, implemented in a C++ and Python
+software framework, playing the leading role in producing the combined 7\TeV and 8\TeV analysis described in
+Chapters~\ref{c:Differential_Cross_Section:data_simulation_and_selection},
+\ref{c:Differential_Cross_Section:fitting_unfolding_and_measurement}
+and~\ref{c:Differential_Cross_Section:systematics_and_results}. Areas of focus regarding physics included
+event selection synchronisation of the event selection, distribution comparison between 7\TeV and 8\TeV data,
+and implementing details such as selection criteria, \btagging, trigger efficiencies, jet energy resolution
+and fitting, in addition to maintaining up-to-date particle object definitions, corrections, efficiencies and
+prescription recommendations from working groups within CMS.
+% In terms of the technical workflow employed, the author was heavily involved in producing ntuples from the
+% analysis-ready Analysis Object Data (AOD) data format, running the software to perform the prescribed
+% analysis methods, and running scripts on the output ROOT data to perform the final calculation and to
+% produce results plots and tables.
 
 Chapters~\ref{c:CMS_Detector} and \ref{c:CMS_computing_and_offline} describe the LHC and the CMS detector,
 including information about the object reconstruction process based on detector readout, to represent
@@ -57,9 +59,7 @@ covered in Chapters~\ref{c:Differential_Cross_Section:data_simulation_and_select
 \ref{c:Differential_Cross_Section:fitting_unfolding_and_measurement}
 and~\ref{c:Differential_Cross_Section:systematics_and_results}. To conclude, Chapter~\ref{c:summary} contains
 a summary and outlook to the future. Additional data, tables and plots from the presented analyses are given
-in Appendices~\ref{ac:b_tagging_plots} and \ref{ac:ttbar_diff_cross_section_analysis}. Finally, an addendum
-describing the brief continuation of work from the author's MSc in testing a readout chip for the CMS strip
-tracker is outlined in Appendix~\ref{ac:cbc}.
+in Appendices~\ref{ac:b_tagging_plots} and \ref{ac:ttbar_diff_cross_section_analysis}.
 
 From the outset, natural units are used throughout this thesis, unless otherwise specifed, so that
 \begin{equation}
