@@ -6,7 +6,6 @@
 \documentclass[12pt,a4paper,titlepage,openright]{report}
 
 % Put all the style files you want in the directory StyleFiles and usepackage like this:
-%\usepackage{StyleFiles/watermark}
 
 \usepackage{StyleFiles/mystyle}
 \include{Macros/ParticlePhysicsMacros}
@@ -15,7 +14,7 @@
     \pdfinfo { /Title  (PhD Thesis)
                /Creator (TeX)
                /Producer (pdfTeX)
-               /Author (Jeson Jacob jeson.a.jacob@bristol.ac.uk)
+               /Author (Jeson Abe Jacob jeson.a.jacob@bristol.ac.uk)
                /CreationDate (D:20140105195500)  %format D:YYYYMMDDhhmmss
                /ModDate (D:\pdfdate) % automatically use current date
                /Subject (PhD Thesis)
@@ -76,28 +75,29 @@
 \pagenumbering{arabic}
 
 \include{Chapters/01_Introduction/01_Introduction}
-\include{Chapters/02_Detector/02a_TheCMSDetectorAtTheLHC}
-\include{Chapters/02_Detector/02b_ComputingandOffline}
-\include{Chapters/03_Theory/03a_TheStandardModel}
-\include{Chapters/03_Theory/03b_Top_Physics}
-\include{Chapters/04_Analysis/04a_BTags/04a_BTagStudies}
-\include{Chapters/04_Analysis/04b_XSections/04b_DifferentialTTbarCrossSections_1}
-\include{Chapters/04_Analysis/04b_XSections/04b_DifferentialTTbarCrossSections_2}
-\include{Chapters/04_Analysis/04b_XSections/04b_DifferentialTTbarCrossSections_3}
-\include{Chapters/06_Conclusions/06_Conclusions}
+\include{Chapters/02_Theory/02_TheStandardModel}
+\include{Chapters/03_Top_Physics/03_TopPhysics}
+\include{Chapters/04_Detector/04_TheCMSDetectorAtTheLHC}
+\include{Chapters/05_Computing_And_Offline/05_ComputingandOffline}
+
+\include{Chapters/06_BTag_Study/06_BTagStudy}
+\include{Chapters/07_08_09_Analysis/07_DifferentialTTbarCrossSections}
+\include{Chapters/07_08_09_Analysis/08_DifferentialTTbarCrossSections}
+\include{Chapters/07_08_09_Analysis/09_DifferentialTTbarCrossSections}
+\include{Chapters/10_Summary_and_Outlook/10_SummaryAndOutlook}
 
 %appendix
 \appendix
-\include{Chapters/07_Appendices/07a_Appendices}
-\include{Chapters/07_Appendices/07b_Appendices_1}
-\include{Chapters/07_Appendices/07b_Appendices_2}
-\include{Chapters/07_Appendices/07b_Appendices_3}
-%\include{Chapters/07_Appendices/07c_2_ServiceWorkOnCBC}
+\include{Chapters/11_AppendixA/11_AppendixA}
+\include{Chapters/12_AppendixB/12_AppendixB_1}
+\include{Chapters/12_AppendixB/12_AppendixB_2}
+\include{Chapters/12_AppendixB/12_AppendixB_3}
+%\include{Chapters/13_AppendixC/13_AppendixC_ServiceWorkOnCBC}
 
 %bibliography
 \renewcommand{\bibname}{References} % changes default name Bibliography to References
 \addcontentsline{toc}{chapter}{\bibname}
 \bibliographystyle{plain}
-\bibliography{Chapters/08_References/references}
+\bibliography{Chapters/14_References/references}
 
 \end{document}

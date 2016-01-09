@@ -21,7 +21,9 @@
 \DisableLigatures{encoding = *, family = *}
 
 \usepackage{graphicx}
-\graphicspath{ {Images/}}
+\graphicspath{ {Images/} }
+
+%\usepackage[export]{adjustbox}
 
 \usepackage{float}
 \renewcommand{\topfraction}{0.9}	% max fraction of floats at top
@@ -42,6 +44,9 @@
 \usepackage{ifthen}
 
 %\usepackage[Lenny]{fncychap}
+
+%for removing page numbers on some pages with large floats
+%\usepackage{floatpag}
 
 \usepackage{color}
 \definecolor{gray75}{gray}{0.75}
@@ -122,3 +127,6 @@
   \renewcommand{\footrulewidth}{0pt}
   \fancyfoot[C]{\thepage}
 }
+
+%\usepackage{cleveref}
+%\newcommand{\crefrangeconjunction}{\textendash}

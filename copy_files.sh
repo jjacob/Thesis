@@ -1,12 +1,16 @@
 #!/bin/bash
 
 origin_file_path=/Volumes/soolin/03_Measurement/CMSSW_7_4_7_DPS/src/DailyPythonScripts/
-origin_file_path_for_lepton_scale_factors=/Users/phjaj/Documents/workspace/AN-14-071_check/notes/AN-14-071/trunk/results/other_plots/leptonSF/
 destination_file_path=/Users/phjaj/Documents/workspace/Thesis/Chapters/
 
+# b-tag Study
+#cp ${origin_file_path}plots/not_made_by_measurement_scripts/btag_study_plots/BJetAnalysis/ ${destination_file_path}04_Analysis/04a_BTags/Images/
+
+
+# TTbar Differential Cross Sections
 # Muon channel non-isolated region PF relative isolation (muon)
-cp ${origin_file_path}plots/control_plots/before_fit/7TeV/qcd_plots/QCD_muon_pfIsolation_0btag.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/qcd_plots/QCD_muon_pfIsolation_0btag.pdf
-cp ${origin_file_path}plots/control_plots/before_fit/8TeV/qcd_plots/QCD_muon_pfIsolation_0btag.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/qcd_plots/QCD_muon_pfIsolation_0btag.pdf
+cp ${origin_file_path}plots/control_plots/before_fit/7TeV/qcd_plots/QCD_muon_pfIsolation_with_cutline_0btag.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/qcd_plots/QCD_muon_pfIsolation_with_cutline_0btag.pdf
+cp ${origin_file_path}plots/control_plots/before_fit/8TeV/qcd_plots/QCD_muon_pfIsolation_with_cutline_0btag.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/qcd_plots/QCD_muon_pfIsolation_with_cutline_0btag.pdf
 
 # NVertices before and after pileup reweighting (electron)
 cp ${origin_file_path}plots/control_plots/before_fit/7TeV/EPlusJets_nVertex_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/EPlusJets_nVertex_with_ratio.pdf
@@ -22,10 +26,10 @@ cp ${origin_file_path}plots/control_plots/before_fit/8TeV/EPlusJets_N_BJets_rewe
 
 # Lepton scale factor fit and efficiency plots (electron)
 # id_iso
-cp ${origin_file_path}plots/leptonSF_copied_from_emyr/CBConvolution/electron/data/id_iso/tagProbe_total_Z_peak.pdf ${destination_file_path}04_Analysis/04b_XSections/images/lepton_scale_factors/CBConvolution/electron/data/id_iso/tagProbe_total_Z_peak.pdf
-cp ${origin_file_path}plots/leptonSF_copied_from_emyr/CBConvolution/electron/data/id_iso/tagProbe_passed_Z_peak.pdf ${destination_file_path}04_Analysis/04b_XSections/images/lepton_scale_factors/CBConvolution/electron/data/id_iso/tagProbe_passed_Z_peak.pdf
-cp ${origin_file_path}plots/leptonSF_copied_from_emyr/CBConvolution/electron/efficiency_eta_id_iso.pdf ${destination_file_path}04_Analysis/04b_XSections/images/lepton_scale_factors/CBConvolution/electron/efficiency_eta_id_iso.pdf
-cp ${origin_file_path}plots/leptonSF_copied_from_emyr/CBConvolution/electron/efficiency_pt_id_iso.pdf ${destination_file_path}04_Analysis/04b_XSections/images/lepton_scale_factors/CBConvolution/electron/efficiency_pt_id_iso.pdf
+cp ${origin_file_path}plots/not_made_by_measurement_scripts/leptonSF/CBConvolution/electron/data/id_iso/tagProbe_total_Z_peak.pdf ${destination_file_path}04_Analysis/04b_XSections/images/lepton_scale_factors/CBConvolution/electron/data/id_iso/tagProbe_total_Z_peak.pdf
+cp ${origin_file_path}plots/not_made_by_measurement_scripts/leptonSF/CBConvolution/electron/data/id_iso/tagProbe_passed_Z_peak.pdf ${destination_file_path}04_Analysis/04b_XSections/images/lepton_scale_factors/CBConvolution/electron/data/id_iso/tagProbe_passed_Z_peak.pdf
+cp ${origin_file_path}plots/not_made_by_measurement_scripts/leptonSF/CBConvolution/electron/efficiency_eta_id_iso.pdf ${destination_file_path}04_Analysis/04b_XSections/images/lepton_scale_factors/CBConvolution/electron/efficiency_eta_id_iso.pdf
+cp ${origin_file_path}plots/not_made_by_measurement_scripts/leptonSF/CBConvolution/electron/efficiency_pt_id_iso.pdf ${destination_file_path}04_Analysis/04b_XSections/images/lepton_scale_factors/CBConvolution/electron/efficiency_pt_id_iso.pdf
 
 # Data-MC comparison plots (before fit)
 cp ${origin_file_path}plots/control_plots/before_fit/7TeV/EPlusJets_patType1CorrectedPFMet_2orMoreBtags_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/EPlusJets_patType1CorrectedPFMet_2orMoreBtags_with_ratio.pdf
@@ -61,17 +65,17 @@ cp ${origin_file_path}plots/control_plots/before_fit/7TeV/qcd_plots/shape_compar
 cp ${origin_file_path}plots/control_plots/before_fit/8TeV/qcd_plots/shape_comparisons/QCD_electron_AbsEta_control_region_comparison_0btag.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/8TeV/qcd_plots/shape_comparisons/QCD_electron_AbsEta_control_region_comparison_0btag.pdf
 
 # Binning Plots (electron)
-cp ${origin_file_path}plots/binning/electron_MET_7TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/electron_MET_7TeV.pdf
-cp ${origin_file_path}plots/binning/electron_HT_7TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/electron_HT_7TeV.pdf
-cp ${origin_file_path}plots/binning/electron_ST_7TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/electron_ST_7TeV.pdf
-cp ${origin_file_path}plots/binning/electron_MT_7TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/electron_MT_7TeV.pdf
-cp ${origin_file_path}plots/binning/electron_WPT_7TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/electron_WPT_7TeV.pdf
+cp ${origin_file_path}plots/binning/electron_MET_7TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/binning/electron_MET_7TeV.pdf
+cp ${origin_file_path}plots/binning/electron_HT_7TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/binning/electron_HT_7TeV.pdf
+cp ${origin_file_path}plots/binning/electron_ST_7TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/binning/electron_ST_7TeV.pdf
+cp ${origin_file_path}plots/binning/electron_MT_7TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/binning/electron_MT_7TeV.pdf
+cp ${origin_file_path}plots/binning/electron_WPT_7TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/binning/electron_WPT_7TeV.pdf
 
-cp ${origin_file_path}plots/binning/electron_MET_8TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/electron_MET_8TeV.pdf
-cp ${origin_file_path}plots/binning/electron_HT_8TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/electron_HT_8TeV.pdf
-cp ${origin_file_path}plots/binning/electron_ST_8TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/electron_ST_8TeV.pdf
-cp ${origin_file_path}plots/binning/electron_MT_8TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/electron_MT_8TeV.pdf
-cp ${origin_file_path}plots/binning/electron_WPT_8TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/before_fit/7TeV/electron_WPT_8TeV.pdf
+cp ${origin_file_path}plots/binning/electron_MET_8TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/binning/electron_MET_8TeV.pdf
+cp ${origin_file_path}plots/binning/electron_HT_8TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/binning/electron_HT_8TeV.pdf
+cp ${origin_file_path}plots/binning/electron_ST_8TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/binning/electron_ST_8TeV.pdf
+cp ${origin_file_path}plots/binning/electron_MT_8TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/binning/electron_MT_8TeV.pdf
+cp ${origin_file_path}plots/binning/electron_WPT_8TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/binning/electron_WPT_8TeV.pdf
 
 # Fitting variable distributions (7TeV)
 cp ${origin_file_path}plots/7TeV/fit_variables/electron/MET/electron_absolute_eta/MET_inclusive_electron_absolute_eta_2orMoreBtags_templates.pdf ${destination_file_path}04_Analysis/04b_XSections/images/7TeV/fit_variables/electron/MET/electron_absolute_eta/MET_inclusive_electron_absolute_eta_2orMoreBtags_templates.pdf
@@ -117,6 +121,34 @@ cp ${origin_file_path}plots/control_plots/after_fit/8TeV/MuPlusJets_patType1Corr
 cp ${origin_file_path}plots/control_plots/after_fit/8TeV/MuPlusJets_patType1CorrectedPFMet_MT_2orMoreBtags_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/8TeV/MuPlusJets_patType1CorrectedPFMet_MT_2orMoreBtags_with_ratio.pdf
 cp ${origin_file_path}plots/control_plots/after_fit/8TeV/MuPlusJets_patType1CorrectedPFMet_WPT_2orMoreBtags_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/8TeV/MuPlusJets_patType1CorrectedPFMet_WPT_2orMoreBtags_with_ratio.pdf
 
+cp ${origin_file_path}plots/control_plots/after_fit/7TeV/electron_pT_2orMoreBtags.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/7TeV/electron_pT_2orMoreBtags_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/after_fit/7TeV/electron_AbsEta_2orMoreBtags_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/7TeV/electron_AbsEta_2orMoreBtags_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/after_fit/7TeV/EPlusJets_angle_bl_2orMoreBtags_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/7TeV/EPlusJets_angle_bl_2orMoreBtags_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/after_fit/7TeV/EPlusJets_M3_2orMoreBtags_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/7TeV/EPlusJets_M3_2orMoreBtags_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/after_fit/7TeV/EPlusJets_N_Jets_2orMoreBtags_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/7TeV/EPlusJets_N_Jets_2orMoreBtags_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/after_fit/7TeV/EPlusJets_patType1CorrectedPFMet_phi_2orMoreBtags_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/7TeV/EPlusJets_patType1CorrectedPFMet_phi_2orMoreBtags_with_ratio.pdf
+
+cp ${origin_file_path}plots/control_plots/after_fit/7TeV/muon_pT_2orMoreBtags.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/7TeV/muon_pT_2orMoreBtags_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/after_fit/7TeV/muon_AbsEta_2orMoreBtags_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/7TeV/muon_AbsEta_2orMoreBtags_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/after_fit/7TeV/MuPlusJets_angle_bl_2orMoreBtags_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/7TeV/MuPlusJets_angle_bl_2orMoreBtags_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/after_fit/7TeV/MuPlusJets_M3_2orMoreBtags_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/7TeV/MuPlusJets_M3_2orMoreBtags_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/after_fit/7TeV/MuPlusJets_N_Jets_2orMoreBtags_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/7TeV/MuPlusJets_N_Jets_2orMoreBtags_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/after_fit/7TeV/MuPlusJets_patType1CorrectedPFMet_phi_2orMoreBtags_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/7TeV/MuPlusJets_patType1CorrectedPFMet_phi_2orMoreBtags_with_ratio.pdf
+
+cp ${origin_file_path}plots/control_plots/after_fit/8TeV/electron_pT_2orMoreBtags.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/8TeV/electron_pT_2orMoreBtags_with_ratio.pdf 
+cp ${origin_file_path}plots/control_plots/after_fit/8TeV/electron_AbsEta_2orMoreBtags_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/8TeV/electron_AbsEta_2orMoreBtags_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/after_fit/8TeV/EPlusJets_angle_bl_2orMoreBtags_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/8TeV/EPlusJets_angle_bl_2orMoreBtags_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/after_fit/8TeV/EPlusJets_M3_2orMoreBtags_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/8TeV/EPlusJets_M3_2orMoreBtags_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/after_fit/8TeV/EPlusJets_N_Jets_2orMoreBtags_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/8TeV/EPlusJets_N_Jets_2orMoreBtags_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/after_fit/8TeV/EPlusJets_patType1CorrectedPFMet_phi_2orMoreBtags_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/8TeV/EPlusJets_patType1CorrectedPFMet_phi_2orMoreBtags_with_ratio.pdf
+
+cp ${origin_file_path}plots/control_plots/after_fit/8TeV/muon_pT_2orMoreBtags.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/8TeV/muon_pT_2orMoreBtags_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/after_fit/8TeV/muon_AbsEta_2orMoreBtags_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/8TeV/muon_AbsEta_2orMoreBtags_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/after_fit/8TeV/MuPlusJets_angle_bl_2orMoreBtags_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/8TeV/MuPlusJets_angle_bl_2orMoreBtags_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/after_fit/8TeV/MuPlusJets_M3_2orMoreBtags_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/8TeV/MuPlusJets_M3_2orMoreBtags_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/after_fit/8TeV/MuPlusJets_N_Jets_2orMoreBtags_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/8TeV/MuPlusJets_N_Jets_2orMoreBtags_with_ratio.pdf
+cp ${origin_file_path}plots/control_plots/after_fit/8TeV/MuPlusJets_patType1CorrectedPFMet_phi_2orMoreBtags_with_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/control_plots/after_fit/8TeV/MuPlusJets_patType1CorrectedPFMet_phi_2orMoreBtags_with_ratio.pdf
+
 # fit correlations
 cp ${origin_file_path}plots/fitchecks/8TeV/Correlations_electron_MET_0-27.pdf ${destination_file_path}04_Analysis/04b_XSections/images/fitchecks/8TeV/Correlations_electron_MET_0-27.pdf
 cp ${origin_file_path}plots/fitchecks/8TeV/Correlations_electron_MET_27-52.pdf ${destination_file_path}04_Analysis/04b_XSections/images/fitchecks/8TeV/Correlations_electron_MET_27-52.pdf
@@ -125,13 +157,6 @@ cp ${origin_file_path}plots/fitchecks/8TeV/Correlations_electron_MET_87-130.pdf 
 cp ${origin_file_path}plots/fitchecks/8TeV/Correlations_electron_MET_130-172.pdf ${destination_file_path}04_Analysis/04b_XSections/images/fitchecks/8TeV/Correlations_electron_MET_130-172.pdf
 cp ${origin_file_path}plots/fitchecks/8TeV/Correlations_electron_MET_172-inf.pdf ${destination_file_path}04_Analysis/04b_XSections/images/fitchecks/8TeV/Correlations_electron_MET_172-inf.pdf
 
-#cp ${origin_file_path}plots/fitchecks/8TeV/Correlations_muon_MET_0-27.pdf ${destination_file_path}04_Analysis/04b_XSections/images/fitchecks/8TeV/Correlations_muon_MET_0-27.pdf
-#cp ${origin_file_path}plots/fitchecks/8TeV/Correlations_muon_MET_27-52.pdf ${destination_file_path}04_Analysis/04b_XSections/images/fitchecks/8TeV/Correlations_muon_MET_27-52.pdf
-#cp ${origin_file_path}plots/fitchecks/8TeV/Correlations_muon_MET_52-87.pdf ${destination_file_path}04_Analysis/04b_XSections/images/fitchecks/8TeV/Correlations_muon_MET_52-87.pdf
-#cp ${origin_file_path}plots/fitchecks/8TeV/Correlations_muon_MET_87-130.pdf ${destination_file_path}04_Analysis/04b_XSections/images/fitchecks/8TeV/Correlations_muon_MET_87-130.pdf
-#cp ${origin_file_path}plots/fitchecks/8TeV/Correlations_muon_MET_130-172.pdf ${destination_file_path}04_Analysis/04b_XSections/images/fitchecks/8TeV/Correlations_muon_MET_130-172.pdf
-#cp ${origin_file_path}plots/fitchecks/8TeV/Correlations_muon_MET_172-inf.pdf ${destination_file_path}04_Analysis/04b_XSections/images/fitchecks/8TeV/Correlations_muon_MET_172-inf.pdf
-
 cp ${origin_file_path}plots/fitchecks/7TeV/Correlations_electron_MET_0-27.pdf ${destination_file_path}04_Analysis/04b_XSections/images/fitchecks/7TeV/Correlations_electron_MET_0-27.pdf
 cp ${origin_file_path}plots/fitchecks/7TeV/Correlations_electron_MET_27-52.pdf ${destination_file_path}04_Analysis/04b_XSections/images/fitchecks/7TeV/Correlations_electron_MET_27-52.pdf
 cp ${origin_file_path}plots/fitchecks/7TeV/Correlations_electron_MET_52-87.pdf ${destination_file_path}04_Analysis/04b_XSections/images/fitchecks/7TeV/Correlations_electron_MET_52-87.pdf
@@ -139,22 +164,29 @@ cp ${origin_file_path}plots/fitchecks/7TeV/Correlations_electron_MET_87-130.pdf 
 cp ${origin_file_path}plots/fitchecks/7TeV/Correlations_electron_MET_130-172.pdf ${destination_file_path}04_Analysis/04b_XSections/images/fitchecks/7TeV/Correlations_electron_MET_130-172.pdf
 cp ${origin_file_path}plots/fitchecks/7TeV/Correlations_electron_MET_172-inf.pdf ${destination_file_path}04_Analysis/04b_XSections/images/fitchecks/7TeV/Correlations_electron_MET_172-inf.pdf
 
-#cp ${origin_file_path}plots/fitchecks/7TeV/Correlations_muon_MET_0-27.pdf ${destination_file_path}04_Analysis/04b_XSections/images/fitchecks/7TeV/Correlations_muon_MET_0-27.pdf
-#cp ${origin_file_path}plots/fitchecks/7TeV/Correlations_muon_MET_27-52.pdf ${destination_file_path}04_Analysis/04b_XSections/images/fitchecks/7TeV/Correlations_muon_MET_27-52.pdf
-#cp ${origin_file_path}plots/fitchecks/7TeV/Correlations_muon_MET_52-87.pdf ${destination_file_path}04_Analysis/04b_XSections/images/fitchecks/7TeV/Correlations_muon_MET_52-87.pdf
-#cp ${origin_file_path}plots/fitchecks/7TeV/Correlations_muon_MET_87-130.pdf ${destination_file_path}04_Analysis/04b_XSections/images/fitchecks/7TeV/Correlations_muon_MET_87-130.pdf
-#cp ${origin_file_path}plots/fitchecks/7TeV/Correlations_muon_MET_130-172.pdf ${destination_file_path}04_Analysis/04b_XSections/images/fitchecks/7TeV/Correlations_muon_MET_130-172.pdf
-#cp ${origin_file_path}plots/fitchecks/7TeV/Correlations_muon_MET_172-inf.pdf ${destination_file_path}04_Analysis/04b_XSections/images/fitchecks/7TeV/Correlations_muon_MET_172-inf.pdf
+# These plots are not made by measurement scripts, they are made manually using plot command in DPS instead
+# Unfolding tests
+cp ${origin_file_path}plots/not_made_by_measurement_scripts/unfolding_tests/8TeV/k_values/k_from_d_i_electron_channel_MET_data.pdf ${destination_file_path}04_Analysis/04b_XSections/images/unfolding_tests/8TeV/k_values/k_from_d_i_electron_channel_MET_data.pdf
+cp ${origin_file_path}plots/not_made_by_measurement_scripts/unfolding_tests/8TeV/k_values/k_from_d_i_muon_channel_MET_data.pdf ${destination_file_path}04_Analysis/04b_XSections/images/unfolding_tests/8TeV/k_values/k_from_d_i_muon_channel_MET_data.pdf
+cp ${origin_file_path}plots/not_made_by_measurement_scripts/unfolding_tests/8TeV/closure/electron_MET_RooUnfoldSvd_closure.pdf ${destination_file_path}04_Analysis/04b_XSections/images/unfolding_tests/8TeV/closure/electron_MET_RooUnfoldSvd_closure.pdf
+cp ${origin_file_path}plots/not_made_by_measurement_scripts/unfolding_tests/8TeV/closure/muon_MET_RooUnfoldSvd_closure.pdf ${destination_file_path}04_Analysis/04b_XSections/images/unfolding_tests/8TeV/closure/muon_MET_RooUnfoldSvd_closure.pdf
+cp ${origin_file_path}plots/not_made_by_measurement_scripts/unfolding_tests/8TeV/data/electron_MET_RooUnfoldSvd_data.pdf ${destination_file_path}04_Analysis/04b_XSections/images/unfolding_tests/8TeV/data/electron_MET_RooUnfoldSvd_data.pdf
+cp ${origin_file_path}plots/not_made_by_measurement_scripts/unfolding_tests/8TeV/data/muon_MET_RooUnfoldSvd_data.pdf ${destination_file_path}04_Analysis/04b_XSections/images/unfolding_tests/8TeV/data/muon_MET_RooUnfoldSvd_data.pdf
 
+# These plots are not made by measurement scripts, they are made manually using plot command in DPS instead
+# Unfolding pulls
+cp ${origin_file_path}plots/not_made_by_measurement_scripts/unfolding_pulls/8TeV/MET/electron/kv3/pull_from_files_all_bins_stats_65520.pdf ${destination_file_path}04_Analysis/04b_XSections/images/unfolding_tests/8TeV/k_values/k_from_d_i_electron_channel_MET_data.pdf
+cp ${origin_file_path}plots/not_made_by_measurement_scripts/unfolding_pulls/8TeV/MET/electron/kv3/pull_from_files_all_bins_stats_65520.pdf ${destination_file_path}04_Analysis/04b_XSections/images/unfolding_tests/8TeV/k_values/k_from_d_i_muon_channel_MET_data.pdf
+
+# These plots are not made by measurement scripts, they are made manually using plot command in DPS instead
 # TTJets measured-fake comparison
-cp ${origin_file_path}plots/TTJet_comparison/comparison_measured_fake_TTJets_normalised_to_one_without_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/tau_cross_checks/comparison_measured_fake_TTJets_normalised_to_one_without_ratio.pdf
-cp ${origin_file_path}plots/TTJet_comparison/comparison_measured_fake_TTJets_normalised_to_nevents.pdf ${destination_file_path}04_Analysis/04b_XSections/images/tau_cross_checks/comparison_measured_fake_TTJets_normalised_to_nevents.pdf
-
-# Not copied over because not made by scripts, made manually using plot command in DPS instead
-# Chapters/04_Analysis/04b_XSections/images/tau_cross_checks/compare_central_MET_to_tau_energy_down_asym_bins_electron_channel_data.pdf
-# Chapters/04_Analysis/04b_XSections/images/tau_cross_checks/compare_central_MET_to_tau_energy_down_asym_bins_electron_channel_TTJet.pdf
-# Chapters/04_Analysis/04b_XSections/images/WJets_comparison/TTbar_plus_X_analysis_EPlusJets_Refselection_MET_patType1CorrectedPFMet_MET_0orMoreBtag.pdf
-# Chapters/04_Analysis/04b_XSections/images/WJets_comparison/TTbar_plus_X_analysis_EPlusJets_Refselection_Electron_electron_AbsEta_0orMoreBtag.pdf
+cp ${origin_file_path}plots/not_made_by_measurement_scripts/tau_cross_checks/comparison_measured_fake_TTJets_normalised_to_one_without_ratio.pdf ${destination_file_path}04_Analysis/04b_XSections/images/tau_cross_checks/comparison_measured_fake_TTJets_normalised_to_one_without_ratio.pdf
+cp ${origin_file_path}plots/not_made_by_measurement_scripts/tau_cross_checks/comparison_measured_fake_TTJets_normalised_to_nevents.pdf ${destination_file_path}04_Analysis/04b_XSections/images/tau_cross_checks/comparison_measured_fake_TTJets_normalised_to_nevents.pdf
+cp ${origin_file_path}plots/not_made_by_measurement_scripts/tau_cross_checks/compare_central_MET_to_tau_energy_down_asym_bins_electron_channel_data.pdf ${destination_file_path}04_Analysis/04b_XSections/images/tau_cross_checks/compare_central_MET_to_tau_energy_down_asym_bins_electron_channel_data.pdf
+cp ${origin_file_path}plots/not_made_by_measurement_scripts/tau_cross_checks/compare_central_MET_to_tau_energy_down_asym_bins_electron_channel_TTJet.pdf ${destination_file_path}04_Analysis/04b_XSections/images/tau_cross_checks/compare_central_MET_to_tau_energy_down_asym_bins_electron_channel_TTJet.pdf
+# WJets 7TeV-8TeV shape comparison
+cp ${origin_file_path}plots/not_made_by_measurement_scripts/WJets_comparison/TTbar_plus_X_analysis_EPlusJets_Refselection_MET_patType1CorrectedPFMet_MET_0orMoreBtag.pdf ${destination_file_path}04_Analysis/04b_XSections/images/WJets_comparison/TTbar_plus_X_analysis_EPlusJets_Refselection_Electron_electron_AbsEta_0orMoreBtag.pdf
+cp ${origin_file_path}plots/not_made_by_measurement_scripts/WJets_comparison/TTbar_plus_X_analysis_EPlusJets_Refselection_Electron_electron_AbsEta_0orMoreBtag.pdf ${destination_file_path}04_Analysis/04b_XSections/images/WJets_comparison/TTbar_plus_X_analysis_EPlusJets_Refselection_Electron_electron_AbsEta_0orMoreBtag.pdf
 
 # Systematics tables
 cp ${origin_file_path}tables/fit/7TeV/MET/MET_systematics_7TeV_combined.tex ${destination_file_path}04_Analysis/04b_XSections/tables/systematics/7TeV/MET/MET_systematics_7TeV_combined.tex
@@ -173,66 +205,66 @@ cp ${origin_file_path}tables/fit/8TeV/typical_systematics_8TeV_combined.tex ${de
 
 # Results plots
 # fitting
-cp ${origin_file_path}plots/fit/7TeV/MET/central/normalised_xsection_combined_different_generators.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/MET/central/normalised_xsection_combined_different_generators.pdf
-cp ${origin_file_path}plots/fit/7TeV/MET/central/normalised_xsection_combined_systematics_shifts.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/MET/central/normalised_xsection_combined_systematics_shifts.pdf
+cp ${origin_file_path}plots/results/fit/7TeV/MET/central/normalised_xsection_combined_different_generators.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/MET/central/normalised_xsection_combined_different_generators.pdf
+cp ${origin_file_path}plots/results/fit/7TeV/MET/central/normalised_xsection_combined_systematics_shifts.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/MET/central/normalised_xsection_combined_systematics_shifts.pdf
 
-cp ${origin_file_path}plots/fit/7TeV/HT/central/normalised_xsection_combined_different_generators.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/HT/central/normalised_xsection_combined_different_generators.pdf
-cp ${origin_file_path}plots/fit/7TeV/HT/central/normalised_xsection_combined_systematics_shifts.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/HT/central/normalised_xsection_combined_systematics_shifts.pdf
+cp ${origin_file_path}plots/results/fit/7TeV/HT/central/normalised_xsection_combined_different_generators.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/HT/central/normalised_xsection_combined_different_generators.pdf
+cp ${origin_file_path}plots/results/fit/7TeV/HT/central/normalised_xsection_combined_systematics_shifts.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/HT/central/normalised_xsection_combined_systematics_shifts.pdf
 
-cp ${origin_file_path}plots/fit/7TeV/ST/central/normalised_xsection_combined_different_generators.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/ST/central/normalised_xsection_combined_different_generators.pdf
-cp ${origin_file_path}plots/fit/7TeV/ST/central/normalised_xsection_combined_systematics_shifts.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/ST/central/normalised_xsection_combined_systematics_shifts.pdf
+cp ${origin_file_path}plots/results/fit/7TeV/ST/central/normalised_xsection_combined_different_generators.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/ST/central/normalised_xsection_combined_different_generators.pdf
+cp ${origin_file_path}plots/results/fit/7TeV/ST/central/normalised_xsection_combined_systematics_shifts.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/ST/central/normalised_xsection_combined_systematics_shifts.pdf
 
-cp ${origin_file_path}plots/fit/7TeV/MT/central/normalised_xsection_combined_different_generators.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/MT/central/normalised_xsection_combined_different_generators.pdf
-cp ${origin_file_path}plots/fit/7TeV/MT/central/normalised_xsection_combined_systematics_shifts.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/MT/central/normalised_xsection_combined_systematics_shifts.pdf
+cp ${origin_file_path}plots/results/fit/7TeV/MT/central/normalised_xsection_combined_different_generators.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/MT/central/normalised_xsection_combined_different_generators.pdf
+cp ${origin_file_path}plots/results/fit/7TeV/MT/central/normalised_xsection_combined_systematics_shifts.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/MT/central/normalised_xsection_combined_systematics_shifts.pdf
 
-cp ${origin_file_path}plots/fit/7TeV/WPT/central/normalised_xsection_combined_different_generators.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/WPT/central/normalised_xsection_combined_different_generators.pdf
-cp ${origin_file_path}plots/fit/7TeV/WPT/central/normalised_xsection_combined_systematics_shifts.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/WPT/central/normalised_xsection_combined_systematics_shifts.pdf
+cp ${origin_file_path}plots/results/fit/7TeV/WPT/central/normalised_xsection_combined_different_generators.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/WPT/central/normalised_xsection_combined_different_generators.pdf
+cp ${origin_file_path}plots/results/fit/7TeV/WPT/central/normalised_xsection_combined_systematics_shifts.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/WPT/central/normalised_xsection_combined_systematics_shifts.pdf
 
-cp ${origin_file_path}plots/fit/8TeV/MET/central/normalised_xsection_combined_different_generators.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/MET/central/normalised_xsection_combined_different_generators.pdf
-cp ${origin_file_path}plots/fit/8TeV/MET/central/normalised_xsection_combined_systematics_shifts.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/MET/central/normalised_xsection_combined_systematics_shifts.pdf
+cp ${origin_file_path}plots/results/fit/8TeV/MET/central/normalised_xsection_combined_different_generators.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/MET/central/normalised_xsection_combined_different_generators.pdf
+cp ${origin_file_path}plots/results/fit/8TeV/MET/central/normalised_xsection_combined_systematics_shifts.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/MET/central/normalised_xsection_combined_systematics_shifts.pdf
 
-cp ${origin_file_path}plots/fit/8TeV/HT/central/normalised_xsection_combined_different_generators.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/HT/central/normalised_xsection_combined_different_generators.pdf
-cp ${origin_file_path}plots/fit/8TeV/HT/central/normalised_xsection_combined_systematics_shifts.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/HT/central/normalised_xsection_combined_systematics_shifts.pdf
+cp ${origin_file_path}plots/results/fit/8TeV/HT/central/normalised_xsection_combined_different_generators.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/HT/central/normalised_xsection_combined_different_generators.pdf
+cp ${origin_file_path}plots/results/fit/8TeV/HT/central/normalised_xsection_combined_systematics_shifts.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/HT/central/normalised_xsection_combined_systematics_shifts.pdf
 
-cp ${origin_file_path}plots/fit/8TeV/ST/central/normalised_xsection_combined_different_generators.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/ST/central/normalised_xsection_combined_different_generators.pdf
-cp ${origin_file_path}plots/fit/8TeV/ST/central/normalised_xsection_combined_systematics_shifts.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/ST/central/normalised_xsection_combined_systematics_shifts.pdf
+cp ${origin_file_path}plots/results/fit/8TeV/ST/central/normalised_xsection_combined_different_generators.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/ST/central/normalised_xsection_combined_different_generators.pdf
+cp ${origin_file_path}plots/results/fit/8TeV/ST/central/normalised_xsection_combined_systematics_shifts.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/ST/central/normalised_xsection_combined_systematics_shifts.pdf
 
-cp ${origin_file_path}plots/fit/8TeV/MT/central/normalised_xsection_combined_different_generators.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/MT/central/normalised_xsection_combined_different_generators.pdf
-cp ${origin_file_path}plots/fit/8TeV/MT/central/normalised_xsection_combined_systematics_shifts.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/MT/central/normalised_xsection_combined_systematics_shifts.pdf
+cp ${origin_file_path}plots/results/fit/8TeV/MT/central/normalised_xsection_combined_different_generators.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/MT/central/normalised_xsection_combined_different_generators.pdf
+cp ${origin_file_path}plots/results/fit/8TeV/MT/central/normalised_xsection_combined_systematics_shifts.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/MT/central/normalised_xsection_combined_systematics_shifts.pdf
 
-cp ${origin_file_path}plots/fit/8TeV/WPT/central/normalised_xsection_combined_different_generators.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/WPT/central/normalised_xsection_combined_different_generators.pdf
-cp ${origin_file_path}plots/fit/8TeV/WPT/central/normalised_xsection_combined_systematics_shifts.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/WPT/central/normalised_xsection_combined_systematics_shifts.pdf
+cp ${origin_file_path}plots/results/fit/8TeV/WPT/central/normalised_xsection_combined_different_generators.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/WPT/central/normalised_xsection_combined_different_generators.pdf
+cp ${origin_file_path}plots/results/fit/8TeV/WPT/central/normalised_xsection_combined_systematics_shifts.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/WPT/central/normalised_xsection_combined_systematics_shifts.pdf
 
 # with background subtraction results
-cp ${origin_file_path}plots/fit/7TeV/MET/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/MET/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf
-cp ${origin_file_path}plots/fit/7TeV/MET/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/MET/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf
+cp ${origin_file_path}plots/results/fit/7TeV/MET/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/MET/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf
+cp ${origin_file_path}plots/results/fit/7TeV/MET/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/MET/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf
 
-cp ${origin_file_path}plots/fit/7TeV/HT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/HT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf
-cp ${origin_file_path}plots/fit/7TeV/HT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/HT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf
+cp ${origin_file_path}plots/results/fit/7TeV/HT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/HT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf
+cp ${origin_file_path}plots/results/fit/7TeV/HT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/HT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf
 
-cp ${origin_file_path}plots/fit/7TeV/ST/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/ST/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf
-cp ${origin_file_path}plots/fit/7TeV/ST/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/ST/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf
+cp ${origin_file_path}plots/results/fit/7TeV/ST/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/ST/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf
+cp ${origin_file_path}plots/results/fit/7TeV/ST/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/ST/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf
 
-cp ${origin_file_path}plots/fit/7TeV/MT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/MT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf
-cp ${origin_file_path}plots/fit/7TeV/MT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/MT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf
+cp ${origin_file_path}plots/results/fit/7TeV/MT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/MT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf
+cp ${origin_file_path}plots/results/fit/7TeV/MT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/MT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf
 
-cp ${origin_file_path}plots/fit/7TeV/WPT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/WPT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf
-cp ${origin_file_path}plots/fit/7TeV/WPT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/WPT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf
+cp ${origin_file_path}plots/results/fit/7TeV/WPT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/WPT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf
+cp ${origin_file_path}plots/results/fit/7TeV/WPT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/7TeV/WPT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf
 
-cp ${origin_file_path}plots/fit/8TeV/MET/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/MET/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf
-cp ${origin_file_path}plots/fit/8TeV/MET/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/MET/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf
+cp ${origin_file_path}plots/results/fit/8TeV/MET/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/MET/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf
+cp ${origin_file_path}plots/results/fit/8TeV/MET/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/MET/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf
 
-cp ${origin_file_path}plots/fit/8TeV/HT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/HT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf
-cp ${origin_file_path}plots/fit/8TeV/HT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/HT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf
+cp ${origin_file_path}plots/results/fit/8TeV/HT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/HT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf
+cp ${origin_file_path}plots/results/fit/8TeV/HT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/HT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf
 
-cp ${origin_file_path}plots/fit/8TeV/ST/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/ST/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf
-cp ${origin_file_path}plots/fit/8TeV/ST/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/ST/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf
+cp ${origin_file_path}plots/results/fit/8TeV/ST/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/ST/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf
+cp ${origin_file_path}plots/results/fit/8TeV/ST/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/ST/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf
 
-cp ${origin_file_path}plots/fit/8TeV/MT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/MT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf
-cp ${origin_file_path}plots/fit/8TeV/MT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/MT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf
+cp ${origin_file_path}plots/results/fit/8TeV/MT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/MT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf
+cp ${origin_file_path}plots/results/fit/8TeV/MT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/MT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf
 
-cp ${origin_file_path}plots/fit/8TeV/WPT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/WPT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf
-cp ${origin_file_path}plots/fit/8TeV/WPT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/WPT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf
+cp ${origin_file_path}plots/results/fit/8TeV/WPT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/WPT/central/normalised_xsection_combined_different_generators_with_bkgd_subtraction_results.pdf
+cp ${origin_file_path}plots/results/fit/8TeV/WPT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf ${destination_file_path}04_Analysis/04b_XSections/images/results/fit/8TeV/WPT/central/normalised_xsection_combined_systematics_shifts_with_bkgd_subtraction_results.pdf
 
 
 # APPENDICES
@@ -251,10 +283,10 @@ cp ${origin_file_path}plots/control_plots/before_fit/8TeV/MuPlusJets_N_BJets_rew
 
 # Lepton scale factor fit and efficiency plots (electron)
 # trigger
-cp ${origin_file_path}plots/leptonSF_copied_from_emyr/CBConvolution/electron/data/trigger/tagProbe_total_Z_peak.pdf ${destination_file_path}04_Analysis/04b_XSections/images/lepton_scale_factors/CBConvolution/electron/data/trigger/tagProbe_total_Z_peak.pdf
-cp ${origin_file_path}plots/leptonSF_copied_from_emyr/CBConvolution/electron/data/trigger/tagProbe_passed_hlt_Z_peak.pdf ${destination_file_path}04_Analysis/04b_XSections/images/lepton_scale_factors/CBConvolution/electron/data/trigger/tagProbe_passed_hlt_Z_peak.pdf
-cp ${origin_file_path}plots/leptonSF_copied_from_emyr/CBConvolution/electron/efficiency_eta_trigger.pdf ${destination_file_path}04_Analysis/04b_XSections/images/lepton_scale_factors/CBConvolution/electron/efficiency_eta_trigger.pdf
-cp ${origin_file_path}plots/leptonSF_copied_from_emyr/CBConvolution/electron/efficiency_pt_trigger.pdf ${destination_file_path}04_Analysis/04b_XSections/images/lepton_scale_factors/CBConvolution/electron/efficiency_pt_trigger.pdf
+cp ${origin_file_path}plots/not_made_by_measurement_scripts/leptonSF/CBConvolution/electron/data/trigger/tagProbe_total_Z_peak.pdf ${destination_file_path}04_Analysis/04b_XSections/images/lepton_scale_factors/CBConvolution/electron/data/trigger/tagProbe_total_Z_peak.pdf
+cp ${origin_file_path}plots/not_made_by_measurement_scripts/leptonSF/CBConvolution/electron/data/trigger/tagProbe_passed_hlt_Z_peak.pdf ${destination_file_path}04_Analysis/04b_XSections/images/lepton_scale_factors/CBConvolution/electron/data/trigger/tagProbe_passed_hlt_Z_peak.pdf
+cp ${origin_file_path}plots/not_made_by_measurement_scripts/leptonSF/CBConvolution/electron/efficiency_eta_trigger.pdf ${destination_file_path}04_Analysis/04b_XSections/images/lepton_scale_factors/CBConvolution/electron/efficiency_eta_trigger.pdf
+cp ${origin_file_path}plots/not_made_by_measurement_scripts/leptonSF/CBConvolution/electron/efficiency_pt_trigger.pdf ${destination_file_path}04_Analysis/04b_XSections/images/lepton_scale_factors/CBConvolution/electron/efficiency_pt_trigger.pdf
 
 # Binning Plots (muon)
 cp ${origin_file_path}plots/binning/muon_MET_7TeV.pdf ${destination_file_path}04_Analysis/04b_XSections/images/binning/muon_MET_7TeV.pdf

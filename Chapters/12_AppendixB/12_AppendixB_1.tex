@@ -1,0 +1,69 @@
+%\let\cleardoublepage\clearpage
+%\chapter*{Appendices} % * means unnumbered heading
+%\addcontentsline{toc}{chapter}{Appendices} % add to table of contents although not a numbered heading
+%\label{c:Appendices}
+
+\chapter{\ttbar differential cross section}
+\label{ac:ttbar_diff_cross_section_analysis}
+
+\section{Datasets in differential cross section analysis}
+\label{as:datasets}
+\input{Chapters/07_08_09_Analysis/Tables/datasets/HLT_triggers}
+% included in main text
+%\input{Chapters/07_08_09_Analysis/Tables/datasets/data_7TeV}
+%\input{Chapters/07_08_09_Analysis/Tables/datasets/data_8TeV}
+
+\input{Chapters/07_08_09_Analysis/Tables/datasets/JSON_files}
+
+% included in main text
+%\input{Chapters/07_08_09_Analysis/Tables/datasets/background_samples_7TeV}
+%\input{Chapters/07_08_09_Analysis/Tables/datasets/background_samples_8TeV}
+
+
+\section{Data - Monte Carlo corrections}
+\label{as:data_monte_carlo_corrections}
+\begin{figure}[H]
+    \centering
+      \includegraphics[width=0.48\textwidth]{Chapters/07_08_09_Analysis/Images/control_plots/before_fit/7TeV/EPlusJets_nVertex_with_ratio}\hfill
+      \includegraphics[width=0.48\textwidth]{Chapters/07_08_09_Analysis/Images/control_plots/before_fit/7TeV/EPlusJets_nVertex_reweighted_with_ratio}\\
+      \includegraphics[width=0.48\textwidth]{Chapters/07_08_09_Analysis/Images/control_plots/before_fit/8TeV/EPlusJets_nVertex_with_ratio}\hfill
+      \includegraphics[width=0.48\textwidth]{Chapters/07_08_09_Analysis/Images/control_plots/before_fit/8TeV/EPlusJets_nVertex_reweighted_with_ratio}\\
+     \caption[Distributions of the number of reconstructed vertices in an event in the muon+jets channel
+     before and after implementing pileup reweighting at $\roots=7\TeV$ and $\roots=8\TeV$.]{Distributions of
+     the number of reconstructed vertices in an event in the muon+jets channel before implementing pileup
+     reweighting (left) and after implementation (right) at $\roots=7\TeV$ (upper) and $\roots=8\TeV$ (lower).}
+     \label{fig:nvertices_before_and_after_pileup_reweighting_muons}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+      \includegraphics[width=0.48\textwidth]{Chapters/07_08_09_Analysis/Images/control_plots/before_fit/7TeV/MuPlusJets_N_BJets_with_ratio}\hfill
+      \includegraphics[width=0.48\textwidth]{Chapters/07_08_09_Analysis/Images/control_plots/before_fit/7TeV/MuPlusJets_N_BJets_reweighted_with_ratio}\\
+      \includegraphics[width=0.48\textwidth]{Chapters/07_08_09_Analysis/Images/control_plots/before_fit/8TeV/MuPlusJets_N_BJets_with_ratio}\hfill
+      \includegraphics[width=0.48\textwidth]{Chapters/07_08_09_Analysis/Images/control_plots/before_fit/8TeV/MuPlusJets_N_BJets_reweighted_with_ratio}\\
+     \caption[Distributions of the number of \btags in an event in the muon+jets channel before
+     and after applying \btag scale factors at $\roots=7\TeV$ and $\roots=8\TeV$.]{Distributions of
+     the number of \btags in an event in the muon+jets channel before applying \btag scale factors (left) and
+     after application (right) at $\roots=7\TeV$ (upper) and $\roots=8\TeV$ (lower).}
+     \label{fig:nbjets_before_and_after_btag_scale_factors_muons}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+      \includegraphics[width=0.48\textwidth]{Chapters/07_08_09_Analysis/Images/lepton_scale_factors/CBConvolution/electron/data/trigger/tagProbe_total_Z_peak}\hfill
+      \includegraphics[width=0.48\textwidth]{Chapters/07_08_09_Analysis/Images/lepton_scale_factors/CBConvolution/electron/data/trigger/tagProbe_passed_hlt_Z_peak}\\
+     \caption[Fits of the invariant mass distribution of tag-and-probe electron pairs.]{Fits of the
+     invariant mass distribution of all tag-and-probe pairs (left) and for tag-and-probe pairs in which the
+     probe passes the trigger (right).}
+     \label{fig:electron_trigger_efficiency_invariant_Z_mass_fits}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+      \includegraphics[width=0.48\textwidth]{Chapters/07_08_09_Analysis/Images/lepton_scale_factors/CBConvolution/electron/efficiency_eta_trigger}\hfill
+      \includegraphics[width=0.48\textwidth]{Chapters/07_08_09_Analysis/Images/lepton_scale_factors/CBConvolution/electron/efficiency_pt_trigger}\\
+      \caption[Trigger efficiencies as a function of $\eta$ and \pt in data and \ttbar Monte Carlo
+      simulation.]{Trigger efficiencies as a function of $\eta$ and \pt in data and \ttbar Monte Carlo
+      simulation.}
+     \label{fig:electron_trigger_efficiencies_wrt_eta_pt}
+\end{figure}
